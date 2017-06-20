@@ -7,13 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		A95FD8031EF9D2110094AA1C /* SellerAppNetworkingBC.h in Headers */ = {isa = PBXBuildFile; fileRef = A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80B1EF9D2650094AA1C /* Int+Extension.swift */; };
+		A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80C1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift */; };
+		A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80D1EF9D2650094AA1C /* LPBridgeCoreTypes.swift */; };
+		A95FD8301EF9D2650094AA1C /* LoginVendedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80F1EF9D2650094AA1C /* LoginVendedor.swift */; };
+		A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8101EF9D2650094AA1C /* LPBridgeCoreResponse.swift */; };
+		A95FD8321EF9D2650094AA1C /* LPCancelTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8111EF9D2650094AA1C /* LPCancelTransaction.swift */; };
+		A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8121EF9D2650094AA1C /* LPCloseSession.swift */; };
+		A95FD8341EF9D2650094AA1C /* LPOptionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8131EF9D2650094AA1C /* LPOptionMenu.swift */; };
+		A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8141EF9D2650094AA1C /* LPRegisterTerminal.swift */; };
+		A95FD8361EF9D2650094AA1C /* LPStartupSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8151EF9D2650094AA1C /* LPStartupSession.swift */; };
+		A95FD8371EF9D2650094AA1C /* LPStoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8161EF9D2650094AA1C /* LPStoreData.swift */; };
+		A95FD8381EF9D2650094AA1C /* LPTerminalRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8171EF9D2650094AA1C /* LPTerminalRepresentation.swift */; };
+		A95FD8391EF9D2650094AA1C /* BCResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8191EF9D2650094AA1C /* BCResponse.swift */; };
+		A95FD83A1EF9D2650094AA1C /* Benefitdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD81A1EF9D2650094AA1C /* Benefitdata.swift */; };
+		A95FD83B1EF9D2650094AA1C /* Benefitsdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD81B1EF9D2650094AA1C /* Benefitsdata.swift */; };
+		A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD81C1EF9D2650094AA1C /* Bridgecoreresponse.swift */; };
+		A95FD83D1EF9D2650094AA1C /* Operationresult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD81D1EF9D2650094AA1C /* Operationresult.swift */; };
+		A95FD83E1EF9D2650094AA1C /* Optionmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD81E1EF9D2650094AA1C /* Optionmenu.swift */; };
+		A95FD83F1EF9D2650094AA1C /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD81F1EF9D2650094AA1C /* Options.swift */; };
+		A95FD8401EF9D2650094AA1C /* Promooptiondata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8201EF9D2650094AA1C /* Promooptiondata.swift */; };
+		A95FD8411EF9D2650094AA1C /* Promooptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8211EF9D2650094AA1C /* Promooptions.swift */; };
+		A95FD8421EF9D2650094AA1C /* Promotiondata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8221EF9D2650094AA1C /* Promotiondata.swift */; };
+		A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8231EF9D2650094AA1C /* Promotionsdata.swift */; };
+		A95FD8441EF9D2650094AA1C /* Reasonsalecancelmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8241EF9D2650094AA1C /* Reasonsalecancelmenu.swift */; };
+		A95FD8451EF9D2650094AA1C /* Reasonsaleitemdiscountmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8251EF9D2650094AA1C /* Reasonsaleitemdiscountmenu.swift */; };
+		A95FD8461EF9D2650094AA1C /* Reasonsalereturnmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8261EF9D2650094AA1C /* Reasonsalereturnmenu.swift */; };
+		A95FD8471EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8271EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift */; };
+		A95FD8481EF9D2650094AA1C /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8281EF9D2650094AA1C /* Representation.swift */; };
+		A95FD8491EF9D2650094AA1C /* Sessiondata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD8291EF9D2650094AA1C /* Sessiondata.swift */; };
+		A95FD84A1EF9D2650094AA1C /* Storedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82A1EF9D2650094AA1C /* Storedata.swift */; };
+		A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82B1EF9D2650094AA1C /* Storeslist.swift */; };
+		A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerAppNetworkingBC.h; sourceTree = "<group>"; };
 		A95FD8021EF9D2110094AA1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A95FD80B1EF9D2650094AA1C /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		A95FD80C1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPBridgeCoreServiceProvider.swift; sourceTree = "<group>"; };
+		A95FD80D1EF9D2650094AA1C /* LPBridgeCoreTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPBridgeCoreTypes.swift; sourceTree = "<group>"; };
+		A95FD80F1EF9D2650094AA1C /* LoginVendedor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVendedor.swift; sourceTree = "<group>"; };
+		A95FD8101EF9D2650094AA1C /* LPBridgeCoreResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPBridgeCoreResponse.swift; sourceTree = "<group>"; };
+		A95FD8111EF9D2650094AA1C /* LPCancelTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPCancelTransaction.swift; sourceTree = "<group>"; };
+		A95FD8121EF9D2650094AA1C /* LPCloseSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPCloseSession.swift; sourceTree = "<group>"; };
+		A95FD8131EF9D2650094AA1C /* LPOptionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPOptionMenu.swift; sourceTree = "<group>"; };
+		A95FD8141EF9D2650094AA1C /* LPRegisterTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRegisterTerminal.swift; sourceTree = "<group>"; };
+		A95FD8151EF9D2650094AA1C /* LPStartupSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPStartupSession.swift; sourceTree = "<group>"; };
+		A95FD8161EF9D2650094AA1C /* LPStoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPStoreData.swift; sourceTree = "<group>"; };
+		A95FD8171EF9D2650094AA1C /* LPTerminalRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPTerminalRepresentation.swift; sourceTree = "<group>"; };
+		A95FD8191EF9D2650094AA1C /* BCResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCResponse.swift; sourceTree = "<group>"; };
+		A95FD81A1EF9D2650094AA1C /* Benefitdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Benefitdata.swift; sourceTree = "<group>"; };
+		A95FD81B1EF9D2650094AA1C /* Benefitsdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Benefitsdata.swift; sourceTree = "<group>"; };
+		A95FD81C1EF9D2650094AA1C /* Bridgecoreresponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bridgecoreresponse.swift; sourceTree = "<group>"; };
+		A95FD81D1EF9D2650094AA1C /* Operationresult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operationresult.swift; sourceTree = "<group>"; };
+		A95FD81E1EF9D2650094AA1C /* Optionmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optionmenu.swift; sourceTree = "<group>"; };
+		A95FD81F1EF9D2650094AA1C /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		A95FD8201EF9D2650094AA1C /* Promooptiondata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promooptiondata.swift; sourceTree = "<group>"; };
+		A95FD8211EF9D2650094AA1C /* Promooptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promooptions.swift; sourceTree = "<group>"; };
+		A95FD8221EF9D2650094AA1C /* Promotiondata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotiondata.swift; sourceTree = "<group>"; };
+		A95FD8231EF9D2650094AA1C /* Promotionsdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotionsdata.swift; sourceTree = "<group>"; };
+		A95FD8241EF9D2650094AA1C /* Reasonsalecancelmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reasonsalecancelmenu.swift; sourceTree = "<group>"; };
+		A95FD8251EF9D2650094AA1C /* Reasonsaleitemdiscountmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reasonsaleitemdiscountmenu.swift; sourceTree = "<group>"; };
+		A95FD8261EF9D2650094AA1C /* Reasonsalereturnmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reasonsalereturnmenu.swift; sourceTree = "<group>"; };
+		A95FD8271EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reasonsaletransactiondiscountmenu.swift; sourceTree = "<group>"; };
+		A95FD8281EF9D2650094AA1C /* Representation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
+		A95FD8291EF9D2650094AA1C /* Sessiondata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sessiondata.swift; sourceTree = "<group>"; };
+		A95FD82A1EF9D2650094AA1C /* Storedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storedata.swift; sourceTree = "<group>"; };
+		A95FD82B1EF9D2650094AA1C /* Storeslist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storeslist.swift; sourceTree = "<group>"; };
+		A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tendersmenu.swift; sourceTree = "<group>"; };
+		F09B66C44678F716BBD9DB15 /* Pods-SellerAppNetworkingBC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC.release.xcconfig"; sourceTree = "<group>"; };
+		FEE0A7059439E5503BAB1EE3 /* Pods-SellerAppNetworkingBC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +101,8 @@
 			children = (
 				A95FD8001EF9D2110094AA1C /* SellerAppNetworkingBC */,
 				A95FD7FF1EF9D2110094AA1C /* Products */,
+				B5D1C4F646EB3523034AC0C9 /* Pods */,
+				CBA0E62E5F33146B03843065 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,10 +117,91 @@
 		A95FD8001EF9D2110094AA1C /* SellerAppNetworkingBC */ = {
 			isa = PBXGroup;
 			children = (
+				A95FD8091EF9D2650094AA1C /* BridgeCoreClasses */,
 				A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */,
 				A95FD8021EF9D2110094AA1C /* Info.plist */,
 			);
 			path = SellerAppNetworkingBC;
+			sourceTree = "<group>";
+		};
+		A95FD8091EF9D2650094AA1C /* BridgeCoreClasses */ = {
+			isa = PBXGroup;
+			children = (
+				A95FD80A1EF9D2650094AA1C /* Extensions */,
+				A95FD80C1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift */,
+				A95FD80D1EF9D2650094AA1C /* LPBridgeCoreTypes.swift */,
+				A95FD80E1EF9D2650094AA1C /* LPObjects */,
+				A95FD8181EF9D2650094AA1C /* MapObjects */,
+			);
+			path = BridgeCoreClasses;
+			sourceTree = "<group>";
+		};
+		A95FD80A1EF9D2650094AA1C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A95FD80B1EF9D2650094AA1C /* Int+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A95FD80E1EF9D2650094AA1C /* LPObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A95FD80F1EF9D2650094AA1C /* LoginVendedor.swift */,
+				A95FD8101EF9D2650094AA1C /* LPBridgeCoreResponse.swift */,
+				A95FD8111EF9D2650094AA1C /* LPCancelTransaction.swift */,
+				A95FD8121EF9D2650094AA1C /* LPCloseSession.swift */,
+				A95FD8131EF9D2650094AA1C /* LPOptionMenu.swift */,
+				A95FD8141EF9D2650094AA1C /* LPRegisterTerminal.swift */,
+				A95FD8151EF9D2650094AA1C /* LPStartupSession.swift */,
+				A95FD8161EF9D2650094AA1C /* LPStoreData.swift */,
+				A95FD8171EF9D2650094AA1C /* LPTerminalRepresentation.swift */,
+			);
+			path = LPObjects;
+			sourceTree = "<group>";
+		};
+		A95FD8181EF9D2650094AA1C /* MapObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A95FD8191EF9D2650094AA1C /* BCResponse.swift */,
+				A95FD81A1EF9D2650094AA1C /* Benefitdata.swift */,
+				A95FD81B1EF9D2650094AA1C /* Benefitsdata.swift */,
+				A95FD81C1EF9D2650094AA1C /* Bridgecoreresponse.swift */,
+				A95FD81D1EF9D2650094AA1C /* Operationresult.swift */,
+				A95FD81E1EF9D2650094AA1C /* Optionmenu.swift */,
+				A95FD81F1EF9D2650094AA1C /* Options.swift */,
+				A95FD8201EF9D2650094AA1C /* Promooptiondata.swift */,
+				A95FD8211EF9D2650094AA1C /* Promooptions.swift */,
+				A95FD8221EF9D2650094AA1C /* Promotiondata.swift */,
+				A95FD8231EF9D2650094AA1C /* Promotionsdata.swift */,
+				A95FD8241EF9D2650094AA1C /* Reasonsalecancelmenu.swift */,
+				A95FD8251EF9D2650094AA1C /* Reasonsaleitemdiscountmenu.swift */,
+				A95FD8261EF9D2650094AA1C /* Reasonsalereturnmenu.swift */,
+				A95FD8271EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift */,
+				A95FD8281EF9D2650094AA1C /* Representation.swift */,
+				A95FD8291EF9D2650094AA1C /* Sessiondata.swift */,
+				A95FD82A1EF9D2650094AA1C /* Storedata.swift */,
+				A95FD82B1EF9D2650094AA1C /* Storeslist.swift */,
+				A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */,
+			);
+			path = MapObjects;
+			sourceTree = "<group>";
+		};
+		B5D1C4F646EB3523034AC0C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEE0A7059439E5503BAB1EE3 /* Pods-SellerAppNetworkingBC.debug.xcconfig */,
+				F09B66C44678F716BBD9DB15 /* Pods-SellerAppNetworkingBC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CBA0E62E5F33146B03843065 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,10 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A95FD8061EF9D2110094AA1C /* Build configuration list for PBXNativeTarget "SellerAppNetworkingBC" */;
 			buildPhases = (
+				35E78D3000D5B77C9F1F5BFF /* [CP] Check Pods Manifest.lock */,
 				A95FD7F91EF9D2110094AA1C /* Sources */,
 				A95FD7FA1EF9D2110094AA1C /* Frameworks */,
 				A95FD7FB1EF9D2110094AA1C /* Headers */,
 				A95FD7FC1EF9D2110094AA1C /* Resources */,
+				7F7163820DA7ED020E7B7250 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,11 +280,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35E78D3000D5B77C9F1F5BFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7F7163820DA7ED020E7B7250 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A95FD7F91EF9D2110094AA1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95FD83D1EF9D2650094AA1C /* Operationresult.swift in Sources */,
+				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
+				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,
+				A95FD84A1EF9D2650094AA1C /* Storedata.swift in Sources */,
+				A95FD8491EF9D2650094AA1C /* Sessiondata.swift in Sources */,
+				A95FD8321EF9D2650094AA1C /* LPCancelTransaction.swift in Sources */,
+				A95FD8471EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift in Sources */,
+				A95FD8371EF9D2650094AA1C /* LPStoreData.swift in Sources */,
+				A95FD8441EF9D2650094AA1C /* Reasonsalecancelmenu.swift in Sources */,
+				A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */,
+				A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */,
+				A95FD83B1EF9D2650094AA1C /* Benefitsdata.swift in Sources */,
+				A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */,
+				A95FD8411EF9D2650094AA1C /* Promooptions.swift in Sources */,
+				A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */,
+				A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */,
+				A95FD83A1EF9D2650094AA1C /* Benefitdata.swift in Sources */,
+				A95FD83E1EF9D2650094AA1C /* Optionmenu.swift in Sources */,
+				A95FD8391EF9D2650094AA1C /* BCResponse.swift in Sources */,
+				A95FD83F1EF9D2650094AA1C /* Options.swift in Sources */,
+				A95FD8301EF9D2650094AA1C /* LoginVendedor.swift in Sources */,
+				A95FD8381EF9D2650094AA1C /* LPTerminalRepresentation.swift in Sources */,
+				A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */,
+				A95FD8401EF9D2650094AA1C /* Promooptiondata.swift in Sources */,
+				A95FD8461EF9D2650094AA1C /* Reasonsalereturnmenu.swift in Sources */,
+				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
+				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,
+				A95FD8421EF9D2650094AA1C /* Promotiondata.swift in Sources */,
+				A95FD8361EF9D2650094AA1C /* LPStartupSession.swift in Sources */,
+				A95FD8341EF9D2650094AA1C /* LPOptionMenu.swift in Sources */,
+				A95FD8481EF9D2650094AA1C /* Representation.swift in Sources */,
+				A95FD8451EF9D2650094AA1C /* Reasonsaleitemdiscountmenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -227,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -240,6 +459,7 @@
 		};
 		A95FD8071EF9D2110094AA1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEE0A7059439E5503BAB1EE3 /* Pods-SellerAppNetworkingBC.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -258,6 +478,7 @@
 		};
 		A95FD8081EF9D2110094AA1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F09B66C44678F716BBD9DB15 /* Pods-SellerAppNetworkingBC.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
