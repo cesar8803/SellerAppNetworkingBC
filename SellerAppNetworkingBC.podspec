@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
 # 6 URL Git
 
-    s.source = { :git => "https://J_ALEJANDRO_H@bitbucket.org/deloittedigitalmx/bcpod2017_repo.git", :tag => "#{s.version}" }
+    s.source = { :git => "https://github.com/cesar8803/SellerAppNetworkingBC.git", :tag => "#{s.version}" }
 
 
 # 7 Dependencies
