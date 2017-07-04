@@ -47,6 +47,8 @@ public class AsyncClientBC
         }
     }
     
+
+    
     
     /************** Petición POST **********************/
     class func postRequestExecuteWithTimeOut<T:Mappable>(_ _Type:BackendUrlManager.ServiceUrlsId, _Parameters: Parameters, _ViewLoader:Bool, _MsjLoader: String,_Completion:@escaping (_ _postRequest: T) -> Void, _ErrorCompletition: @escaping (_ errorString:String) -> Void){
@@ -96,17 +98,18 @@ public class AsyncClientBC
     
     
     /************** Petición PUT **********************/
-    class func putRequestExecute<T:Mappable>(_ _Type:BackendUrlManager.ServiceUrlsId, _Parameters: Parameters, _ViewLoader:Bool, _MsjLoader: String,_Completion:@escaping (_ _putRequest: T) -> Void, _ErrorCompletition: @escaping (_ errorString:String) -> Void){
+
+    class func putRequestExecute<T:Mappable>(_ type:BackendUrlManager.ServiceUrlsId, parameters: Parameters, viewLoader:Bool, msjLoader: String, completion:@escaping (_ putResponse:T) -> Void, errorCompletition: @escaping (_ errorString:String) -> Void){
         
-        let _Url = BackendUrlManager.Current.getUrl(_Type)
-        Alamofire.request(_Url, method: .put, parameters: _Parameters, encoding: URLEncoding.default).responseObject { (response: DataResponse<T>) in
+        let url = BackendUrlManager.Current.getUrl(type)
+        Alamofire.request(url, method: .put, parameters: parameters, encoding: URLEncoding.default).responseObject { (response: DataResponse<T>) in
             
             if response.result.isSuccess{
                 let responseService = response.result.value
-                _Completion(responseService!)
+                completion(responseService!)
                 
             }else{
-                _ErrorCompletition((response.result.error?.localizedDescription)!)
+                errorCompletition((response.result.error?.localizedDescription)!)
             }
         }
     }

@@ -8,20 +8,24 @@
 
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
+
+public typealias ErrorStringHandlerBC = (_ errorString:String) -> Void
+
 
 public class Withdrawals
 {
-    public class func selectEnableCoins(connectionId:String, storeCode:String, terminalCode:String)
+    public class func selectEnableCoins(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCoreResponse)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         let params = ["storeCode":storeCode, "terminalCode":terminalCode]
         let bridgeCoreRequestDict = ["conectionId":connectionId, "operation":"selectEnableCoins", "params":params] as [String : Any]
     
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
-        /*AsyncClientBC.putRequestExecute(BackendUrlManager.ServiceUrlsId.selectEnableCoins, _Parameters: p, _ViewLoader: false, _MsjLoader: "message", _Completion: { (brigeCoreResponse) in
-            
+        AsyncClientBC.putRequestExecute(BackendUrlManager.ServiceUrlsId.selectEnableCoins, parameters: p, viewLoader: true, msjLoader: "cargando", completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
         }) { (msg) in
-            
-        }*/
+            completionError(msg)
+        }
     }
 }
