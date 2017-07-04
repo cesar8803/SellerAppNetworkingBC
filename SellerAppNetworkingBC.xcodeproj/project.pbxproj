@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */; };
+		2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */; };
+		2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB41F0B48C3004E5F1F /* OperationResult.swift */; };
+		2B788EB71F0B4962004E5F1F /* ExchangeCurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB61F0B4962004E5F1F /* ExchangeCurrencyData.swift */; };
+		2B788EB91F0B49DA004E5F1F /* ValorTipoCambio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB81F0B49DA004E5F1F /* ValorTipoCambio.swift */; };
+		2B788EBB1F0B4E54004E5F1F /* BackedUrlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */; };
+		2B788EBD1F0B52A6004E5F1F /* Withdrawals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */; };
+		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		A95FD8031EF9D2110094AA1C /* SellerAppNetworkingBC.h in Headers */ = {isa = PBXBuildFile; fileRef = A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80B1EF9D2650094AA1C /* Int+Extension.swift */; };
@@ -44,6 +52,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreResponse.swift; path = Objects/BridgeCoreResponse.swift; sourceTree = "<group>"; };
+		2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeCurrencyListData.swift; path = Objects/ExchangeCurrencyListData.swift; sourceTree = "<group>"; };
+		2B788EB41F0B48C3004E5F1F /* OperationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationResult.swift; path = Objects/OperationResult.swift; sourceTree = "<group>"; };
+		2B788EB61F0B4962004E5F1F /* ExchangeCurrencyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeCurrencyData.swift; path = Objects/ExchangeCurrencyData.swift; sourceTree = "<group>"; };
+		2B788EB81F0B49DA004E5F1F /* ValorTipoCambio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValorTipoCambio.swift; path = Objects/ValorTipoCambio.swift; sourceTree = "<group>"; };
+		2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackedUrlManager.swift; path = Services/BackedUrlManager.swift; sourceTree = "<group>"; };
+		2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Withdrawals.swift; path = Services/Withdrawals.swift; sourceTree = "<group>"; };
+		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
 		8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerAppNetworkingBC.h; sourceTree = "<group>"; };
@@ -96,6 +112,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B788EAD1F0B45D8004E5F1F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				2B788EB41F0B48C3004E5F1F /* OperationResult.swift */,
+				2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */,
+				2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */,
+				2B788EB61F0B4962004E5F1F /* ExchangeCurrencyData.swift */,
+				2B788EB81F0B49DA004E5F1F /* ValorTipoCambio.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		2BA3B34A1F0AF548003CCFB2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */,
+				2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */,
+				2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		A95FD7F41EF9D2110094AA1C = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +165,8 @@
 		A95FD8091EF9D2650094AA1C /* BridgeCoreClasses */ = {
 			isa = PBXGroup;
 			children = (
+				2B788EAD1F0B45D8004E5F1F /* Objects */,
+				2BA3B34A1F0AF548003CCFB2 /* Services */,
 				A95FD80A1EF9D2650094AA1C /* Extensions */,
 				A95FD80C1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift */,
 				A95FD80D1EF9D2650094AA1C /* LPBridgeCoreTypes.swift */,
@@ -322,17 +362,23 @@
 				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
 				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,
 				A95FD84A1EF9D2650094AA1C /* Storedata.swift in Sources */,
+				2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */,
 				A95FD8491EF9D2650094AA1C /* Sessiondata.swift in Sources */,
 				A95FD8321EF9D2650094AA1C /* LPCancelTransaction.swift in Sources */,
+				2B788EBB1F0B4E54004E5F1F /* BackedUrlManager.swift in Sources */,
 				A95FD8471EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift in Sources */,
 				A95FD8371EF9D2650094AA1C /* LPStoreData.swift in Sources */,
 				A95FD8441EF9D2650094AA1C /* Reasonsalecancelmenu.swift in Sources */,
 				A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */,
+				2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */,
 				A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */,
 				A95FD83B1EF9D2650094AA1C /* Benefitsdata.swift in Sources */,
 				A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */,
 				A95FD8411EF9D2650094AA1C /* Promooptions.swift in Sources */,
+				2B788EB91F0B49DA004E5F1F /* ValorTipoCambio.swift in Sources */,
 				A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */,
+				2B788EB71F0B4962004E5F1F /* ExchangeCurrencyData.swift in Sources */,
+				2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */,
 				A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */,
 				A95FD83A1EF9D2650094AA1C /* Benefitdata.swift in Sources */,
 				A95FD83E1EF9D2650094AA1C /* Optionmenu.swift in Sources */,
@@ -341,6 +387,8 @@
 				A95FD8301EF9D2650094AA1C /* LoginVendedor.swift in Sources */,
 				A95FD8381EF9D2650094AA1C /* LPTerminalRepresentation.swift in Sources */,
 				A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */,
+				2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */,
+				2B788EBD1F0B52A6004E5F1F /* Withdrawals.swift in Sources */,
 				A95FD8401EF9D2650094AA1C /* Promooptiondata.swift in Sources */,
 				A95FD8461EF9D2650094AA1C /* Reasonsalereturnmenu.swift in Sources */,
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
@@ -514,6 +562,7 @@
 				A95FD8081EF9D2110094AA1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
