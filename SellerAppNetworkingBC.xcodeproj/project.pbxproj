@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0CA3AB1F0DA314007A8EB0 /* RepresentationWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3AA1F0DA314007A8EB0 /* RepresentationWD.swift */; };
+		2B0CA3AD1F0DA585007A8EB0 /* SessionDataWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3AC1F0DA585007A8EB0 /* SessionDataWD.swift */; };
+		2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3AE1F0DA613007A8EB0 /* TerdersMenuWD.swift */; };
+		2B0CA3B11F0DA6EC007A8EB0 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3B01F0DA6EC007A8EB0 /* Ticket.swift */; };
+		2B0CA3B31F0DA81A007A8EB0 /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3B21F0DA81A007A8EB0 /* StoreData.swift */; };
+		2B0CA3B51F0DA87E007A8EB0 /* StoreAddressList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3B41F0DA87E007A8EB0 /* StoreAddressList.swift */; };
+		2B0CA3B71F0DA8E7007A8EB0 /* PaymentsTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3B61F0DA8E7007A8EB0 /* PaymentsTotal.swift */; };
 		2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */; };
 		2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */; };
 		2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB41F0B48C3004E5F1F /* OperationResult.swift */; };
@@ -53,6 +60,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B0CA3AA1F0DA314007A8EB0 /* RepresentationWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepresentationWD.swift; path = Objects/RepresentationWD.swift; sourceTree = "<group>"; };
+		2B0CA3AC1F0DA585007A8EB0 /* SessionDataWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionDataWD.swift; path = Objects/SessionDataWD.swift; sourceTree = "<group>"; };
+		2B0CA3AE1F0DA613007A8EB0 /* TerdersMenuWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerdersMenuWD.swift; path = Objects/TerdersMenuWD.swift; sourceTree = "<group>"; };
+		2B0CA3B01F0DA6EC007A8EB0 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticket.swift; path = Objects/Ticket.swift; sourceTree = "<group>"; };
+		2B0CA3B21F0DA81A007A8EB0 /* StoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreData.swift; path = Objects/StoreData.swift; sourceTree = "<group>"; };
+		2B0CA3B41F0DA87E007A8EB0 /* StoreAddressList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreAddressList.swift; sourceTree = "<group>"; };
+		2B0CA3B61F0DA8E7007A8EB0 /* PaymentsTotal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsTotal.swift; path = Objects/PaymentsTotal.swift; sourceTree = "<group>"; };
 		2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreResponse.swift; path = Objects/BridgeCoreResponse.swift; sourceTree = "<group>"; };
 		2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeCurrencyListData.swift; path = Objects/ExchangeCurrencyListData.swift; sourceTree = "<group>"; };
 		2B788EB41F0B48C3004E5F1F /* OperationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationResult.swift; path = Objects/OperationResult.swift; sourceTree = "<group>"; };
@@ -123,6 +137,13 @@
 				2B788EB61F0B4962004E5F1F /* ExchangeCurrencyData.swift */,
 				2B788EB81F0B49DA004E5F1F /* ValorTipoCambio.swift */,
 				2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */,
+				2B0CA3AA1F0DA314007A8EB0 /* RepresentationWD.swift */,
+				2B0CA3AC1F0DA585007A8EB0 /* SessionDataWD.swift */,
+				2B0CA3AE1F0DA613007A8EB0 /* TerdersMenuWD.swift */,
+				2B0CA3B01F0DA6EC007A8EB0 /* Ticket.swift */,
+				2B0CA3B21F0DA81A007A8EB0 /* StoreData.swift */,
+				2B0CA3B41F0DA87E007A8EB0 /* StoreAddressList.swift */,
+				2B0CA3B61F0DA8E7007A8EB0 /* PaymentsTotal.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -364,15 +385,18 @@
 				A95FD83D1EF9D2650094AA1C /* Operationresult.swift in Sources */,
 				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
 				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,
+				2B0CA3B71F0DA8E7007A8EB0 /* PaymentsTotal.swift in Sources */,
 				A95FD84A1EF9D2650094AA1C /* Storedata.swift in Sources */,
 				2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */,
 				A95FD8491EF9D2650094AA1C /* Sessiondata.swift in Sources */,
 				A95FD8321EF9D2650094AA1C /* LPCancelTransaction.swift in Sources */,
 				2B788EBB1F0B4E54004E5F1F /* BackedUrlManager.swift in Sources */,
+				2B0CA3AD1F0DA585007A8EB0 /* SessionDataWD.swift in Sources */,
 				A95FD8471EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift in Sources */,
 				A95FD8371EF9D2650094AA1C /* LPStoreData.swift in Sources */,
 				A95FD8441EF9D2650094AA1C /* Reasonsalecancelmenu.swift in Sources */,
 				A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */,
+				2B0CA3AB1F0DA314007A8EB0 /* RepresentationWD.swift in Sources */,
 				2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */,
 				A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */,
 				2B788ECF1F0C54F9004E5F1F /* BridgeCore.swift in Sources */,
@@ -380,7 +404,9 @@
 				A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */,
 				A95FD8411EF9D2650094AA1C /* Promooptions.swift in Sources */,
 				2B788EB91F0B49DA004E5F1F /* ValorTipoCambio.swift in Sources */,
+				2B0CA3B51F0DA87E007A8EB0 /* StoreAddressList.swift in Sources */,
 				A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */,
+				2B0CA3B11F0DA6EC007A8EB0 /* Ticket.swift in Sources */,
 				2B788EB71F0B4962004E5F1F /* ExchangeCurrencyData.swift in Sources */,
 				2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */,
 				A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */,
@@ -391,9 +417,11 @@
 				A95FD8301EF9D2650094AA1C /* LoginVendedor.swift in Sources */,
 				A95FD8381EF9D2650094AA1C /* LPTerminalRepresentation.swift in Sources */,
 				A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */,
+				2B0CA3B31F0DA81A007A8EB0 /* StoreData.swift in Sources */,
 				2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */,
 				2B788EBD1F0B52A6004E5F1F /* Withdrawals.swift in Sources */,
 				A95FD8401EF9D2650094AA1C /* Promooptiondata.swift in Sources */,
+				2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */,
 				A95FD8461EF9D2650094AA1C /* Reasonsalereturnmenu.swift in Sources */,
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
 				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,

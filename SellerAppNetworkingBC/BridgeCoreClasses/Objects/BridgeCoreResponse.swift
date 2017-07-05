@@ -13,6 +13,9 @@ public class BridgeCoreResponse: Mappable{
     public var ack: Int?
     public var message: String?
     public var operationResult: OperationResult?
+    public var connectionId:String?
+    public var representation: RepresentationWD?
+    public var actualActivity: String?
     
     public required init?(map: Map){
     }
@@ -21,5 +24,8 @@ public class BridgeCoreResponse: Mappable{
         ack <- map["ack"]
         message <- map["message"]
         operationResult <- map["operationResult"]
+        connectionId <- map["connectionId"]
+        representation <- map["representation"]
+        actualActivity <- map["actualActivity"]
     }
 }
