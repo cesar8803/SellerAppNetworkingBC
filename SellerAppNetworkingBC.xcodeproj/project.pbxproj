@@ -14,6 +14,7 @@
 		2B788EB91F0B49DA004E5F1F /* ValorTipoCambio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB81F0B49DA004E5F1F /* ValorTipoCambio.swift */; };
 		2B788EBB1F0B4E54004E5F1F /* BackedUrlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */; };
 		2B788EBD1F0B52A6004E5F1F /* Withdrawals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */; };
+		2B788ECF1F0C54F9004E5F1F /* BridgeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */; };
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		A95FD8031EF9D2110094AA1C /* SellerAppNetworkingBC.h in Headers */ = {isa = PBXBuildFile; fileRef = A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +60,7 @@
 		2B788EB81F0B49DA004E5F1F /* ValorTipoCambio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValorTipoCambio.swift; path = Objects/ValorTipoCambio.swift; sourceTree = "<group>"; };
 		2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackedUrlManager.swift; path = Services/BackedUrlManager.swift; sourceTree = "<group>"; };
 		2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Withdrawals.swift; path = Services/Withdrawals.swift; sourceTree = "<group>"; };
+		2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCore.swift; path = Objects/BridgeCore.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
 		8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */,
 				2B788EB61F0B4962004E5F1F /* ExchangeCurrencyData.swift */,
 				2B788EB81F0B49DA004E5F1F /* ValorTipoCambio.swift */,
+				2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */,
 				2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */,
 				A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */,
+				2B788ECF1F0C54F9004E5F1F /* BridgeCore.swift in Sources */,
 				A95FD83B1EF9D2650094AA1C /* Benefitsdata.swift in Sources */,
 				A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */,
 				A95FD8411EF9D2650094AA1C /* Promooptions.swift in Sources */,

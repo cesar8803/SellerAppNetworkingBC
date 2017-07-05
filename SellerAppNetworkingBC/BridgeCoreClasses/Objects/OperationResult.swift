@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class OperationResult: Mappable{
+    public var arrobaClass: String?
     public var exchangeCurrencyListData: [ExchangeCurrencyListData]?
     
     public required init?(map: Map){
@@ -17,5 +18,6 @@ public class OperationResult: Mappable{
     
     public func mapping(map: Map){
         exchangeCurrencyListData <- map["exchangeCurrencyListData"]
+        arrobaClass <- map["@class"]
     }
 }

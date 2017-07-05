@@ -15,7 +15,7 @@ class BackendUrlManager : NSObject{
     }
     
     fileprivate static let SERVICE_CONTEXT:[String] = [
-        "bridge-server-rest-liverpool/services/selectEnableCoins",                                  //selectEnableCoins
+        "bridge-server-rest-liverpool/service/selectEnableCoins",                                  //selectEnableCoins
     ]
     
     // The array of all the services url's.

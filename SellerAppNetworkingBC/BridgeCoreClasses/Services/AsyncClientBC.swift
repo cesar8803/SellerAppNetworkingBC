@@ -102,7 +102,8 @@ public class AsyncClientBC
     class func putRequestExecute<T:Mappable>(_ type:BackendUrlManager.ServiceUrlsId, parameters: Parameters, viewLoader:Bool, msjLoader: String, completion:@escaping (_ putResponse:T) -> Void, errorCompletition: @escaping (_ errorString:String) -> Void){
         
         let url = BackendUrlManager.Current.getUrl(type)
-        Alamofire.request(url, method: .put, parameters: parameters, encoding: URLEncoding.default).responseObject { (response: DataResponse<T>) in
+        print("url..:\(url)")
+        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default).responseObject { (response: DataResponse<T>) in
             
             if response.result.isSuccess{
                 let responseService = response.result.value
