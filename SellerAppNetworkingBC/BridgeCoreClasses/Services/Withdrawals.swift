@@ -43,6 +43,8 @@ public enum BridgeCoreOperation
         paymentMethod: String,
         paymentQuantity: String)
     
+    case finishTransaction(connectionId:String, terminalCode:String, storeCode:String)
+    
     func getParams()->(Parameters, String, String)
     {
         switch self
@@ -62,6 +64,13 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.addTender.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
+            
+        case .finishTransaction(let connectionId, let terminalCode,let  storeCode):
+            let p:[String:Any] = [String:Any]()
+            
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.finishTransaction.rawValue, "params":p]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
         }
     }
 }
@@ -72,6 +81,7 @@ public enum WithdrawalsOperation:String
     case selectEnableCoins = "selectEnableCoins"
     case selectTransaction = "selectTransaction"
     case addTender = "addTender"
+    case finishTransaction = "finishTransaction"
 }
 
 public class Withdrawals
@@ -91,27 +101,6 @@ public class Withdrawals
         }
     }
     
-    
-   
-    /*public class func selectTransaction(connectionId:String,
-                                        storeCode:String,
-                                        terminalCode:String,
-                                        transactionSubtype:String,
-                                        giftTicket:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
-    {
-        let params = ["transactionSubtype":transactionSubtype, "giftTicket":giftTicket]
-        let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":WithdrawalsOperation.selectTransaction.rawValue, "params":params] as [String : Any]
-        
-        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
-        
-        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.selectTransaction(terminalCode: terminalCode, storeCode: storeCode, paramters: p), completion: { (bridgeCoreResponse) in
-            completion(bridgeCoreResponse)
-        }) { (msg) in
-            completionError(msg)
-        }
-     
-    
-    }*/
     
     public class func bridgeCoreOperationTransact(operation:BridgeCoreOperation, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {

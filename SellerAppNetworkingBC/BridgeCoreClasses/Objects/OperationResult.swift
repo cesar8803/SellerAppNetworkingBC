@@ -12,6 +12,8 @@ import ObjectMapper
 public class OperationResult: Mappable{
     public var arrobaClass: String?
     public var exchangeCurrencyListData: [ExchangeCurrencyListData]?
+    public var invoiced: Int?
+    public var docNumber: String?
     
     public required init?(map: Map){
     }
@@ -19,5 +21,7 @@ public class OperationResult: Mappable{
     public func mapping(map: Map){
         exchangeCurrencyListData <- map["exchangeCurrencyListData"]
         arrobaClass <- map["@class"]
+        invoiced <- map["invoiced"]
+        docNumber <- map["docNumber"]
     }
 }
