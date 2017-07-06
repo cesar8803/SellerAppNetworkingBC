@@ -64,7 +64,7 @@ public class Ticket: Mappable{
     public var items: [String]?
     public var cashDrawerOpeningRequired: Int?
     public var endDateTime: String?
-    public var subtotal: Subtotal?
+    public var subtotal: SubTotal?
     public var updateBines: Int?
     public var promoGifts: [String]?
     public var ivaPerceptions: Ivaperceptions?
