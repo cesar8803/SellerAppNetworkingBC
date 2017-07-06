@@ -76,7 +76,7 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .selectEnableCoins:
             return "bridge-server-rest-liverpool/service/selectEnableCoins"
         case .selectTransaction(let terminal, let store, _):
-            return "bridge-server-rest-liverpool/service/\(terminal)/\(store)"
+            return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
             
             
         }
