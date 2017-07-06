@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class StoreData: Mappable{
     public var storeAddress: String?
-    public var storeAddressList: [Storeaddresslist]?
+    public var storeAddressList: [StoreAddressList]?
     public var storeName: String?
     
     required public init?(map: Map){
