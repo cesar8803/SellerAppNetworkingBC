@@ -78,7 +78,8 @@ public class Ticket: Mappable{
     
     required public init?(map: Map){
     }
-    func mapping(map: Map){
+    
+    public func mapping(map: Map){
         storeData <- map["storeData"]
         originalItems <- map["originalItems"]
         transactionName <- map["transactionName"]
