@@ -74,7 +74,7 @@ public class Ticket: Mappable{
     public var taxDetailPerceptions: [String]?
     public var userName: String?
     public var trainingModeFlag: Int?
-    public var paymentsSurchargeTotal: Paymentssurchargetotal?
+    public var paymentsSurchargeTotal: PaymentsSurChargetotal?
     
     required public init?(map: Map){
     }
