@@ -14,7 +14,18 @@ import AlamofireObjectMapper
 public class AsyncClientBC
 {
     
-   
+    class func getBCRequest<T:Mappable>(bcRouter:BrigdeCoreRouter, completion:@escaping (_ dataResponse:T) -> Void, errorCompletition: @escaping (_ errorString:String) -> Void)
+    {
+        Alamofire.request(bcRouter).responseObject { (response: DataResponse<T>) in
+            
+            if response.result.isSuccess{
+                let responseService = response.result.value
+                completion(responseService!)
+            } else {
+                errorCompletition((response.result.error?.localizedDescription)!)
+            }
+        }
+    }
     
     /************** Petición GET con Parametros **********************/
     class func getRequestExecute<T:Mappable>(_ type:BackendUrlManager.ServiceUrlsId, parameters: Parameters, completion:@escaping (_ dataResponse:T) -> Void, errorCompletition: @escaping (_ errorString:String) -> Void){

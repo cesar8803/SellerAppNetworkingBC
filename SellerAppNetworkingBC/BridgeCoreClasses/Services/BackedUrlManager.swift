@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class BackendUrlManager : NSObject{
     
@@ -48,3 +49,54 @@ class BackendUrlManager : NSObject{
     // Singleton intance.
     static let Current:BackendUrlManager = BackendUrlManager()
 }
+
+
+enum BrigdeCoreRouter:URLRequestConvertible {
+    static let backendHost = "172.22.209.88:9090/"
+    static let backendProtocol = "http://"
+    
+    static let baseURLString = "\(backendProtocol)\(backendHost)"
+    
+    //Cases
+    case selectEnableCoins(parameters:Parameters)
+    case selectTransaction(terminalCode:String, storeCode:String, paramters:Parameters)
+    
+    //method
+    var method:HTTPMethod{
+        switch self {
+        case .selectEnableCoins(_):
+            return .put
+        case .selectTransaction(_,_,_):
+            return .put
+        }
+    }
+    
+    var path:String{
+        switch self {
+        case .selectEnableCoins:
+            return "bridge-server-rest-liverpool/service/selectEnableCoin"
+        case .selectTransaction(let terminal, let store, _):
+            return "bridge-server-rest-liverpool/service/\(terminal)/\(store)"
+            
+        }
+    }
+    
+    
+    func asURLRequest() throws -> URLRequest
+    {
+        let url = try BrigdeCoreRouter.baseURLString.asURL()
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        
+        urlRequest.httpMethod = method.rawValue
+        
+        switch self {
+        case .selectEnableCoins(let params):
+            urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: params)
+        case .selectTransaction(_, _,  let params):
+            urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: params)
+        }
+        
+        return urlRequest
+    }
+}
+
