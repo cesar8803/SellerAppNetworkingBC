@@ -15,6 +15,7 @@ class Operationresult: Mappable{
     
     required init?(map: Map){
     }
+    
     func mapping(map: Map){
         ps <- map["$"]
         arrobaClass <- map["@class"]
