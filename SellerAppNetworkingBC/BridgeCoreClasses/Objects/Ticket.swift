@@ -70,7 +70,7 @@ public class Ticket: Mappable{
     public var ivaPerceptions: IvaPerceptions?
     public var tenderSurchargeTotal: TendersurChargeTotal?
     public var payments: [String]?
-    public var discountsTransactionTotal: Discountstransactiontotal?
+    public var discountsTransactionTotal: DiscountsTransactionTotal?
     public var taxDetailPerceptions: [String]?
     public var userName: String?
     public var trainingModeFlag: Int?
