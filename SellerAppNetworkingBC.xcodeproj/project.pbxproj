@@ -35,6 +35,7 @@
 		2B0CA3DD1F0DBAF9007A8EB0 /* TotalComputador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3DC1F0DBAF9007A8EB0 /* TotalComputador.swift */; };
 		2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3DE1F0DBB6A007A8EB0 /* TotalDiferencia.swift */; };
 		2B0CA3E11F0DBC70007A8EB0 /* Entregado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3E01F0DBC70007A8EB0 /* Entregado.swift */; };
+		2B0CA3E31F0DBCF1007A8EB0 /* ValesPapel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3E21F0DBCF1007A8EB0 /* ValesPapel.swift */; };
 		2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */; };
 		2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */; };
 		2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB41F0B48C3004E5F1F /* OperationResult.swift */; };
@@ -109,6 +110,7 @@
 		2B0CA3DC1F0DBAF9007A8EB0 /* TotalComputador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalComputador.swift; path = Objects/TotalComputador.swift; sourceTree = "<group>"; };
 		2B0CA3DE1F0DBB6A007A8EB0 /* TotalDiferencia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalDiferencia.swift; path = Objects/TotalDiferencia.swift; sourceTree = "<group>"; };
 		2B0CA3E01F0DBC70007A8EB0 /* Entregado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entregado.swift; path = Objects/Entregado.swift; sourceTree = "<group>"; };
+		2B0CA3E21F0DBCF1007A8EB0 /* ValesPapel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValesPapel.swift; path = Objects/ValesPapel.swift; sourceTree = "<group>"; };
 		2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreResponse.swift; path = Objects/BridgeCoreResponse.swift; sourceTree = "<group>"; };
 		2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeCurrencyListData.swift; path = Objects/ExchangeCurrencyListData.swift; sourceTree = "<group>"; };
 		2B788EB41F0B48C3004E5F1F /* OperationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationResult.swift; path = Objects/OperationResult.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				2B0CA3DC1F0DBAF9007A8EB0 /* TotalComputador.swift */,
 				2B0CA3DE1F0DBB6A007A8EB0 /* TotalDiferencia.swift */,
 				2B0CA3E01F0DBC70007A8EB0 /* Entregado.swift */,
+				2B0CA3E21F0DBCF1007A8EB0 /* ValesPapel.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				A95FD83F1EF9D2650094AA1C /* Options.swift in Sources */,
 				A95FD8301EF9D2650094AA1C /* LoginVendedor.swift in Sources */,
 				A95FD8381EF9D2650094AA1C /* LPTerminalRepresentation.swift in Sources */,
+				2B0CA3E31F0DBCF1007A8EB0 /* ValesPapel.swift in Sources */,
 				2B0CA3CB1F0DB5FE007A8EB0 /* DiscountsTotal.swift in Sources */,
 				2B0CA3D91F0DBA1F007A8EB0 /* PaymentsSurChargetotal.swift in Sources */,
 				A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */,
