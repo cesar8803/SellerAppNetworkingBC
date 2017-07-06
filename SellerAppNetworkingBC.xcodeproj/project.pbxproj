@@ -26,6 +26,7 @@
 		2B0CA3CB1F0DB5FE007A8EB0 /* DiscountsTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3CA1F0DB5FE007A8EB0 /* DiscountsTotal.swift */; };
 		2B0CA3CD1F0DB69D007A8EB0 /* TotalsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3CC1F0DB69D007A8EB0 /* TotalsData.swift */; };
 		2B0CA3CF1F0DB748007A8EB0 /* DiscountsPromoTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3CE1F0DB748007A8EB0 /* DiscountsPromoTotal.swift */; };
+		2B0CA3D11F0DB7E9007A8EB0 /* SubTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3D01F0DB7E9007A8EB0 /* SubTotal.swift */; };
 		2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */; };
 		2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */; };
 		2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB41F0B48C3004E5F1F /* OperationResult.swift */; };
@@ -91,6 +92,7 @@
 		2B0CA3CA1F0DB5FE007A8EB0 /* DiscountsTotal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscountsTotal.swift; path = Objects/DiscountsTotal.swift; sourceTree = "<group>"; };
 		2B0CA3CC1F0DB69D007A8EB0 /* TotalsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalsData.swift; path = Objects/TotalsData.swift; sourceTree = "<group>"; };
 		2B0CA3CE1F0DB748007A8EB0 /* DiscountsPromoTotal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscountsPromoTotal.swift; path = Objects/DiscountsPromoTotal.swift; sourceTree = "<group>"; };
+		2B0CA3D01F0DB7E9007A8EB0 /* SubTotal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubTotal.swift; path = Objects/SubTotal.swift; sourceTree = "<group>"; };
 		2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreResponse.swift; path = Objects/BridgeCoreResponse.swift; sourceTree = "<group>"; };
 		2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeCurrencyListData.swift; path = Objects/ExchangeCurrencyListData.swift; sourceTree = "<group>"; };
 		2B788EB41F0B48C3004E5F1F /* OperationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationResult.swift; path = Objects/OperationResult.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				2B0CA3CA1F0DB5FE007A8EB0 /* DiscountsTotal.swift */,
 				2B0CA3CC1F0DB69D007A8EB0 /* TotalsData.swift */,
 				2B0CA3CE1F0DB748007A8EB0 /* DiscountsPromoTotal.swift */,
+				2B0CA3D01F0DB7E9007A8EB0 /* SubTotal.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				2B0CA3B91F0DAF26007A8EB0 /* IvaTotal.swift in Sources */,
 				A95FD8421EF9D2650094AA1C /* Promotiondata.swift in Sources */,
 				A95FD8361EF9D2650094AA1C /* LPStartupSession.swift in Sources */,
+				2B0CA3D11F0DB7E9007A8EB0 /* SubTotal.swift in Sources */,
 				A95FD8341EF9D2650094AA1C /* LPOptionMenu.swift in Sources */,
 				A95FD8481EF9D2650094AA1C /* Representation.swift in Sources */,
 				A95FD8451EF9D2650094AA1C /* Reasonsaleitemdiscountmenu.swift in Sources */,
