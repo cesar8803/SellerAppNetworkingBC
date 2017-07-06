@@ -27,10 +27,10 @@ public class Ticket: Mappable{
     public var docNumber: String?
     public var configuredPaymentPlans: [String]?
     public var total: Total?
-    public var totalBalance: Totalbalance?
-    public var iibbPerceptions: Iibbperceptions?
-    public var totalLoyaltyBenefits: Totalloyaltybenefits?
-    public var discountsItemsTotal: Discountsitemstotal?
+    public var totalBalance: TotalBalance?
+    public var iibbPerceptions: IibbPerceptions?
+    public var totalLoyaltyBenefits: TotalLoyaltyBenefits?
+    public var discountsItemsTotal: DiscountsItemsTotal?
     public var transactionTitle: String?
     public var discounts: [String]?
     public var change: Change?
@@ -40,11 +40,11 @@ public class Ticket: Mappable{
     public var transactionType: Int?
     public var status: Int?
     public var storeCode: String?
-    public var internalTaxesTotal: Internaltaxestotal?
+    public var internalTaxesTotal: InternalTaxesTotal?
     public var paqueteriaOffLine: Int?
-    public var perceptionsTotal: Perceptionstotal?
-    public var discountsTotal: Discountstotal?
-    public var totalsData: Totalsdata?
+    public var perceptionsTotal: PerceptionsTotal?
+    public var discountsTotal: DiscountsTotal?
+    public var totalsData: TotalsData?
     public var isConsulting: Int?
     public var transactionSuperType: Int?
     public var promoPaymentPlans: [String]?
