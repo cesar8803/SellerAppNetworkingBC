@@ -74,9 +74,10 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     var path:String{
         switch self {
         case .selectEnableCoins:
-            return "bridge-server-rest-liverpool/service/selectEnableCoin"
+            return "bridge-server-rest-liverpool/service/selectEnableCoins"
         case .selectTransaction(let terminal, let store, _):
             return "bridge-server-rest-liverpool/service/\(terminal)/\(store)"
+            
             
         }
     }
@@ -91,9 +92,9 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         
         switch self {
         case .selectEnableCoins(let params):
-            urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: params)
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .selectTransaction(_, _,  let params):
-            urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: params)
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
         return urlRequest
