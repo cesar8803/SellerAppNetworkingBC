@@ -13,7 +13,7 @@ import ObjectMapper
 public class TotalsData: Mappable{
     public var devolucion: Devolucion?
     public var totalComputador: TotalComputador?
-    public var totalDiferencia: Totaldiferencia?
+    public var totalDiferencia: TotalDiferencia?
     public var entregado: Entregado?
     public var valesPapel: Valespapel?
     public var voucher: Int?

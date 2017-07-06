@@ -33,6 +33,7 @@
 		2B0CA3D91F0DBA1F007A8EB0 /* PaymentsSurChargetotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3D81F0DBA1F007A8EB0 /* PaymentsSurChargetotal.swift */; };
 		2B0CA3DB1F0DBA91007A8EB0 /* Devolucion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3DA1F0DBA91007A8EB0 /* Devolucion.swift */; };
 		2B0CA3DD1F0DBAF9007A8EB0 /* TotalComputador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3DC1F0DBAF9007A8EB0 /* TotalComputador.swift */; };
+		2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3DE1F0DBB6A007A8EB0 /* TotalDiferencia.swift */; };
 		2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */; };
 		2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */; };
 		2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB41F0B48C3004E5F1F /* OperationResult.swift */; };
@@ -105,6 +106,7 @@
 		2B0CA3D81F0DBA1F007A8EB0 /* PaymentsSurChargetotal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsSurChargetotal.swift; path = Objects/PaymentsSurChargetotal.swift; sourceTree = "<group>"; };
 		2B0CA3DA1F0DBA91007A8EB0 /* Devolucion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Devolucion.swift; path = Objects/Devolucion.swift; sourceTree = "<group>"; };
 		2B0CA3DC1F0DBAF9007A8EB0 /* TotalComputador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalComputador.swift; path = Objects/TotalComputador.swift; sourceTree = "<group>"; };
+		2B0CA3DE1F0DBB6A007A8EB0 /* TotalDiferencia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalDiferencia.swift; path = Objects/TotalDiferencia.swift; sourceTree = "<group>"; };
 		2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreResponse.swift; path = Objects/BridgeCoreResponse.swift; sourceTree = "<group>"; };
 		2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeCurrencyListData.swift; path = Objects/ExchangeCurrencyListData.swift; sourceTree = "<group>"; };
 		2B788EB41F0B48C3004E5F1F /* OperationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationResult.swift; path = Objects/OperationResult.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				2B0CA3D81F0DBA1F007A8EB0 /* PaymentsSurChargetotal.swift */,
 				2B0CA3DA1F0DBA91007A8EB0 /* Devolucion.swift */,
 				2B0CA3DC1F0DBAF9007A8EB0 /* TotalComputador.swift */,
+				2B0CA3DE1F0DBB6A007A8EB0 /* TotalDiferencia.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
 				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,
 				2B0CA3CF1F0DB748007A8EB0 /* DiscountsPromoTotal.swift in Sources */,
+				2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */,
 				2B0CA3B91F0DAF26007A8EB0 /* IvaTotal.swift in Sources */,
 				A95FD8421EF9D2650094AA1C /* Promotiondata.swift in Sources */,
 				A95FD8361EF9D2650094AA1C /* LPStartupSession.swift in Sources */,
