@@ -54,7 +54,7 @@ public class Ticket: Mappable{
     public var ticketVoidFlag: Int?
     public var date: String?
     public var giftTicket: Int?
-    public var discountsPromoTotal: Discountspromototal?
+    public var discountsPromoTotal: DiscountsPromoTotal?
     public var firstPurchaseDay: Int?
     public var transactionDolar: Int?
     public var transactionNumber: Int?
