@@ -67,7 +67,7 @@ public class Ticket: Mappable{
     public var subtotal: SubTotal?
     public var updateBines: Int?
     public var promoGifts: [String]?
-    public var ivaPerceptions: Ivaperceptions?
+    public var ivaPerceptions: IvaPerceptions?
     public var tenderSurchargeTotal: Tendersurchargetotal?
     public var payments: [String]?
     public var discountsTransactionTotal: Discountstransactiontotal?
