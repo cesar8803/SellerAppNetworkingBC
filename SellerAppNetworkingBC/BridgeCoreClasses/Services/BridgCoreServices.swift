@@ -31,7 +31,7 @@ public class BridgeCoreServices
     {
         let params:Parameters = ["userName":userName, "userPassword":userPassword, "trainingMode":trainingMode]
         
-        let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"logoff", "params":params] as [String : Any]
+        let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"login", "params":params] as [String : Any]
         
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
