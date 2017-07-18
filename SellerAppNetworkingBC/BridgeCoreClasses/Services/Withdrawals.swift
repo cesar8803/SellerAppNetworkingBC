@@ -45,6 +45,8 @@ public enum BridgeCoreOperation
     
     case finishTransaction(connectionId:String, terminalCode:String, storeCode:String)
     
+    case cancelTransaction(connectionId:String, terminalCode:String, storeCode:String)
+    
     func getParams()->(Parameters, String, String)
     {
         switch self
@@ -71,6 +73,15 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.finishTransaction.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
+            
+        case .cancelTransaction(let connectionId, let terminalCode,let  storeCode):
+            let p:[String:Any] = [String:Any]()
+            
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.cancelTransaction.rawValue, "params":p]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
+
+            
         }
     }
 }
@@ -82,10 +93,12 @@ public enum WithdrawalsOperation:String
     case selectTransaction = "selectTransaction"
     case addTender = "addTender"
     case finishTransaction = "finishTransaction"
+    case cancelTransaction = "cancelTransaction"
 }
 
 public class Withdrawals
 {
+    
     public class func selectEnableCoins(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         let params = ["storeCode":storeCode, "terminalCode":terminalCode]
@@ -93,7 +106,7 @@ public class Withdrawals
     
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
-        print(":UPDATED===>\(p)")
+        
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.selectEnableCoins(parameters: p), completion: { (bridgeCoreResponse) in
             completion(bridgeCoreResponse)
         }) { (msg) in
@@ -111,6 +124,8 @@ public class Withdrawals
             completionError(msg)
         }
     }
+    
+    
     
     
 }

@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class PaymentsTotal: Mappable{
-    public var number: String?
+    public var number: Double?
     
     required public init?(map: Map){
     }
