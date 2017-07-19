@@ -191,6 +191,19 @@ public class BridgeCoreServices
     }
     
     
+    public class func cancelTenderWithDocument(connectionID:String, storeCode:String, terminalCode:String, amount:String, document:String,completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let oper:BridgeCoreOperation = BridgeCoreOperation.cancelTransactionWithDocument(connectionId: connectionID, terminalCode: terminalCode, storeCode: storeCode, document: document, amount: amount)
+        
+        let (params, _, _) =  oper.getParams()
+        let bcRouter = BrigdeCoreRouter.selectTransaction(terminalCode: terminalCode, storeCode: storeCode, paramters: params)
+        
+        AsyncClientBC.getBCRequest(bcRouter: bcRouter, completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
     
     
     public class func finishTransaction(connectionId:String, storeCode:String, terminalCode:String,completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)

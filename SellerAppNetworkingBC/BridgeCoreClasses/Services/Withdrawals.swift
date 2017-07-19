@@ -47,6 +47,8 @@ public enum BridgeCoreOperation
     
     case cancelTransaction(connectionId:String, terminalCode:String, storeCode:String)
     
+    case cancelTransactionWithDocument(connectionId:String, terminalCode:String, storeCode:String, document:String, amount:String)
+    
     func getParams()->(Parameters, String, String)
     {
         switch self
@@ -81,7 +83,11 @@ public enum BridgeCoreOperation
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
 
-            
+        case .cancelTransactionWithDocument(let connectionId, let terminalCode, let storeCode, let document, let amount):
+            let p:[String:Any] = ["transactionSubtype":BCTransactionSubtype.CANCEL_TRANSACTION.rawValue, "amountTrxCancel": amount, "numTrxCancel":document]
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.selectTransaction.rawValue, "params":p]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
         }
     }
 }
