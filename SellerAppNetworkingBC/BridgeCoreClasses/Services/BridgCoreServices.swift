@@ -198,11 +198,13 @@ public class BridgeCoreServices
         let (params, _, _) =  oper.getParams()
         let bcRouter = BrigdeCoreRouter.selectTransaction(terminalCode: terminalCode, storeCode: storeCode, paramters: params)
         
+        
         AsyncClientBC.getBCRequest(bcRouter: bcRouter, completion: { (bridgeCoreResponse) in
-            completion(bridgeCoreResponse)
+           completion(bridgeCoreResponse)
         }) { (msg) in
             completionError(msg)
         }
+        
     }
     
     
