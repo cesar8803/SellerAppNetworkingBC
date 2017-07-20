@@ -14,7 +14,7 @@ public class ExchangeCurrencyData: Mappable{
     public var factor: Float?
     public var nameCurrency: String?
     public var currencySymbol: String?
-    public var maxAmount: Int?
+    public var maxAmount: Double?
     
     public required init?(map: Map){
     }

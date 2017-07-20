@@ -63,8 +63,10 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     //Cases
     case selectEnableCoins(parameters:Parameters)
     case selectTransaction(terminalCode:String, storeCode:String, paramters:Parameters)
-    case logoff(terminalCode:String, storeCode:String, paramters:Parameters)
-    case login(terminalCode:String, storeCode:String, paramters:Parameters)
+    case logoff(terminalCode:String, storeCode:String, parameters:Parameters)
+    case login(terminalCode:String, storeCode:String, parameters:Parameters)
+    case cancelTransaction(terminalCode:String, storeCode:String, parameters:Parameters)
+    
     //method
     var method:HTTPMethod{
         switch self {
@@ -75,6 +77,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .logoff(_, _, _):
             return .put
         case .login(_,_,_):
+            return .put
+        case .cancelTransaction(_,_,_):
             return .put
         }
     }
@@ -89,6 +93,9 @@ enum BrigdeCoreRouter:URLRequestConvertible {
                 return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
         case .login(let terminal, let store, _):
             return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
+        case .cancelTransaction(let terminal, let store, _):
+            return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
+            
             
         }
     }
@@ -109,6 +116,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .logoff(_, _, let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .login(_, _, let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .cancelTransaction(_,_,let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
