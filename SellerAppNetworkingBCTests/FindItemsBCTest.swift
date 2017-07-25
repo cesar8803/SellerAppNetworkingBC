@@ -7,12 +7,22 @@
 //
 
 import XCTest
+@testable import SellerAppNetworkingBC
 
 class FindItemsBCTest: XCTestCase {
+    var terminalCode:String = ""
+    var storeCode:String = ""
+    var itemCode:String = ""
+    
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        terminalCode = "964"
+        storeCode = "0103"
+        itemCode = "1007028225"
+       
     }
     
     override func tearDown() {
@@ -20,9 +30,45 @@ class FindItemsBCTest: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testEnum() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+       
+        
+        let oper = BridgeCoreOperation.findItem(terminalCode: terminalCode, storeCode: storeCode, itemCode: itemCode, exactMaching: true)
+        XCTAssertNotNil(oper, "Something was wrong, oper can not be nil")
+        
+        let (params_, terminal_, store_) = oper.getParams()
+        XCTAssertEqual(terminal_, terminalCode, "The terminals should be equal")
+        XCTAssertEqual(store_, storeCode, "The storeres should be equal")
+        XCTAssertNotNil(params_["bridgeCoreRequest"], "bridgeCoreRequest shouldn't be nil")
+    }
+    
+    func testFindItems()
+    {
+        //let oper = BridgeCoreOperation.findItem(connectionId: "", terminalCode: terminal, storeCode: storeCode, itemCode: itemCode)
+        
+        let ex = expectation(description: "Call find item was successful")
+        
+        RefundsBC.findItems(storeCode: storeCode, terminalCode: terminalCode, itemCode: itemCode, exactMaching: true, completion: { (findItemBridgeCore) in
+            XCTAssertNotNil(findItemBridgeCore, "the findItemsBridgeCore shouldn't nil")
+            let bcResponse = findItemBridgeCore.bridgeCoreResponse
+            XCTAssertNotNil(bcResponse, "the findItemsBridgeCore.bridgeCoreResponse shouldn't nil" )
+            
+            XCTAssertEqual(bcResponse?.ack, 0, "BridgeCore Response shuld be Zero")
+            
+            
+            ex.fulfill()
+
+        }) { (msg) in
+            XCTAssertNil(msg, "Something was wrong: \(msg)")
+        }
+        
+        waitForExpectations(timeout: 10) { (error) in
+            XCTAssertNil(error, "Test timeout \(error?.localizedDescription ?? "---")")
+        }
+        
+        
     }
     
     func testPerformanceExample() {
