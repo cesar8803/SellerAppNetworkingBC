@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import Alamofire
+import AlamofireObjectMapper
+
+public class RefundsBC
+{
+    public class func findItems(storeCode:String, terminalCode:String, itemCode:String, exactMaching:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+          let oper = BridgeCoreOperation.findItem(terminalCode: terminalCode, storeCode: storeCode, itemCode: itemCode, exactMaching: exactMaching)
+        
+        let (params, terminalCode, storeCode) = oper.getParams()
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.findItem(parameters: params), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+
+}
