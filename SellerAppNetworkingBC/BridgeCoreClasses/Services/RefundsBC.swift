@@ -16,7 +16,7 @@ public class RefundsBC
     {
           let oper = BridgeCoreOperation.findItem(terminalCode: terminalCode, storeCode: storeCode, itemCode: itemCode, exactMaching: exactMaching)
         
-        let (params, terminalCode, storeCode) = oper.getParams()
+        let (params, _, _) = oper.getParams()
         
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.findItem(parameters: params), completion: { (bridgeCoreResponse) in
             completion(bridgeCoreResponse)

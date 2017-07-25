@@ -50,6 +50,10 @@
 		2B994B631F27B39900292163 /* FindItemsBCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B621F27B39900292163 /* FindItemsBCTest.swift */; };
 		2B994B651F27EC8200292163 /* RefundsBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B641F27EC8200292163 /* RefundsBC.swift */; };
 		2B994B671F27FA4800292163 /* BridgeCoreOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B661F27FA4800292163 /* BridgeCoreOperations.swift */; };
+		2B994B691F2808C600292163 /* ItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B681F2808C600292163 /* ItemData.swift */; };
+		2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */; };
+		2B994B6D1F280A3B00292163 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6C1F280A3B00292163 /* Price.swift */; };
+		2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6E1F280B1700292163 /* HierarchyGroup.swift */; };
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
 		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
@@ -143,6 +147,10 @@
 		2B994B621F27B39900292163 /* FindItemsBCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindItemsBCTest.swift; sourceTree = "<group>"; };
 		2B994B641F27EC8200292163 /* RefundsBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefundsBC.swift; path = Services/RefundsBC.swift; sourceTree = "<group>"; };
 		2B994B661F27FA4800292163 /* BridgeCoreOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreOperations.swift; path = Services/BridgeCoreOperations.swift; sourceTree = "<group>"; };
+		2B994B681F2808C600292163 /* ItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemData.swift; path = Objects/ItemData.swift; sourceTree = "<group>"; };
+		2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemLiverpoolData.swift; path = Objects/ItemLiverpoolData.swift; sourceTree = "<group>"; };
+		2B994B6C1F280A3B00292163 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Price.swift; path = Services/Price.swift; sourceTree = "<group>"; };
+		2B994B6E1F280B1700292163 /* HierarchyGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HierarchyGroup.swift; path = Objects/HierarchyGroup.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
 		7996FE2FEED43F9CF7721109 /* Pods-SellerAppNetworkingBCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests.release.xcconfig"; sourceTree = "<group>"; };
 		8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +254,10 @@
 				2B0CA3DE1F0DBB6A007A8EB0 /* TotalDiferencia.swift */,
 				2B0CA3E01F0DBC70007A8EB0 /* Entregado.swift */,
 				2B0CA3E21F0DBCF1007A8EB0 /* ValesPapel.swift */,
+				2B994B681F2808C600292163 /* ItemData.swift */,
+				2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */,
+				2B994B6C1F280A3B00292163 /* Price.swift */,
+				2B994B6E1F280B1700292163 /* HierarchyGroup.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -648,11 +660,15 @@
 				2B0CA3C11F0DB215007A8EB0 /* TotalLoyaltyBenefits.swift in Sources */,
 				2B0CA3C31F0DB2F6007A8EB0 /* DiscountsItemsTotal.swift in Sources */,
 				2B0CA3C91F0DB5AC007A8EB0 /* PerceptionsTotal.swift in Sources */,
+				2B994B6D1F280A3B00292163 /* Price.swift in Sources */,
 				2B994B671F27FA4800292163 /* BridgeCoreOperations.swift in Sources */,
+				2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */,
 				2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */,
 				A95FD8461EF9D2650094AA1C /* Reasonsalereturnmenu.swift in Sources */,
+				2B994B691F2808C600292163 /* ItemData.swift in Sources */,
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
 				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,
+				2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */,
 				2B0CA3CF1F0DB748007A8EB0 /* DiscountsPromoTotal.swift in Sources */,
 				2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */,
 				2B0CA3B91F0DAF26007A8EB0 /* IvaTotal.swift in Sources */,
