@@ -66,6 +66,7 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     case logoff(terminalCode:String, storeCode:String, parameters:Parameters)
     case login(terminalCode:String, storeCode:String, parameters:Parameters)
     case cancelTransaction(terminalCode:String, storeCode:String, parameters:Parameters)
+    case findItem(parameters:Parameters)
     
     //method
     var method:HTTPMethod{
@@ -79,6 +80,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .login(_,_,_):
             return .put
         case .cancelTransaction(_,_,_):
+            return .put
+        case .findItem(_):
             return .put
         }
     }
@@ -95,7 +98,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
             return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
         case .cancelTransaction(let terminal, let store, _):
             return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
-            
+        case .findItem(_):
+            return "bridge-server-rest-liverpool/service/findItems"
             
         }
     }
@@ -118,6 +122,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .login(_, _, let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .cancelTransaction(_,_,let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .findItem(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         

@@ -45,7 +45,17 @@
 		2B788EBB1F0B4E54004E5F1F /* BackedUrlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */; };
 		2B788EBD1F0B52A6004E5F1F /* Withdrawals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */; };
 		2B788ECF1F0C54F9004E5F1F /* BridgeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */; };
+		2B994B5A1F27AB1800292163 /* SellerAppNetworkingBCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B591F27AB1800292163 /* SellerAppNetworkingBCTests.swift */; };
+		2B994B5C1F27AB1800292163 /* SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */; };
+		2B994B631F27B39900292163 /* FindItemsBCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B621F27B39900292163 /* FindItemsBCTest.swift */; };
+		2B994B651F27EC8200292163 /* RefundsBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B641F27EC8200292163 /* RefundsBC.swift */; };
+		2B994B671F27FA4800292163 /* BridgeCoreOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B661F27FA4800292163 /* BridgeCoreOperations.swift */; };
+		2B994B691F2808C600292163 /* ItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B681F2808C600292163 /* ItemData.swift */; };
+		2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */; };
+		2B994B6D1F280A3B00292163 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6C1F280A3B00292163 /* Price.swift */; };
+		2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6E1F280B1700292163 /* HierarchyGroup.swift */; };
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
+		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		A95FD8031EF9D2110094AA1C /* SellerAppNetworkingBC.h in Headers */ = {isa = PBXBuildFile; fileRef = A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80B1EF9D2650094AA1C /* Int+Extension.swift */; };
@@ -81,6 +91,16 @@
 		A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82B1EF9D2650094AA1C /* Storeslist.swift */; };
 		A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2B994B5D1F27AB1800292163 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A95FD7F51EF9D2110094AA1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A95FD7FD1EF9D2110094AA1C;
+			remoteInfo = SellerAppNetworkingBC;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2B0CA3AA1F0DA314007A8EB0 /* RepresentationWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepresentationWD.swift; path = Objects/RepresentationWD.swift; sourceTree = "<group>"; };
@@ -121,7 +141,18 @@
 		2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackedUrlManager.swift; path = Services/BackedUrlManager.swift; sourceTree = "<group>"; };
 		2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Withdrawals.swift; path = Services/Withdrawals.swift; sourceTree = "<group>"; };
 		2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCore.swift; path = Objects/BridgeCore.swift; sourceTree = "<group>"; };
+		2B994B571F27AB1800292163 /* SellerAppNetworkingBCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SellerAppNetworkingBCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B994B591F27AB1800292163 /* SellerAppNetworkingBCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerAppNetworkingBCTests.swift; sourceTree = "<group>"; };
+		2B994B5B1F27AB1800292163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B994B621F27B39900292163 /* FindItemsBCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindItemsBCTest.swift; sourceTree = "<group>"; };
+		2B994B641F27EC8200292163 /* RefundsBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefundsBC.swift; path = Services/RefundsBC.swift; sourceTree = "<group>"; };
+		2B994B661F27FA4800292163 /* BridgeCoreOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreOperations.swift; path = Services/BridgeCoreOperations.swift; sourceTree = "<group>"; };
+		2B994B681F2808C600292163 /* ItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemData.swift; path = Objects/ItemData.swift; sourceTree = "<group>"; };
+		2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemLiverpoolData.swift; path = Objects/ItemLiverpoolData.swift; sourceTree = "<group>"; };
+		2B994B6C1F280A3B00292163 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Price.swift; path = Services/Price.swift; sourceTree = "<group>"; };
+		2B994B6E1F280B1700292163 /* HierarchyGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HierarchyGroup.swift; path = Objects/HierarchyGroup.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
+		7996FE2FEED43F9CF7721109 /* Pods-SellerAppNetworkingBCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests.release.xcconfig"; sourceTree = "<group>"; };
 		8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerAppNetworkingBC.h; sourceTree = "<group>"; };
@@ -158,11 +189,22 @@
 		A95FD82A1EF9D2650094AA1C /* Storedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storedata.swift; sourceTree = "<group>"; };
 		A95FD82B1EF9D2650094AA1C /* Storeslist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storeslist.swift; sourceTree = "<group>"; };
 		A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tendersmenu.swift; sourceTree = "<group>"; };
+		E3B20915DA025EDC92B2CF07 /* Pods-SellerAppNetworkingBCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F09B66C44678F716BBD9DB15 /* Pods-SellerAppNetworkingBC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC.release.xcconfig"; sourceTree = "<group>"; };
+		F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE0A7059439E5503BAB1EE3 /* Pods-SellerAppNetworkingBC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2B994B541F27AB1800292163 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B994B5C1F27AB1800292163 /* SellerAppNetworkingBC.framework in Frameworks */,
+				4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A95FD7FA1EF9D2110094AA1C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,8 +254,22 @@
 				2B0CA3DE1F0DBB6A007A8EB0 /* TotalDiferencia.swift */,
 				2B0CA3E01F0DBC70007A8EB0 /* Entregado.swift */,
 				2B0CA3E21F0DBCF1007A8EB0 /* ValesPapel.swift */,
+				2B994B681F2808C600292163 /* ItemData.swift */,
+				2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */,
+				2B994B6C1F280A3B00292163 /* Price.swift */,
+				2B994B6E1F280B1700292163 /* HierarchyGroup.swift */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		2B994B581F27AB1800292163 /* SellerAppNetworkingBCTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B994B591F27AB1800292163 /* SellerAppNetworkingBCTests.swift */,
+				2B994B5B1F27AB1800292163 /* Info.plist */,
+				2B994B621F27B39900292163 /* FindItemsBCTest.swift */,
+			);
+			path = SellerAppNetworkingBCTests;
 			sourceTree = "<group>";
 		};
 		2BA3B34A1F0AF548003CCFB2 /* Services */ = {
@@ -223,6 +279,8 @@
 				2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */,
 				2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */,
 				2B26B80D1F1009FE0092C263 /* BridgCoreServices.swift */,
+				2B994B641F27EC8200292163 /* RefundsBC.swift */,
+				2B994B661F27FA4800292163 /* BridgeCoreOperations.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -231,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				A95FD8001EF9D2110094AA1C /* SellerAppNetworkingBC */,
+				2B994B581F27AB1800292163 /* SellerAppNetworkingBCTests */,
 				A95FD7FF1EF9D2110094AA1C /* Products */,
 				B5D1C4F646EB3523034AC0C9 /* Pods */,
 				CBA0E62E5F33146B03843065 /* Frameworks */,
@@ -241,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */,
+				2B994B571F27AB1800292163 /* SellerAppNetworkingBCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,6 +385,8 @@
 			children = (
 				FEE0A7059439E5503BAB1EE3 /* Pods-SellerAppNetworkingBC.debug.xcconfig */,
 				F09B66C44678F716BBD9DB15 /* Pods-SellerAppNetworkingBC.release.xcconfig */,
+				E3B20915DA025EDC92B2CF07 /* Pods-SellerAppNetworkingBCTests.debug.xcconfig */,
+				7996FE2FEED43F9CF7721109 /* Pods-SellerAppNetworkingBCTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -333,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */,
+				F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,6 +414,27 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		2B994B561F27AB1800292163 /* SellerAppNetworkingBCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B994B611F27AB1800292163 /* Build configuration list for PBXNativeTarget "SellerAppNetworkingBCTests" */;
+			buildPhases = (
+				530C4B45FD566C3D4AA13C23 /* [CP] Check Pods Manifest.lock */,
+				2B994B531F27AB1800292163 /* Sources */,
+				2B994B541F27AB1800292163 /* Frameworks */,
+				2B994B551F27AB1800292163 /* Resources */,
+				FCB7354EECCDD71580217BAE /* [CP] Embed Pods Frameworks */,
+				753F2CBC1298ECD6D71F220C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B994B5E1F27AB1800292163 /* PBXTargetDependency */,
+			);
+			name = SellerAppNetworkingBCTests;
+			productName = SellerAppNetworkingBCTests;
+			productReference = 2B994B571F27AB1800292163 /* SellerAppNetworkingBCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A95FD7FD1EF9D2110094AA1C /* SellerAppNetworkingBC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A95FD8061EF9D2110094AA1C /* Build configuration list for PBXNativeTarget "SellerAppNetworkingBC" */;
@@ -377,9 +461,15 @@
 		A95FD7F51EF9D2110094AA1C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Liverpool;
 				TargetAttributes = {
+					2B994B561F27AB1800292163 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 64NX44RFX5;
+						ProvisioningStyle = Automatic;
+					};
 					A95FD7FD1EF9D2110094AA1C = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
@@ -399,11 +489,19 @@
 			projectRoot = "";
 			targets = (
 				A95FD7FD1EF9D2110094AA1C /* SellerAppNetworkingBC */,
+				2B994B561F27AB1800292163 /* SellerAppNetworkingBCTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2B994B551F27AB1800292163 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A95FD7FC1EF9D2110094AA1C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,6 +527,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		530C4B45FD566C3D4AA13C23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		753F2CBC1298ECD6D71F220C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7F7163820DA7ED020E7B7250 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -444,9 +572,33 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FCB7354EECCDD71580217BAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2B994B531F27AB1800292163 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B994B631F27B39900292163 /* FindItemsBCTest.swift in Sources */,
+				2B994B5A1F27AB1800292163 /* SellerAppNetworkingBCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A95FD7F91EF9D2110094AA1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,6 +641,7 @@
 				A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */,
 				A95FD83A1EF9D2650094AA1C /* Benefitdata.swift in Sources */,
 				A95FD83E1EF9D2650094AA1C /* Optionmenu.swift in Sources */,
+				2B994B651F27EC8200292163 /* RefundsBC.swift in Sources */,
 				A95FD8391EF9D2650094AA1C /* BCResponse.swift in Sources */,
 				A95FD83F1EF9D2650094AA1C /* Options.swift in Sources */,
 				A95FD8301EF9D2650094AA1C /* LoginVendedor.swift in Sources */,
@@ -507,10 +660,15 @@
 				2B0CA3C11F0DB215007A8EB0 /* TotalLoyaltyBenefits.swift in Sources */,
 				2B0CA3C31F0DB2F6007A8EB0 /* DiscountsItemsTotal.swift in Sources */,
 				2B0CA3C91F0DB5AC007A8EB0 /* PerceptionsTotal.swift in Sources */,
+				2B994B6D1F280A3B00292163 /* Price.swift in Sources */,
+				2B994B671F27FA4800292163 /* BridgeCoreOperations.swift in Sources */,
+				2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */,
 				2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */,
 				A95FD8461EF9D2650094AA1C /* Reasonsalereturnmenu.swift in Sources */,
+				2B994B691F2808C600292163 /* ItemData.swift in Sources */,
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
 				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,
+				2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */,
 				2B0CA3CF1F0DB748007A8EB0 /* DiscountsPromoTotal.swift in Sources */,
 				2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */,
 				2B0CA3B91F0DAF26007A8EB0 /* IvaTotal.swift in Sources */,
@@ -527,7 +685,43 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2B994B5E1F27AB1800292163 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A95FD7FD1EF9D2110094AA1C /* SellerAppNetworkingBC */;
+			targetProxy = 2B994B5D1F27AB1800292163 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2B994B5F1F27AB1800292163 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3B20915DA025EDC92B2CF07 /* Pods-SellerAppNetworkingBCTests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 64NX44RFX5;
+				INFOPLIST_FILE = SellerAppNetworkingBCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.liverpool.SellerAppNetworkingBC.SellerAppNetworkingBCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2B994B601F27AB1800292163 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7996FE2FEED43F9CF7721109 /* Pods-SellerAppNetworkingBCTests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 64NX44RFX5;
+				INFOPLIST_FILE = SellerAppNetworkingBCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.liverpool.SellerAppNetworkingBC.SellerAppNetworkingBCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		A95FD8041EF9D2110094AA1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -670,6 +864,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2B994B611F27AB1800292163 /* Build configuration list for PBXNativeTarget "SellerAppNetworkingBCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B994B5F1F27AB1800292163 /* Debug */,
+				2B994B601F27AB1800292163 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A95FD7F81EF9D2110094AA1C /* Build configuration list for PBXProject "SellerAppNetworkingBC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
