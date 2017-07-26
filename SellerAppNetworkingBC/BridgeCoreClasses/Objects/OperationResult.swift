@@ -14,6 +14,7 @@ public class OperationResult: Mappable{
     public var exchangeCurrencyListData: [ExchangeCurrencyListData]?
     public var invoiced: Int?
     public var docNumber: String?
+    public var itemErrorList: [String]?
     
     /*******************************
      FindItems
@@ -44,6 +45,7 @@ public class OperationResult: Mappable{
         hierarchyGroupData <- map["hierarchyGroupData"]
         totalPages <- map["totalPages"]
         arrobaClass <- map["@class"]
+        itemErrorList <- map["itemErrorList"]
         /*******************************/
     }
 }

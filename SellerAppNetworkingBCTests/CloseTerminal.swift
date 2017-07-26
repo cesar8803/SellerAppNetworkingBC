@@ -51,7 +51,7 @@ class CloseTerminal: XCTestCase {
         BridgeCoreServices.closeTerminal(connectionId: connId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, completion: { (closeTermBridgeCore) in
             XCTAssertNotNil(closeTermBridgeCore, "No debe ser nil")
             XCTAssertNotNil(closeTermBridgeCore.bridgeCoreResponse, "No debe ser nil")
-            XCTAssertEqual(closeTermBridgeCore.bridgeCoreResponse?.ack, 0, "Algo paso \(closeTermBridgeCore.bridgeCoreResponse?.ack)")
+            XCTAssertEqual(closeTermBridgeCore.bridgeCoreResponse?.ack, 0, "Algo paso \(closeTermBridgeCore.bridgeCoreResponse?.ack ?? -100)")
             ex.fulfill()
         }) { (msg) in
             XCTAssertNil(msg, "Something was wrong: \(msg)")

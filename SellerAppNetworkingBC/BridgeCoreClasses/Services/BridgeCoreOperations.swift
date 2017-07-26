@@ -51,7 +51,7 @@ public enum BridgeCoreOperation
     
     case findItem( terminalCode:String, storeCode:String, itemCode:String,exactMaching:Bool)
     
-    //case closeTerminal(connectionId:String, terminalCode:String, storeCode:String, giftTicket:Bool)
+    case findItemList( terminalCode:String, storeCode:String, itemsCodeList:[String])
     
     func getParams()->(Parameters, String, String)
     {
@@ -98,7 +98,26 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.findItems.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
-       
+            
+        case .findItemList(let terminalCode, let storeCode, let itemsCodeList):
+            
+            var valuesTypes:[[String:Any]] = [[String:Any]]()
+            for itemCode in itemsCodeList
+            {
+                var dict:[String:Any] = [String:Any]()
+                dict["itemCode"] = itemCode
+                dict["@type"] = "map"
+                valuesTypes.append(dict)
+            }
+            
+            let valueDict = ["value":valuesTypes]
+            
+            let p:[String:Any] = ["terminalCode":terminalCode, "storeCode": storeCode, "itemDataList":valueDict]
+            let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.findItemsList.rawValue, "params":p]
+            
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
             
         }
     }
