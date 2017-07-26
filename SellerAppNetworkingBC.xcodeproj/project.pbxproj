@@ -56,6 +56,7 @@
 		2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6E1F280B1700292163 /* HierarchyGroup.swift */; };
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
 		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
+		57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9CD891F29020200367A15 /* CloseTerminal.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		A95FD8031EF9D2110094AA1C /* SellerAppNetworkingBC.h in Headers */ = {isa = PBXBuildFile; fileRef = A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80B1EF9D2650094AA1C /* Int+Extension.swift */; };
@@ -152,6 +153,7 @@
 		2B994B6C1F280A3B00292163 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Price.swift; path = Services/Price.swift; sourceTree = "<group>"; };
 		2B994B6E1F280B1700292163 /* HierarchyGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HierarchyGroup.swift; path = Objects/HierarchyGroup.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
+		57F9CD891F29020200367A15 /* CloseTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTerminal.swift; sourceTree = "<group>"; };
 		7996FE2FEED43F9CF7721109 /* Pods-SellerAppNetworkingBCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests.release.xcconfig"; sourceTree = "<group>"; };
 		8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +270,7 @@
 				2B994B591F27AB1800292163 /* SellerAppNetworkingBCTests.swift */,
 				2B994B5B1F27AB1800292163 /* Info.plist */,
 				2B994B621F27B39900292163 /* FindItemsBCTest.swift */,
+				57F9CD891F29020200367A15 /* CloseTerminal.swift */,
 			);
 			path = SellerAppNetworkingBCTests;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			files = (
 				2B994B631F27B39900292163 /* FindItemsBCTest.swift in Sources */,
 				2B994B5A1F27AB1800292163 /* SellerAppNetworkingBCTests.swift in Sources */,
+				57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

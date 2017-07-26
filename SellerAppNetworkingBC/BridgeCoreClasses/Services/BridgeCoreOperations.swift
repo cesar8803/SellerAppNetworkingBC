@@ -51,6 +51,7 @@ public enum BridgeCoreOperation
     
     case findItem( terminalCode:String, storeCode:String, itemCode:String,exactMaching:Bool)
     
+    //case closeTerminal(connectionId:String, terminalCode:String, storeCode:String, giftTicket:Bool)
     
     func getParams()->(Parameters, String, String)
     {
@@ -97,6 +98,7 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.findItems.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
+       
             
         }
     }
