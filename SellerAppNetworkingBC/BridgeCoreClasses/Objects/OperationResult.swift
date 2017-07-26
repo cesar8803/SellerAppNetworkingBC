@@ -15,6 +15,17 @@ public class OperationResult: Mappable{
     public var invoiced: Int?
     public var docNumber: String?
     
+    /*******************************
+     FindItems
+     *******************************/
+    public var currentLevel: Int?
+    public var itemData: [ItemData]?
+    public var hierarchyLevelData: [String]?
+    public var hierarchyGroupData: [String]?
+    public var totalPages: Int?
+    
+    /******************************/
+    
     public required init?(map: Map){
     }
     
@@ -23,5 +34,16 @@ public class OperationResult: Mappable{
         arrobaClass <- map["@class"]
         invoiced <- map["invoiced"]
         docNumber <- map["docNumber"]
+        
+        /*******************************
+         FindItems
+         *******************************/
+        currentLevel <- map["currentLevel"]
+        itemData <- map["itemData"]
+        hierarchyLevelData <- map["hierarchyLevelData"]
+        hierarchyGroupData <- map["hierarchyGroupData"]
+        totalPages <- map["totalPages"]
+        arrobaClass <- map["@class"]
+        /*******************************/
     }
 }

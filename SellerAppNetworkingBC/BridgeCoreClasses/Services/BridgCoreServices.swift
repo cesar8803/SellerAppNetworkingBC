@@ -123,7 +123,7 @@ public class BridgeCoreServices
                                                     
                                                 }else{
                                                     //Cancelar la transacción y todo el proceso
-                                                    print("Cancelar la transacción y todo el proceso...:\(withdrawalBridgeCoreResponse.message)")
+                                                    print("Cancelar la transacción y todo el proceso...:\(withdrawalBridgeCoreResponse.message ?? "-")")
                                                     
                                                     guard let ackNumber = withdrawalBridgeCoreResponse.ack , let errMsg = withdrawalBridgeCoreResponse.message else {
                                                         storedError = NSError(domain: "TenderError.Domain", code: -1000, userInfo: ["message":"unknow error"])
@@ -248,6 +248,8 @@ public class BridgeCoreServices
             completionError(msg)
         })
     }
+    
+
     
 
 }
