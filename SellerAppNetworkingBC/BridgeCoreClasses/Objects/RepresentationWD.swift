@@ -26,6 +26,17 @@ public class RepresentationWD: Mappable{
     public var optionalForceKeys: Int?
     public var secondCashLimitExceeded: Int?
     
+    /****************************/
+    /*      CloseTerminal      */
+
+    public var totalsData: TotalsData?
+    public var storeStatus: String?
+    public var priceWithTaxes: Int?
+    public var controllerID: String?
+    public var assignedCashDrawer: Int?
+    
+    /****************************/
+    
     required public init?(map: Map){
     }
     
@@ -45,5 +56,10 @@ public class RepresentationWD: Mappable{
         storeCloseInProgress <- map["storeCloseInProgress"]
         optionalForceKeys <- map["optionalForceKeys"]
         secondCashLimitExceeded <- map["secondCashLimitExceeded"]
+        totalsData <- map["totalsData"]
+        storeStatus <- map["storeStatus"]
+        priceWithTaxes <- map["priceWithTaxes"]
+        controllerID <- map["controllerID"]
+        assignedCashDrawer <- map["assignedCashDrawer"]
     }
 }
