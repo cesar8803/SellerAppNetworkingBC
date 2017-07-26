@@ -24,5 +24,21 @@ public class RefundsBC
             completionError(msg)
         }
     }
+    
+    
+    public class func findItemsList(storeCode:String, terminalCode:String, itemsCodeList:[String], completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let oper = BridgeCoreOperation.findItemList(terminalCode: terminalCode, storeCode: storeCode, itemsCodeList: itemsCodeList)
+        
+        let (params, _, _) = oper.getParams()
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.findItemsList(parameters: params), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    
 
 }

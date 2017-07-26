@@ -21,7 +21,7 @@ class FindItemsBCTest: XCTestCase {
         
         terminalCode = "964"
         storeCode = "0103"
-        itemCode = "1007028225"
+        itemCode = "1045885719"
        
     }
     
@@ -67,9 +67,34 @@ class FindItemsBCTest: XCTestCase {
         waitForExpectations(timeout: 10) { (error) in
             XCTAssertNil(error, "Test timeout \(error?.localizedDescription ?? "---")")
         }
-        
-        
     }
+    
+    
+    func testFindItemsList()
+    {
+        //let oper = BridgeCoreOperation.findItem(connectionId: "", terminalCode: terminal, storeCode: storeCode, itemCode: itemCode)
+        
+        let ex = expectation(description: "Call find item was successful")
+        
+        RefundsBC.findItemsList(storeCode: storeCode, terminalCode: terminalCode, itemsCodeList: ["1045885719","1045885859"], completion: { (findItemListBridgeCore) in
+            
+            XCTAssertNotNil(findItemListBridgeCore, "the findItemListBridgeCore shouldn't nil")
+            let bcResponse = findItemListBridgeCore.bridgeCoreResponse
+            XCTAssertNotNil(bcResponse, "the findItemsBridgeCore.bridgeCoreResponse shouldn't nil" )
+            
+            XCTAssertEqual(bcResponse?.ack, 0, "BridgeCore Response shuld be Zero")
+            ex.fulfill()
+        }) { (msg) in
+             XCTAssertNil(msg, "Something was wrong: \(msg)")
+        }
+        
+    
+        waitForExpectations(timeout: 10) { (error) in
+            XCTAssertNil(error, "Test timeout \(error?.localizedDescription ?? "---")")
+        }
+    }
+    
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

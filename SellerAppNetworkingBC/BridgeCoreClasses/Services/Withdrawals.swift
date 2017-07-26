@@ -20,6 +20,7 @@ public enum WithdrawalsOperation:String
     case finishTransaction = "finishTransaction"
     case cancelTransaction = "cancelTransaction"
     case findItems = "findItems"
+    case findItemsList = "findItemsList"
 }
 
 public class Withdrawals
