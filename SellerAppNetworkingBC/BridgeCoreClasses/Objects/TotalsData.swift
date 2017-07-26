@@ -18,6 +18,8 @@ public class TotalsData: Mappable{
     public var valesPapel: ValesPapel?
     public var voucher: Int?
     
+
+    
     required public init?(map: Map){
     }
     

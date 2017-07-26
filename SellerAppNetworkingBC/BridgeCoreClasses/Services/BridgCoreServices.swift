@@ -249,6 +249,55 @@ public class BridgeCoreServices
         })
     }
     
+    public class func closeTerminal(connectionId:String, userName: String, userPass: String, storeCode:String, terminalCode:String, giftTicket: Bool = false, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        
+        BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, completion: { (logoffBridgeCoreResponse) in
+            guard let bcLogoffR = logoffBridgeCoreResponse.bridgeCoreResponse else {
+                completionError("bridgeCoreResponse is nil")
+                return }
+            
+            if bcLogoffR.ack == 0
+            {
+                BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPass, trainingMode: false, completion: { (loginBridgeCoreResponse) in
+                    guard let bcLoginR = loginBridgeCoreResponse.bridgeCoreResponse else {
+                        completionError("bridgeCoreResponse is nil")
+                    return}
+                    
+                    if bcLoginR.ack == 0
+                    {
+                        let oper: BridgeCoreOperation = BridgeCoreOperation.selectTransaction(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, transactionSubtype: BCTransactionSubtype.TERMINAL_CLOSE, giftTicket: false)
+                        
+                        let (params, _, _) =  oper.getParams()
+                        let bcRouter = BrigdeCoreRouter.selectTransaction(terminalCode: terminalCode, storeCode: storeCode, paramters: params)
+                        
+                        
+                        AsyncClientBC.getBCRequest(bcRouter: bcRouter, completion: { (bridgeCoreResponse) in
+                            completion(bridgeCoreResponse)
+                        }) { (msg) in
+                            completionError(msg)
+                        }
+                    }
+                    
+                }, completionError: { (message) in
+                    completionError(message)
+                })
+            }else{
+                completionError(bcLogoffR.message ?? "")
+            }
+            
+        }) { (msg) in
+            completionError(msg)
+        }
+        
+      
+        
+
+        
+        
+
+    }
+    
 
     
 
