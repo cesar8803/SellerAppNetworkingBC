@@ -25,6 +25,7 @@ public class RepresentationWD: Mappable{
     public var storeCloseInProgress: Int?
     public var optionalForceKeys: Int?
     public var secondCashLimitExceeded: Int?
+    public var totalsData: TotalsData?
     
     required public init?(map: Map){
     }
@@ -45,5 +46,6 @@ public class RepresentationWD: Mappable{
         storeCloseInProgress <- map["storeCloseInProgress"]
         optionalForceKeys <- map["optionalForceKeys"]
         secondCashLimitExceeded <- map["secondCashLimitExceeded"]
+        totalsData <- map["totalsData"]
     }
 }
