@@ -27,6 +27,14 @@ public class OperationResult: Mappable{
     
     /******************************/
     
+    
+    /********************************
+     FindItemList
+    *********************************/
+
+    public var itemDataList: [ItemDataList]?
+    /******************************/
+    
     public required init?(map: Map){
     }
     
@@ -36,9 +44,6 @@ public class OperationResult: Mappable{
         invoiced <- map["invoiced"]
         docNumber <- map["docNumber"]
         
-        /*******************************
-         FindItems
-         *******************************/
         currentLevel <- map["currentLevel"]
         itemData <- map["itemData"]
         hierarchyLevelData <- map["hierarchyLevelData"]
@@ -46,6 +51,8 @@ public class OperationResult: Mappable{
         totalPages <- map["totalPages"]
         arrobaClass <- map["@class"]
         itemErrorList <- map["itemErrorList"]
-        /*******************************/
+        
+        itemDataList <- map["itemDataList"]
+        
     }
 }

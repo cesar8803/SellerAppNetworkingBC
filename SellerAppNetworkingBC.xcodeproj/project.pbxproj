@@ -45,6 +45,7 @@
 		2B788EBB1F0B4E54004E5F1F /* BackedUrlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */; };
 		2B788EBD1F0B52A6004E5F1F /* Withdrawals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */; };
 		2B788ECF1F0C54F9004E5F1F /* BridgeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */; };
+		2B9096931F2A53070026CFDE /* ItemDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9096911F2A50CC0026CFDE /* ItemDataList.swift */; };
 		2B994B5A1F27AB1800292163 /* SellerAppNetworkingBCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B591F27AB1800292163 /* SellerAppNetworkingBCTests.swift */; };
 		2B994B5C1F27AB1800292163 /* SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */; };
 		2B994B631F27B39900292163 /* FindItemsBCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B621F27B39900292163 /* FindItemsBCTest.swift */; };
@@ -142,6 +143,7 @@
 		2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackedUrlManager.swift; path = Services/BackedUrlManager.swift; sourceTree = "<group>"; };
 		2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Withdrawals.swift; path = Services/Withdrawals.swift; sourceTree = "<group>"; };
 		2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCore.swift; path = Objects/BridgeCore.swift; sourceTree = "<group>"; };
+		2B9096911F2A50CC0026CFDE /* ItemDataList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDataList.swift; path = Objects/ItemDataList.swift; sourceTree = "<group>"; };
 		2B994B571F27AB1800292163 /* SellerAppNetworkingBCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SellerAppNetworkingBCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B994B591F27AB1800292163 /* SellerAppNetworkingBCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerAppNetworkingBCTests.swift; sourceTree = "<group>"; };
 		2B994B5B1F27AB1800292163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */,
 				2B994B6C1F280A3B00292163 /* Price.swift */,
 				2B994B6E1F280B1700292163 /* HierarchyGroup.swift */,
+				2B9096911F2A50CC0026CFDE /* ItemDataList.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */,
 				A95FD83A1EF9D2650094AA1C /* Benefitdata.swift in Sources */,
 				A95FD83E1EF9D2650094AA1C /* Optionmenu.swift in Sources */,
+				2B9096931F2A53070026CFDE /* ItemDataList.swift in Sources */,
 				2B994B651F27EC8200292163 /* RefundsBC.swift in Sources */,
 				A95FD8391EF9D2650094AA1C /* BCResponse.swift in Sources */,
 				A95FD83F1EF9D2650094AA1C /* Options.swift in Sources */,
