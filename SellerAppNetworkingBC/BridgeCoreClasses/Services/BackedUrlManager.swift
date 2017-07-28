@@ -68,6 +68,7 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     case cancelTransaction(terminalCode:String, storeCode:String, parameters:Parameters)
     case findItem(parameters:Parameters)
     case findItemsList(parameters:Parameters)
+    case generateBudget(parameters:Parameters)
     
     //method
     var method:HTTPMethod{
@@ -85,6 +86,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .findItem(_):
             return .put
         case .findItemsList(_):
+            return .put
+        case .generateBudget(_):
             return .put
         }
     }
@@ -105,6 +108,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
             return "bridge-server-rest-liverpool/service/findItems"
         case .findItemsList(_):
             return "bridge-server-rest-liverpool/service/findItemsList"
+        case .generateBudget(_):
+            return "bridge-server-rest-liverpool/service/findBudget"
         }
     }
     
@@ -130,6 +135,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .findItem(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .findItemsList(let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .generateBudget(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
