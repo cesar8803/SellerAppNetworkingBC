@@ -25,6 +25,8 @@ public class RepresentationWD: Mappable{
     public var storeCloseInProgress: Int?
     public var optionalForceKeys: Int?
     public var secondCashLimitExceeded: Int?
+    public var additionalData: [AdditionalData]?
+    public var fieldRequests: [FieldRequests]?
     
     /****************************/
     /*      CloseTerminal      */
@@ -61,5 +63,7 @@ public class RepresentationWD: Mappable{
         priceWithTaxes <- map["priceWithTaxes"]
         controllerID <- map["controllerID"]
         assignedCashDrawer <- map["assignedCashDrawer"]
+        additionalData <- map["additionalData"]
+        fieldRequests <- map["fieldRequests"]
     }
 }
