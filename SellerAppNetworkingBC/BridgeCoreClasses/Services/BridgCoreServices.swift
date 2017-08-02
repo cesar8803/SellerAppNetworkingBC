@@ -289,13 +289,6 @@ public class BridgeCoreServices
         }) { (msg) in
             completionError(msg)
         }
-        
-      
-        
-
-        
-        
-
     }
     
 
