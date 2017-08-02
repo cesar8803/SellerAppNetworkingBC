@@ -59,6 +59,18 @@
 		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
 		57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9CD891F29020200367A15 /* CloseTerminal.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
+		71419A3B1F30FFC3005F70E3 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71419A3A1F30FFC3005F70E3 /* Amount.swift */; };
+		7156AD961F2A67AB00761F38 /* BudgetServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD951F2A67AB00761F38 /* BudgetServices.swift */; };
+		7156AD981F2A8F6300761F38 /* AdditionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD971F2A8F6300761F38 /* AdditionalData.swift */; };
+		7156AD9C1F2A8FBE00761F38 /* AdditionalDataListField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD9B1F2A8FBE00761F38 /* AdditionalDataListField.swift */; };
+		7156AD9E1F2A8FFA00761F38 /* FieldRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD9D1F2A8FFA00761F38 /* FieldRequests.swift */; };
+		7156ADA01F2A905100761F38 /* FieldRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD9F1F2A905100761F38 /* FieldRequestData.swift */; };
+		7156ADA21F2A907D00761F38 /* AdditionalInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156ADA11F2A907D00761F38 /* AdditionalInformation.swift */; };
+		7156ADA41F2A9D9F00761F38 /* PrinterDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156ADA31F2A9D9F00761F38 /* PrinterDocument.swift */; };
+		7156ADA61F2A9F7B00761F38 /* PrinterDocumentsBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156ADA51F2A9F7B00761F38 /* PrinterDocumentsBase64.swift */; };
+		7156ADA81F2AA10600761F38 /* BudgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156ADA71F2AA10600761F38 /* BudgetData.swift */; };
+		7156ADAA1F2AA14F00761F38 /* BudgetInstallments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156ADA91F2AA14F00761F38 /* BudgetInstallments.swift */; };
+		7156ADAC1F2AA21700761F38 /* BudgetAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156ADAB1F2AA21700761F38 /* BudgetAmount.swift */; };
 		A95FD8031EF9D2110094AA1C /* SellerAppNetworkingBC.h in Headers */ = {isa = PBXBuildFile; fileRef = A95FD8011EF9D2110094AA1C /* SellerAppNetworkingBC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80B1EF9D2650094AA1C /* Int+Extension.swift */; };
 		A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD80C1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift */; };
@@ -156,6 +168,18 @@
 		2B994B6E1F280B1700292163 /* HierarchyGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HierarchyGroup.swift; path = Objects/HierarchyGroup.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
 		57F9CD891F29020200367A15 /* CloseTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTerminal.swift; sourceTree = "<group>"; };
+		71419A3A1F30FFC3005F70E3 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = Objects/Amount.swift; sourceTree = "<group>"; };
+		7156AD951F2A67AB00761F38 /* BudgetServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetServices.swift; path = Services/BudgetServices.swift; sourceTree = "<group>"; };
+		7156AD971F2A8F6300761F38 /* AdditionalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalData.swift; path = Objects/AdditionalData.swift; sourceTree = "<group>"; };
+		7156AD9B1F2A8FBE00761F38 /* AdditionalDataListField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalDataListField.swift; path = Objects/AdditionalDataListField.swift; sourceTree = "<group>"; };
+		7156AD9D1F2A8FFA00761F38 /* FieldRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldRequests.swift; path = Objects/FieldRequests.swift; sourceTree = "<group>"; };
+		7156AD9F1F2A905100761F38 /* FieldRequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldRequestData.swift; path = Objects/FieldRequestData.swift; sourceTree = "<group>"; };
+		7156ADA11F2A907D00761F38 /* AdditionalInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalInformation.swift; path = Objects/AdditionalInformation.swift; sourceTree = "<group>"; };
+		7156ADA31F2A9D9F00761F38 /* PrinterDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrinterDocument.swift; path = Objects/PrinterDocument.swift; sourceTree = "<group>"; };
+		7156ADA51F2A9F7B00761F38 /* PrinterDocumentsBase64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrinterDocumentsBase64.swift; path = Objects/PrinterDocumentsBase64.swift; sourceTree = "<group>"; };
+		7156ADA71F2AA10600761F38 /* BudgetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetData.swift; path = Objects/BudgetData.swift; sourceTree = "<group>"; };
+		7156ADA91F2AA14F00761F38 /* BudgetInstallments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetInstallments.swift; path = Objects/BudgetInstallments.swift; sourceTree = "<group>"; };
+		7156ADAB1F2AA21700761F38 /* BudgetAmount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetAmount.swift; path = Objects/BudgetAmount.swift; sourceTree = "<group>"; };
 		7996FE2FEED43F9CF7721109 /* Pods-SellerAppNetworkingBCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests.release.xcconfig"; sourceTree = "<group>"; };
 		8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FD7FE1EF9D2110094AA1C /* SellerAppNetworkingBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +287,17 @@
 				2B994B6C1F280A3B00292163 /* Price.swift */,
 				2B994B6E1F280B1700292163 /* HierarchyGroup.swift */,
 				2B9096911F2A50CC0026CFDE /* ItemDataList.swift */,
+				7156AD971F2A8F6300761F38 /* AdditionalData.swift */,
+				7156AD9B1F2A8FBE00761F38 /* AdditionalDataListField.swift */,
+				7156AD9D1F2A8FFA00761F38 /* FieldRequests.swift */,
+				7156AD9F1F2A905100761F38 /* FieldRequestData.swift */,
+				7156ADA11F2A907D00761F38 /* AdditionalInformation.swift */,
+				7156ADA31F2A9D9F00761F38 /* PrinterDocument.swift */,
+				7156ADA51F2A9F7B00761F38 /* PrinterDocumentsBase64.swift */,
+				7156ADA71F2AA10600761F38 /* BudgetData.swift */,
+				7156ADA91F2AA14F00761F38 /* BudgetInstallments.swift */,
+				7156ADAB1F2AA21700761F38 /* BudgetAmount.swift */,
+				71419A3A1F30FFC3005F70E3 /* Amount.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -287,6 +322,7 @@
 				2B26B80D1F1009FE0092C263 /* BridgCoreServices.swift */,
 				2B994B641F27EC8200292163 /* RefundsBC.swift */,
 				2B994B661F27FA4800292163 /* BridgeCoreOperations.swift */,
+				7156AD951F2A67AB00761F38 /* BudgetServices.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -615,6 +651,7 @@
 				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
 				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,
 				2B0CA3B71F0DA8E7007A8EB0 /* PaymentsTotal.swift in Sources */,
+				7156ADA01F2A905100761F38 /* FieldRequestData.swift in Sources */,
 				A95FD84A1EF9D2650094AA1C /* Storedata.swift in Sources */,
 				2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */,
 				A95FD8491EF9D2650094AA1C /* Sessiondata.swift in Sources */,
@@ -623,6 +660,7 @@
 				2B788EBB1F0B4E54004E5F1F /* BackedUrlManager.swift in Sources */,
 				2B0CA3CD1F0DB69D007A8EB0 /* TotalsData.swift in Sources */,
 				2B0CA3AD1F0DA585007A8EB0 /* SessionDataWD.swift in Sources */,
+				7156ADA61F2A9F7B00761F38 /* PrinterDocumentsBase64.swift in Sources */,
 				2B0CA3D51F0DB937007A8EB0 /* TendersurChargeTotal.swift in Sources */,
 				2B0CA3BF1F0DB089007A8EB0 /* IibbPerceptions.swift in Sources */,
 				2B0CA3BB1F0DAFE0007A8EB0 /* Total.swift in Sources */,
@@ -630,6 +668,7 @@
 				A95FD8371EF9D2650094AA1C /* LPStoreData.swift in Sources */,
 				A95FD8441EF9D2650094AA1C /* Reasonsalecancelmenu.swift in Sources */,
 				A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */,
+				7156ADA21F2A907D00761F38 /* AdditionalInformation.swift in Sources */,
 				2B0CA3AB1F0DA314007A8EB0 /* RepresentationWD.swift in Sources */,
 				2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */,
 				A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */,
@@ -644,12 +683,15 @@
 				A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */,
 				2B0CA3B11F0DA6EC007A8EB0 /* Ticket.swift in Sources */,
 				2B788EB71F0B4962004E5F1F /* ExchangeCurrencyData.swift in Sources */,
+				7156AD981F2A8F6300761F38 /* AdditionalData.swift in Sources */,
 				2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */,
+				7156ADAC1F2AA21700761F38 /* BudgetAmount.swift in Sources */,
 				A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */,
 				A95FD83A1EF9D2650094AA1C /* Benefitdata.swift in Sources */,
 				A95FD83E1EF9D2650094AA1C /* Optionmenu.swift in Sources */,
 				2B9096931F2A53070026CFDE /* ItemDataList.swift in Sources */,
 				2B994B651F27EC8200292163 /* RefundsBC.swift in Sources */,
+				7156ADAA1F2AA14F00761F38 /* BudgetInstallments.swift in Sources */,
 				A95FD8391EF9D2650094AA1C /* BCResponse.swift in Sources */,
 				A95FD83F1EF9D2650094AA1C /* Options.swift in Sources */,
 				A95FD8301EF9D2650094AA1C /* LoginVendedor.swift in Sources */,
@@ -669,6 +711,7 @@
 				2B0CA3C31F0DB2F6007A8EB0 /* DiscountsItemsTotal.swift in Sources */,
 				2B0CA3C91F0DB5AC007A8EB0 /* PerceptionsTotal.swift in Sources */,
 				2B994B6D1F280A3B00292163 /* Price.swift in Sources */,
+				71419A3B1F30FFC3005F70E3 /* Amount.swift in Sources */,
 				2B994B671F27FA4800292163 /* BridgeCoreOperations.swift in Sources */,
 				2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */,
 				2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */,
@@ -677,17 +720,22 @@
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
 				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,
 				2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */,
+				7156AD9C1F2A8FBE00761F38 /* AdditionalDataListField.swift in Sources */,
 				2B0CA3CF1F0DB748007A8EB0 /* DiscountsPromoTotal.swift in Sources */,
 				2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */,
 				2B0CA3B91F0DAF26007A8EB0 /* IvaTotal.swift in Sources */,
 				A95FD8421EF9D2650094AA1C /* Promotiondata.swift in Sources */,
 				A95FD8361EF9D2650094AA1C /* LPStartupSession.swift in Sources */,
+				7156AD9E1F2A8FFA00761F38 /* FieldRequests.swift in Sources */,
 				2B0CA3DD1F0DBAF9007A8EB0 /* TotalComputador.swift in Sources */,
 				2B0CA3D11F0DB7E9007A8EB0 /* SubTotal.swift in Sources */,
 				A95FD8341EF9D2650094AA1C /* LPOptionMenu.swift in Sources */,
 				2B0CA3DB1F0DBA91007A8EB0 /* Devolucion.swift in Sources */,
+				7156ADA81F2AA10600761F38 /* BudgetData.swift in Sources */,
 				A95FD8481EF9D2650094AA1C /* Representation.swift in Sources */,
+				7156ADA41F2A9D9F00761F38 /* PrinterDocument.swift in Sources */,
 				A95FD8451EF9D2650094AA1C /* Reasonsaleitemdiscountmenu.swift in Sources */,
+				7156AD961F2A67AB00761F38 /* BudgetServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

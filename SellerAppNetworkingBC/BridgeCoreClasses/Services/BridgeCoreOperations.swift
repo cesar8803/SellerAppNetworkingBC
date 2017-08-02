@@ -53,6 +53,8 @@ public enum BridgeCoreOperation
     
     case findItemList( terminalCode:String, storeCode:String, itemsCodeList:[String])
     
+    case getBudget( terminalCode: String, storeCode: String, budgetAmount: String?, selectedPlan: String?)
+    
     func getParams()->(Parameters, String, String)
     {
         switch self
@@ -116,6 +118,21 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.findItemsList.rawValue, "params":p]
             
             
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
+            
+        case .getBudget(let terminalCode, let storeCode, let budgetAmount, let selectedPlan):
+            
+            var p:[String : Any] = ["terminalCode":terminalCode, "storeCode": storeCode]
+            
+            if budgetAmount != nil{
+                p["budgetAmount"] = budgetAmount!
+                p["printerTypeName"] = "1003"
+                p["printerStationType"] = "6"
+                p["selectedBudgetPlan"] = selectedPlan
+            }
+            
+            let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.getBudget.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
