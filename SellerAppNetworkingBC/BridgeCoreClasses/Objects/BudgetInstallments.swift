@@ -11,10 +11,14 @@ import ObjectMapper
 
 public class BudgetInstallments: Mappable{
     public var budgetInstallments: [BudgetInstallments]?
+    public var installment: Int?
+    public var amount: Amount?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
         budgetInstallments <- map["budgetInstallments"]
+        installment <- map["installment"]
+        amount <- map["amount"]
     }
 }
