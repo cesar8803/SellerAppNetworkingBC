@@ -71,6 +71,7 @@ public enum BCParamsNames: String{
 
 public enum BCRequestParams{
     case refundNormalTransaction(refundOriginalTrxScannedCode:String,
+        transactionSubtype: String,
         refundOriginalEmployee:String,
         originalTrxStore:String,
         refundCause:Int,
@@ -98,6 +99,7 @@ public enum BCRequestParams{
     {
         switch self{
         case .refundNormalTransaction(let refundOriginalTrxScannedCode,
+                                      let transactionSubtype,
                                        let refundOriginalEmployee,
                                        let originalTrxStore,
                                        let refundCause,
@@ -105,12 +107,13 @@ public enum BCRequestParams{
                                        let scannedCodeEntryMethod):
             
             let params:Parameters = [BCParamsNames.refundOriginalTrxScannedCode.rawValue:refundOriginalTrxScannedCode,
-                    BCParamsNames.transactionSubtype.rawValue: BCTransactionSubtype.REFUND_NORMAL.rawValue,
-                    BCParamsNames.refundOriginalEmployee.rawValue:refundOriginalEmployee,
-                    BCParamsNames.originalTrxStore.rawValue: originalTrxStore,
-                    BCParamsNames.refundCause.rawValue:refundCause,
-                    BCParamsNames.giftTicket.rawValue: giftTicket,
-                    BCParamsNames.scannedCodeEntryMethod.rawValue: scannedCodeEntryMethod]
+                                     BCParamsNames.transactionSubtype.rawValue: transactionSubtype,
+                                     BCParamsNames.transactionSubtype.rawValue: BCTransactionSubtype.REFUND_NORMAL.rawValue,
+                                     BCParamsNames.refundOriginalEmployee.rawValue:refundOriginalEmployee,
+                                     BCParamsNames.originalTrxStore.rawValue: originalTrxStore,
+                                     BCParamsNames.refundCause.rawValue:refundCause,
+                                     BCParamsNames.giftTicket.rawValue: giftTicket,
+                                     BCParamsNames.scannedCodeEntryMethod.rawValue: scannedCodeEntryMethod]
             
             return params
             
@@ -123,8 +126,6 @@ public enum BCRequestParams{
                                      BCParamsNames.processPromotions.rawValue:processPromotions]
             return params
             
-            
-        //case .applyDiscount(let processPromotions, let sequenceNumber, let discountType, let discountValue):
         case .applydiscount(let processPromotions, let sequenceNumber, let discountType, let discountValue):
             
             let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions,
