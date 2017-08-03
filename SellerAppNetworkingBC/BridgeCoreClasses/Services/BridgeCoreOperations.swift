@@ -12,6 +12,7 @@ import AlamofireObjectMapper
 
 public typealias ErrorStringHandlerBC = (_ errorString:String) -> Void
 
+
 public enum BridgeCoreOperationName:String
 {
     case selectEnableCoins = "selectEnableCoins"
@@ -266,7 +267,7 @@ public enum BridgeCoreOperation
             return(params, "", "")
             
         case .selectTransactionWithParams(let connectionId, let terminalCode, let storeCode, let parameters):
-            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.returnSelect.rawValue, "params":parameters, "connectionId":connectionId]
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.selectTransaction.rawValue, "params":parameters, "connectionId":connectionId]
             
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             
