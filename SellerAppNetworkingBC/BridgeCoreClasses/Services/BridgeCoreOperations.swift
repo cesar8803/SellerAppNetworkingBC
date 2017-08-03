@@ -12,6 +12,22 @@ import AlamofireObjectMapper
 
 public typealias ErrorStringHandlerBC = (_ errorString:String) -> Void
 
+public enum BridgeCoreOperationName:String
+{
+    case selectEnableCoins = "selectEnableCoins"
+    case selectTransaction = "selectTransaction"
+    case addTender = "addTender"
+    case finishTransaction = "finishTransaction"
+    case cancelTransaction = "cancelTransaction"
+    case findItems = "findItems"
+    case findItemsList = "findItemsList"
+    case getBudget = "calculateBudget"
+    case returnSelect = "returnSelect"
+    case addItem = "addItem"
+    case applyDiscountToItem = "applyDiscountToItem"
+    case totalizeTransaction = "totalizeTransaction"
+}
+
 public enum BCTransactionSubtype: String {
     case TENDER_WITHDRAWAL = "7"
     case SALE_NORMAL = "101"
@@ -34,6 +50,100 @@ public enum BCTransactionSubtype: String {
     case REFUND_SOMS = "106"
 }
 
+public enum BCParamsNames: String{
+    case refundOriginalTrxScannedCode = "refundOriginalTrxScannedCode"
+    case transactionSubtype = "transactionSubtype"
+    case refundOriginalEmployee = "refundOriginalEmployee"
+    case originalTrxStore = "originalTrxStore"
+    case refundCause = "refundCause"
+    case giftTicket = "giftTicket"
+    case scannedCodeEntryMethod = "scannedCodeEntryMethod"
+    case itemPrice = "itemPrice"
+    case itemDepartment = "itemDepartment"
+    case itemDepartmentPrice = "itemDepartmentPrice"
+    case itemQty = "itemQty"
+    case itemBarcode = "itemBarcode"
+    case processPromotions = "processPromotions"
+    case sequenceNumber = "sequenceNumber"
+    case discountType = "discountType"
+    case discountValue = "discountValue"
+}
+
+public enum BCRequestParams{
+    case refundNormalTransaction(refundOriginalTrxScannedCode:String,
+        transactionSubtype: String,
+        refundOriginalEmployee:String,
+        originalTrxStore:String,
+        refundCause:Int,
+        giftTicket:Bool,
+        scannedCodeEntryMethod:String)
+        
+    case additem(itemPrice:String,
+        itemDepartment: String,
+        itemDepartmentPrice: String,
+        itemQty: String,
+        itemBarcode: String,
+        processPromotions:Bool)
+    
+    
+    case applydiscount(
+        processPromotions: Bool,
+        sequenceNumber: Int,
+        discountType: Int,
+        discountValue: Double)
+    
+    case totalizeTransaction(processPromotions:Bool)
+    
+    
+    public func getParamsForRequest()->Parameters
+    {
+        switch self{
+        case .refundNormalTransaction(let refundOriginalTrxScannedCode,
+                                      let transactionSubtype,
+                                       let refundOriginalEmployee,
+                                       let originalTrxStore,
+                                       let refundCause,
+                                       let giftTicket,
+                                       let scannedCodeEntryMethod):
+            
+            let params:Parameters = [BCParamsNames.refundOriginalTrxScannedCode.rawValue:refundOriginalTrxScannedCode,
+                                     BCParamsNames.transactionSubtype.rawValue: transactionSubtype,
+                                     BCParamsNames.refundOriginalEmployee.rawValue:refundOriginalEmployee,
+                                     BCParamsNames.originalTrxStore.rawValue: originalTrxStore,
+                                     BCParamsNames.refundCause.rawValue:refundCause,
+                                     BCParamsNames.giftTicket.rawValue: giftTicket,
+                                     BCParamsNames.scannedCodeEntryMethod.rawValue: scannedCodeEntryMethod]
+            
+            return params
+            
+        case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions):
+            let params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
+                                     BCParamsNames.itemDepartment.rawValue: itemDepartment,
+                                     BCParamsNames.itemDepartmentPrice.rawValue: itemDepartmentPrice,
+                                     BCParamsNames.itemQty.rawValue:itemQty,
+                                     BCParamsNames.itemBarcode.rawValue:itemBarcode,
+                                     BCParamsNames.processPromotions.rawValue:processPromotions]
+            return params
+            
+        case .applydiscount(let processPromotions, let sequenceNumber, let discountType, let discountValue):
+            
+            let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions,
+                                     BCParamsNames.sequenceNumber.rawValue: sequenceNumber,
+                                     BCParamsNames.discountType.rawValue: discountType,
+                                     BCParamsNames.discountValue.rawValue: discountValue]
+            return params
+            
+        case .totalizeTransaction(let processPromotions):
+            let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions]
+            return params
+
+        }
+    }
+}
+
+
+
+
 public enum BridgeCoreOperation
 {
     case selectTransaction(connectionId:String, terminalCode:String, storeCode:String,  transactionSubtype:BCTransactionSubtype, giftTicket:Bool)
@@ -55,7 +165,20 @@ public enum BridgeCoreOperation
     
     case getBudget( terminalCode: String, storeCode: String, budgetAmount: String?, selectedPlan: String?)
     
+    case returnSelect(connectionId:String)
+    
+    //Generic Select Transaction
+    // A generic function
+    case selectTransactionWithParams(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
+    case addItem(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
+    case applyDiscount(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
+    case totalizeTransaction(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
     case cardCancel( connectionId: String, operation: String, terminalCode:String, storeCode:String, object:Any)
+    
     
     func getParams()->(Parameters, String, String)
     {
@@ -63,7 +186,7 @@ public enum BridgeCoreOperation
         {
         case .selectTransaction(let connectionId, let terminalCode, let storeCode , let transactionSubtype, let giftTicket):
             let p:[String:Any] = ["transactionSubtype":transactionSubtype.rawValue, "giftTicket": giftTicket]
-            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.selectTransaction.rawValue, "params":p]
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.selectTransaction.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
@@ -73,33 +196,33 @@ public enum BridgeCoreOperation
                                   "paymentMethod": paymentMethod,
                                   "paymentQuantity": paymentQuantity]
             
-            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.addTender.rawValue, "params":p]
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.addTender.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
         case .finishTransaction(let connectionId, let terminalCode,let  storeCode):
             let p:[String:Any] = [String:Any]()
             
-            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.finishTransaction.rawValue, "params":p]
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.finishTransaction.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
         case .cancelTransaction(let connectionId, let terminalCode,let  storeCode):
             let p:[String:Any] = [String:Any]()
             
-            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.cancelTransaction.rawValue, "params":p]
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.cancelTransaction.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
         case .cancelTransactionWithDocument(let connectionId, let terminalCode, let storeCode, let document, let amount):
             let p:[String:Any] = ["transactionSubtype":BCTransactionSubtype.CANCEL_TRANSACTION.rawValue, "amountTrxCancel": amount, "numTrxCancel":document]
-            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":WithdrawalsOperation.selectTransaction.rawValue, "params":p]
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.selectTransaction.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
         case .findItem(let terminalCode, let storeCode, let itemCode, let exactMaching):
             let p:[String:Any] = ["terminalCode":terminalCode, "storeCode": storeCode, "itemCode":itemCode, "itemCodeExactMatching":exactMaching]
-            let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.findItems.rawValue, "params":p]
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.findItems.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
@@ -117,7 +240,7 @@ public enum BridgeCoreOperation
             let valueDict = ["value":valuesTypes]
             
             let p:[String:Any] = ["terminalCode":terminalCode, "storeCode": storeCode, "itemDataList":valueDict]
-            let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.findItemsList.rawValue, "params":p]
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.findItemsList.rawValue, "params":p]
             
             
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
@@ -134,17 +257,60 @@ public enum BridgeCoreOperation
                 p["selectedBudgetPlan"] = selectedPlan
             }
             
-            let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.getBudget.rawValue, "params":p]
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.getBudget.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
-        
+
+        case .returnSelect(let connectionId):
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.returnSelect.rawValue, "params":"", "connectionId":connectionId]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            return(params, "", "")
+            
+        case .selectTransactionWithParams(let connectionId, let terminalCode, let storeCode, let parameters):
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.returnSelect.rawValue, "params":parameters, "connectionId":connectionId]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            return(params, terminalCode, storeCode)
+            
+        case .addItem(let connectionId, let terminalCode, let storeCode, let parameters):
+            
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.addItem.rawValue, "params":parameters, "connectionId":connectionId]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            return(params, terminalCode, storeCode)
+
+        case .applyDiscount(let connectionId, let terminalCode, let storeCode, let parameters):
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.applyDiscountToItem.rawValue, "params":parameters, "connectionId":connectionId]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            return(params, terminalCode, storeCode)
+            
+        case .totalizeTransaction(let connectionId, let terminalCode, let storeCode, let parameters):
+            let bridgeCoreRequestDict:Parameters = ["operation":BridgeCoreOperationName.totalizeTransaction.rawValue,
+                                                    "params":parameters, "connectionId":connectionId]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            return(params, terminalCode, storeCode)
+            
         case .cardCancel(connectionId: let connectionId, operation: let operation, let terminalCode, let storeCode, let object):
             
             let p:[String : Any] = ["connectionId":connectionId, "operation": operation, "params": object]
             
             let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.useCreditCard.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
-            return (params, terminalCode, storeCode)
+            return (params, terminalCode, storeCode)case .cardCancel(connectionId: let connectionId, operation: let operation, let terminalCode, let storeCode, let object):
+                
+                let p:[String : Any] = ["connectionId":connectionId, "operation": operation, "params": object]
+                
+                let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.useCreditCard.rawValue, "params":p]
+                let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+                return (params, terminalCode, storeCode)
+            
         }
     }
 }

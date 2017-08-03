@@ -226,6 +226,8 @@ public class BridgeCoreServices
                                         
                                         let oper:BridgeCoreOperation = BridgeCoreOperation.addTender(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, paymentAmount: "\(w.paymentAmount)", voidFalg: w.voidFlag, paymentMethod: "\(w.paymentMethod)", paymentQuantity: "\(w.paymentQuantity)")
                                         
+                                        
+                                        
                                         Withdrawals.bridgeCoreOperationTransact(operation: oper, completion: { (withdrawalBridgeCore) in
                                             
                                             print("\(idx) 🌎 - 🌕 ")
@@ -401,6 +403,28 @@ public class BridgeCoreServices
                 completionError(bcLogoffR.message ?? "")
             }
             
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    
+    public class func returnSelect(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let oper = BridgeCoreOperation.returnSelect(connectionId: connectionId)
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.returnSelect(terminalCode: terminalCode, storeCode: storeCode, operation: oper), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    public class func selectTransactionWithParams(connectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+    
+        let oper = BridgeCoreOperation.selectTransactionWithParams(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: params)
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.selectTransactionWithOperation(terminalCode: terminalCode, storeCode: storeCode, operation: oper), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
         }) { (msg) in
             completionError(msg)
         }

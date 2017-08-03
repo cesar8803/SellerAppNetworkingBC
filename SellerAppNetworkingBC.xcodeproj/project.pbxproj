@@ -37,6 +37,7 @@
 		2B0CA3E11F0DBC70007A8EB0 /* Entregado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3E01F0DBC70007A8EB0 /* Entregado.swift */; };
 		2B0CA3E31F0DBCF1007A8EB0 /* ValesPapel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3E21F0DBCF1007A8EB0 /* ValesPapel.swift */; };
 		2B26B80E1F1009FE0092C263 /* BridgCoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26B80D1F1009FE0092C263 /* BridgCoreServices.swift */; };
+		2B5E31451F32298900882601 /* RefundBCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E31441F32298900882601 /* RefundBCTest.swift */; };
 		2B788EAF1F0B4784004E5F1F /* BridgeCoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */; };
 		2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */; };
 		2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B788EB41F0B48C3004E5F1F /* OperationResult.swift */; };
@@ -147,13 +148,14 @@
 		2B0CA3E01F0DBC70007A8EB0 /* Entregado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entregado.swift; path = Objects/Entregado.swift; sourceTree = "<group>"; };
 		2B0CA3E21F0DBCF1007A8EB0 /* ValesPapel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValesPapel.swift; path = Objects/ValesPapel.swift; sourceTree = "<group>"; };
 		2B26B80D1F1009FE0092C263 /* BridgCoreServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgCoreServices.swift; path = Services/BridgCoreServices.swift; sourceTree = "<group>"; };
+		2B5E31441F32298900882601 /* RefundBCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundBCTest.swift; sourceTree = "<group>"; };
 		2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreResponse.swift; path = Objects/BridgeCoreResponse.swift; sourceTree = "<group>"; };
 		2B788EB21F0B48AA004E5F1F /* ExchangeCurrencyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeCurrencyListData.swift; path = Objects/ExchangeCurrencyListData.swift; sourceTree = "<group>"; };
 		2B788EB41F0B48C3004E5F1F /* OperationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationResult.swift; path = Objects/OperationResult.swift; sourceTree = "<group>"; };
 		2B788EB61F0B4962004E5F1F /* ExchangeCurrencyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeCurrencyData.swift; path = Objects/ExchangeCurrencyData.swift; sourceTree = "<group>"; };
 		2B788EB81F0B49DA004E5F1F /* ValorTipoCambio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValorTipoCambio.swift; path = Objects/ValorTipoCambio.swift; sourceTree = "<group>"; };
 		2B788EBA1F0B4E54004E5F1F /* BackedUrlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackedUrlManager.swift; path = Services/BackedUrlManager.swift; sourceTree = "<group>"; };
-		2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Withdrawals.swift; path = Services/Withdrawals.swift; sourceTree = "<group>"; };
+		2B788EBC1F0B52A6004E5F1F /* Withdrawals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = Withdrawals.swift; path = Services/Withdrawals.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2B788ECE1F0C54F9004E5F1F /* BridgeCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCore.swift; path = Objects/BridgeCore.swift; sourceTree = "<group>"; };
 		2B9096911F2A50CC0026CFDE /* ItemDataList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDataList.swift; path = Objects/ItemDataList.swift; sourceTree = "<group>"; };
 		2B994B571F27AB1800292163 /* SellerAppNetworkingBCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SellerAppNetworkingBCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +163,7 @@
 		2B994B5B1F27AB1800292163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B994B621F27B39900292163 /* FindItemsBCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindItemsBCTest.swift; sourceTree = "<group>"; };
 		2B994B641F27EC8200292163 /* RefundsBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefundsBC.swift; path = Services/RefundsBC.swift; sourceTree = "<group>"; };
-		2B994B661F27FA4800292163 /* BridgeCoreOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreOperations.swift; path = Services/BridgeCoreOperations.swift; sourceTree = "<group>"; };
+		2B994B661F27FA4800292163 /* BridgeCoreOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = BridgeCoreOperations.swift; path = Services/BridgeCoreOperations.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2B994B681F2808C600292163 /* ItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemData.swift; path = Objects/ItemData.swift; sourceTree = "<group>"; };
 		2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemLiverpoolData.swift; path = Objects/ItemLiverpoolData.swift; sourceTree = "<group>"; };
 		2B994B6C1F280A3B00292163 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Price.swift; path = Services/Price.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				2B994B5B1F27AB1800292163 /* Info.plist */,
 				2B994B621F27B39900292163 /* FindItemsBCTest.swift */,
 				57F9CD891F29020200367A15 /* CloseTerminal.swift */,
+				2B5E31441F32298900882601 /* RefundBCTest.swift */,
 			);
 			path = SellerAppNetworkingBCTests;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 			files = (
 				2B994B631F27B39900292163 /* FindItemsBCTest.swift in Sources */,
 				2B994B5A1F27AB1800292163 /* SellerAppNetworkingBCTests.swift in Sources */,
+				2B5E31451F32298900882601 /* RefundBCTest.swift in Sources */,
 				57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

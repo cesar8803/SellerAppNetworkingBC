@@ -39,6 +39,28 @@ public class RefundsBC
         }
     }
     
+    public class func addItem(connectionId:String, storeCode:String, terminalCode:String, item:BCRequestParams,  completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let oper = BridgeCoreOperation.addItem(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: item.getParamsForRequest())
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addItem(operation: oper), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+        
+    }
+    
+    public class func applyDiscountToItem(connectionId:String, storeCode:String, terminalCode:String, discountParams:BCRequestParams,  completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let oper = BridgeCoreOperation.applyDiscount(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: discountParams.getParamsForRequest())
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addItem(operation: oper), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
     
 
 }
