@@ -69,7 +69,7 @@ public class Ticket: Mappable{
     public var promoGifts: [String]?
     public var ivaPerceptions: IvaPerceptions?
     public var tenderSurchargeTotal: TendersurChargeTotal?
-    public var payments: [String]?
+    public var payments: [Payments]?
     public var discountsTransactionTotal: DiscountsTransactionTotal?
     public var taxDetailPerceptions: [String]?
     public var userName: String?
@@ -145,5 +145,102 @@ public class Ticket: Mappable{
         userName <- map["userName"]
         trainingModeFlag <- map["trainingModeFlag"]
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
+    }
+}
+
+public class Payments: Mappable
+{
+    public var paymentDataLiverpool: Paymentdataliverpool?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        paymentDataLiverpool <- map["paymentDataLiverpool"]
+    }
+}
+
+public class Paymentdataliverpool: Mappable{
+    public var count: Count?
+    public var additionalData: [Additionaldata]?
+    public var msi: Int?
+    public var idTender: Int?
+    public var descriptionPayment: String?
+    public var autografa: Int?
+    public var surcharge: Surcharge?
+    public var isNew: Int?
+    public var voided: Int?
+    public var idTenderType: Int?
+    public var amount: Amount?
+    public var isOwnCredit: Int?
+    public var eglobalCard: Int?
+    public var isVoid: Int?
+    public var isForeign: Int?
+    public var qps: Int?
+    public var nip: Int?
+    public var sinFirma: Int?
+    public var inputType: String?
+    public var frankingRequired: Int?
+    public var tenderGsaId: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        count <- map["count"]
+        additionalData <- map["additionalData"]
+        msi <- map["msi"]
+        idTender <- map["idTender"]
+        descriptionPayment <- map["description"]
+        autografa <- map["autografa"]
+        surcharge <- map["surcharge"]
+        isNew <- map["isNew"]
+        voided <- map["voided"]
+        idTenderType <- map["idTenderType"]
+        amount <- map["amount"]
+        isOwnCredit <- map["isOwnCredit"]
+        eglobalCard <- map["eglobalCard"]
+        isVoid <- map["isVoid"]
+        isForeign <- map["isForeign"]
+        qps <- map["qps"]
+        nip <- map["nip"]
+        sinFirma <- map["sinFirma"]
+        inputType <- map["inputType"]
+        frankingRequired <- map["frankingRequired"]
+        tenderGsaId <- map["tenderGsaId"]
+    }
+}
+
+public class Count: Mappable{
+    public var number: Int?
+    
+    required  public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Additionaldata: Mappable{
+    public var cardPrefixType: Int?
+    public var PINPAD__RESPONSE__EMV__TAGS: String?
+    public var ad__InputDto: String?
+    public var PINPAD__RESPONSE__TOKENS: String?
+    
+    required public init?( map: Map){
+    }
+    public func mapping(map: Map){
+        cardPrefixType <- map["cardPrefixType"]
+        PINPAD__RESPONSE__EMV__TAGS <- map["PINPAD__RESPONSE__EMV__TAGS"]
+        ad__InputDto <- map["ad__InputDto"]
+        PINPAD__RESPONSE__TOKENS <- map["PINPAD__RESPONSE__TOKENS"]
+    }
+}
+
+public class Surcharge: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
     }
 }

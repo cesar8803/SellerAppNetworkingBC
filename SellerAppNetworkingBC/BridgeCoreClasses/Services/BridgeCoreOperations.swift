@@ -177,6 +177,8 @@ public enum BridgeCoreOperation
     
     case totalizeTransaction(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
     
+    case cardCancel( connectionId: String, operation: String, terminalCode:String, storeCode:String, object:Any)
+    
     
     func getParams()->(Parameters, String, String)
     {
@@ -258,7 +260,7 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.getBudget.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
-            
+
         case .returnSelect(let connectionId):
             let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.returnSelect.rawValue, "params":"", "connectionId":connectionId]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
@@ -294,6 +296,21 @@ public enum BridgeCoreOperation
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             
             return(params, terminalCode, storeCode)
+            
+        case .cardCancel(connectionId: let connectionId, operation: let operation, let terminalCode, let storeCode, let object):
+            
+            let p:[String : Any] = ["connectionId":connectionId, "operation": operation, "params": object]
+            
+            let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.useCreditCard.rawValue, "params":p]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)case .cardCancel(connectionId: let connectionId, operation: let operation, let terminalCode, let storeCode, let object):
+                
+                let p:[String : Any] = ["connectionId":connectionId, "operation": operation, "params": object]
+                
+                let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.useCreditCard.rawValue, "params":p]
+                let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+                return (params, terminalCode, storeCode)
+            
         }
     }
 }
