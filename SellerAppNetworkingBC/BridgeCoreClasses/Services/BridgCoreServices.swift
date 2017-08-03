@@ -68,6 +68,121 @@ public class BridgeCoreServices
         }
     }
     
+    public class func logOffBoss(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, completion: { (logOffBridgeCore) in
+            
+            guard let brigeCoreLogOffResponse = logOffBridgeCore.bridgeCoreResponse else
+            {
+                completionError("Algo salio mal, por favor consulte soporte"); return }
+            
+            if brigeCoreLogOffResponse.ack == 0 //Login success
+            {
+                completion(logOffBridgeCore)
+            }
+            
+        }) { (msg) in
+            
+            completionError(msg)
+        }
+    }
+    
+    public class func loginBoss(userName:String, userPass:String, connectionId:String, storeCode:String, terminalCode:String, completion: @escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode , userName: userName, userPassword: userPass, trainingMode: false, completion: { (loginBridgeCore) in
+            
+            guard let brigeCoreLoginResponse = loginBridgeCore.bridgeCoreResponse else { completionError("Algo salio mal, por favor consulte soporte"); return }
+            
+            if brigeCoreLoginResponse.ack == 0 //Login success
+            {
+                completion(loginBridgeCore)
+            }
+        }, completionError: { (msg) in
+            completionError(msg)
+        })
+    }
+    
+    public class func cancelSale(connectionId:String, storeCode:String, terminalCode:String, docto: String, amount: String, userName:String, userPassword:String, trainingMode:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let oper: BridgeCoreOperation = BridgeCoreOperation.cancelTransactionWithDocument(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, document: docto, amount: amount)
+        
+        let (params, _, _) = oper.getParams()
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.selectTransaction(terminalCode: terminalCode, storeCode: storeCode, paramters: params), completion: { (responseBC) in
+            
+            completion(responseBC)
+            
+        }) { (msg) in
+            
+            completionError(msg)
+        }
+        
+        
+        
+        
+        
+        
+        
+        /*BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, completion: { (bridgeCore) in
+            
+            guard let brigeResponse = bridgeCore.bridgeCoreResponse else { completionError("Algo salio mal, por favor consulte soporte"); return }
+            
+            if brigeResponse.ack == 0{ //LogOff successful
+                BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPassword, trainingMode: false, completion: { (loginBridgeCore) in
+                    
+                    guard let brigeCoreLoginResponse = loginBridgeCore.bridgeCoreResponse else { completionError("Algo salio mal, por favor consulte soporte"); return }
+                    
+                    if brigeCoreLoginResponse.ack == 0 //Login success
+                    {
+                        let oper: BridgeCoreOperation = BridgeCoreOperation.selectTransaction(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, transactionSubtype: BCTransactionSubtype.CANCEL_TRANSACTION, giftTicket: false)
+                        
+                        let (params, _, _) =  oper.getParams()
+                        let bcRouter = BrigdeCoreRouter.selectTransaction(terminalCode: terminalCode, storeCode: storeCode, paramters: params)
+                        
+                        
+                        AsyncClientBC.getBCRequest(bcRouter: bcRouter, completion: { (bridgeCoreResponse) in
+                            completion(bridgeCoreResponse)
+                        }) { (msg) in
+                            completionError(msg)
+                        }
+                        
+                    }else{
+                        if let msg = brigeCoreLoginResponse.message{
+                            completionError(msg)
+                        }else{
+                            completionError("Algo salio mal, por favor consulte soporte")
+                        }
+                    }
+                    
+                }, completionError: { (msg) in
+                    completionError(msg)
+                })
+            }else{
+                if let msg = brigeResponse.message{
+                    completionError(msg)
+                }else{
+                    completionError("Algo salio mal, por favor consulte soporte")
+                }
+            }
+        }) { (msg) in
+            completionError(msg)
+        }*/
+    }
+    
+    public class func useCard(connectionId:String, terminalCode: String, storeCode: String, dataDictionary: Any, operationType: String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let oper:BridgeCoreOperation = BridgeCoreOperation.cardCancel(connectionId: connectionId, operation: operationType, terminalCode: terminalCode, storeCode: storeCode, object: dataDictionary)
+        
+        let (params, _, _) = oper.getParams()
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.useCardPayment(terminalCode: terminalCode, storeCode: storeCode, paramters: params), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+        
+    }
+    
     
     public class func addTender(connectionId:String, storeCode:String, terminalCode:String, payments:[PaymentMethod], userName:String, userPassword:String, trainingMode:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
@@ -314,8 +429,4 @@ public class BridgeCoreServices
             completionError(msg)
         }
     }
-    
-   
-    
-
 }

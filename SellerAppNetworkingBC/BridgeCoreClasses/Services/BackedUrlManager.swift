@@ -73,6 +73,7 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     case selectTransactionWithOperation(terminalCode:String, storeCode:String, operation:BridgeCoreOperation)
     case addItem(operation:BridgeCoreOperation)
     case totalizeTransaction(operation:BridgeCoreOperation)
+    case useCardPayment(terminalCode:String, storeCode:String, paramters:Parameters)
     
     //method
     var method:HTTPMethod{
@@ -100,6 +101,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .addItem(_):
             return .put
         case .totalizeTransaction(_):
+            return .put
+        case .useCardPayment(_,_,_):
             return .put
         }
     }
@@ -132,6 +135,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .totalizeTransaction(let operation):
             let  (_, terminal, store) = operation.getParams()
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+        case .useCardPayment(let terminal, let store, _):
+            return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
         }
     }
     
@@ -176,9 +181,11 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .totalizeTransaction(let operation):
             let (params,_,_) = operation.getParams()
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .useCardPayment(_, _, let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+            
         }
         
         return urlRequest
     }
 }
-
