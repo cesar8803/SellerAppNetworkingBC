@@ -69,6 +69,10 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     case findItem(parameters:Parameters)
     case findItemsList(parameters:Parameters)
     case generateBudget(parameters:Parameters)
+    case returnSelect(terminalCode:String, storeCode:String, operation:BridgeCoreOperation)
+    case selectTransactionWithOperation(terminalCode:String, storeCode:String, operation:BridgeCoreOperation)
+    case addItem(operation:BridgeCoreOperation)
+    case totalizeTransaction(operation:BridgeCoreOperation)
     
     //method
     var method:HTTPMethod{
@@ -88,6 +92,14 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .findItemsList(_):
             return .put
         case .generateBudget(_):
+            return .put
+        case .returnSelect(_):
+            return .put
+        case .selectTransactionWithOperation(_, _, _):
+            return .put
+        case .addItem(_):
+            return .put
+        case .totalizeTransaction(_):
             return .put
         }
     }
@@ -110,7 +122,21 @@ enum BrigdeCoreRouter:URLRequestConvertible {
             return "bridge-server-rest-liverpool/service/findItemsList"
         case .generateBudget(_):
             return "bridge-server-rest-liverpool/service/findBudget"
+        case .returnSelect(let terminal, let store, _):
+            return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+        case .selectTransactionWithOperation(let terminal, let store, _):
+            return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+        case .addItem(let operation):
+            let  (_, terminal, store) = operation.getParams()
+            return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+        case .totalizeTransaction(let operation):
+            let  (_, terminal, store) = operation.getParams()
+            return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
         }
+    }
+    
+    func pathForTerminalAndStore(terminalCode:String, storeCode:String)->String{
+        return "bridge-server-rest-liverpool/terminal/\(terminalCode)/\(storeCode)"
     }
     
     
@@ -137,6 +163,18 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .findItemsList(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .generateBudget(let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .returnSelect(_, _, let oper):
+            let (params,_,_) = oper.getParams()
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .selectTransactionWithOperation(_, _, let operation):
+            let (params,_,_) = operation.getParams()
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .addItem(let operation):
+            let (params,_,_) = operation.getParams()
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .totalizeTransaction(let operation):
+            let (params,_,_) = operation.getParams()
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         

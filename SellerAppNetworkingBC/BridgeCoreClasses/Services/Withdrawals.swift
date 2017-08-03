@@ -12,17 +12,7 @@ import AlamofireObjectMapper
 
 
 
-public enum WithdrawalsOperation:String
-{
-    case selectEnableCoins = "selectEnableCoins"
-    case selectTransaction = "selectTransaction"
-    case addTender = "addTender"
-    case finishTransaction = "finishTransaction"
-    case cancelTransaction = "cancelTransaction"
-    case findItems = "findItems"
-    case findItemsList = "findItemsList"
-    case getBudget = "calculateBudget"
-}
+
 
 public class Withdrawals
 {
