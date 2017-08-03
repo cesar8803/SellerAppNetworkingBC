@@ -95,7 +95,7 @@ public enum BCRequestParams{
     case totalizeTransaction(processPromotions:Bool)
     
     
-    func getParamsForRequest()->Parameters
+    public func getParamsForRequest()->Parameters
     {
         switch self{
         case .refundNormalTransaction(let refundOriginalTrxScannedCode,
@@ -108,7 +108,6 @@ public enum BCRequestParams{
             
             let params:Parameters = [BCParamsNames.refundOriginalTrxScannedCode.rawValue:refundOriginalTrxScannedCode,
                                      BCParamsNames.transactionSubtype.rawValue: transactionSubtype,
-                                     BCParamsNames.transactionSubtype.rawValue: BCTransactionSubtype.REFUND_NORMAL.rawValue,
                                      BCParamsNames.refundOriginalEmployee.rawValue:refundOriginalEmployee,
                                      BCParamsNames.originalTrxStore.rawValue: originalTrxStore,
                                      BCParamsNames.refundCause.rawValue:refundCause,

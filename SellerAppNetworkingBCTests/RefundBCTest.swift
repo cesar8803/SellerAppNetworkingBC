@@ -45,10 +45,11 @@ class RefundBCTest: XCTestCase {
         
         //let oper = BridgeCoreOperation.findItem(terminalCode: terminalCode, storeCode: storeCode, itemCode: itemCode, exactMaching: true)
         
-        let bcRequestsParams = BCRequestParams.refoundNormalTransaction(refundOriginalTrxScannedCode: "", refundOriginalEmployee: userName, originalTrxStore: storeCode, refundCause: 1, giftTicket: false, scannedCodeEntryMethod: "Scanned")
+        let bcRequestsParams = BCRequestParams.refundNormalTransaction(refundOriginalTrxScannedCode: "", transactionSubtype: "105", refundOriginalEmployee: userName, originalTrxStore: storeCode, refundCause: 1, giftTicket: false, scannedCodeEntryMethod: "Scanned") //.refoundNormalTransaction(refundOriginalTrxScannedCode: "", refundOriginalEmployee: userName, originalTrxStore: storeCode, refundCause: 1, giftTicket: false, scannedCodeEntryMethod: "Scanned")
         
         
-        let oper = BridgeCoreOperation.selectTransactionWithParams(connectionId: connId, terminalCode: terminalCode, storeCode: storeCode, params: bcRequestsParams.getRequestParams())
+        let oper = BridgeCoreOperation.selectTransactionWithParams(connectionId: connId, terminalCode: terminalCode, storeCode: storeCode, params: bcRequestsParams.getParamsForRequest())
+        //let oper = BridgeCoreOperation.selectTransactionWithParams(connectionId: connId, terminalCode: terminalCode, storeCode: storeCode, params: bcRequestsParams.getRequestParams())
         
         
         XCTAssertNotNil(oper, "Something was wrong, oper can not be nil")

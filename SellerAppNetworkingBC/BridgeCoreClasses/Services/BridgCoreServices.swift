@@ -111,6 +111,8 @@ public class BridgeCoreServices
                                         
                                         let oper:BridgeCoreOperation = BridgeCoreOperation.addTender(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, paymentAmount: "\(w.paymentAmount)", voidFalg: w.voidFlag, paymentMethod: "\(w.paymentMethod)", paymentQuantity: "\(w.paymentQuantity)")
                                         
+                                        
+                                        
                                         Withdrawals.bridgeCoreOperationTransact(operation: oper, completion: { (withdrawalBridgeCore) in
                                             
                                             print("\(idx) 🌎 - 🌕 ")
