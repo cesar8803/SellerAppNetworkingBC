@@ -55,6 +55,8 @@ public enum BridgeCoreOperation
     
     case getBudget( terminalCode: String, storeCode: String, budgetAmount: String?, selectedPlan: String?)
     
+    case cardCancel( connectionId: String, operation: String, terminalCode:String, storeCode:String, object:Any)
+    
     func getParams()->(Parameters, String, String)
     {
         switch self
@@ -135,7 +137,14 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.getBudget.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
+        
+        case .cardCancel(connectionId: let connectionId, operation: let operation, let terminalCode, let storeCode, let object):
             
+            let p:[String : Any] = ["connectionId":connectionId, "operation": operation, "params": object]
+            
+            let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.useCreditCard.rawValue, "params":p]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
         }
     }
 }

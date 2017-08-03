@@ -169,6 +169,20 @@ public class BridgeCoreServices
         }*/
     }
     
+    public class func useCard(connectionId:String, terminalCode: String, storeCode: String, dataDictionary: Any, operationType: String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let oper:BridgeCoreOperation = BridgeCoreOperation.cardCancel(connectionId: connectionId, operation: operationType, terminalCode: terminalCode, storeCode: storeCode, object: dataDictionary)
+        
+        let (params, _, _) = oper.getParams()
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.useCardPayment(terminalCode: terminalCode, storeCode: storeCode, paramters: params), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+        
+    }
+    
     
     public class func addTender(connectionId:String, storeCode:String, terminalCode:String, payments:[PaymentMethod], userName:String, userPassword:String, trainingMode:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
@@ -390,16 +404,5 @@ public class BridgeCoreServices
         }) { (msg) in
             completionError(msg)
         }
-        
-      
-        
-
-        
-        
-
     }
-    
-
-    
-
 }
