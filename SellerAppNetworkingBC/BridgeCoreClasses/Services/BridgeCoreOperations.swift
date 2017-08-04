@@ -12,6 +12,7 @@ import AlamofireObjectMapper
 
 public typealias ErrorStringHandlerBC = (_ errorString:String) -> Void
 
+
 public enum BridgeCoreOperationName:String
 {
     case selectEnableCoins = "selectEnableCoins"
@@ -67,6 +68,11 @@ public enum BCParamsNames: String{
     case sequenceNumber = "sequenceNumber"
     case discountType = "discountType"
     case discountValue = "discountValue"
+    
+    case promoOptionSelected = "promoOptionSelected"
+    case supervisorEntryMethod = "supervisorEntryMethod"
+    case supervisorPassword = "supervisorPassword"
+    case supervisorName = "supervisorName"
 }
 
 public enum BCRequestParams{
@@ -92,7 +98,16 @@ public enum BCRequestParams{
         discountType: Int,
         discountValue: Double)
     
+    
+    
     case totalizeTransaction(processPromotions:Bool)
+    
+    case totalizeTransactionAutorized(
+        promoOptionSelected:Int,
+        supervisorEntryMethod:String,
+        processPromotions:Bool,
+        supervisorPassword:String,
+        supervisorName:String)
     
     
     public func getParamsForRequest()->Parameters
@@ -135,6 +150,15 @@ public enum BCRequestParams{
             
         case .totalizeTransaction(let processPromotions):
             let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions]
+            return params
+            
+        case .totalizeTransactionAutorized(let promoOptionSelected, let supervisorEntryMethod, let processPromotions, let supervisorPassword, let supervisorName):
+            
+            let params: Parameters = [BCParamsNames.promoOptionSelected.rawValue:promoOptionSelected,
+                                      BCParamsNames.supervisorEntryMethod.rawValue:supervisorEntryMethod,
+                                      BCParamsNames.processPromotions.rawValue: processPromotions,
+                                      BCParamsNames.supervisorPassword.rawValue: supervisorPassword,
+                                      BCParamsNames.supervisorName.rawValue: supervisorName]
             return params
 
         }
@@ -268,7 +292,7 @@ public enum BridgeCoreOperation
             return(params, "", "")
             
         case .selectTransactionWithParams(let connectionId, let terminalCode, let storeCode, let parameters):
-            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.returnSelect.rawValue, "params":parameters, "connectionId":connectionId]
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.selectTransaction.rawValue, "params":parameters, "connectionId":connectionId]
             
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             
@@ -303,13 +327,8 @@ public enum BridgeCoreOperation
             
             let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.useCreditCard.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
-            return (params, terminalCode, storeCode)case .cardCancel(connectionId: let connectionId, operation: let operation, let terminalCode, let storeCode, let object):
-                
-                let p:[String : Any] = ["connectionId":connectionId, "operation": operation, "params": object]
-                
-                let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.useCreditCard.rawValue, "params":p]
-                let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
-                return (params, terminalCode, storeCode)
+            return (params, terminalCode, storeCode)
+        
             
         }
     }

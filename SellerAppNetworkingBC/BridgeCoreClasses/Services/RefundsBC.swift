@@ -62,5 +62,17 @@ public class RefundsBC
         }
     }
     
+    
+    public class func totalizeTransaction(connectionId:String, storeCode:String, terminalCode:String, discountParams:BCRequestParams,  completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let oper = BridgeCoreOperation.totalizeTransaction(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: discountParams.getParamsForRequest())
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.totalizeTransaction(operation: oper), completion: { (totalizeBCResponse) in
+            completion(totalizeBCResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
 
 }
