@@ -27,6 +27,7 @@ public enum BridgeCoreOperationName:String
     case addItem = "addItem"
     case applyDiscountToItem = "applyDiscountToItem"
     case totalizeTransaction = "totalizeTransaction"
+    case addMonederoPayment = "addMonederoPayment"
 }
 
 public enum BCTransactionSubtype: String {
@@ -73,6 +74,11 @@ public enum BCParamsNames: String{
     case supervisorEntryMethod = "supervisorEntryMethod"
     case supervisorPassword = "supervisorPassword"
     case supervisorName = "supervisorName"
+    
+    case paymentAmount = "paymentAmount"
+    case account = "account"
+    case paymentMethod = "paymentMethod"
+    case entryMethod = "entryMethod"
 }
 
 public enum BCRequestParams{
@@ -109,6 +115,7 @@ public enum BCRequestParams{
         supervisorPassword:String,
         supervisorName:String)
     
+    case addPurse(paymentAmount:String, account: String, paymentMethod:String, entryMethod: String)
     
     public func getParamsForRequest()->Parameters
     {
@@ -160,7 +167,13 @@ public enum BCRequestParams{
                                       BCParamsNames.supervisorPassword.rawValue: supervisorPassword,
                                       BCParamsNames.supervisorName.rawValue: supervisorName]
             return params
-
+        case .addPurse(let paymentAmount, let account, let paymentMethod, let entryMethod):
+            
+            let params: Parameters = [BCParamsNames.paymentAmount.rawValue:paymentAmount,
+                                      BCParamsNames.account.rawValue:account,
+                                      BCParamsNames.paymentMethod.rawValue: paymentMethod,
+                                      BCParamsNames.entryMethod.rawValue: entryMethod]
+            return params
         }
     }
 }
@@ -203,6 +216,7 @@ public enum BridgeCoreOperation
     
     case cardCancel( connectionId: String, operation: String, terminalCode:String, storeCode:String, object:Any)
     
+    case addPurse(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
     
     func getParams()->(Parameters, String, String)
     {
@@ -328,7 +342,13 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["operation":WithdrawalsOperation.useCreditCard.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
-        
+        case .addPurse(let connectionId, let terminalCode, let storeCode, let parameters):
+            let bridgeCoreRequestDict:Parameters = ["operation":BridgeCoreOperationName.addMonederoPayment.rawValue,
+                                                    "params":parameters, "connectionId":connectionId]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            return(params, terminalCode, storeCode)
             
         }
     }
