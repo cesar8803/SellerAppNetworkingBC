@@ -35,6 +35,7 @@ class BackendUrlManager : NSObject{
    
     // Gets the indicated service url.
     func getUrl(_ urlId:ServiceUrlsId) -> String {
+
         let selectedUrl:String = serviceUrls[urlId.rawValue]
         return selectedUrl
     }
@@ -51,14 +52,15 @@ class BackendUrlManager : NSObject{
 }
 
 
+
 enum BrigdeCoreRouter:URLRequestConvertible {
     
     //static let backendHost = "172.22.49.66:9090/"
-    static let backendHost = "172.22.209.88:9090/"
+    static var backendHost = "172.22.209.88:9090/"
     
     static let backendProtocol = "http://"
-    
-    static let baseURLString = "\(backendProtocol)\(backendHost)"
+    //This variable coul be changed from outside
+    static var baseURLString = "\(backendProtocol)\(backendHost)"
     
     //Cases
     case selectEnableCoins(parameters:Parameters)
