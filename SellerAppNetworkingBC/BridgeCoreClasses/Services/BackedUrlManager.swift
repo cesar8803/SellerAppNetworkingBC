@@ -60,7 +60,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     
     static let backendProtocol = "http://"
     //This variable coul be changed from outside
-    static var baseURLString = "\(backendProtocol)\(backendHost)"
+    static public var baseURLString = "\(backendProtocol)\(backendHost)"
     
     //Cases
     case selectEnableCoins(parameters:Parameters)
@@ -76,6 +76,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     case addItem(operation:BridgeCoreOperation)
     case totalizeTransaction(operation:BridgeCoreOperation)
     case useCardPayment(terminalCode:String, storeCode:String, paramters:Parameters)
+    case addPurse(operation:BridgeCoreOperation)
     
     //method
     var method:HTTPMethod{
@@ -105,6 +106,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .totalizeTransaction(_):
             return .put
         case .useCardPayment(_,_,_):
+            return .put
+        case .addPurse(_):
             return .put
         }
     }
@@ -139,6 +142,9 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
         case .useCardPayment(let terminal, let store, _):
             return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
+        case .addPurse(let operation):
+            let  (_, terminal, store) = operation.getParams()
+            return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
         }
     }
     
@@ -185,7 +191,9 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .useCardPayment(_, _, let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
-            
+        case .addPurse(let oper):
+            let (params,_,_) = oper.getParams()
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
         return urlRequest
