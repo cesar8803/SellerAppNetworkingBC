@@ -23,7 +23,7 @@ class BackendUrlManager : NSObject{
     fileprivate var serviceUrls:[String] = [String]();
     
     fileprivate func createUrls() {
-        let backendHost = "172.22.209.88:9090/"
+        let backendHost = "172.22.209.218:9090/"
         let backendProtocol = "http://"
         let servicesCount = BackendUrlManager.SERVICE_CONTEXT.count
         for index in 0..<servicesCount {
@@ -56,7 +56,7 @@ class BackendUrlManager : NSObject{
 public enum BrigdeCoreRouter:URLRequestConvertible {
     
     //static let backendHost = "172.22.49.66:9090/"
-    static var backendHost = "172.22.209.88:9090/"
+    static var backendHost = "172.22.209.218:9090/"
     
     static let backendProtocol = "http://"
     //This variable coul be changed from outside
