@@ -53,7 +53,7 @@ class BackendUrlManager : NSObject{
 
 
 
-enum BrigdeCoreRouter:URLRequestConvertible {
+public enum BrigdeCoreRouter:URLRequestConvertible {
     
     //static let backendHost = "172.22.49.66:9090/"
     static var backendHost = "172.22.209.88:9090/"
@@ -147,7 +147,7 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     }
     
     
-    func asURLRequest() throws -> URLRequest
+    public func asURLRequest() throws -> URLRequest
     {
         let url = try BrigdeCoreRouter.baseURLString.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
