@@ -23,7 +23,7 @@ class BackendUrlManager : NSObject{
     fileprivate var serviceUrls:[String] = [String]();
     
     fileprivate func createUrls() {
-        let backendHost = "172.22.209.88:9090/"
+        let backendHost = "172.22.209.218:9090/"
         let backendProtocol = "http://"
         let servicesCount = BackendUrlManager.SERVICE_CONTEXT.count
         for index in 0..<servicesCount {
@@ -35,6 +35,7 @@ class BackendUrlManager : NSObject{
    
     // Gets the indicated service url.
     func getUrl(_ urlId:ServiceUrlsId) -> String {
+
         let selectedUrl:String = serviceUrls[urlId.rawValue]
         return selectedUrl
     }
@@ -51,14 +52,15 @@ class BackendUrlManager : NSObject{
 }
 
 
-enum BrigdeCoreRouter:URLRequestConvertible {
+
+public enum BrigdeCoreRouter:URLRequestConvertible {
     
     //static let backendHost = "172.22.49.66:9090/"
-    static let backendHost = "172.22.209.88:9090/"
+    static var backendHost = "172.22.209.218:9090/"
     
     static let backendProtocol = "http://"
-    
-    static let baseURLString = "\(backendProtocol)\(backendHost)"
+    //This variable coul be changed from outside
+    static public var baseURLString = "\(backendProtocol)\(backendHost)"
     
     //Cases
     case selectEnableCoins(parameters:Parameters)
@@ -74,6 +76,7 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     case addItem(operation:BridgeCoreOperation)
     case totalizeTransaction(operation:BridgeCoreOperation)
     case useCardPayment(terminalCode:String, storeCode:String, paramters:Parameters)
+    case addPurse(operation:BridgeCoreOperation)
     
     //method
     var method:HTTPMethod{
@@ -103,6 +106,8 @@ enum BrigdeCoreRouter:URLRequestConvertible {
         case .totalizeTransaction(_):
             return .put
         case .useCardPayment(_,_,_):
+            return .put
+        case .addPurse(_):
             return .put
         }
     }
@@ -137,6 +142,9 @@ enum BrigdeCoreRouter:URLRequestConvertible {
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
         case .useCardPayment(let terminal, let store, _):
             return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
+        case .addPurse(let operation):
+            let  (_, terminal, store) = operation.getParams()
+            return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
         }
     }
     
@@ -145,7 +153,7 @@ enum BrigdeCoreRouter:URLRequestConvertible {
     }
     
     
-    func asURLRequest() throws -> URLRequest
+    public func asURLRequest() throws -> URLRequest
     {
         let url = try BrigdeCoreRouter.baseURLString.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
@@ -183,7 +191,9 @@ enum BrigdeCoreRouter:URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .useCardPayment(_, _, let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
-            
+        case .addPurse(let oper):
+            let (params,_,_) = oper.getParams()
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
         return urlRequest
