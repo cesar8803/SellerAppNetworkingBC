@@ -218,6 +218,8 @@ public enum BridgeCoreOperation
     
     case addPurse(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
     
+    case finishTransactionWithParams(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
     func getParams()->(Parameters, String, String)
     {
         switch self
@@ -349,6 +351,14 @@ public enum BridgeCoreOperation
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             
             return(params, terminalCode, storeCode)
+            
+        case .finishTransactionWithParams(let connectionId, let terminalCode, let storeCode, let params):
+            let p:Parameters = params
+            
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.finishTransaction.rawValue, "params":p]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
+            
             
         }
     }
