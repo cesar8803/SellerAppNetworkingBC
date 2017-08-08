@@ -77,6 +77,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     case totalizeTransaction(operation:BridgeCoreOperation)
     case useCardPayment(terminalCode:String, storeCode:String, paramters:Parameters)
     case addPurse(operation:BridgeCoreOperation)
+    case closeSession(terminalCode:String, storeCode:String)
+    case startupSession(terminalCode:String, storeCode:String)
     
     //method
     var method:HTTPMethod{
@@ -109,6 +111,10 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             return .put
         case .addPurse(_):
             return .put
+        case .closeSession(_, _):
+            return .delete
+        case .startupSession(_, _):
+            return .post
         }
     }
     
@@ -145,6 +151,10 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addPurse(let operation):
             let  (_, terminal, store) = operation.getParams()
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+        case .closeSession(let terminalCode, let storeCode):
+             return pathForTerminalAndStore(terminalCode: terminalCode, storeCode: storeCode)
+        case .startupSession(let terminalCode, let storeCode):
+            return pathForTerminalAndStore(terminalCode: terminalCode, storeCode: storeCode) + "/1"
         }
     }
     
@@ -194,6 +204,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addPurse(let oper):
             let (params,_,_) = oper.getParams()
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .closeSession(_, _),
+             .startupSession(_, _): break
         }
         
         return urlRequest
