@@ -433,4 +433,23 @@ public class BridgeCoreServices
             completionError(msg)
         }
     }
+    
+    public class func closeSession(storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.closeSession(terminalCode: terminalCode, storeCode: storeCode), completion: { (closeTrasactionResponse) in
+            completion(closeTrasactionResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    public class func startUpSession(storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.startupSession(terminalCode: terminalCode, storeCode: storeCode), completion: { (closeTrasactionResponse) in
+            completion(closeTrasactionResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+        
+    }
+
 }
