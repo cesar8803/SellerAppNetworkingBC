@@ -40,10 +40,22 @@ public class BridgeCoreServices
         let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"logoff"] as [String : Any]
         
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
-        
-        
     
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.logoff(terminalCode: terminalCode, storeCode: storeCode, parameters: p), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, printerTypeName:String, printerStationType:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod, "printerTypeName":printerTypeName, "printerStationType":printerStationType] as [String : Any]
+        
+        let otherP = ["params":bridgeCoreRequestDict,"operation":"findWalletBalance"] as [String : Any]
+        let p:Parameters = ["bridgeCoreRequest":otherP]
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.findWalletBalance(terminalCode: terminalCode, storeCode: storeCode, paramters: p), completion: { (bridgeCoreResponse) in
             completion(bridgeCoreResponse)
         }) { (msg) in
             completionError(msg)

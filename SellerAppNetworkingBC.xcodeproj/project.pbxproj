@@ -58,6 +58,8 @@
 		2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6E1F280B1700292163 /* HierarchyGroup.swift */; };
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
 		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
+		55E35FA51F3CF24E00E93EB6 /* Balancedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */; };
+		55E35FA71F3CF2E300E93EB6 /* walletBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */; };
 		57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9CD891F29020200367A15 /* CloseTerminal.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		71419A3B1F30FFC3005F70E3 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71419A3A1F30FFC3005F70E3 /* Amount.swift */; };
@@ -169,6 +171,8 @@
 		2B994B6C1F280A3B00292163 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Price.swift; path = Services/Price.swift; sourceTree = "<group>"; };
 		2B994B6E1F280B1700292163 /* HierarchyGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HierarchyGroup.swift; path = Objects/HierarchyGroup.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
+		55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balancedata.swift; path = Objects/Balancedata.swift; sourceTree = "<group>"; };
+		55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = walletBalance.swift; path = Objects/walletBalance.swift; sourceTree = "<group>"; };
 		57F9CD891F29020200367A15 /* CloseTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTerminal.swift; sourceTree = "<group>"; };
 		71419A3A1F30FFC3005F70E3 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = Objects/Amount.swift; sourceTree = "<group>"; };
 		7156AD951F2A67AB00761F38 /* BudgetServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetServices.swift; path = Services/BudgetServices.swift; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 				7156ADA91F2AA14F00761F38 /* BudgetInstallments.swift */,
 				7156ADAB1F2AA21700761F38 /* BudgetAmount.swift */,
 				71419A3A1F30FFC3005F70E3 /* Amount.swift */,
+				55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */,
+				55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -691,9 +697,11 @@
 				2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */,
 				7156ADAC1F2AA21700761F38 /* BudgetAmount.swift in Sources */,
 				A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */,
+				55E35FA51F3CF24E00E93EB6 /* Balancedata.swift in Sources */,
 				A95FD83A1EF9D2650094AA1C /* Benefitdata.swift in Sources */,
 				A95FD83E1EF9D2650094AA1C /* Optionmenu.swift in Sources */,
 				2B9096931F2A53070026CFDE /* ItemDataList.swift in Sources */,
+				55E35FA71F3CF2E300E93EB6 /* walletBalance.swift in Sources */,
 				2B994B651F27EC8200292163 /* RefundsBC.swift in Sources */,
 				7156ADAA1F2AA14F00761F38 /* BudgetInstallments.swift in Sources */,
 				A95FD8391EF9D2650094AA1C /* BCResponse.swift in Sources */,
