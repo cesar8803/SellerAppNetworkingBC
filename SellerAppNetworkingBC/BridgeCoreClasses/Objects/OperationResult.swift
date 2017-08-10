@@ -14,7 +14,6 @@ public class OperationResult: Mappable{
     public var exchangeCurrencyListData: [ExchangeCurrencyListData]?
     public var invoiced: Int?
     public var docNumber: String?
-    public var itemErrorList: [String]?
     
     /*******************************
      FindItems
@@ -31,8 +30,10 @@ public class OperationResult: Mappable{
     /********************************
      FindItemList
     *********************************/
-
     public var itemDataList: [ItemDataList]?
+    public var itemErrorList: [ItemErrorList]?
+    public var itemErrorListString: [String]?
+
     /******************************/
     
     
@@ -107,9 +108,10 @@ public class OperationResult: Mappable{
         hierarchyLevelData <- map["hierarchyLevelData"]
         hierarchyGroupData <- map["hierarchyGroupData"]
         totalPages <- map["totalPages"]
-        itemErrorList <- map["itemErrorList"]
         
         itemDataList <- map["itemDataList"]
+        itemErrorList <- map["itemErrorList"]
+        itemErrorListString <- map["itemErrorList"]
         
         printerDocument <- map["printerDocument"]
         originalItems <- map["originalItems"]
@@ -161,4 +163,5 @@ public class OperationResult: Mappable{
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
         
     }
+
 }
