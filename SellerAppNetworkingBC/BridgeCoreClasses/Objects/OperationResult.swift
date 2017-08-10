@@ -90,7 +90,7 @@ public class OperationResult: Mappable{
     public var discountsTransactionTotal: DiscountsTransactionTotal?
     public var taxDetailPerceptions: [String]?
     public var paymentsSurchargeTotal: PaymentsSurChargetotal?
-    
+    public var balanceData: Balancedata?
     
     /****************************/
     
@@ -161,7 +161,7 @@ public class OperationResult: Mappable{
         discountsTransactionTotal <- map["discountsTransactionTotal"]
         taxDetailPerceptions <- map["taxDetailPerceptions"]
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
-        
+        balanceData <- map["balanceData"]
     }
 
 }
