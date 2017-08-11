@@ -107,6 +107,8 @@
 		A95FD84A1EF9D2650094AA1C /* Storedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82A1EF9D2650094AA1C /* Storedata.swift */; };
 		A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82B1EF9D2650094AA1C /* Storeslist.swift */; };
 		A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */; };
+		A9E05B951F3CD450001ACA0A /* ItemErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */; };
+		A9E05B971F3CD4F8001ACA0A /* ItemErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +225,8 @@
 		A95FD82A1EF9D2650094AA1C /* Storedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storedata.swift; sourceTree = "<group>"; };
 		A95FD82B1EF9D2650094AA1C /* Storeslist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storeslist.swift; sourceTree = "<group>"; };
 		A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tendersmenu.swift; sourceTree = "<group>"; };
+		A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorList.swift; path = Objects/ItemErrorList.swift; sourceTree = "<group>"; };
+		A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorData.swift; path = Objects/ItemErrorData.swift; sourceTree = "<group>"; };
 		E3B20915DA025EDC92B2CF07 /* Pods-SellerAppNetworkingBCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F09B66C44678F716BBD9DB15 /* Pods-SellerAppNetworkingBC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC.release.xcconfig"; sourceTree = "<group>"; };
 		F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingBCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,10 +293,9 @@
 				2B0CA3E01F0DBC70007A8EB0 /* Entregado.swift */,
 				2B0CA3E21F0DBCF1007A8EB0 /* ValesPapel.swift */,
 				2B994B681F2808C600292163 /* ItemData.swift */,
-				2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */,
 				2B994B6C1F280A3B00292163 /* Price.swift */,
 				2B994B6E1F280B1700292163 /* HierarchyGroup.swift */,
-				2B9096911F2A50CC0026CFDE /* ItemDataList.swift */,
+				2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */,
 				7156AD971F2A8F6300761F38 /* AdditionalData.swift */,
 				7156AD9B1F2A8FBE00761F38 /* AdditionalDataListField.swift */,
 				7156AD9D1F2A8FFA00761F38 /* FieldRequests.swift */,
@@ -304,6 +307,9 @@
 				7156ADA91F2AA14F00761F38 /* BudgetInstallments.swift */,
 				7156ADAB1F2AA21700761F38 /* BudgetAmount.swift */,
 				71419A3A1F30FFC3005F70E3 /* Amount.swift */,
+				2B9096911F2A50CC0026CFDE /* ItemDataList.swift */,
+				A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */,
+				A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */,
 				55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */,
 				55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */,
 			);
@@ -657,6 +663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B0CA3D71F0DB9BD007A8EB0 /* DiscountsTransactionTotal.swift in Sources */,
+				A9E05B971F3CD4F8001ACA0A /* ItemErrorData.swift in Sources */,
 				A95FD83D1EF9D2650094AA1C /* Operationresult.swift in Sources */,
 				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
 				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,
@@ -680,6 +687,7 @@
 				A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */,
 				7156ADA21F2A907D00761F38 /* AdditionalInformation.swift in Sources */,
 				2B0CA3AB1F0DA314007A8EB0 /* RepresentationWD.swift in Sources */,
+				A9E05B951F3CD450001ACA0A /* ItemErrorList.swift in Sources */,
 				2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */,
 				A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */,
 				2B788ECF1F0C54F9004E5F1F /* BridgeCore.swift in Sources */,
