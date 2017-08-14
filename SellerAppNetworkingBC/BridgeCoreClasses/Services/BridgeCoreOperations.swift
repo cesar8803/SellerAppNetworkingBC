@@ -12,6 +12,13 @@ import AlamofireObjectMapper
 
 public typealias ErrorStringHandlerBC = (_ errorString:String) -> Void
 
+public struct Item{
+    public let itemPrice:String
+    public let warrantySelected:Bool
+    public let itemQty:String
+    public let itemBarcode:String
+    public let type:String =  "map"
+}
 
 public enum BridgeCoreOperationName:String
 {
@@ -28,6 +35,7 @@ public enum BridgeCoreOperationName:String
     case applyDiscountToItem = "applyDiscountToItem"
     case totalizeTransaction = "totalizeTransaction"
     case addMonederoPayment = "addMonederoPayment"
+    case addItemList = "addItemList"
 }
 
 public enum BCTransactionSubtype: String {
@@ -79,6 +87,9 @@ public enum BCParamsNames: String{
     case account = "account"
     case paymentMethod = "paymentMethod"
     case entryMethod = "entryMethod"
+    
+    case warrantySelected = "warrantySelected"
+    case type = "type"
 }
 
 public enum BCRequestParams{
@@ -116,6 +127,8 @@ public enum BCRequestParams{
         supervisorName:String)
     
     case addPurse(paymentAmount:String, account: String, paymentMethod:String, entryMethod: String)
+    
+    case addItemList(product: Item)
     
     public func getParamsForRequest()->Parameters
     {
@@ -174,6 +187,15 @@ public enum BCRequestParams{
                                       BCParamsNames.paymentMethod.rawValue: paymentMethod,
                                       BCParamsNames.entryMethod.rawValue: entryMethod]
             return params
+        case .addItemList(let item):
+            let params: Parameters = [
+                BCParamsNames.type.rawValue : "map",
+                BCParamsNames.itemBarcode.rawValue: item.itemBarcode,
+                BCParamsNames.itemPrice.rawValue: item.itemPrice,
+                BCParamsNames.warrantySelected.rawValue: item.warrantySelected,
+                BCParamsNames.itemQty.rawValue: item.itemQty
+            ]
+            return params
         }
     }
 }
@@ -219,6 +241,8 @@ public enum BridgeCoreOperation
     case addPurse(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
     
     case finishTransactionWithParams(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
+    case addItemList(connectionId: String, terminal:String, store:String, params: [Parameters])
     
     func getParams()->(Parameters, String, String)
     {
@@ -359,6 +383,14 @@ public enum BridgeCoreOperation
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
+        case .addItemList(let connectionId, let terminal, let store, let params):
+            
+            let itemDataList = ["value":params]
+            
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.addItemList.rawValue, "params":["itemDataList":itemDataList]]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminal, store)
             
         }
     }
