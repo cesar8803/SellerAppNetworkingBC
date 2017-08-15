@@ -85,5 +85,18 @@ public class RefundsBC
         }
     }
     
-
+    public class func addItemList(connectionId:String, storeCode:String, terminalCode:String, addItemListParams:[Item],completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let p = addItemListParams.map { (item) -> Parameters in
+            return BCRequestParams.addItemList(product: item).getParamsForRequest()
+        }
+        
+        let oper = BridgeCoreOperation.addItemList(connectionId: connectionId, terminal: terminalCode, store: storeCode, params: p)
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addItemList(operation: oper), completion: { (addItemListBCResponse) in
+            completion(addItemListBCResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
 }
