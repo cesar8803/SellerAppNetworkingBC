@@ -80,6 +80,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     case closeSession(terminalCode:String, storeCode:String)
     case startupSession(terminalCode:String, storeCode:String)
     case findWalletBalance(terminalCode:String, storeCode:String, paramters:Parameters)
+    case addItemList(operation:BridgeCoreOperation)
     
     //method
     var method:HTTPMethod{
@@ -117,6 +118,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .startupSession(_, _):
             return .post
         case .findWalletBalance(_,_,_):
+            return .put
+        case .addItemList(_):
             return .put
         }
     }
@@ -160,6 +163,9 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             return pathForTerminalAndStore(terminalCode: terminalCode, storeCode: storeCode) + "/1"
         case .findWalletBalance(_, _, _):
             return "bridge-server-rest-liverpool/service/findBalance"
+        case .addItemList(let operation):
+            let  (_, terminal, store) = operation.getParams()
+            return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
         }
     }
     
@@ -212,6 +218,9 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .closeSession(_, _),
              .startupSession(_, _): break
         case .findWalletBalance(_,_,let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .addItemList(let oper):
+            let (params,_,_) = oper.getParams()
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
