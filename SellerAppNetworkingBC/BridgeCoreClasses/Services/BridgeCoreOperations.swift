@@ -117,6 +117,11 @@ public enum BCRequestParams{
     
     case addPurse(paymentAmount:String, account: String, paymentMethod:String, entryMethod: String)
     
+    case addGenericItem(itemPrice:String,
+        itemDepartment: String,
+        itemDepartmentPrice: String,
+        itemQty: String)
+    
     public func getParamsForRequest()->Parameters
     {
         switch self{
@@ -173,6 +178,13 @@ public enum BCRequestParams{
                                       BCParamsNames.account.rawValue:account,
                                       BCParamsNames.paymentMethod.rawValue: paymentMethod,
                                       BCParamsNames.entryMethod.rawValue: entryMethod]
+            return params
+            
+        case .addGenericItem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty):
+            let params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
+                                      BCParamsNames.itemDepartment.rawValue: itemDepartment,
+                                      BCParamsNames.itemDepartmentPrice.rawValue: itemDepartmentPrice,
+                                      BCParamsNames.itemQty.rawValue:itemQty]
             return params
         }
     }
