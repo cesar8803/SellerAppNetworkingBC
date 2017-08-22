@@ -128,12 +128,14 @@ public enum BCRequestParams{
     
     case addPurse(paymentAmount:String, account: String, paymentMethod:String, entryMethod: String)
     
+<<<<<<< HEAD
     case addGenericItem(itemPrice:String,
         itemDepartment: String,
         itemDepartmentPrice: String,
         itemQty: String)
-    
+=======
     case addItemList(product: Item)
+>>>>>>> develop
     
     public func getParamsForRequest()->Parameters
     {
@@ -192,13 +194,14 @@ public enum BCRequestParams{
                                       BCParamsNames.paymentMethod.rawValue: paymentMethod,
                                       BCParamsNames.entryMethod.rawValue: entryMethod]
             return params
+<<<<<<< HEAD
             
         case .addGenericItem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty):
             let params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
                                       BCParamsNames.itemDepartment.rawValue: itemDepartment,
                                       BCParamsNames.itemDepartmentPrice.rawValue: itemDepartmentPrice,
                                       BCParamsNames.itemQty.rawValue:itemQty]
-            return params
+=======
         case .addItemList(let item):
             let params: Parameters = [
                 BCParamsNames.type.rawValue : "map",
@@ -207,6 +210,7 @@ public enum BCRequestParams{
                 BCParamsNames.warrantySelected.rawValue: item.warrantySelected,
                 BCParamsNames.itemQty.rawValue: item.itemQty
             ]
+>>>>>>> develop
             return params
         }
     }

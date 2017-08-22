@@ -10,12 +10,23 @@ import Foundation
 import ObjectMapper
 
 public class ItemDataList: Mappable{
+    
     public var itemLiverpoolData: [ItemLiverpoolData]?
     
     required public  init?(map: Map){
     }
     
     public func mapping(map: Map){
+        
+        var data: ItemLiverpoolData? = nil
+        data <- map["itemLiverpoolData"]
+        
+        if data != nil {
+            itemLiverpoolData = [data!]
+            return
+        }
+        
         itemLiverpoolData <- map["itemLiverpoolData"]
+        
     }
 }
