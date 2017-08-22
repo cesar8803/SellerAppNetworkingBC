@@ -17,7 +17,15 @@ public struct Item{
     public let warrantySelected:Bool
     public let itemQty:String
     public let itemBarcode:String
-    public let type:String =  "map"
+    public let type:String
+    
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
+        self.itemPrice = itemPrice
+        self.warrantySelected = warrantySelected
+        self.itemQty = itemQty
+        self.itemBarcode = itemBarcode
+        self.type = "map"
+    }
 }
 
 public enum BridgeCoreOperationName:String
