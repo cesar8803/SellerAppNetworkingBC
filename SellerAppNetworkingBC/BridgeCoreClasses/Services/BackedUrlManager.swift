@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+/*
 class BackendUrlManager : NSObject{
     
     enum ServiceUrlsId : Int {
@@ -23,11 +24,11 @@ class BackendUrlManager : NSObject{
     fileprivate var serviceUrls:[String] = [String]();
     
     fileprivate func createUrls() {
-        let backendHost = "172.22.209.218:9090/"
-        let backendProtocol = "http://"
+        //let backendHost = "172.22.209.218:9090/"
+        //let backendProtocol = "http://"
         let servicesCount = BackendUrlManager.SERVICE_CONTEXT.count
         for index in 0..<servicesCount {
-            let nextUrl:String = "\(backendProtocol)\(backendHost)\(BackendUrlManager.SERVICE_CONTEXT[index])";
+            let nextUrl:String = BridgeCoreConnection.sharedInstance.urlString //"\(backendProtocol)\(backendHost)\(BackendUrlManager.SERVICE_CONTEXT[index])";
             serviceUrls.append(nextUrl)
         }
     }
@@ -50,17 +51,11 @@ class BackendUrlManager : NSObject{
     // Singleton intance.
     static let Current:BackendUrlManager = BackendUrlManager()
 }
-
-
+*/
 
 public enum BrigdeCoreRouter:URLRequestConvertible {
-    
-    //static let backendHost = "172.22.49.66:9090/"
-    static var backendHost = "172.22.209.218:9090/"
-    
-    static let backendProtocol = "http://"
     //This variable coul be changed from outside
-    static public var baseURLString = "\(backendProtocol)\(backendHost)"
+    static public var baseURLString = BridgeCoreConnection.sharedInstance.urlString
     
     //Cases
     case selectEnableCoins(parameters:Parameters)

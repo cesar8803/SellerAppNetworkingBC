@@ -27,6 +27,7 @@ public class RepresentationWD: Mappable{
     public var secondCashLimitExceeded: Int?
     public var additionalData: [AdditionalData]?
     public var fieldRequests: [FieldRequests]?
+    public var storesList: [StoresList]?
     
     /****************************/
     /*      CloseTerminal      */
@@ -65,5 +66,6 @@ public class RepresentationWD: Mappable{
         assignedCashDrawer <- map["assignedCashDrawer"]
         additionalData <- map["additionalData"]
         fieldRequests <- map["fieldRequests"]
+        storesList <- map["storesList"]
     }
 }

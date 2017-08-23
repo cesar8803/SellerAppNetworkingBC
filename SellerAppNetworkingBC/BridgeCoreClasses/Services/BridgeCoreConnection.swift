@@ -8,6 +8,8 @@
 
 import Foundation
 
-class BridgeCoreConnection{
-    
+public class BridgeCoreConnection{
+    public static let sharedInstance:BridgeCoreConnection = BridgeCoreConnection()
+    public var urlString:String = ""
+    private init(){}
 }
