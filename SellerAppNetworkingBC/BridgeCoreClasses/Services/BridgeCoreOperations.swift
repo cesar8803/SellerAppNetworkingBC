@@ -98,6 +98,8 @@ public enum BCParamsNames: String{
     
     case warrantySelected = "warrantySelected"
     case type = "type"
+    case somsAccountNumber = "somsAccountNumber"
+    case operationsToApprove = "operationsToApprove"
 }
 
 public enum BCRequestParams{
@@ -108,6 +110,28 @@ public enum BCRequestParams{
         refundCause:Int,
         giftTicket:Bool,
         scannedCodeEntryMethod:String)
+    
+    case refundSomsTransaction(refundOriginalTrxScannedCode:String,
+        transactionSubtype: String,
+        refundOriginalEmployee:String,
+        originalTrxStore:String,
+        somsAccountNumber:String,
+        refundCause:Int,
+        giftTicket:Bool
+    )
+    
+    case selectTransactionSupervisor(supervisorEntryMethod: String,
+        refundOriginalTrxScannedCode:String,
+        transactionSubtype: String,
+        refundOriginalEmployee:String,
+        originalTrxStore:String,
+        supervisorName: String,
+        refundCause:Int,
+        giftTicket:Bool,
+        operationsToApprove: String,
+        supervisorPassword: String,
+        somsAccountNumber: String
+    )
         
     case additem(itemPrice:String,
         itemDepartment: String,
@@ -162,6 +186,47 @@ public enum BCRequestParams{
                                      BCParamsNames.giftTicket.rawValue: giftTicket,
                                      BCParamsNames.scannedCodeEntryMethod.rawValue: scannedCodeEntryMethod]
             
+            return params
+            
+        case .refundSomsTransaction(let refundOriginalTrxScannedCode,
+                                    let transactionSubtype,
+                                    let refundOriginalEmployee,
+                                    let originalTrxStore,
+                                    let somsAccountNumber,
+                                    let refundCause,
+                                    let giftTicket):
+            
+            let params:Parameters = [BCParamsNames.refundOriginalTrxScannedCode.rawValue:refundOriginalTrxScannedCode,
+                                     BCParamsNames.transactionSubtype.rawValue: transactionSubtype,
+                                     BCParamsNames.refundOriginalEmployee.rawValue:refundOriginalEmployee,
+                                     BCParamsNames.originalTrxStore.rawValue: originalTrxStore,
+                                     BCParamsNames.somsAccountNumber.rawValue: somsAccountNumber,
+                                     BCParamsNames.refundCause.rawValue:refundCause,
+                                     BCParamsNames.giftTicket.rawValue: giftTicket]
+            return params
+        case .selectTransactionSupervisor(let supervisorEntryMethod,
+                                          let refundOriginalTrxScannedCode,
+                                          let transactionSubtype,
+                                          let refundOriginalEmployee,
+                                          let originalTrxStore,
+                                          let supervisorName,
+                                          let refundCause,
+                                          let giftTicket,
+                                          let operationsToApprove,
+                                          let supervisorPassword,
+                                          let somsAccountNumber):
+        
+            let params: Parameters = [BCParamsNames.supervisorEntryMethod.rawValue:supervisorEntryMethod,
+                                      BCParamsNames.refundOriginalTrxScannedCode.rawValue:refundOriginalTrxScannedCode,
+                                      BCParamsNames.transactionSubtype.rawValue: transactionSubtype,
+                                      BCParamsNames.refundOriginalEmployee.rawValue:refundOriginalEmployee,
+                                      BCParamsNames.originalTrxStore.rawValue: originalTrxStore,
+                                      BCParamsNames.supervisorName.rawValue:supervisorName,
+                                      BCParamsNames.refundCause.rawValue:refundCause,
+                                      BCParamsNames.giftTicket.rawValue: giftTicket,
+                                      BCParamsNames.operationsToApprove.rawValue:operationsToApprove,
+                                      BCParamsNames.supervisorPassword.rawValue:supervisorPassword,
+                                      BCParamsNames.somsAccountNumber.rawValue:somsAccountNumber]
             return params
             
         case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions):
