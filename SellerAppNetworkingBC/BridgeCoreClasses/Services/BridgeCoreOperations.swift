@@ -17,7 +17,15 @@ public struct Item{
     public let warrantySelected:Bool
     public let itemQty:String
     public let itemBarcode:String
-    public let type:String =  "map"
+    public let type:String
+    
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
+        self.itemPrice = itemPrice
+        self.warrantySelected = warrantySelected
+        self.itemQty = itemQty
+        self.itemBarcode = itemBarcode
+        self.type = "map"
+    }
 }
 
 public enum BridgeCoreOperationName:String
@@ -90,6 +98,8 @@ public enum BCParamsNames: String{
     
     case warrantySelected = "warrantySelected"
     case type = "type"
+    case somsAccountNumber = "somsAccountNumber"
+    case operationsToApprove = "operationsToApprove"
 }
 
 public enum BCRequestParams{
@@ -100,6 +110,28 @@ public enum BCRequestParams{
         refundCause:Int,
         giftTicket:Bool,
         scannedCodeEntryMethod:String)
+    
+    case refundSomsTransaction(refundOriginalTrxScannedCode:String,
+        transactionSubtype: String,
+        refundOriginalEmployee:String,
+        originalTrxStore:String,
+        somsAccountNumber:String,
+        refundCause:Int,
+        giftTicket:Bool
+    )
+    
+    case selectTransactionSupervisor(supervisorEntryMethod: String,
+        refundOriginalTrxScannedCode:String,
+        transactionSubtype: String,
+        refundOriginalEmployee:String,
+        originalTrxStore:String,
+        supervisorName: String,
+        refundCause:Int,
+        giftTicket:Bool,
+        operationsToApprove: String,
+        supervisorPassword: String,
+        somsAccountNumber: String
+    )
         
     case additem(itemPrice:String,
         itemDepartment: String,
@@ -128,6 +160,11 @@ public enum BCRequestParams{
     
     case addPurse(paymentAmount:String, account: String, paymentMethod:String, entryMethod: String)
     
+    case addGenericItem(itemPrice:String,
+        itemDepartment: String,
+        itemDepartmentPrice: String,
+        itemQty: String)
+    
     case addItemList(product: Item)
     
     public func getParamsForRequest()->Parameters
@@ -149,6 +186,47 @@ public enum BCRequestParams{
                                      BCParamsNames.giftTicket.rawValue: giftTicket,
                                      BCParamsNames.scannedCodeEntryMethod.rawValue: scannedCodeEntryMethod]
             
+            return params
+            
+        case .refundSomsTransaction(let refundOriginalTrxScannedCode,
+                                    let transactionSubtype,
+                                    let refundOriginalEmployee,
+                                    let originalTrxStore,
+                                    let somsAccountNumber,
+                                    let refundCause,
+                                    let giftTicket):
+            
+            let params:Parameters = [BCParamsNames.refundOriginalTrxScannedCode.rawValue:refundOriginalTrxScannedCode,
+                                     BCParamsNames.transactionSubtype.rawValue: transactionSubtype,
+                                     BCParamsNames.refundOriginalEmployee.rawValue:refundOriginalEmployee,
+                                     BCParamsNames.originalTrxStore.rawValue: originalTrxStore,
+                                     BCParamsNames.somsAccountNumber.rawValue: somsAccountNumber,
+                                     BCParamsNames.refundCause.rawValue:refundCause,
+                                     BCParamsNames.giftTicket.rawValue: giftTicket]
+            return params
+        case .selectTransactionSupervisor(let supervisorEntryMethod,
+                                          let refundOriginalTrxScannedCode,
+                                          let transactionSubtype,
+                                          let refundOriginalEmployee,
+                                          let originalTrxStore,
+                                          let supervisorName,
+                                          let refundCause,
+                                          let giftTicket,
+                                          let operationsToApprove,
+                                          let supervisorPassword,
+                                          let somsAccountNumber):
+        
+            let params: Parameters = [BCParamsNames.supervisorEntryMethod.rawValue:supervisorEntryMethod,
+                                      BCParamsNames.refundOriginalTrxScannedCode.rawValue:refundOriginalTrxScannedCode,
+                                      BCParamsNames.transactionSubtype.rawValue: transactionSubtype,
+                                      BCParamsNames.refundOriginalEmployee.rawValue:refundOriginalEmployee,
+                                      BCParamsNames.originalTrxStore.rawValue: originalTrxStore,
+                                      BCParamsNames.supervisorName.rawValue:supervisorName,
+                                      BCParamsNames.refundCause.rawValue:refundCause,
+                                      BCParamsNames.giftTicket.rawValue: giftTicket,
+                                      BCParamsNames.operationsToApprove.rawValue:operationsToApprove,
+                                      BCParamsNames.supervisorPassword.rawValue:supervisorPassword,
+                                      BCParamsNames.somsAccountNumber.rawValue:somsAccountNumber]
             return params
             
         case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions):
@@ -186,6 +264,13 @@ public enum BCRequestParams{
                                       BCParamsNames.account.rawValue:account,
                                       BCParamsNames.paymentMethod.rawValue: paymentMethod,
                                       BCParamsNames.entryMethod.rawValue: entryMethod]
+            return params
+            
+        case .addGenericItem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty):
+            let params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
+                                      BCParamsNames.itemDepartment.rawValue: itemDepartment,
+                                      BCParamsNames.itemDepartmentPrice.rawValue: itemDepartmentPrice,
+                                      BCParamsNames.itemQty.rawValue:itemQty]
             return params
         case .addItemList(let item):
             let params: Parameters = [

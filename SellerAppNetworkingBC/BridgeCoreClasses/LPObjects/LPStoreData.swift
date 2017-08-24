@@ -17,7 +17,7 @@ public class LPStoreData {
     public var storeSubType: String?
     public var longDescription: String?
     
-    init(mappable: Storedata?) {
+    init(mappable: StoreData?) {
         
         guard let response = mappable else {
             return
