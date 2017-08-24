@@ -29,6 +29,20 @@ public class RepresentationWD: Mappable{
     public var fieldRequests: [FieldRequests]?
     public var storesList: [StoresList]?
     
+    public var stores:[LPStoreData]? {
+        
+        if let storeDataList = self.storesList?.first?.storeData {
+            
+            return storeDataList.map({ (storeData) -> LPStoreData in
+                let lp = LPStoreData(mappable: storeData)
+                return lp
+            })
+        }else{
+            return nil
+        }
+        
+    }
+    
     /****************************/
     /*      CloseTerminal      */
 
