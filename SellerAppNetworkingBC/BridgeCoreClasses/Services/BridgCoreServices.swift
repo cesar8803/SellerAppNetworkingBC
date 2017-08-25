@@ -403,7 +403,7 @@ public class BridgeCoreServices
     
     public class func cancelTransactionWithParams(coneectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
         
-        let bridgeCoreRequestDict = ["connectionId":coneectionId, "operation":"cancelTransaction", "params":["cancelReasonCode":params]] as [String : Any]
+        let bridgeCoreRequestDict = ["connectionId":coneectionId, "operation":"cancelTransaction", "params":params] as [String : Any]
         
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
