@@ -348,15 +348,21 @@ public class BridgeCoreServices
                         }) { (msg) in
                             completionError(msg)
                         }
+                    }else
+                    {
+                        completionError(bcLoginR.message ?? "")
                     }
                     
-                }, completionError: { (message) in
-                    completionError(message)
+                }, completionError: { (loginBridgeCoreResponse) in
+                    
+                    //completionError(message)
+                    
+                    completion(logoffBridgeCoreResponse)
+                    
                 })
             }else{
                 completionError(bcLogoffR.message ?? "")
             }
-            
         }) { (msg) in
             completionError(msg)
         }
@@ -390,6 +396,19 @@ public class BridgeCoreServices
         
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.selectTransactionWithOperation(terminalCode: terminalCode, storeCode: storeCode, operation: oper), completion: { (finishTransactionOper) in
             completion(finishTransactionOper)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    public class func cancelTransactionWithParams(coneectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let bridgeCoreRequestDict = ["connectionId":coneectionId, "operation":"cancelTransaction", "params":params] as [String : Any]
+        
+        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.cancelTransaction(terminalCode: terminalCode, storeCode: storeCode, parameters: p), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
         }) { (msg) in
             completionError(msg)
         }

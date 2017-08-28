@@ -301,6 +301,8 @@ public enum BridgeCoreOperation
     
     case cancelTransaction(connectionId:String, terminalCode:String, storeCode:String)
     
+    case cancelTransactionWithParams(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
     case cancelTransactionWithDocument(connectionId:String, terminalCode:String, storeCode:String, document:String, amount:String)
     
     case findItem( terminalCode:String, storeCode:String, itemCode:String,exactMaching:Bool)
@@ -362,6 +364,13 @@ public enum BridgeCoreOperation
             let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.cancelTransaction.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
+            
+        case .cancelTransactionWithParams(let connectionId, let terminalCode, let storeCode, let parameters):
+            let bridgeCoreRequestDict:[String : Any] = ["operation":BridgeCoreOperationName.cancelTransaction.rawValue, "params":parameters, "connectionId":connectionId]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            return(params, terminalCode, storeCode)
             
         case .cancelTransactionWithDocument(let connectionId, let terminalCode, let storeCode, let document, let amount):
             let p:[String:Any] = ["transactionSubtype":BCTransactionSubtype.CANCEL_TRANSACTION.rawValue, "amountTrxCancel": amount, "numTrxCancel":document]

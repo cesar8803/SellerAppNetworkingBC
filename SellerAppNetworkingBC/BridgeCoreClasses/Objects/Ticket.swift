@@ -219,11 +219,13 @@ public class Count: Mappable{
     }
 }
 
-public class Additionaldata: Mappable{
+public class Additionaldata: Mappable
+{
     public var cardPrefixType: Int?
     public var PINPAD__RESPONSE__EMV__TAGS: String?
     public var ad__InputDto: String?
     public var PINPAD__RESPONSE__TOKENS: String?
+    public var additionalDataListField: [AdditionalDataListField]?
     
     required public init?( map: Map){
     }
@@ -232,6 +234,7 @@ public class Additionaldata: Mappable{
         PINPAD__RESPONSE__EMV__TAGS <- map["PINPAD__RESPONSE__EMV__TAGS"]
         ad__InputDto <- map["ad__InputDto"]
         PINPAD__RESPONSE__TOKENS <- map["PINPAD__RESPONSE__TOKENS"]
+        additionalDataListField <- map["additionalDataListField"]
     }
 }
 
