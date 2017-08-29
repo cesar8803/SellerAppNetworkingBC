@@ -97,7 +97,7 @@ public enum BCParamsNames: String{
     case entryMethod = "entryMethod"
     
     case warrantySelected = "warrantySelected"
-    case type = "type"
+    case type = "@type"
     case somsAccountNumber = "somsAccountNumber"
     case operationsToApprove = "operationsToApprove"
 }
