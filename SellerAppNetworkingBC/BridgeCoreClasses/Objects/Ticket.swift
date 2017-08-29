@@ -48,6 +48,7 @@ public class Ticket: Mappable{
     public var isConsulting: Int?
     public var transactionSuperType: Int?
     public var promoPaymentPlans: [String]?
+    public var promoPaymentPlansArray: [Promopaymentplans]?
     public var terminalCode: Int?
     public var transaccionRegalo: Int?
     public var userNameDescription: String?
@@ -117,7 +118,13 @@ public class Ticket: Mappable{
         totalsData <- map["totalsData"]
         isConsulting <- map["isConsulting"]
         transactionSuperType <- map["transactionSuperType"]
-        promoPaymentPlans <- map["promoPaymentPlans"]
+        
+        if map["promoPaymentPlans"].currentValue is [String]{
+            promoPaymentPlans <- map["promoPaymentPlans"]
+        }else{
+            promoPaymentPlansArray <- map["promoPaymentPlans"]
+        }
+        
         terminalCode <- map["terminalCode"]
         transaccionRegalo <- map["transaccionRegalo"]
         userNameDescription <- map["userNameDescription"]
@@ -145,6 +152,16 @@ public class Ticket: Mappable{
         userName <- map["userName"]
         trainingModeFlag <- map["trainingModeFlag"]
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
+    }
+}
+
+public class Promopaymentplans: Mappable{
+    public var benefitData: [BenefitData]?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        benefitData <- map["benefitData"]
     }
 }
 
