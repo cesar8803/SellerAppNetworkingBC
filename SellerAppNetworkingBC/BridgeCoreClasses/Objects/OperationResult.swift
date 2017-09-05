@@ -91,7 +91,7 @@ public class OperationResult: Mappable{
     public var taxDetailPerceptions: [String]?
     public var paymentsSurchargeTotal: PaymentsSurChargetotal?
     public var balanceData: Balancedata?
-    
+    public var tagEX: String?
     /****************************/
     
     public required init?(map: Map){
@@ -162,6 +162,7 @@ public class OperationResult: Mappable{
         taxDetailPerceptions <- map["taxDetailPerceptions"]
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
         balanceData <- map["balanceData"]
+        tagEX <- map["tagEX"]
     }
 
 }

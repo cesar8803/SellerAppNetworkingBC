@@ -10,48 +10,48 @@ import Foundation
 import Alamofire
 
 /*
-class BackendUrlManager : NSObject{
-    
-    enum ServiceUrlsId : Int {
-        case selectEnableCoins
-    }
-    
-    fileprivate static let SERVICE_CONTEXT:[String] = [
-        "bridge-server-rest-liverpool/service/selectEnableCoins",                                  //selectEnableCoins
-    ]
-    
-    // The array of all the services url's.
-    fileprivate var serviceUrls:[String] = [String]();
-    
-    fileprivate func createUrls() {
-        //let backendHost = "172.22.209.218:9090/"
-        //let backendProtocol = "http://"
-        let servicesCount = BackendUrlManager.SERVICE_CONTEXT.count
-        for index in 0..<servicesCount {
-            let nextUrl:String = BridgeCoreConnection.sharedInstance.urlString //"\(backendProtocol)\(backendHost)\(BackendUrlManager.SERVICE_CONTEXT[index])";
-            serviceUrls.append(nextUrl)
-        }
-    }
-    
-   
-    // Gets the indicated service url.
-    func getUrl(_ urlId:ServiceUrlsId) -> String {
-
-        let selectedUrl:String = serviceUrls[urlId.rawValue]
-        return selectedUrl
-    }
-    
-    // Private init to avoid several instances of this class.
-    fileprivate override init() {
-        super.init()
-        self.createUrls()
-        //overrideUrls()
-    }
-    
-    // Singleton intance.
-    static let Current:BackendUrlManager = BackendUrlManager()
-}
-*/
+ class BackendUrlManager : NSObject{
+ 
+ enum ServiceUrlsId : Int {
+ case selectEnableCoins
+ }
+ 
+ fileprivate static let SERVICE_CONTEXT:[String] = [
+ "bridge-server-rest-liverpool/service/selectEnableCoins",                                  //selectEnableCoins
+ ]
+ 
+ // The array of all the services url's.
+ fileprivate var serviceUrls:[String] = [String]();
+ 
+ fileprivate func createUrls() {
+ //let backendHost = "172.22.209.218:9090/"
+ //let backendProtocol = "http://"
+ let servicesCount = BackendUrlManager.SERVICE_CONTEXT.count
+ for index in 0..<servicesCount {
+ let nextUrl:String = BridgeCoreConnection.sharedInstance.urlString //"\(backendProtocol)\(backendHost)\(BackendUrlManager.SERVICE_CONTEXT[index])";
+ serviceUrls.append(nextUrl)
+ }
+ }
+ 
+ 
+ // Gets the indicated service url.
+ func getUrl(_ urlId:ServiceUrlsId) -> String {
+ 
+ let selectedUrl:String = serviceUrls[urlId.rawValue]
+ return selectedUrl
+ }
+ 
+ // Private init to avoid several instances of this class.
+ fileprivate override init() {
+ super.init()
+ self.createUrls()
+ //overrideUrls()
+ }
+ 
+ // Singleton intance.
+ static let Current:BackendUrlManager = BackendUrlManager()
+ }
+ */
 
 public enum BrigdeCoreRouter:URLRequestConvertible {
     //This variable coul be changed from outside
@@ -76,6 +76,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     case startupSession(terminalCode:String, storeCode:String)
     case findWalletBalance(terminalCode:String, storeCode:String, paramters:Parameters)
     case addItemList(operation:BridgeCoreOperation)
+    case updatePinPadKeys(terminalCode:String, parameters:Parameters)
     
     //method
     var method:HTTPMethod{
@@ -116,6 +117,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             return .put
         case .addItemList(_):
             return .put
+        case .updatePinPadKeys(_,_):
+            return .put
         }
     }
     
@@ -126,7 +129,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .selectTransaction(let terminal, let store, _):
             return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
         case .logoff(let terminal, let store, _):
-                return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
+            return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
         case .login(let terminal, let store, _):
             return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
         case .cancelTransaction(let terminal, let store, _):
@@ -153,7 +156,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             let  (_, terminal, store) = operation.getParams()
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
         case .closeSession(let terminalCode, let storeCode):
-             return pathForTerminalAndStore(terminalCode: terminalCode, storeCode: storeCode)
+            return pathForTerminalAndStore(terminalCode: terminalCode, storeCode: storeCode)
         case .startupSession(let terminalCode, let storeCode):
             return pathForTerminalAndStore(terminalCode: terminalCode, storeCode: storeCode) + "/1"
         case .findWalletBalance(_, _, _):
@@ -161,6 +164,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addItemList(let operation):
             let  (_, terminal, store) = operation.getParams()
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+        case .updatePinPadKeys(let terminal, let params):
+            return "bridge-server-rest-liverpool/service/forceKeys"
         }
     }
     
@@ -217,7 +222,10 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addItemList(let oper):
             let (params,_,_) = oper.getParams()
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .updatePinPadKeys(_,let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
+        
         
         return urlRequest
     }
