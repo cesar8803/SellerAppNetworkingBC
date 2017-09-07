@@ -10,11 +10,25 @@ import Foundation
 import ObjectMapper
 
 public class Items: Mappable{
+    
     public var itemTicketLiverpoolData: [ItemTicketLiverpoolData]?
-
+    
+    public var isArray:Bool = false
     required public init?(map: Map){
     }
+    
     public func mapping(map: Map){
-        itemTicketLiverpoolData <- map["itemTicketLiverpoolData"]
+        if let dict = map["itemTicketLiverpoolData"].currentValue as? [String:Any]{
+            self.itemTicketLiverpoolData = [ItemTicketLiverpoolData]()
+            var itm:ItemTicketLiverpoolData? = nil
+            itm <- map["itemTicketLiverpoolData"]
+            if let i = itm{
+                self.itemTicketLiverpoolData?.append(i)
+            }
+        }else{
+            itemTicketLiverpoolData <- map["itemTicketLiverpoolData"]
+        }
+        
     }
+    
 }
