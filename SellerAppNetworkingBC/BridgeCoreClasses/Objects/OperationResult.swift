@@ -164,6 +164,7 @@ public class OperationResult: Mappable{
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
         balanceData <- map["balanceData"]
         tagEX <- map["tagEX"]
+        terminalReportData <- map["terminalReportData"]
     }
     
     public class TerminalReportData: Mappable{
