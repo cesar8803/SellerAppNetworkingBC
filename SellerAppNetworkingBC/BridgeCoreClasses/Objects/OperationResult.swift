@@ -167,23 +167,23 @@ public class OperationResult: Mappable{
     }
     
     public class TerminalReportData: Mappable{
-        var terminalCode: String?
-        var reportTerminalType: String?
-        var permiteTeclearTajeta: Int?
-        var motorPromo: Float?
-        var taxLiverpool: [TaxLiverpool]?
-        var alternativeServerPort: Int?
-        var serverIp: String?
-        var alternativeServerIp: String?
-        var serverPort: Int?
-        var aplicationName: String?
-        var cajon1: Int?
-        var lineAutorization: Int?
-        var aplicationDate: String?
-        var cajon2: Int?
-        var bascula: Int?
-        var aplicationVersion: String?
-        var motorPromoMapa: Int?
+        public var terminalCode: String?
+        public var reportTerminalType: String?
+        public var permiteTeclearTajeta: Int?
+        public var motorPromo: Float?
+        public var taxLiverpool: [TaxLiverpool]?
+        public var alternativeServerPort: Int?
+        public var serverIp: String?
+        public var alternativeServerIp: String?
+        public var serverPort: Int?
+        public var aplicationName: String?
+        public var cajon1: Int?
+        public var lineAutorization: Int?
+        public var aplicationDate: String?
+        public var cajon2: Int?
+        public var bascula: Int?
+        public var aplicationVersion: String?
+        public var motorPromoMapa: Int?
         
         public required init?(map: Map){
         }
@@ -209,7 +209,7 @@ public class OperationResult: Mappable{
     }
     
     public class TaxLiverpool: Mappable{
-        var taxLiverpoolDTO: [Taxliverpooldto]?
+        public var taxLiverpoolDTO: [Taxliverpooldto]?
         
         public required init?(map: Map){
         }
@@ -219,10 +219,10 @@ public class OperationResult: Mappable{
     }
     
     public class Taxliverpooldto: Mappable{
-        var categoriaTax: Int?
-        var tipoTax: Int?
-        var descripcionTax: String?
-        var porcenajeTax: String?
+        public var categoriaTax: Int?
+        public var tipoTax: Int?
+        public var descripcionTax: String?
+        public var porcenajeTax: String?
         
         public required init?(map: Map){
         }
