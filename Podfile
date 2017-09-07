@@ -7,9 +7,14 @@ def shared_pods
     pod 'AlamofireObjectMapper', '~> 4.0'
 end
 
-target ‘SellerAppNetworkingBC’ do
+target 'SellerAppNetworkingBC' do
   shared_pods
 end
+
+target 'SellerAppNetworkingBCTests' do
+    shared_pods
+end
+
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
