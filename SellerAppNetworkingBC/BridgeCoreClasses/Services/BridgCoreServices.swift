@@ -446,11 +446,24 @@ public class BridgeCoreServices
     
     public class func updateKeysPinPad(token:String,terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
-        let bridgeCoreRequestDict = ["operation":"sendForceKeysMessage"] as [String : Any]
+        let params = ["tokens":token, "terminalCode":terminalCode]
+        let bridgeCoreRequestDict = ["params": params, "operation":"sendForceKeysMessage"] as [String : Any]
+        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
-        let p:Parameters = ["tokens":token,"terminalCode": terminalCode]
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.updatePinPadKeys(parameters: p), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    public class func getPromotionMapVersion(storeCode: String,terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let params = ["printerTypeName": "1003","aplicationNameCore": "BCORE","printerStationType": "6","reportTerminalType": "SOLICITUD","storeCode":storeCode, "terminalCode":terminalCode]
+        let bridgeCoreRequestDict = ["params": params, "operation":"generateTerminalReport"] as [String : Any]
+        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
-        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.updatePinPadKeys(terminalCode: terminalCode, parameters: p), completion: { (bridgeCoreResponse) in
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.promotionMapVersion(parameters: p), completion: { (bridgeCoreResponse) in
             completion(bridgeCoreResponse)
         }) { (msg) in
             completionError(msg)

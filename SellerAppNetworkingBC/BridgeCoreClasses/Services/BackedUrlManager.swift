@@ -76,7 +76,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     case startupSession(terminalCode:String, storeCode:String)
     case findWalletBalance(terminalCode:String, storeCode:String, paramters:Parameters)
     case addItemList(operation:BridgeCoreOperation)
-    case updatePinPadKeys(terminalCode:String, parameters:Parameters)
+    case updatePinPadKeys(parameters:Parameters)
+    case promotionMapVersion(parameters:Parameters)
     
     //method
     var method:HTTPMethod{
@@ -117,7 +118,9 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             return .put
         case .addItemList(_):
             return .put
-        case .updatePinPadKeys(_,_):
+        case .updatePinPadKeys(_):
+            return .put
+        case .promotionMapVersion(_):
             return .put
         }
     }
@@ -164,13 +167,19 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addItemList(let operation):
             let  (_, terminal, store) = operation.getParams()
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
-        case .updatePinPadKeys(let terminal, let params):
-            return "bridge-server-rest-liverpool/service/forceKeys"
+        case .updatePinPadKeys(_):
+            return pathForBaseServices() + "forceKeys"
+        case .promotionMapVersion( _):
+            return pathForBaseServices() + "terminalReport"
         }
     }
     
     func pathForTerminalAndStore(terminalCode:String, storeCode:String)->String{
         return "bridge-server-rest-liverpool/terminal/\(terminalCode)/\(storeCode)"
+    }
+    
+    func pathForBaseServices()->String{
+        return "bridge-server-rest-liverpool/service/"
     }
     
     
@@ -222,8 +231,10 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addItemList(let oper):
             let (params,_,_) = oper.getParams()
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
-        case .updatePinPadKeys(_,let params):
+        case .updatePinPadKeys(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+       case .promotionMapVersion(let params):
+       urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
         
