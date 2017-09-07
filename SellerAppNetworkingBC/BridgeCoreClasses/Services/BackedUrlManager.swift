@@ -234,7 +234,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .updatePinPadKeys(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
        case .promotionMapVersion(let params):
-       urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
         
