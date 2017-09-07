@@ -457,7 +457,7 @@ public class BridgeCoreServices
         }
     }
     
-    public class func getPromotionMapVersion(storeCode: String,terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    public class func promotionMapVersion(storeCode: String,terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         let params = ["printerTypeName": "1003","aplicationNameCore": "BCORE","printerStationType": "6","reportTerminalType": "SOLICITUD","storeCode":storeCode, "terminalCode":terminalCode]
         let bridgeCoreRequestDict = ["params": params, "operation":"generateTerminalReport"] as [String : Any]
