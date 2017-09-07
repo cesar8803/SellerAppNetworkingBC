@@ -63,6 +63,7 @@ public class Ticket: Mappable{
     public var contigencyFlag: Int?
     public var originalPayments: [String]?
     public var items: [String]?
+    public var itemsTicket: [Items]?
     public var cashDrawerOpeningRequired: Int?
     public var endDateTime: String?
     public var subtotal: SubTotal?
@@ -138,7 +139,15 @@ public class Ticket: Mappable{
         dilisaCorporated <- map["dilisaCorporated"]
         contigencyFlag <- map["contigencyFlag"]
         originalPayments <- map["originalPayments"]
-        items <- map["items"]
+        
+        
+        
+        if let _ = map["items"].currentValue as? [String]{
+            items <- map["items"]
+        }else {
+            itemsTicket <- map["items"]
+        }
+        
         cashDrawerOpeningRequired <- map["cashDrawerOpeningRequired"]
         endDateTime <- map["endDateTime"]
         subtotal <- map["subtotal"]
@@ -152,6 +161,8 @@ public class Ticket: Mappable{
         userName <- map["userName"]
         trainingModeFlag <- map["trainingModeFlag"]
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
+        
+        
     }
 }
 
