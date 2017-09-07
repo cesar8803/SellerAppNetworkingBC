@@ -140,11 +140,11 @@ public class Ticket: Mappable{
         contigencyFlag <- map["contigencyFlag"]
         originalPayments <- map["originalPayments"]
         
-        let mapItems = map["items"].currentValue
         
-        if mapItems is [String]{
+        
+        if let _ = map["items"].currentValue as? [String]{
             items <- map["items"]
-        }else if mapItems is [Items]{
+        }else {
             itemsTicket <- map["items"]
         }
         
