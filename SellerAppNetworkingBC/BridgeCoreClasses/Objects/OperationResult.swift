@@ -93,6 +93,8 @@ public class OperationResult: Mappable{
     public var paymentsSurchargeTotal: PaymentsSurChargetotal?
     public var balanceData: Balancedata?
     public var tagEX: String?
+    public var barcode: String?
+    
     /****************************/
     
     public required init?(map: Map){
@@ -165,6 +167,7 @@ public class OperationResult: Mappable{
         balanceData <- map["balanceData"]
         tagEX <- map["tagEX"]
         terminalReportData <- map["terminalReportData"]
+        barcode <- map["barcode"]
     }
     
     public class TerminalReportData: Mappable{
