@@ -1,6 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+
+platform :ios, '10.0'
 use_frameworks!
+
+
+project '/Users/adair/Documents/SellerAppNetworkingBC/SellerAppNetworkingBC.xcodeproj'
 
 def shared_pods
     pod 'Alamofire', '~> 4.0'
