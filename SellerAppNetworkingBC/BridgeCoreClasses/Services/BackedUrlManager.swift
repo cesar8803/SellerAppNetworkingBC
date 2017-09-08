@@ -78,6 +78,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     case addItemList(operation:BridgeCoreOperation)
     case updatePinPadKeys(parameters:Parameters)
     case promotionMapVersion(parameters:Parameters)
+    case addCashPayment(terminalCode:String, storeCode:String, paramters:Parameters)
     
     //method
     var method:HTTPMethod{
@@ -121,6 +122,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .updatePinPadKeys(_):
             return .put
         case .promotionMapVersion(_):
+            return .put
+        case .addCashPayment(_,_,_):
             return .put
         }
     }
@@ -171,6 +174,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             return pathForBaseServices() + "forceKeys"
         case .promotionMapVersion( _):
             return pathForBaseServices() + "terminalReport"
+        case .addCashPayment(let terminal, let store, _):
+            return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
         }
     }
     
@@ -234,6 +239,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .updatePinPadKeys(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
        case .promotionMapVersion(let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .addCashPayment(_, _,  let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
