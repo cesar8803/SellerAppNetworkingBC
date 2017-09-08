@@ -18,7 +18,7 @@ public class Items: Mappable{
     }
     
     public func mapping(map: Map){
-        if let dict = map["itemTicketLiverpoolData"].currentValue as? [String:Any]{
+        if let _ = map["itemTicketLiverpoolData"].currentValue as? [String:Any]{
             self.itemTicketLiverpoolData = [ItemTicketLiverpoolData]()
             var itm:ItemTicketLiverpoolData? = nil
             itm <- map["itemTicketLiverpoolData"]

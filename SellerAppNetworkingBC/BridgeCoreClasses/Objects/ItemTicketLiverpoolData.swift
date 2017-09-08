@@ -67,6 +67,9 @@ public class ItemTicketLiverpoolData: Mappable{
     public var villaNevada: Int?
     public var discountPromoTotal: DiscountPromoTotal?
     public var monederoBenefits: [String]?
+    public var optionsGroups: [OptionsGroups]?
+    
+    public var optionsGroupsSelected: [OptionsGroupsSelected]?
 
     required public init?(map: Map){
     }
@@ -129,5 +132,8 @@ public class ItemTicketLiverpoolData: Mappable{
         villaNevada <- map["villaNevada"]
         discountPromoTotal <- map["discountPromoTotal"]
         monederoBenefits <- map["monederoBenefits"]
+        
+        optionsGroupsSelected <- map["optionsGroupsSelected"]
+        optionsGroups <- map["optionsGroups"]
     }
 }
