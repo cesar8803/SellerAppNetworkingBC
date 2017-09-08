@@ -134,8 +134,8 @@ public enum BCRequestParams{
     )
         
     case additem(itemPrice:String,
-        itemDepartment: String,
-        itemDepartmentPrice: String,
+        itemDepartment: String?,
+        itemDepartmentPrice: String?,
         itemQty: String,
         itemBarcode: String,
         processPromotions:Bool)
@@ -230,12 +230,20 @@ public enum BCRequestParams{
             return params
             
         case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions):
-            let params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
-                                     BCParamsNames.itemDepartment.rawValue: itemDepartment,
-                                     BCParamsNames.itemDepartmentPrice.rawValue: itemDepartmentPrice,
+            var params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
                                      BCParamsNames.itemQty.rawValue:itemQty,
                                      BCParamsNames.itemBarcode.rawValue:itemBarcode,
                                      BCParamsNames.processPromotions.rawValue:processPromotions]
+            
+            if let itmDepartment = itemDepartment{
+                params[BCParamsNames.itemDepartment.rawValue] = itmDepartment
+            }
+            
+            if let itmDepartmentPrice = itemDepartmentPrice{
+                params[BCParamsNames.itemDepartmentPrice.rawValue] = itmDepartmentPrice
+            }
+            
+            
             return params
             
         case .applydiscount(let processPromotions, let sequenceNumber, let discountType, let discountValue):
@@ -247,7 +255,7 @@ public enum BCRequestParams{
             return params
             
         case .totalizeTransaction(let processPromotions):
-            let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions]
+            let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions, "promoOptionSelected":0]
             return params
             
         case .totalizeTransactionAutorized(let promoOptionSelected, let supervisorEntryMethod, let processPromotions, let supervisorPassword, let supervisorName):
