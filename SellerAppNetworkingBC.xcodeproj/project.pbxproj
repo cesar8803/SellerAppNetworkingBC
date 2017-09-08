@@ -135,6 +135,15 @@
 		F78D195E1F60BFBF00AEA7BB /* VatPercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78D195D1F60BFBF00AEA7BB /* VatPercentage.swift */; };
 		F78D19601F60BFFF00AEA7BB /* ItemPaymentPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78D195F1F60BFFF00AEA7BB /* ItemPaymentPlans.swift */; };
 		F78D19621F60C04E00AEA7BB /* DiscountPromoTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78D19611F60C04E00AEA7BB /* DiscountPromoTotal.swift */; };
+		F7FEF2841F6306380019F7DE /* OptionsGroupsSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF2831F6306380019F7DE /* OptionsGroupsSelected.swift */; };
+		F7FEF2861F6306E80019F7DE /* OptionGroupSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF2851F6306E80019F7DE /* OptionGroupSelected.swift */; };
+		F7FEF2881F63087A0019F7DE /* OptionsGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF2871F63087A0019F7DE /* OptionsGroups.swift */; };
+		F7FEF28A1F630B5A0019F7DE /* OptionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF2891F630B5A0019F7DE /* OptionGroup.swift */; };
+		F7FEF28C1F630BED0019F7DE /* PromoOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF28B1F630BED0019F7DE /* PromoOptions.swift */; };
+		F7FEF28E1F630DD90019F7DE /* PromoOptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF28D1F630DD90019F7DE /* PromoOptionData.swift */; };
+		F7FEF2901F630E490019F7DE /* PromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF28F1F630E490019F7DE /* PromotionsData.swift */; };
+		F7FEF2921F630EA20019F7DE /* PromotionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF2911F630EA20019F7DE /* PromotionData.swift */; };
+		F7FEF2941F630EEB0019F7DE /* BenefitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEF2931F630EEB0019F7DE /* BenefitsData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,6 +291,15 @@
 		F78D195D1F60BFBF00AEA7BB /* VatPercentage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VatPercentage.swift; path = Objects/VatPercentage.swift; sourceTree = "<group>"; };
 		F78D195F1F60BFFF00AEA7BB /* ItemPaymentPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemPaymentPlans.swift; path = Objects/ItemPaymentPlans.swift; sourceTree = "<group>"; };
 		F78D19611F60C04E00AEA7BB /* DiscountPromoTotal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscountPromoTotal.swift; path = Objects/DiscountPromoTotal.swift; sourceTree = "<group>"; };
+		F7FEF2831F6306380019F7DE /* OptionsGroupsSelected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsGroupsSelected.swift; path = Objects/OptionsGroupsSelected.swift; sourceTree = "<group>"; };
+		F7FEF2851F6306E80019F7DE /* OptionGroupSelected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionGroupSelected.swift; path = Objects/OptionGroupSelected.swift; sourceTree = "<group>"; };
+		F7FEF2871F63087A0019F7DE /* OptionsGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsGroups.swift; path = Objects/OptionsGroups.swift; sourceTree = "<group>"; };
+		F7FEF2891F630B5A0019F7DE /* OptionGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionGroup.swift; path = Objects/OptionGroup.swift; sourceTree = "<group>"; };
+		F7FEF28B1F630BED0019F7DE /* PromoOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoOptions.swift; path = Objects/PromoOptions.swift; sourceTree = "<group>"; };
+		F7FEF28D1F630DD90019F7DE /* PromoOptionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoOptionData.swift; path = Objects/PromoOptionData.swift; sourceTree = "<group>"; };
+		F7FEF28F1F630E490019F7DE /* PromotionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromotionsData.swift; path = Objects/PromotionsData.swift; sourceTree = "<group>"; };
+		F7FEF2911F630EA20019F7DE /* PromotionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromotionData.swift; path = Objects/PromotionData.swift; sourceTree = "<group>"; };
+		F7FEF2931F630EEB0019F7DE /* BenefitsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenefitsData.swift; path = Objects/BenefitsData.swift; sourceTree = "<group>"; };
 		FEE0A7059439E5503BAB1EE3 /* Pods-SellerAppNetworkingBC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -389,6 +407,15 @@
 				F78D195D1F60BFBF00AEA7BB /* VatPercentage.swift */,
 				F78D195F1F60BFFF00AEA7BB /* ItemPaymentPlans.swift */,
 				F78D19611F60C04E00AEA7BB /* DiscountPromoTotal.swift */,
+				F7FEF2831F6306380019F7DE /* OptionsGroupsSelected.swift */,
+				F7FEF2851F6306E80019F7DE /* OptionGroupSelected.swift */,
+				F7FEF2871F63087A0019F7DE /* OptionsGroups.swift */,
+				F7FEF2891F630B5A0019F7DE /* OptionGroup.swift */,
+				F7FEF28B1F630BED0019F7DE /* PromoOptions.swift */,
+				F7FEF28D1F630DD90019F7DE /* PromoOptionData.swift */,
+				F7FEF2931F630EEB0019F7DE /* BenefitsData.swift */,
+				F7FEF28F1F630E490019F7DE /* PromotionsData.swift */,
+				F7FEF2911F630EA20019F7DE /* PromotionData.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -748,12 +775,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7FEF2901F630E490019F7DE /* PromotionsData.swift in Sources */,
 				2B0CA3D71F0DB9BD007A8EB0 /* DiscountsTransactionTotal.swift in Sources */,
 				A9E05B971F3CD4F8001ACA0A /* ItemErrorData.swift in Sources */,
 				A95FD83D1EF9D2650094AA1C /* Operationresult.swift in Sources */,
 				2B9FF9501F4D166100E2025E /* BridgeCoreConnection.swift in Sources */,
 				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
 				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,
+				F7FEF28A1F630B5A0019F7DE /* OptionGroup.swift in Sources */,
 				5588D7D21F55D05C003426A4 /* BenefitData.swift in Sources */,
 				F78D19381F60B6D000AEA7BB /* EntryMethod.swift in Sources */,
 				2B0CA3B71F0DA8E7007A8EB0 /* PaymentsTotal.swift in Sources */,
@@ -765,6 +794,7 @@
 				F78D19361F60B63200AEA7BB /* ItemTicketLiverpoolData.swift in Sources */,
 				2B0CA3E11F0DBC70007A8EB0 /* Entregado.swift in Sources */,
 				A95FD8321EF9D2650094AA1C /* LPCancelTransaction.swift in Sources */,
+				F7FEF28C1F630BED0019F7DE /* PromoOptions.swift in Sources */,
 				2B0CA3CD1F0DB69D007A8EB0 /* TotalsData.swift in Sources */,
 				2B0CA3AD1F0DA585007A8EB0 /* SessionDataWD.swift in Sources */,
 				7156ADA61F2A9F7B00761F38 /* PrinterDocumentsBase64.swift in Sources */,
@@ -776,6 +806,7 @@
 				A95FD8371EF9D2650094AA1C /* LPStoreData.swift in Sources */,
 				A95FD8441EF9D2650094AA1C /* Reasonsalecancelmenu.swift in Sources */,
 				A95FD82E1EF9D2650094AA1C /* LPBridgeCoreServiceProvider.swift in Sources */,
+				F7FEF2941F630EEB0019F7DE /* BenefitsData.swift in Sources */,
 				F78D195E1F60BFBF00AEA7BB /* VatPercentage.swift in Sources */,
 				F78D193E1F60B7FC00AEA7BB /* VatAmount.swift in Sources */,
 				7156ADA21F2A907D00761F38 /* AdditionalInformation.swift in Sources */,
@@ -792,11 +823,13 @@
 				2B0CA3D31F0DB898007A8EB0 /* IvaPerceptions.swift in Sources */,
 				2B788EB91F0B49DA004E5F1F /* ValorTipoCambio.swift in Sources */,
 				2B0CA3B51F0DA87E007A8EB0 /* StoreAddressList.swift in Sources */,
+				F7FEF2921F630EA20019F7DE /* PromotionData.swift in Sources */,
 				A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */,
 				2B0CA3B11F0DA6EC007A8EB0 /* Ticket.swift in Sources */,
 				2B788EB71F0B4962004E5F1F /* ExchangeCurrencyData.swift in Sources */,
 				7156AD981F2A8F6300761F38 /* AdditionalData.swift in Sources */,
 				2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */,
+				F7FEF2861F6306E80019F7DE /* OptionGroupSelected.swift in Sources */,
 				7156ADAC1F2AA21700761F38 /* BudgetAmount.swift in Sources */,
 				A95FD83C1EF9D2650094AA1C /* Bridgecoreresponse.swift in Sources */,
 				55E35FA51F3CF24E00E93EB6 /* Balancedata.swift in Sources */,
@@ -825,6 +858,7 @@
 				2B0CA3B31F0DA81A007A8EB0 /* StoreData.swift in Sources */,
 				F78D195A1F60BF2A00AEA7BB /* ExtendedPrice.swift in Sources */,
 				2B788EB51F0B48C3004E5F1F /* OperationResult.swift in Sources */,
+				F7FEF2841F6306380019F7DE /* OptionsGroupsSelected.swift in Sources */,
 				2B788EBD1F0B52A6004E5F1F /* Withdrawals.swift in Sources */,
 				F78D19521F60BE2000AEA7BB /* Units.swift in Sources */,
 				2B0CA3C71F0DB4F0007A8EB0 /* InternalTaxesTotal.swift in Sources */,
@@ -835,6 +869,7 @@
 				2B0CA3C91F0DB5AC007A8EB0 /* PerceptionsTotal.swift in Sources */,
 				2B994B6D1F280A3B00292163 /* Price.swift in Sources */,
 				71419A3B1F30FFC3005F70E3 /* Amount.swift in Sources */,
+				F7FEF2881F63087A0019F7DE /* OptionsGroups.swift in Sources */,
 				2B4E0CDA1F4DEEFB004CAEA7 /* StoresList.swift in Sources */,
 				2B994B671F27FA4800292163 /* BridgeCoreOperations.swift in Sources */,
 				2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */,
@@ -843,6 +878,7 @@
 				F78D195C1F60BF7300AEA7BB /* NetValue.swift in Sources */,
 				F78D19621F60C04E00AEA7BB /* DiscountPromoTotal.swift in Sources */,
 				F78D194E1F60BD6100AEA7BB /* RegularUnitPrice.swift in Sources */,
+				F7FEF28E1F630DD90019F7DE /* PromoOptionData.swift in Sources */,
 				2B994B691F2808C600292163 /* ItemData.swift in Sources */,
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
 				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,
