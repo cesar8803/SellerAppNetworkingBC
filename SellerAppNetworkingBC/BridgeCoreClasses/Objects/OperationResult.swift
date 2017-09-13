@@ -76,6 +76,7 @@ public class OperationResult: Mappable{
     public var ticketVoidFlag: Int?
     public var date: String?
     public var giftTicket: Int?
+    public var terminalReportData: TerminalReportData?
     public var discountsPromoTotal: DiscountsPromoTotal?
     public var firstPurchaseDay: Int?
     public var transactionDolar: Int?
@@ -91,6 +92,8 @@ public class OperationResult: Mappable{
     public var taxDetailPerceptions: [String]?
     public var paymentsSurchargeTotal: PaymentsSurChargetotal?
     public var balanceData: Balancedata?
+    public var tagEX: String?
+    public var barcode: String?
     
     /****************************/
     
@@ -162,6 +165,77 @@ public class OperationResult: Mappable{
         taxDetailPerceptions <- map["taxDetailPerceptions"]
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
         balanceData <- map["balanceData"]
+        tagEX <- map["tagEX"]
+        terminalReportData <- map["terminalReportData"]
+        barcode <- map["barcode"]
+    }
+    
+    public class TerminalReportData: Mappable{
+        public var terminalCode: String?
+        public var reportTerminalType: String?
+        public var permiteTeclearTajeta: Int?
+        public var motorPromo: Float?
+        public var taxLiverpool: [TaxLiverpool]?
+        public var alternativeServerPort: Int?
+        public var serverIp: String?
+        public var alternativeServerIp: String?
+        public var serverPort: Int?
+        public var aplicationName: String?
+        public var cajon1: Int?
+        public var lineAutorization: Int?
+        public var aplicationDate: String?
+        public var cajon2: Int?
+        public var bascula: Int?
+        public var aplicationVersion: String?
+        public var motorPromoMapa: Int?
+        
+        public required init?(map: Map){
+        }
+        public func mapping(map: Map){
+            terminalCode <- map["terminalCode"]
+            reportTerminalType <- map["reportTerminalType"]
+            permiteTeclearTajeta <- map["permiteTeclearTajeta"]
+            motorPromo <- map["motorPromo"]
+            taxLiverpool <- map["taxLiverpool"]
+            alternativeServerPort <- map["alternativeServerPort"]
+            serverIp <- map["serverIp"]
+            alternativeServerIp <- map["alternativeServerIp"]
+            serverPort <- map["serverPort"]
+            aplicationName <- map["aplicationName"]
+            cajon1 <- map["cajon1"]
+            lineAutorization <- map["lineAutorization"]
+            aplicationDate <- map["aplicationDate"]
+            cajon2 <- map["cajon2"]
+            bascula <- map["bascula"]
+            aplicationVersion <- map["aplicationVersion"]
+            motorPromoMapa <- map["motorPromoMapa"]
+        }
+    }
+    
+    public class TaxLiverpool: Mappable{
+        public var taxLiverpoolDTO: [Taxliverpooldto]?
+        
+        public required init?(map: Map){
+        }
+        public func mapping(map: Map){
+            taxLiverpoolDTO <- map["taxLiverpoolDTO"]
+        }
+    }
+    
+    public class Taxliverpooldto: Mappable{
+        public var categoriaTax: Int?
+        public var tipoTax: Int?
+        public var descripcionTax: String?
+        public var porcenajeTax: String?
+        
+        public required init?(map: Map){
+        }
+        public func mapping(map: Map){
+            categoriaTax <- map["categoriaTax"]
+            tipoTax <- map["tipoTax"]
+            descripcionTax <- map["descripcionTax"]
+            porcenajeTax <- map["porcenajeTax"]
+        }
     }
 
 }

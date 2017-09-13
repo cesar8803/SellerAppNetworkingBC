@@ -34,6 +34,7 @@ public enum BridgeCoreOperationName:String
     case selectTransaction = "selectTransaction"
     case addTender = "addTender"
     case finishTransaction = "finishTransaction"
+    case finishTransactionPrinter = "finishTransactionPrinter"
     case cancelTransaction = "cancelTransaction"
     case findItems = "findItems"
     case findItemsList = "findItemsList"
@@ -134,8 +135,8 @@ public enum BCRequestParams{
     )
         
     case additem(itemPrice:String,
-        itemDepartment: String,
-        itemDepartmentPrice: String,
+        itemDepartment: String?,
+        itemDepartmentPrice: String?,
         itemQty: String,
         itemBarcode: String,
         processPromotions:Bool)
@@ -230,12 +231,20 @@ public enum BCRequestParams{
             return params
             
         case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions):
-            let params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
-                                     BCParamsNames.itemDepartment.rawValue: itemDepartment,
-                                     BCParamsNames.itemDepartmentPrice.rawValue: itemDepartmentPrice,
+            var params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
                                      BCParamsNames.itemQty.rawValue:itemQty,
                                      BCParamsNames.itemBarcode.rawValue:itemBarcode,
                                      BCParamsNames.processPromotions.rawValue:processPromotions]
+            
+            if let itmDepartment = itemDepartment{
+                params[BCParamsNames.itemDepartment.rawValue] = itmDepartment
+            }
+            
+            if let itmDepartmentPrice = itemDepartmentPrice{
+                params[BCParamsNames.itemDepartmentPrice.rawValue] = itmDepartmentPrice
+            }
+            
+            
             return params
             
         case .applydiscount(let processPromotions, let sequenceNumber, let discountType, let discountValue):
@@ -247,7 +256,7 @@ public enum BCRequestParams{
             return params
             
         case .totalizeTransaction(let processPromotions):
-            let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions]
+            let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions, "promoOptionSelected":0]
             return params
             
         case .totalizeTransactionAutorized(let promoOptionSelected, let supervisorEntryMethod, let processPromotions, let supervisorPassword, let supervisorName):
@@ -328,6 +337,8 @@ public enum BridgeCoreOperation
     case addPurse(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
     
     case finishTransactionWithParams(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
+    case finishTransactionPrinter(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
     
     case addItemList(connectionId: String, terminal:String, store:String, params: [Parameters])
     
@@ -474,6 +485,13 @@ public enum BridgeCoreOperation
             let p:Parameters = params
             
             let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.finishTransaction.rawValue, "params":p]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
+            
+        case .finishTransactionPrinter(let connectionId, let terminalCode, let storeCode, let params):
+            let p:Parameters = params
+            
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.finishTransactionPrinter.rawValue, "params":p]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             

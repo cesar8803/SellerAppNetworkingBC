@@ -16,6 +16,11 @@ public class BenefitData: Mappable{
     public var benefitType: String?
     public var printerMessage: String?
     
+    public var installments: String?
+    public var paymentPlanId: String?
+    public var bank: String?
+    
+    
     required public init?(map: Map){
     }
     public func mapping(map: Map){
@@ -24,5 +29,9 @@ public class BenefitData: Mappable{
         tlogMessage <- map["tlogMessage"]
         benefitType <- map["benefitType"]
         printerMessage <- map["printerMessage"]
+        
+        installments <- map["installments"]
+        paymentPlanId <- map["paymentPlanId"]
+        bank <- map["bank"]
     }
 }

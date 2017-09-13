@@ -401,6 +401,17 @@ public class BridgeCoreServices
         }
     }
     
+    public class func finishTransactionPrinter(connectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let oper = BridgeCoreOperation.finishTransactionPrinter(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: params)
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.selectTransactionWithOperation(terminalCode: terminalCode, storeCode: storeCode, operation: oper), completion: { (finishTransactionOper) in
+            completion(finishTransactionOper)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
     public class func cancelTransactionWithParams(coneectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
         
         let bridgeCoreRequestDict = ["connectionId":coneectionId, "operation":"cancelTransaction", "params":params] as [String : Any]
@@ -408,6 +419,19 @@ public class BridgeCoreServices
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.cancelTransaction(terminalCode: terminalCode, storeCode: storeCode, parameters: p), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    public class func addCashPayment(connectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"addCashPayment", "params":params] as [String : Any]
+        
+        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addCashPayment(terminalCode: terminalCode, storeCode: storeCode, paramters: p), completion: { (bridgeCoreResponse) in
             completion(bridgeCoreResponse)
         }) { (msg) in
             completionError(msg)
@@ -443,5 +467,31 @@ public class BridgeCoreServices
         }
         
     }
-
+    
+    public class func updateKeysPinPad(token:String,terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let params = ["tokens":token, "terminalCode":terminalCode]
+        let bridgeCoreRequestDict = ["params": params, "operation":"sendForceKeysMessage"] as [String : Any]
+        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.updatePinPadKeys(parameters: p), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    public class func promotionMapVersion(storeCode: String,terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let params = ["printerTypeName": "1003","aplicationNameCore": "BCORE","printerStationType": "6","reportTerminalType": "SOLICITUD","storeCode":storeCode, "terminalCode":terminalCode]
+        let bridgeCoreRequestDict = ["params": params, "operation":"generateTerminalReport"] as [String : Any]
+        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.promotionMapVersion(parameters: p), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
 }
