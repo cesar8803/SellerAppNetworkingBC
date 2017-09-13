@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class PromoOptions: Mappable{
-    var promoOptionData: PromoOptionData?
+    public var promoOptionData: PromoOptionData?
     
     required init?(map: Map){
     }
