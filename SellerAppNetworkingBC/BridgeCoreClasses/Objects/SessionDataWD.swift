@@ -19,6 +19,9 @@ public class SessionDataWD: Mappable{
     public var trainingMode: Int?
     public var userNameId: Int?
     
+    public var promoOptions2: [PromoOptions]?
+    public var offlineMode: Int?
+    
     required public init?(map: Map){
     }
     
@@ -31,5 +34,14 @@ public class SessionDataWD: Mappable{
         ticket <- map["ticket"]
         trainingMode <- map["trainingMode"]
         userNameId <- map["userNameId"]
+        offlineMode <- map["offlineMode"]
+        
+        if let _ = map["promoOptions"].currentValue as? [String]{
+            promoOptions <- map["promoOptions"]
+        }else{
+            promoOptions2 <- map["promoOptions"]
+        }
+        //promoOptions <- map["promoOptions"]
+
     }
 }

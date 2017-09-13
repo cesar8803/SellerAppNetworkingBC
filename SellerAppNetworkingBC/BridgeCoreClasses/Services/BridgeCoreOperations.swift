@@ -45,6 +45,7 @@ public enum BridgeCoreOperationName:String
     case totalizeTransaction = "totalizeTransaction"
     case addMonederoPayment = "addMonederoPayment"
     case addItemList = "addItemList"
+    case addCardPayment = "addCardPayment"
 }
 
 public enum BCTransactionSubtype: String {
@@ -342,6 +343,8 @@ public enum BridgeCoreOperation
     
     case addItemList(connectionId: String, terminal:String, store:String, params: [Parameters])
     
+    case addCardPayment(connectionId: String, terminal:String, store:String, params: Parameters)
+    
     func getParams()->(Parameters, String, String)
     {
         switch self
@@ -500,6 +503,13 @@ public enum BridgeCoreOperation
             let itemDataList = ["value":params]
             
             let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.addItemList.rawValue, "params":["itemDataList":itemDataList]]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminal, store)
+            
+        case .addCardPayment(let connectionId, let terminal, let store, let params):
+            
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.addCardPayment.rawValue, "params":params]
             
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminal, store)
