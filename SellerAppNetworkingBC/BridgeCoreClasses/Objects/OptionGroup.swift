@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 public class OptionGroup: Mappable{
-    public var id: Int?
-    public var promoOptions: [PromoOptions]?
+    var id: Int?
+    var promoOptions: [PromoOptions]?
     
     required public init?(map: Map){
     }
