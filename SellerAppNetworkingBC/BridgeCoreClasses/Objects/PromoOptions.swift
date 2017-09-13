@@ -9,12 +9,12 @@
 import Foundation
 import ObjectMapper
 
-class PromoOptions: Mappable{
+public class PromoOptions: Mappable{
     public var promoOptionData: PromoOptionData?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         promoOptionData <- map["promoOptionData"]
     }
 }

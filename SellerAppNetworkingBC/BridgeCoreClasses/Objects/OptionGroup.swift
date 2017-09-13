@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class OptionGroup: Mappable{
     var id: Int?
-    var promoOptions: [PromoOptions]?
+    public var promoOptions: [PromoOptions]?
     
     required public init?(map: Map){
     }
