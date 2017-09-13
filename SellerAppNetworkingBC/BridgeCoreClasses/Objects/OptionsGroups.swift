@@ -11,7 +11,7 @@ import ObjectMapper
 
 
 public class OptionsGroups: Mappable{
-    var optionGroup: OptionGroup?
+    public var optionGroup: OptionGroup?
     
     required public init?(map: Map){
     }
