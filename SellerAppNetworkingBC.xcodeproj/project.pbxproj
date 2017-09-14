@@ -65,11 +65,6 @@
 		57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9CD891F29020200367A15 /* CloseTerminal.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		71418E821F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */; };
-		71418E841F69ACA400DFBAF1 /* PromoOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E831F69ACA400DFBAF1 /* PromoOptions.swift */; };
-		71418E861F69AD0800DFBAF1 /* PromoOptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E851F69AD0800DFBAF1 /* PromoOptionData.swift */; };
-		71418E881F69AD6000DFBAF1 /* PromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E871F69AD6000DFBAF1 /* PromotionsData.swift */; };
-		71418E8A1F69AD9D00DFBAF1 /* PromotionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E891F69AD9D00DFBAF1 /* PromotionData.swift */; };
-		71418E8C1F69ADD500DFBAF1 /* BenefitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E8B1F69ADD500DFBAF1 /* BenefitsData.swift */; };
 		71419A3B1F30FFC3005F70E3 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71419A3A1F30FFC3005F70E3 /* Amount.swift */; };
 		7156AD961F2A67AB00761F38 /* BudgetServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD951F2A67AB00761F38 /* BudgetServices.swift */; };
 		7156AD981F2A8F6300761F38 /* AdditionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD971F2A8F6300761F38 /* AdditionalData.swift */; };
@@ -220,11 +215,6 @@
 		55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = walletBalance.swift; path = Objects/walletBalance.swift; sourceTree = "<group>"; };
 		57F9CD891F29020200367A15 /* CloseTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTerminal.swift; sourceTree = "<group>"; };
 		71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgecorePaymentResponse.swift; path = Payment/BridgecorePaymentResponse.swift; sourceTree = "<group>"; };
-		71418E831F69ACA400DFBAF1 /* PromoOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoOptions.swift; path = Payment/PromoOptions.swift; sourceTree = "<group>"; };
-		71418E851F69AD0800DFBAF1 /* PromoOptionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoOptionData.swift; path = Payment/PromoOptionData.swift; sourceTree = "<group>"; };
-		71418E871F69AD6000DFBAF1 /* PromotionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromotionsData.swift; path = Payment/PromotionsData.swift; sourceTree = "<group>"; };
-		71418E891F69AD9D00DFBAF1 /* PromotionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromotionData.swift; path = Payment/PromotionData.swift; sourceTree = "<group>"; };
-		71418E8B1F69ADD500DFBAF1 /* BenefitsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenefitsData.swift; path = Payment/BenefitsData.swift; sourceTree = "<group>"; };
 		71419A3A1F30FFC3005F70E3 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = Objects/Amount.swift; sourceTree = "<group>"; };
 		7156AD951F2A67AB00761F38 /* BudgetServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetServices.swift; path = Services/BudgetServices.swift; sourceTree = "<group>"; };
 		7156AD971F2A8F6300761F38 /* AdditionalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalData.swift; path = Objects/AdditionalData.swift; sourceTree = "<group>"; };
@@ -470,11 +460,6 @@
 			isa = PBXGroup;
 			children = (
 				71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */,
-				71418E831F69ACA400DFBAF1 /* PromoOptions.swift */,
-				71418E851F69AD0800DFBAF1 /* PromoOptionData.swift */,
-				71418E871F69AD6000DFBAF1 /* PromotionsData.swift */,
-				71418E891F69AD9D00DFBAF1 /* PromotionData.swift */,
-				71418E8B1F69ADD500DFBAF1 /* BenefitsData.swift */,
 			);
 			name = Payment;
 			sourceTree = "<group>";
@@ -825,7 +810,6 @@
 				2B0CA3AD1F0DA585007A8EB0 /* SessionDataWD.swift in Sources */,
 				7156ADA61F2A9F7B00761F38 /* PrinterDocumentsBase64.swift in Sources */,
 				2B0CA3D51F0DB937007A8EB0 /* TendersurChargeTotal.swift in Sources */,
-				71418E861F69AD0800DFBAF1 /* PromoOptionData.swift in Sources */,
 				2B0CA3BF1F0DB089007A8EB0 /* IibbPerceptions.swift in Sources */,
 				2B0CA3BB1F0DAFE0007A8EB0 /* Total.swift in Sources */,
 				A95FD8471EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift in Sources */,
@@ -847,7 +831,6 @@
 				2B0CA3C51F0DB489007A8EB0 /* Change.swift in Sources */,
 				A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */,
 				A95FD8411EF9D2650094AA1C /* Promooptions.swift in Sources */,
-				71418E881F69AD6000DFBAF1 /* PromotionsData.swift in Sources */,
 				2B0CA3D31F0DB898007A8EB0 /* IvaPerceptions.swift in Sources */,
 				2B788EB91F0B49DA004E5F1F /* ValorTipoCambio.swift in Sources */,
 				2B0CA3B51F0DA87E007A8EB0 /* StoreAddressList.swift in Sources */,
@@ -867,10 +850,8 @@
 				F78D193C1F60B76B00AEA7BB /* DiscountCouponsTotal.swift in Sources */,
 				55E35FA71F3CF2E300E93EB6 /* walletBalance.swift in Sources */,
 				75754F8E1F5EF354009887CD /* BackedUrlManager.swift in Sources */,
-				71418E8A1F69AD9D00DFBAF1 /* PromotionData.swift in Sources */,
 				2B994B651F27EC8200292163 /* RefundsBC.swift in Sources */,
 				7156ADAA1F2AA14F00761F38 /* BudgetInstallments.swift in Sources */,
-				71418E841F69ACA400DFBAF1 /* PromoOptions.swift in Sources */,
 				F78D19581F60BEEA00AEA7BB /* DiscountPerTotal.swift in Sources */,
 				A95FD8391EF9D2650094AA1C /* BCResponse.swift in Sources */,
 				A95FD83F1EF9D2650094AA1C /* Options.swift in Sources */,
@@ -931,7 +912,6 @@
 				F78D19481F60BC7500AEA7BB /* InternalTaxes.swift in Sources */,
 				A95FD8481EF9D2650094AA1C /* Representation.swift in Sources */,
 				7156ADA41F2A9D9F00761F38 /* PrinterDocument.swift in Sources */,
-				71418E8C1F69ADD500DFBAF1 /* BenefitsData.swift in Sources */,
 				A95FD8451EF9D2650094AA1C /* Reasonsaleitemdiscountmenu.swift in Sources */,
 				F78D193A1F60B70D00AEA7BB /* ActualUnitPrice.swift in Sources */,
 				F78D19501F60BDB200AEA7BB /* DiscountTotal.swift in Sources */,

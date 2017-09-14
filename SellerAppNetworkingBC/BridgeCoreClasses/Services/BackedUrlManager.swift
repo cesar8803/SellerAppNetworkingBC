@@ -247,7 +247,6 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
        case .promotionMapVersion(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .addCashPayment(_, _,  let params):
-            let (params,_,_) = oper.getParams()  
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .addCardPayment(let oper):
             let (params,_,_) = oper.getParams()

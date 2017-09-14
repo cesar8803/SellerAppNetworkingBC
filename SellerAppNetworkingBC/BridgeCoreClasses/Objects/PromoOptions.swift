@@ -9,13 +9,23 @@
 import Foundation
 import ObjectMapper
 
-class PromoOptions: Mappable{
-    var promoOptionData: PromoOptionData?
+public class PromoOptions: Mappable{
+    public var promoOptionData: PromoOptionData?
+    public var promoOptionDataArray: [PromoOptionData]?
+
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
-    func mapping(map: Map){
-        promoOptionData <- map["promoOptionData"]
+    public func mapping(map: Map){
+        //promoOptionData <- map["promoOptionData"]
+        
+        if let _ = map["promoOptionData"].currentValue as? PromoOptionData{
+        
+            promoOptionData <- map["promoOptionData"]
+        }else{
+        
+            promoOptionDataArray <- map["promoOptionData"]
+        }
     }
 }
 
