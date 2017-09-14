@@ -494,4 +494,15 @@ public class BridgeCoreServices
         }
     }
     
+    public class func addCardPayment(connectionId:String, storeCode:String, terminalCode:String, parameters: Parameters,  completion:@escaping (_ dataResponse: BridgecorePaymentResponse)-> Void, completionError: @escaping ErrorStringHandlerBC){
+    
+        let operation = BridgeCoreOperation.addCardPayment(connectionId: connectionId, terminal: terminalCode, store: storeCode, params: parameters)
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addCardPayment(operation: operation), completion: { (response) in
+            completion(response)
+        }) { (error) in
+            completionError(error)
+        }
+    }
+
 }
