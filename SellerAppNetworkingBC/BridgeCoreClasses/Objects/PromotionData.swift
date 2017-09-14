@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class PromotionData: Mappable{
-    public var benefitsData: [BenefitsData]?
+    public var benefitsData: [BenefitData]?
     public var promoId: String?
     
     required public  init?(map: Map){
