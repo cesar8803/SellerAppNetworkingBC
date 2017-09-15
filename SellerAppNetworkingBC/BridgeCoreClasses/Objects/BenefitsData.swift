@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 public class BenefitsData: Mappable{
-    public var benefitData: BenefitData?
-    
+    public var benefitData: [BenefitData]?
+
     required public init?(map: Map){
     }
     

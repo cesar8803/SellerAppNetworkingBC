@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 
+/*
 class Promooptions: Mappable{
     var promoOptionData: [Promooptiondata]?
     
@@ -18,3 +19,4 @@ class Promooptions: Mappable{
         promoOptionData <- map["promoOptionData"]
     }
 }
+*/

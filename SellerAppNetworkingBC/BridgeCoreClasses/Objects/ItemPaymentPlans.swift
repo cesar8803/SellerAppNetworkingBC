@@ -16,5 +16,6 @@ public class ItemPaymentPlans: Mappable{
     }
     public func mapping(map: Map){
         benefitData <- map["benefitData"]
+        print("ItemPaymentPlans(map)", map)
     }
 }
