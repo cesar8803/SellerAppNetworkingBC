@@ -69,6 +69,7 @@ public class ItemTicketLiverpoolData: Mappable{
     public var monederoBenefits: [String]?
     public var optionsGroups: [OptionsGroups]?
     
+    
     public var optionsGroupsSelected: [OptionsGroupsSelected]?
 
     required public init?(map: Map){
