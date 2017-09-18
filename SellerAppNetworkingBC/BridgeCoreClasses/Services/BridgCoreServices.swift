@@ -504,5 +504,35 @@ public class BridgeCoreServices
             completionError(error)
         }
     }
+    
+    public class func applyDiscountToItem(connectionId: String, storeCode: String, terminalCode: String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"applyDiscountToItem", "params":params] as [String : Any]
+        
+        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.applyDiscount(terminalCode: terminalCode, storeCode: storeCode, paramters: p), completion: { (response) in
+            
+            completion(response)
+        }) { (error) in
+            
+            completionError(error)
+        }
+    }
+    
+    public class func addMonederoPayment(connectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"addMonederoPayment", "params":params] as [String : Any]
+        
+        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addMonederoPayment(terminalCode: terminalCode, storeCode: storeCode, paramters: p), completion: { (response) in
+            
+            completion(response)
+        }) { (error) in
+            
+            completionError(error)
+        }
+    }
 
 }
