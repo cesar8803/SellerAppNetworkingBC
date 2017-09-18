@@ -102,6 +102,12 @@ public enum BCParamsNames: String{
     case type = "@type"
     case somsAccountNumber = "somsAccountNumber"
     case operationsToApprove = "operationsToApprove"
+    
+    case map = "@map"
+    case itemsOptionSelected = "itemsOptionSelected"
+    case sequence = "sequence"
+    case optionsGroupsSelected = "optionsGroupsSelected"
+    case optionGroup = "optionGroup"
 }
 
 public enum BCRequestParams{
@@ -152,6 +158,7 @@ public enum BCRequestParams{
     
     
     case totalizeTransaction(processPromotions:Bool)
+    
     
     case totalizeTransactionAutorized(
         promoOptionSelected:Int,

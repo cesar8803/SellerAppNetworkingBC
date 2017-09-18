@@ -504,5 +504,16 @@ public class BridgeCoreServices
             completionError(error)
         }
     }
+    
+    /*public class func totalizeTransactionWithParams(connectionId:String, storeCode:String, terminalCode:String, params:Parameters,  completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+     {
+     let oper = BridgeCoreOperation.totalizeTransaction(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: discountParams.getParamsForRequest())
+     
+     AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.totalizeTransaction(operation: oper), completion: { (totalizeBCResponse) in
+     completion(totalizeBCResponse)
+     }) { (msg) in
+     completionError(msg)
+     }
+     }*/
 
 }
