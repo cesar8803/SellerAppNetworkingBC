@@ -10,13 +10,19 @@ import Foundation
 import ObjectMapper
 
 public class PromoOptions: Mappable{
+<<<<<<< HEAD
     public var promoOptionData: [PromoOptionData]?
     
+=======
+    public var promoOptionData: PromoOptionData?
+    public var promoOptionDataArray: [PromoOptionData]?
+>>>>>>> develop
 
     
-    required public init?(map: Map){
+    public required init?(map: Map){
     }
     public func mapping(map: Map){
+<<<<<<< HEAD
         /*
         print("PromoOptions(map)",map)
         switch map["promoOptionData"].currentValue{
@@ -41,6 +47,17 @@ public class PromoOptions: Mappable{
         
          promoOptionData <- map["promoOptionData"]
         
+=======
+        //promoOptionData <- map["promoOptionData"]
+        
+        if let _ = map["promoOptionData"].currentValue as? PromoOptionData{
+        
+            promoOptionData <- map["promoOptionData"]
+        }else{
+        
+            promoOptionDataArray <- map["promoOptionData"]
+        }
+>>>>>>> develop
     }
 }
 

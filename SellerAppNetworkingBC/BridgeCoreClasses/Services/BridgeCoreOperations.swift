@@ -34,6 +34,7 @@ public enum BridgeCoreOperationName:String
     case selectTransaction = "selectTransaction"
     case addTender = "addTender"
     case finishTransaction = "finishTransaction"
+    case finishTransactionPrinter = "finishTransactionPrinter"
     case cancelTransaction = "cancelTransaction"
     case findItems = "findItems"
     case findItemsList = "findItemsList"
@@ -44,6 +45,7 @@ public enum BridgeCoreOperationName:String
     case totalizeTransaction = "totalizeTransaction"
     case addMonederoPayment = "addMonederoPayment"
     case addItemList = "addItemList"
+    case addCardPayment = "addCardPayment"
 }
 
 public enum BCTransactionSubtype: String {
@@ -337,7 +339,11 @@ public enum BridgeCoreOperation
     
     case finishTransactionWithParams(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
     
+    case finishTransactionPrinter(connectionId:String, terminalCode:String, storeCode:String, params:Parameters)
+    
     case addItemList(connectionId: String, terminal:String, store:String, params: [Parameters])
+    
+    case addCardPayment(connectionId: String, terminal:String, store:String, params: Parameters)
     
     func getParams()->(Parameters, String, String)
     {
@@ -485,11 +491,25 @@ public enum BridgeCoreOperation
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminalCode, storeCode)
             
+        case .finishTransactionPrinter(let connectionId, let terminalCode, let storeCode, let params):
+            let p:Parameters = params
+            
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.finishTransactionPrinter.rawValue, "params":p]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminalCode, storeCode)
+            
         case .addItemList(let connectionId, let terminal, let store, let params):
             
             let itemDataList = ["value":params]
             
             let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.addItemList.rawValue, "params":["itemDataList":itemDataList]]
+            
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            return (params, terminal, store)
+            
+        case .addCardPayment(let connectionId, let terminal, let store, let params):
+            
+            let bridgeCoreRequestDict:[String : Any] = ["connectionId":connectionId, "operation":BridgeCoreOperationName.addCardPayment.rawValue, "params":params]
             
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminal, store)

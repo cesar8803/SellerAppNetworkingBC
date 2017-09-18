@@ -64,6 +64,7 @@
 		55E35FA71F3CF2E300E93EB6 /* walletBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */; };
 		57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9CD891F29020200367A15 /* CloseTerminal.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
+		71418E821F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */; };
 		71419A3B1F30FFC3005F70E3 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71419A3A1F30FFC3005F70E3 /* Amount.swift */; };
 		7156AD961F2A67AB00761F38 /* BudgetServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD951F2A67AB00761F38 /* BudgetServices.swift */; };
 		7156AD981F2A8F6300761F38 /* AdditionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156AD971F2A8F6300761F38 /* AdditionalData.swift */; };
@@ -213,6 +214,7 @@
 		55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balancedata.swift; path = Objects/Balancedata.swift; sourceTree = "<group>"; };
 		55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = walletBalance.swift; path = Objects/walletBalance.swift; sourceTree = "<group>"; };
 		57F9CD891F29020200367A15 /* CloseTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTerminal.swift; sourceTree = "<group>"; };
+		71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgecorePaymentResponse.swift; path = Payment/BridgecorePaymentResponse.swift; sourceTree = "<group>"; };
 		71419A3A1F30FFC3005F70E3 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = Objects/Amount.swift; sourceTree = "<group>"; };
 		7156AD951F2A67AB00761F38 /* BudgetServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetServices.swift; path = Services/BudgetServices.swift; sourceTree = "<group>"; };
 		7156AD971F2A8F6300761F38 /* AdditionalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalData.swift; path = Objects/AdditionalData.swift; sourceTree = "<group>"; };
@@ -454,6 +456,14 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		71418E801F69A88000DFBAF1 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
 		A95FD7F41EF9D2110094AA1C = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +497,7 @@
 		A95FD8091EF9D2650094AA1C /* BridgeCoreClasses */ = {
 			isa = PBXGroup;
 			children = (
+				71418E801F69A88000DFBAF1 /* Payment */,
 				2B9FF94E1F4D160700E2025E /* Connection */,
 				2B788EAD1F0B45D8004E5F1F /* Objects */,
 				2BA3B34A1F0AF548003CCFB2 /* Services */,
@@ -886,6 +897,7 @@
 				7156AD9C1F2A8FBE00761F38 /* AdditionalDataListField.swift in Sources */,
 				2B0CA3CF1F0DB748007A8EB0 /* DiscountsPromoTotal.swift in Sources */,
 				2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */,
+				71418E821F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift in Sources */,
 				F78D19421F60B8B300AEA7BB /* OriginalExtendedPrice.swift in Sources */,
 				2B0CA3B91F0DAF26007A8EB0 /* IvaTotal.swift in Sources */,
 				A95FD8421EF9D2650094AA1C /* Promotiondata.swift in Sources */,

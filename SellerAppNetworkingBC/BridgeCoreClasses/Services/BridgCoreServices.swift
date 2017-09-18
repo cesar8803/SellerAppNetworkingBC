@@ -401,6 +401,17 @@ public class BridgeCoreServices
         }
     }
     
+    public class func finishTransactionPrinter(connectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let oper = BridgeCoreOperation.finishTransactionPrinter(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: params)
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.selectTransactionWithOperation(terminalCode: terminalCode, storeCode: storeCode, operation: oper), completion: { (finishTransactionOper) in
+            completion(finishTransactionOper)
+        }) { (msg) in
+            completionError(msg)
+        }
+    }
+    
     public class func cancelTransactionWithParams(coneectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
         
         let bridgeCoreRequestDict = ["connectionId":coneectionId, "operation":"cancelTransaction", "params":params] as [String : Any]
@@ -483,4 +494,15 @@ public class BridgeCoreServices
         }
     }
     
+    public class func addCardPayment(connectionId:String, storeCode:String, terminalCode:String, parameters: Parameters,  completion:@escaping (_ dataResponse: BridgecorePaymentResponse)-> Void, completionError: @escaping ErrorStringHandlerBC){
+    
+        let operation = BridgeCoreOperation.addCardPayment(connectionId: connectionId, terminal: terminalCode, store: storeCode, params: parameters)
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addCardPayment(operation: operation), completion: { (response) in
+            completion(response)
+        }) { (error) in
+            completionError(error)
+        }
+    }
+
 }

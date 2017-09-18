@@ -10,8 +10,9 @@ import Foundation
 import ObjectMapper
 
 public class OptionGroup: Mappable{
-    var id: Int?
-    var promoOptions: [PromoOptions]?
+    public var id: Int?
+    public var promoOptions: [PromoOptions]?
+    
     
     required public init?(map: Map){
     }
@@ -19,6 +20,7 @@ public class OptionGroup: Mappable{
     public func mapping(map: Map){
         id <- map["id"]
         promoOptions <- map["promoOptions"]
+       
     }
 }
 

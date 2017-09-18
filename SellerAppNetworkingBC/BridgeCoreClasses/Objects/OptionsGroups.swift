@@ -11,11 +11,13 @@ import ObjectMapper
 
 
 public class OptionsGroups: Mappable{
-    var optionGroup: OptionGroup?
+    public var optionGroup: OptionGroup?
+    
     
     required public init?(map: Map){
     }
     public func mapping(map: Map){
         optionGroup <- map["optionGroup"]
+        print("OptionsGroups(map)",map)
     }
 }

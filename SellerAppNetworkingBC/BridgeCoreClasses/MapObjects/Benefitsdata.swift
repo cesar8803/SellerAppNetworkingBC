@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 
+/*
 class Benefitsdata: Mappable{
     var benefitData: [Benefitdata]?
     
@@ -18,3 +19,4 @@ class Benefitsdata: Mappable{
         benefitData <- map["benefitData"]
     }
 }
+*/

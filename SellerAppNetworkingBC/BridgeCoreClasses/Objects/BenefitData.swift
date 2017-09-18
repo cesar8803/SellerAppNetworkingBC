@@ -29,9 +29,9 @@ public class BenefitData: Mappable{
         tlogMessage <- map["tlogMessage"]
         benefitType <- map["benefitType"]
         printerMessage <- map["printerMessage"]
-        
         installments <- map["installments"]
         paymentPlanId <- map["paymentPlanId"]
         bank <- map["bank"]
+        print("BenefitData(map)",map)
     }
 }
