@@ -80,6 +80,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     case promotionMapVersion(parameters:Parameters)
     case addCashPayment(terminalCode:String, storeCode:String, paramters:Parameters)
     case addCardPayment(operation: BridgeCoreOperation)
+    case applyDiscount(terminalCode:String, storeCode:String, paramters:Parameters)
+    case addMonederoPayment(terminalCode:String, storeCode:String, paramters:Parameters)
     
     //method
     var method:HTTPMethod{
@@ -128,7 +130,12 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             return .put
         case .addCardPayment(_):
             return .put
+        case .applyDiscount(_,_,_):
+            return .put
+        case .addMonederoPayment(_,_,_):
+            return .put
         }
+        
     }
     
     var path:String{
@@ -182,6 +189,10 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addCardPayment(let operation):
             let  (_, terminal, store) = operation.getParams()
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+        case .applyDiscount(let terminal, let store, _):
+            return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
+        case .addMonederoPayment(let terminal, let store, _):
+            return "bridge-server-rest-liverpool/terminal/\(terminal)/\(store)"
         }
     }
     
@@ -250,6 +261,10 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .addCardPayment(let oper):
             let (params,_,_) = oper.getParams()
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .applyDiscount(_, _,  let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .addMonederoPayment(_, _,  let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
