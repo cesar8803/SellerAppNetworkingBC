@@ -15,7 +15,7 @@ public class BenefitData: Mappable{
     public var tlogMessage: String?
     public var benefitType: String?
     public var printerMessage: String?
-    
+    public var value: Value?
     public var installments: String?
     public var paymentPlanId: String?
     public var bank: String?
