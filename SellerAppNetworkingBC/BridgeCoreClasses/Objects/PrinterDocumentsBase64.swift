@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class PrinterDocumentsBase64: Mappable{
-    public var string: String?
+    public var string: [String]?
     
     public required init?(map: Map){
     }
