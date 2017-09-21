@@ -13,12 +13,14 @@ public class OptionGroup: Mappable{
     public var id: Int?
     public var promoOptions: [PromoOptions]?
     
+    
     required public init?(map: Map){
     }
     
     public func mapping(map: Map){
         id <- map["id"]
         promoOptions <- map["promoOptions"]
+       
     }
 }
 

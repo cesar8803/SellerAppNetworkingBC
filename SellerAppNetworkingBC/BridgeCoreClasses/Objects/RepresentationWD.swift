@@ -54,6 +54,14 @@ public class RepresentationWD: Mappable{
     
     /****************************/
     
+    
+    public var autoCancelTrxAddCustomer: Int?
+    public var warningList: [String]?
+    public var warrantyMessage: String?
+    public var warrantyList: [String]?
+    public var storeCloseMessageExtDisplay: String?
+    public var storeOpenMessageExtDisplay: String?
+    
     required public init?(map: Map){
     }
     
@@ -81,5 +89,12 @@ public class RepresentationWD: Mappable{
         additionalData <- map["additionalData"]
         fieldRequests <- map["fieldRequests"]
         storesList <- map["storesList"]
+        autoCancelTrxAddCustomer <- map["autoCancelTrxAddCustomer"]
+        warningList <- map["warningList"]
+        warrantyMessage <- map["warrantyMessage"]
+        warrantyList <- map["warrantyList"]
+        storeCloseMessageExtDisplay <- map["storeCloseMessageExtDisplay"]
+        storeOpenMessageExtDisplay <- map["storeOpenMessageExtDisplay"]
+
     }
 }
