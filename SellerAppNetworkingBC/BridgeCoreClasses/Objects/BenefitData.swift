@@ -28,6 +28,7 @@ public class BenefitData: Mappable{
         promoId <- map["promoId"]
         tlogMessage <- map["tlogMessage"]
         benefitType <- map["benefitType"]
+        value <- map["value"]
         printerMessage <- map["printerMessage"]
         installments <- map["installments"]
         paymentPlanId <- map["paymentPlanId"]
