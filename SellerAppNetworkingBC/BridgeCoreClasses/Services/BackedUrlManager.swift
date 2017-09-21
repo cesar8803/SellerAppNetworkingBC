@@ -182,6 +182,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addCardPayment(let operation):
             let  (_, terminal, store) = operation.getParams()
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+       
         }
     }
     
@@ -251,6 +252,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addCardPayment(let oper):
             let (params,_,_) = oper.getParams()
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+       
         }
         
         
