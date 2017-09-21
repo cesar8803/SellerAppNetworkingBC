@@ -96,5 +96,7 @@ public class RepresentationWD: Mappable{
         storeCloseMessageExtDisplay <- map["storeCloseMessageExtDisplay"]
         storeOpenMessageExtDisplay <- map["storeOpenMessageExtDisplay"]
 
+        additionalData <- map["additionalData"]
+        fieldRequests <- map["fieldRequests"]
     }
 }
