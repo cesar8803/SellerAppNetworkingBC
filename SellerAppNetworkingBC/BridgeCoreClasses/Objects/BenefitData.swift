@@ -15,7 +15,7 @@ public class BenefitData: Mappable{
     public var tlogMessage: String?
     public var benefitType: String?
     public var printerMessage: String?
-    
+    public var value: Value?
     public var installments: String?
     public var paymentPlanId: String?
     public var bank: String?
@@ -28,6 +28,7 @@ public class BenefitData: Mappable{
         promoId <- map["promoId"]
         tlogMessage <- map["tlogMessage"]
         benefitType <- map["benefitType"]
+        value <- map["value"]
         printerMessage <- map["printerMessage"]
         installments <- map["installments"]
         paymentPlanId <- map["paymentPlanId"]
