@@ -210,6 +210,16 @@ public class Paymentdataliverpool: Mappable{
     public var frankingRequired: Int?
     public var tenderGsaId: Int?
     
+    public var bankDescription: String?
+    public var originalAuthorization: String?
+    public var description: String?
+    public var selectedInstallmentAmount: Selectedinstallmentamount?
+    public var bankAfiliation: Int?
+    public var externalCoupon: Int?
+    public var account: Int?
+    public var selectedInstallments: Int?
+    public var inputDescriptor: String?
+    
     required public init?(map: Map){
     }
     public func mapping(map: Map){
@@ -234,6 +244,26 @@ public class Paymentdataliverpool: Mappable{
         inputType <- map["inputType"]
         frankingRequired <- map["frankingRequired"]
         tenderGsaId <- map["tenderGsaId"]
+        
+        bankDescription <- map["bankDescription"]
+        originalAuthorization <- map["originalAuthorization"]
+        description <- map["description"]
+        selectedInstallmentAmount <- map["selectedInstallmentAmount"]
+        bankAfiliation <- map["bankAfiliation"]
+        externalCoupon <- map["externalCoupon"]
+        account <- map["account"]
+        selectedInstallments <- map["selectedInstallments"]
+        inputDescriptor <- map["inputDescriptor"]
+    }
+}
+
+public class Selectedinstallmentamount: Mappable{
+    var number: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
     }
 }
 
