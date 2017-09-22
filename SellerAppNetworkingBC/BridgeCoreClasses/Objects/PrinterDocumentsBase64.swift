@@ -10,11 +10,16 @@ import Foundation
 import ObjectMapper
 
 public class PrinterDocumentsBase64: Mappable{
-    public var string: [String]?
+    public var stringArray: [String]?
+    public var string: String?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
-        string <- map["string"]
+        if let _ = map["string"].currentValue as? [String]{
+            stringArray <- map["string"]
+        }else{
+            string <- map["string"]
+        }
     }
 }
