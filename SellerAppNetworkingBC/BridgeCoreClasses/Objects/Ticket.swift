@@ -220,6 +220,8 @@ public class Paymentdataliverpool: Mappable{
     public var selectedInstallments: Int?
     public var inputDescriptor: String?
     
+    public var eGlobalCardList: [Eglobalcardlist]?
+    
     required public init?(map: Map){
     }
     public func mapping(map: Map){
@@ -254,6 +256,31 @@ public class Paymentdataliverpool: Mappable{
         account <- map["account"]
         selectedInstallments <- map["selectedInstallments"]
         inputDescriptor <- map["inputDescriptor"]
+        eGlobalCardList <- map["eGlobalCardList"]
+    }
+}
+
+public class Eglobalcardlist: Mappable{
+    public var eglobalCard: Eglobalcard?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        eglobalCard <- map["eglobalCard"]
+    }
+}
+
+public class Eglobalcard: Mappable{
+    public var account: String?
+    public var amount: Amount?
+    public var entered: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        account <- map["account"]
+        amount <- map["amount"]
+        entered <- map["entered"]
     }
 }
 
