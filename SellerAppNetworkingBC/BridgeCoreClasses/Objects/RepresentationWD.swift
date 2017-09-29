@@ -61,6 +61,7 @@ public class RepresentationWD: Mappable{
     public var warrantyList: [String]?
     public var storeCloseMessageExtDisplay: String?
     public var storeOpenMessageExtDisplay: String?
+    public var aditionalParameters: [Aditionalparameters]?
     
     required public init?(map: Map){
     }
@@ -95,6 +96,7 @@ public class RepresentationWD: Mappable{
         warrantyList <- map["warrantyList"]
         storeCloseMessageExtDisplay <- map["storeCloseMessageExtDisplay"]
         storeOpenMessageExtDisplay <- map["storeOpenMessageExtDisplay"]
+        aditionalParameters <- map["aditionalParameters"]
 
     }
 }
