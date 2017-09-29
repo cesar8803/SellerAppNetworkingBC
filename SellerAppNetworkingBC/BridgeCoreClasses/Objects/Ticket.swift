@@ -78,8 +78,6 @@ public class Ticket: Mappable{
     public var trainingModeFlag: Int?
     public var paymentsSurchargeTotal: PaymentsSurChargetotal?
     public var eGlobalCardList: [Eglobalcardlist]?
-    
-    
     public var printerDocument: Printerdocument?
     public var order: Int?
     public var totalWithTrxDiscounts: Totalwithtrxdiscounts?
