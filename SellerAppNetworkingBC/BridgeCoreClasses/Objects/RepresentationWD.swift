@@ -81,7 +81,10 @@ public class RepresentationWD: Mappable{
      */
     public var authorization: String?
     
-    
+    /**
+    * tokenTlv91: Token de respuesta para enviar al PinPad en la confirmación en el campo “Issuer Authentication Data” (String (Base 64))
+    */
+    public var tokenTlv91: String?
     
     required public init?(map: Map){
     }
@@ -124,5 +127,8 @@ public class RepresentationWD: Mappable{
         baseScripts <- map["baseScripts"]
         authorization <- map["authorization"]
         fieldRequests <- map["fieldRequests"]
+        
+        tokenTlv91 <- map["tokenTlv91"]
+        
     }
 }
