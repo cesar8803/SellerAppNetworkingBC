@@ -28,7 +28,7 @@ public class RepresentationWD: Mappable{
     public var additionalData: [AdditionalData]?
     public var fieldRequests: [FieldRequests]?
     public var storesList: [StoresList]?
-    public var aditionalParameters: [Aditionalparameters]?
+    public var aditionalParameters: [AditionalParameters]?
     
     public var stores:[LPStoreData]? {
         
@@ -99,20 +99,20 @@ public class RepresentationWD: Mappable{
         storeOpenMessageExtDisplay <- map["storeOpenMessageExtDisplay"]
 
     }
+}
+
+public class AditionalParameters: Mappable{
+    public var storeCode: String?
+    public var terminalCode: Int?
+    public var paymentAmount: Float?
+    public var cardPaymentTokensReq: Int?
     
-    public class Aditionalparameters: Mappable{
-        public var storeCode: String?
-        public var terminalCode: Int?
-        public var paymentAmount: Float?
-        public var cardPaymentTokensReq: Int?
-        
-        required public init?(map: Map){
-        }
-        public func mapping(map: Map){
-            storeCode <- map["storeCode"]
-            terminalCode <- map["terminalCode"]
-            paymentAmount <- map["paymentAmount"]
-            cardPaymentTokensReq <- map["cardPaymentTokensReq"]
-        }
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        storeCode <- map["storeCode"]
+        terminalCode <- map["terminalCode"]
+        paymentAmount <- map["paymentAmount"]
+        cardPaymentTokensReq <- map["cardPaymentTokensReq"]
     }
 }
