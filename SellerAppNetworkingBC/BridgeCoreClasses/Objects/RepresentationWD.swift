@@ -63,6 +63,26 @@ public class RepresentationWD: Mappable{
     public var storeOpenMessageExtDisplay: String?
     public var aditionalParameters: [Aditionalparameters]?
     
+    //MARK:- SimpleParameters for ConfirmCardPaymentRepresentation
+    /**
+    * authorizationCode: Codigo de autorización a enviar al pinpad en la confirmación en el campo “Authorization Code”
+    */
+    public var authorizationCode: String?
+    /**
+     * code: Codigo de respuesta para enviar al PinPad en la confirmación en el campo “Status de la respuesta del Host”
+     */
+    public var code: String?
+    /**
+     * baseScripts: Scripts completos
+     */
+    public var baseScripts: String?
+    /**
+     * authorization: Tipo de autorización
+     */
+    public var authorization: String?
+    
+    
+    
     required public init?(map: Map){
     }
     
@@ -99,6 +119,10 @@ public class RepresentationWD: Mappable{
         aditionalParameters <- map["aditionalParameters"]
 
         additionalData <- map["additionalData"]
+        fieldRequests <- map["fieldRequests"]
+        
+        baseScripts <- map["baseScripts"]
+        authorization <- map["authorization"]
         fieldRequests <- map["fieldRequests"]
     }
 }
