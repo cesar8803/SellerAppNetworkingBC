@@ -127,7 +127,6 @@ public class RepresentationWD: Mappable{
         baseScripts <- map["baseScripts"]
         authorization <- map["authorization"]
         fieldRequests <- map["fieldRequests"]
-        
         tokenTlv91 <- map["tokenTlv91"]
         
     }
