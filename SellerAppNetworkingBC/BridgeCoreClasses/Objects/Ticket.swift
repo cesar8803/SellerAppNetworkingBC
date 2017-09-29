@@ -77,6 +77,7 @@ public class Ticket: Mappable{
     public var userName: String?
     public var trainingModeFlag: Int?
     public var paymentsSurchargeTotal: PaymentsSurChargetotal?
+    public var eGlobalCardList: [Eglobalcardlist]?
     
     required public init?(map: Map){
     }
@@ -161,7 +162,7 @@ public class Ticket: Mappable{
         userName <- map["userName"]
         trainingModeFlag <- map["trainingModeFlag"]
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
-        
+        eGlobalCardList <- map["eGlobalCardList"]
         
     }
 }
@@ -220,6 +221,8 @@ public class Paymentdataliverpool: Mappable{
     public var selectedInstallments: Int?
     public var inputDescriptor: String?
     
+    
+    
     required public init?(map: Map){
     }
     public func mapping(map: Map){
@@ -254,6 +257,30 @@ public class Paymentdataliverpool: Mappable{
         account <- map["account"]
         selectedInstallments <- map["selectedInstallments"]
         inputDescriptor <- map["inputDescriptor"]
+    }
+}
+
+public class Eglobalcardlist: Mappable{
+    public var eglobalCard: Eglobalcard?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        eglobalCard <- map["eglobalCard"]
+    }
+}
+
+public class Eglobalcard: Mappable{
+    public var account: String?
+    public var amount: Amount?
+    public var entered: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        account <- map["account"]
+        amount <- map["amount"]
+        entered <- map["entered"]
     }
 }
 

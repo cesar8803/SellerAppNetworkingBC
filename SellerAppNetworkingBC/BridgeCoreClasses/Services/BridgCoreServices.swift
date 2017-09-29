@@ -223,7 +223,9 @@ public class BridgeCoreServices
                                         
                                     }
                                     
-                                    finishTransaction(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, completion: completion, completionError: completionError)
+                                    let params: [String:Any] = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false]
+                                    
+                                    finishTransactionPrinter(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: params, completion: completion, completionError: completionError)
     
                                 }
                                 
