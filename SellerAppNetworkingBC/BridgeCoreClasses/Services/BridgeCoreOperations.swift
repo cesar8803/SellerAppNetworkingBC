@@ -102,7 +102,73 @@ public enum BCParamsNames: String{
     case type = "@type"
     case somsAccountNumber = "somsAccountNumber"
     case operationsToApprove = "operationsToApprove"
+    
+    case map = "@map"
+    case itemsOptionSelected = "itemsOptionSelected"
+    case sequence = "sequence"
+    case optionsGroupsSelected = "optionsGroupsSelected"
+    case optionGroup = "optionGroup"
 }
+
+
+//Mark:- New BCRequest parameters
+/*
+ * this is an additional way to build the request paraemters for BridgeCore. The correct number of parameters is
+ * resposabilities who use it
+ */
+public typealias BCDictionary = [BCParamsNames:Any]
+
+public protocol BCRequestProtocol{
+    var parameters: BCDictionary  {get set}
+    var terminal:String {get}
+    var store:String {get}
+    var connId:String {get}
+    var operationName:BridgeCoreOperationName {get set}
+    var transactionSubtype:BCTransactionSubtype? {get set}
+}
+
+public extension BCRequestProtocol{
+    
+    func getDictionayParams()->[String:Any] {
+        var dict:[String:Any] = [String:Any]()
+        for (key, value) in self.parameters{
+            dict[key.rawValue] = value
+        }
+        if let sub = self.transactionSubtype{
+            dict["transactionSubtype"] = sub.rawValue
+        }
+        return dict
+    }
+    
+    mutating func addParameter(key:BCParamsNames, value:Any){
+        self.parameters[key] = value
+    }
+    
+    func getRequestParameters()->Parameters{
+        var dict:Parameters = Parameters()
+        dict["operation"] = self.operationName.rawValue
+        dict["parameters"] = self.getDictionayParams()
+        dict["connectionId"] = self.connId
+        
+        return dict
+    }
+}
+
+//MARk:- BCRequest
+/**
+ * Use this structure to encapsule all logic of make the request dictionary
+ */
+public struct BCRequest:BCRequestProtocol{
+    public var parameters: BCDictionary = BCDictionary()
+    public let terminal:String
+    public let store:String
+    public let connId:String
+    public var operationName:BridgeCoreOperationName
+    public var transactionSubtype:BCTransactionSubtype?
+}
+
+//Mark:--
+
 
 public enum BCRequestParams{
     case refundNormalTransaction(refundOriginalTrxScannedCode:String,
@@ -152,6 +218,7 @@ public enum BCRequestParams{
     
     
     case totalizeTransaction(processPromotions:Bool)
+    
     
     case totalizeTransactionAutorized(
         promoOptionSelected:Int,
@@ -296,7 +363,7 @@ public enum BCRequestParams{
 }
 
 
-
+public typealias BCRequestDictionary = [BCParamsNames:Any]
 
 public enum BridgeCoreOperation
 {
@@ -344,6 +411,9 @@ public enum BridgeCoreOperation
     case addItemList(connectionId: String, terminal:String, store:String, params: [Parameters])
     
     case addCardPayment(connectionId: String, terminal:String, store:String, params: Parameters)
+    
+    case totalizeTransactionWithRequest(request:BCRequestProtocol)
+    
     
     func getParams()->(Parameters, String, String)
     {
@@ -513,6 +583,13 @@ public enum BridgeCoreOperation
             
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             return (params, terminal, store)
+            
+            
+        case .totalizeTransactionWithRequest(let request):
+            let params:Parameters = ["bridgeCoreRequest":request.getRequestParameters()]
+
+            return (params, request.terminal, request.store)
+        
             
         }
     }

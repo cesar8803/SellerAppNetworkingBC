@@ -78,6 +78,27 @@ public class Ticket: Mappable{
     public var trainingModeFlag: Int?
     public var paymentsSurchargeTotal: PaymentsSurChargetotal?
     public var eGlobalCardList: [Eglobalcardlist]?
+    public var printerDocument: Printerdocument?
+    public var order: Int?
+    public var totalWithTrxDiscounts: Totalwithtrxdiscounts?
+    public var antiMoneyLaundry: Int?
+    public var couponName: String?
+    public var promoCoupons: [String]?
+    public var itemsQuantity: Itemsquantity?
+    public var forceReloadPage: Int?
+    public var storeDescriptionData: Storedescriptiondata?
+    public var totalPromoDiscountToShow: Totalpromodiscounttoshow?
+    public var applySnackBar: Int?
+    public var paid: Int?
+    public var netTotal: Nettotal?
+    public var listMessageError: [String]?
+    public var abonoVUE: Int?
+    public var totalCasaDiscount: Totalcasadiscount?
+    public var crmCouponPromotions: [String]?
+    public var puntosBancomerData: Puntosbancomerdata?
+    public var testerData: [Testerdata]?
+    public var promoOptionSelected: Int?
+    
     
     required public init?(map: Map){
     }
@@ -164,6 +185,422 @@ public class Ticket: Mappable{
         paymentsSurchargeTotal <- map["paymentsSurchargeTotal"]
         eGlobalCardList <- map["eGlobalCardList"]
         
+        
+        
+        printerDocument <- map["printerDocument"]
+        order <- map["order"]
+        totalWithTrxDiscounts <- map["totalWithTrxDiscounts"]
+        antiMoneyLaundry <- map["antiMoneyLaundry"]
+        couponName <- map["couponName"]
+        promoCoupons <- map["promoCoupons"]
+        itemsQuantity <- map["itemsQuantity"]
+        forceReloadPage <- map["forceReloadPage"]
+        storeDescriptionData <- map["storeDescriptionData"]
+        totalPromoDiscountToShow <- map["totalPromoDiscountToShow"]
+        applySnackBar <- map["applySnackBar"]
+        paid <- map["paid"]
+        netTotal <- map["netTotal"]
+        listMessageError <- map["listMessageError"]
+        abonoVUE <- map["abonoVUE"]
+        totalCasaDiscount <- map["totalCasaDiscount"]
+        crmCouponPromotions <- map["crmCouponPromotions"]
+        puntosBancomerData <- map["puntosBancomerData"]
+        testerData <- map["testerData"]
+        promoOptionSelected <- map["promoOptionSelected"]
+        
+        
+    }
+}
+
+public class Paymentssurchargetotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Tendersurchargetotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Testerdata: Mappable{
+    public var string: [String]?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        string <- map["string"]
+    }
+}
+
+public class Ivaperceptions: Mappable{
+    public var number: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Subtotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Puntosbancomerdata: Mappable{
+    public var account: Int?
+    public var saldoPesos: Saldopesos?
+    public var saldoAnteriorPesos: Saldoanteriorpesos?
+    public var saldoAnteriorPuntos: Int?
+    public var saldoRedimidoPuntos: Int?
+    public var saldoPuntos: Int?
+    public var bankAfiliation: Int?
+    public var poolId: String?
+    public var saldoRedimidoPesos: Saldoredimidopesos?
+    public var bankDescription: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        account <- map["account"]
+        saldoPesos <- map["saldoPesos"]
+        saldoAnteriorPesos <- map["saldoAnteriorPesos"]
+        saldoAnteriorPuntos <- map["saldoAnteriorPuntos"]
+        saldoRedimidoPuntos <- map["saldoRedimidoPuntos"]
+        saldoPuntos <- map["saldoPuntos"]
+        bankAfiliation <- map["bankAfiliation"]
+        poolId <- map["poolId"]
+        saldoRedimidoPesos <- map["saldoRedimidoPesos"]
+        bankDescription <- map["bankDescription"]
+    }
+}
+
+public class Saldoredimidopesos: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Saldoanteriorpesos: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Saldopesos: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Totalcasadiscount: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Discountspromototal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Nettotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Totalsdata: Mappable{
+    public var devolucion: Devolucion?
+    public var totalComputador: Totalcomputador?
+    public var totalDiferencia: Totaldiferencia?
+    public var entregado: Entregado?
+    public var valesPapel: Valespapel?
+    public var voucher: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        devolucion <- map["devolucion"]
+        totalComputador <- map["totalComputador"]
+        totalDiferencia <- map["totalDiferencia"]
+        entregado <- map["entregado"]
+        valesPapel <- map["valesPapel"]
+        voucher <- map["voucher"]
+    }
+}
+
+public class Valespapel: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Totaldiferencia: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Totalcomputador: Mappable{
+    public var number: Float?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Totalpromodiscounttoshow: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Storedescriptiondata: Mappable{
+    public var addressDescriptions: [Addressdescriptions]?
+    public var trailerTelephone: String?
+    public var trailerLabel: String?
+    public var trailerUrl: String?
+    public var invoiceDescriptions: [Invoicedescriptions]?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        addressDescriptions <- map["addressDescriptions"]
+        trailerTelephone <- map["trailerTelephone"]
+        trailerLabel <- map["trailerLabel"]
+        trailerUrl <- map["trailerUrl"]
+        invoiceDescriptions <- map["invoiceDescriptions"]
+    }
+}
+
+public class Invoicedescriptions: Mappable{
+    public var descriptionLine: [Descriptionline]?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        descriptionLine <- map["descriptionLine"]
+    }
+}
+
+public class Descriptionline: Mappable{
+    public var description: String?
+    public var printingType: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        description <- map["description"]
+        printingType <- map["printingType"]
+    }
+}
+
+public class Addressdescriptions: Mappable{
+    public var descriptionLine: [Descriptionline]?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        descriptionLine <- map["descriptionLine"]
+    }
+}
+
+public class Internaltaxestotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Perceptionstotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Itemsquantity: Mappable{
+    public var number: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Discountsitemstotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Totalloyaltybenefits: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Ivatotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Discountstotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Paymentstotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Iibbperceptions: Mappable{
+    public var number: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Totalwithtrxdiscounts: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Totalbalance: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Discountstransactiontotal: Mappable{
+    public var number: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+}
+
+public class Printerdocument: Mappable{
+    public var errorDescription: String?
+    public var printerDocumentsBase64: [Printerdocumentsbase64]?
+    public var errorCode: Int?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        errorDescription <- map["errorDescription"]
+        printerDocumentsBase64 <- map["printerDocumentsBase64"]
+        errorCode <- map["errorCode"]
+    }
+}
+
+public class Printerdocumentsbase64: Mappable{
+    public var string: String?
+    
+    required public init?(map: Map){
+    }
+    public func mapping(map: Map){
+        string <- map["string"]
     }
 }
 
