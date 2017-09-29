@@ -74,6 +74,8 @@ public class RefundsBC
         }
     }
     
+
+    
     public class func addPurse(connectionId:String, storeCode:String, terminalCode:String,  purseParams:BCRequestParams,completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         let oper = BridgeCoreOperation.addPurse(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: purseParams.getParamsForRequest())

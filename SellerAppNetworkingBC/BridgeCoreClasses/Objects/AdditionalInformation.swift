@@ -11,10 +11,16 @@ import ObjectMapper
 
 public class AdditionalInformation: Mappable{
     public var dataType: String?
+    /*********************************/
+    var labelTitle: String?
+    var indexRequired: String?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
         dataType <- map["dataType"]
+        /*********************************/
+        labelTitle <- map["labelTitle"]
+        indexRequired <- map["indexRequired"]
     }
 }
