@@ -14,6 +14,7 @@ public class Aditionalparameters: Mappable{
     public var paymentAmount: String?
     public var bank: String?
     public var bankcode: Int?
+    public var cardPaymentTokensReq: Int?
     
     public required init?(map: Map){
     }
@@ -23,5 +24,6 @@ public class Aditionalparameters: Mappable{
         paymentAmount <- map["paymentAmount"]
         bank <- map["bank"]
         bankcode <- map["bankcode"]
+        cardPaymentTokensReq <- map["cardPaymentTokensReq"]
     }
 }
