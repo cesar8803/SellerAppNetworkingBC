@@ -114,6 +114,8 @@
 		A9E05B951F3CD450001ACA0A /* ItemErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */; };
 		A9E05B971F3CD4F8001ACA0A /* ItemErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */; };
 		C17B293D1F7DF150005709C1 /* Aditionalparameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B293C1F7DF150005709C1 /* Aditionalparameters.swift */; };
+		C1A91EDE1F82A81C0028D67C /* warrantyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A91EDD1F82A81C0028D67C /* warrantyList.swift */; };
+		C1A91EE01F82A8430028D67C /* Warrantydata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A91EDF1F82A8430028D67C /* Warrantydata.swift */; };
 		C1FA8F481F73FDA700024FB1 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FA8F471F73FDA700024FB1 /* Value.swift */; };
 		F78D19341F60B4A800AEA7BB /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78D19331F60B4A800AEA7BB /* Items.swift */; };
 		F78D19361F60B63200AEA7BB /* ItemTicketLiverpoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78D19351F60B63200AEA7BB /* ItemTicketLiverpoolData.swift */; };
@@ -270,6 +272,8 @@
 		A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorList.swift; path = Objects/ItemErrorList.swift; sourceTree = "<group>"; };
 		A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorData.swift; path = Objects/ItemErrorData.swift; sourceTree = "<group>"; };
 		C17B293C1F7DF150005709C1 /* Aditionalparameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aditionalparameters.swift; sourceTree = "<group>"; };
+		C1A91EDD1F82A81C0028D67C /* warrantyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = warrantyList.swift; path = Objects/warrantyList.swift; sourceTree = "<group>"; };
+		C1A91EDF1F82A8430028D67C /* Warrantydata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Warrantydata.swift; path = Objects/Warrantydata.swift; sourceTree = "<group>"; };
 		C1FA8F471F73FDA700024FB1 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Value.swift; path = Objects/Value.swift; sourceTree = "<group>"; };
 		E3B20915DA025EDC92B2CF07 /* Pods-SellerAppNetworkingBCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F09B66C44678F716BBD9DB15 /* Pods-SellerAppNetworkingBC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingBC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC.release.xcconfig"; sourceTree = "<group>"; };
@@ -424,6 +428,8 @@
 				F7FEF28F1F630E490019F7DE /* PromotionsData.swift */,
 				F7FEF2911F630EA20019F7DE /* PromotionData.swift */,
 				C1FA8F471F73FDA700024FB1 /* Value.swift */,
+				C1A91EDD1F82A81C0028D67C /* warrantyList.swift */,
+				C1A91EDF1F82A8430028D67C /* Warrantydata.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -796,6 +802,8 @@
 				2B0CA3D71F0DB9BD007A8EB0 /* DiscountsTransactionTotal.swift in Sources */,
 				A9E05B971F3CD4F8001ACA0A /* ItemErrorData.swift in Sources */,
 				A95FD83D1EF9D2650094AA1C /* Operationresult.swift in Sources */,
+				C1A91EDE1F82A81C0028D67C /* warrantyList.swift in Sources */,
+				C1A91EE01F82A8430028D67C /* Warrantydata.swift in Sources */,
 				2B9FF9501F4D166100E2025E /* BridgeCoreConnection.swift in Sources */,
 				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
 				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,

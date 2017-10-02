@@ -59,6 +59,7 @@ public class RepresentationWD: Mappable{
     public var warningList: [String]?
     public var warrantyMessage: String?
     public var warrantyList: [String]?
+    public var warrantyListN: [Warrantylist]?
     public var storeCloseMessageExtDisplay: String?
     public var storeOpenMessageExtDisplay: String?
     public var aditionalParameters: [Aditionalparameters]?
@@ -120,10 +121,9 @@ public class RepresentationWD: Mappable{
         storeCloseMessageExtDisplay <- map["storeCloseMessageExtDisplay"]
         storeOpenMessageExtDisplay <- map["storeOpenMessageExtDisplay"]
         aditionalParameters <- map["aditionalParameters"]
-
+        warrantyListN <- map["warrantyList"]
         additionalData <- map["additionalData"]
         fieldRequests <- map["fieldRequests"]
-        
         baseScripts <- map["baseScripts"]
         authorization <- map["authorization"]
         fieldRequests <- map["fieldRequests"]
