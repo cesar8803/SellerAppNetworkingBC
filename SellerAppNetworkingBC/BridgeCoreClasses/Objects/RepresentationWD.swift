@@ -131,5 +131,7 @@ public class RepresentationWD: Mappable{
         fieldRequests <- map["fieldRequests"]
         tokenTlv91 <- map["tokenTlv91"]
         forceKeysData <- map["forceKeysData"]
+        code <- map["code"]
+        authorizationCode <- map["authorizationCode"]
     }
 }
