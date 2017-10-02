@@ -273,6 +273,7 @@ public class Puntosbancomerdata: Mappable{
     public var poolId: String?
     public var saldoRedimidoPesos: Saldoredimidopesos?
     public var bankDescription: String?
+    public var base64: String?
     
     required public init?(map: Map){
     }
@@ -287,6 +288,7 @@ public class Puntosbancomerdata: Mappable{
         poolId <- map["poolId"]
         saldoRedimidoPesos <- map["saldoRedimidoPesos"]
         bankDescription <- map["bankDescription"]
+        base64 <- map["base64"]
     }
 }
 

@@ -60,6 +60,7 @@
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
 		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
 		5588D7D21F55D05C003426A4 /* BenefitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588D7D11F55D05C003426A4 /* BenefitData.swift */; };
+		55E1DCCC1F82A2E8008A469F /* Forcekeysdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */; };
 		55E35FA51F3CF24E00E93EB6 /* Balancedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */; };
 		55E35FA71F3CF2E300E93EB6 /* walletBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */; };
 		57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9CD891F29020200367A15 /* CloseTerminal.swift */; };
@@ -215,6 +216,7 @@
 		2B9FF94F1F4D166100E2025E /* BridgeCoreConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreConnection.swift; path = Services/BridgeCoreConnection.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
 		5588D7D11F55D05C003426A4 /* BenefitData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenefitData.swift; path = Objects/BenefitData.swift; sourceTree = "<group>"; };
+		55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Forcekeysdata.swift; path = Objects/Forcekeysdata.swift; sourceTree = "<group>"; };
 		55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balancedata.swift; path = Objects/Balancedata.swift; sourceTree = "<group>"; };
 		55E35FA61F3CF2E300E93EB6 /* walletBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = walletBalance.swift; path = Objects/walletBalance.swift; sourceTree = "<group>"; };
 		57F9CD891F29020200367A15 /* CloseTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTerminal.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				C1FA8F471F73FDA700024FB1 /* Value.swift */,
 				C1A91EDD1F82A81C0028D67C /* warrantyList.swift */,
 				C1A91EDF1F82A8430028D67C /* Warrantydata.swift */,
+				55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 				A95FD83B1EF9D2650094AA1C /* Benefitsdata.swift in Sources */,
 				2B0CA3C51F0DB489007A8EB0 /* Change.swift in Sources */,
 				A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */,
+				55E1DCCC1F82A2E8008A469F /* Forcekeysdata.swift in Sources */,
 				A95FD8411EF9D2650094AA1C /* Promooptions.swift in Sources */,
 				2B0CA3D31F0DB898007A8EB0 /* IvaPerceptions.swift in Sources */,
 				2B788EB91F0B49DA004E5F1F /* ValorTipoCambio.swift in Sources */,
