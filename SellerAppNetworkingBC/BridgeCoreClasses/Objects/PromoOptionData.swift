@@ -13,6 +13,7 @@ public class PromoOptionData: Mappable{
     
     public var benefitsData: [BenefitsData]?
     public var number: Int?
+    public var benefitStatements : String?
     
     //public var promotionsData: [PromotionsData]?
     //public var promotionsData2: PromotionsData?
