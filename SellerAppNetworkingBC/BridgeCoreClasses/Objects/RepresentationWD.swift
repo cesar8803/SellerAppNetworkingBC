@@ -89,6 +89,8 @@ public class RepresentationWD: Mappable{
     required public init?(map: Map){
     }
     
+    public var forceKeysData: Forcekeysdata?
+    
     public func mapping(map: Map){
         status <- map["status"]
         storeCode <- map["storeCode"]
@@ -128,6 +130,6 @@ public class RepresentationWD: Mappable{
         authorization <- map["authorization"]
         fieldRequests <- map["fieldRequests"]
         tokenTlv91 <- map["tokenTlv91"]
-        
+        forceKeysData <- map["forceKeysData"]
     }
 }
