@@ -536,5 +536,12 @@ public class BridgeCoreServices
             completionError(error)
         }
     }
+    
+    /*Generic*/
+    public class func totalizeWithRequest(request:BCRequestProtocol, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        let bcO = BridgeCoreOperation.totalizeTransactionWithRequest(request: request)
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.totalizeTransaction(operation: bcO), completion: completion, errorCompletition: completionError)
+    }
 
 }
