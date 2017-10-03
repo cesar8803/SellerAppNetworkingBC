@@ -147,7 +147,7 @@ public extension BCRequestProtocol{
     func getRequestParameters()->Parameters{
         var dict:Parameters = Parameters()
         dict["operation"] = self.operationName.rawValue
-        dict["parameters"] = self.getDictionayParams()
+        dict["params"] = self.getDictionayParams()
         dict["connectionId"] = self.connId
         
         return dict

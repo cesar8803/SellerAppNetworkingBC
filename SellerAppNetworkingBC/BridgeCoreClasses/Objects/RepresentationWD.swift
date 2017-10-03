@@ -87,6 +87,8 @@ public class RepresentationWD: Mappable{
     */
     public var tokenTlv91: String?
     
+    
+    
     required public init?(map: Map){
     }
     
