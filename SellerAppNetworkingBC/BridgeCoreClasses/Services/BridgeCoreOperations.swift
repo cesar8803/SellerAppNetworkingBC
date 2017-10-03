@@ -165,6 +165,15 @@ public struct BCRequest:BCRequestProtocol{
     public let connId:String
     public var operationName:BridgeCoreOperationName
     public var transactionSubtype:BCTransactionSubtype?
+    
+    public init(parameters:BCDictionary, terminal:String, store:String, connId:String, operationName:BridgeCoreOperationName, transactionSubtype:BCTransactionSubtype?){
+        self.parameters = parameters
+        self.terminal = terminal
+        self.store = store
+        self.connId = connId
+        self.operationName = operationName
+        self.transactionSubtype = transactionSubtype
+    }
 }
 
 //Mark:--
