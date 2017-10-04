@@ -59,6 +59,11 @@
 		2B9FF9501F4D166100E2025E /* BridgeCoreConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FF94F1F4D166100E2025E /* BridgeCoreConnection.swift */; };
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
 		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
+		550188421F85881C0070DF80 /* Discounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550188411F85881C0070DF80 /* Discounts.swift */; };
+		550188441F8588690070DF80 /* Discountdataliverpool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550188431F8588690070DF80 /* Discountdataliverpool.swift */; };
+		550188461F8588B40070DF80 /* Baseamount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550188451F8588B40070DF80 /* Baseamount.swift */; };
+		550188481F8588E50070DF80 /* Percent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550188471F8588E50070DF80 /* Percent.swift */; };
+		5501884A1F8589250070DF80 /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550188491F8589250070DF80 /* Discount.swift */; };
 		5588D7D21F55D05C003426A4 /* BenefitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588D7D11F55D05C003426A4 /* BenefitData.swift */; };
 		55E1DCCC1F82A2E8008A469F /* Forcekeysdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */; };
 		55E35FA51F3CF24E00E93EB6 /* Balancedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */; };
@@ -213,6 +218,11 @@
 		2B994B6E1F280B1700292163 /* HierarchyGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HierarchyGroup.swift; path = Objects/HierarchyGroup.swift; sourceTree = "<group>"; };
 		2B9FF94F1F4D166100E2025E /* BridgeCoreConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreConnection.swift; path = Services/BridgeCoreConnection.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
+		550188411F85881C0070DF80 /* Discounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discounts.swift; path = Objects/Discounts.swift; sourceTree = "<group>"; };
+		550188431F8588690070DF80 /* Discountdataliverpool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discountdataliverpool.swift; path = Objects/Discountdataliverpool.swift; sourceTree = "<group>"; };
+		550188451F8588B40070DF80 /* Baseamount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Baseamount.swift; path = Objects/Baseamount.swift; sourceTree = "<group>"; };
+		550188471F8588E50070DF80 /* Percent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Percent.swift; path = Objects/Percent.swift; sourceTree = "<group>"; };
+		550188491F8589250070DF80 /* Discount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discount.swift; path = Objects/Discount.swift; sourceTree = "<group>"; };
 		5588D7D11F55D05C003426A4 /* BenefitData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenefitData.swift; path = Objects/BenefitData.swift; sourceTree = "<group>"; };
 		55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Forcekeysdata.swift; path = Objects/Forcekeysdata.swift; sourceTree = "<group>"; };
 		55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balancedata.swift; path = Objects/Balancedata.swift; sourceTree = "<group>"; };
@@ -427,6 +437,11 @@
 				F7FEF2911F630EA20019F7DE /* PromotionData.swift */,
 				C1FA8F471F73FDA700024FB1 /* Value.swift */,
 				55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */,
+				550188411F85881C0070DF80 /* Discounts.swift */,
+				550188431F8588690070DF80 /* Discountdataliverpool.swift */,
+				550188451F8588B40070DF80 /* Baseamount.swift */,
+				550188471F8588E50070DF80 /* Percent.swift */,
+				550188491F8589250070DF80 /* Discount.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -845,6 +860,8 @@
 				2B788EB91F0B49DA004E5F1F /* ValorTipoCambio.swift in Sources */,
 				2B0CA3B51F0DA87E007A8EB0 /* StoreAddressList.swift in Sources */,
 				F7FEF2921F630EA20019F7DE /* PromotionData.swift in Sources */,
+				5501884A1F8589250070DF80 /* Discount.swift in Sources */,
+				550188461F8588B40070DF80 /* Baseamount.swift in Sources */,
 				A95FD84B1EF9D2650094AA1C /* Storeslist.swift in Sources */,
 				2B0CA3B11F0DA6EC007A8EB0 /* Ticket.swift in Sources */,
 				2B788EB71F0B4962004E5F1F /* ExchangeCurrencyData.swift in Sources */,
@@ -897,6 +914,7 @@
 				2B994B671F27FA4800292163 /* BridgeCoreOperations.swift in Sources */,
 				2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */,
 				2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */,
+				550188421F85881C0070DF80 /* Discounts.swift in Sources */,
 				A95FD8461EF9D2650094AA1C /* Reasonsalereturnmenu.swift in Sources */,
 				F78D195C1F60BF7300AEA7BB /* NetValue.swift in Sources */,
 				F78D19621F60C04E00AEA7BB /* DiscountPromoTotal.swift in Sources */,
@@ -920,6 +938,8 @@
 				F78D19601F60BFFF00AEA7BB /* ItemPaymentPlans.swift in Sources */,
 				A95FD8341EF9D2650094AA1C /* LPOptionMenu.swift in Sources */,
 				2B0CA3DB1F0DBA91007A8EB0 /* Devolucion.swift in Sources */,
+				550188441F8588690070DF80 /* Discountdataliverpool.swift in Sources */,
+				550188481F8588E50070DF80 /* Percent.swift in Sources */,
 				7156ADA81F2AA10600761F38 /* BudgetData.swift in Sources */,
 				F78D19481F60BC7500AEA7BB /* InternalTaxes.swift in Sources */,
 				A95FD8481EF9D2650094AA1C /* Representation.swift in Sources */,
