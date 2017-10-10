@@ -11,7 +11,6 @@ import ObjectMapper
 
 public class PrinterDocumentsBase64: Mappable{
     public var stringArray: [String]?
-    public var string: String?
     
     public required init?(map: Map){
     }
@@ -19,7 +18,12 @@ public class PrinterDocumentsBase64: Mappable{
         if let _ = map["string"].currentValue as? [String]{
             stringArray <- map["string"]
         }else{
-            string <- map["string"]
+            self.stringArray = [String]()
+            var stringBase64: String? = nil
+            stringBase64 <- map["string"]
+            if let str = stringBase64{
+                self.stringArray?.append(str)
+            }
         }
     }
 }
