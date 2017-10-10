@@ -68,6 +68,7 @@ public class ItemTicketLiverpoolData: Mappable{
     public var discountPromoTotal: DiscountPromoTotal?
     public var monederoBenefits: [String]?
     public var optionsGroups: [OptionsGroups]?
+    public var discounts: [Discounts]?
     
     
     public var optionsGroupsSelected: [OptionsGroupsSelected]?
@@ -136,5 +137,6 @@ public class ItemTicketLiverpoolData: Mappable{
         
         optionsGroupsSelected <- map["optionsGroupsSelected"]
         optionsGroups <- map["optionsGroups"]
+        discounts <- map["discounts"]
     }
 }
