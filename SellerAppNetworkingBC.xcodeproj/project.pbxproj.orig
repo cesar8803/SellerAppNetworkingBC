@@ -453,16 +453,19 @@
 				C1A91EDD1F82A81C0028D67C /* warrantyList.swift */,
 				C1A91EDF1F82A8430028D67C /* Warrantydata.swift */,
 				55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */,
+<<<<<<< HEAD
 				F75F37A81F8D17CC00BE00CB /* BalanceBC.swift */,
 				F75F37AA1F8D187100BE00CB /* DefeatedBalance.swift */,
 				F75F37AC1F8D18EA00BE00CB /* PaymentWithoutRefinance.swift */,
 				F75F37AE1F8D19D400BE00CB /* MinPayment.swift */,
 				F75F37B01F8D1AFD00BE00CB /* MinPaymentWithoutInterest.swift */,
+=======
 				550188411F85881C0070DF80 /* Discounts.swift */,
 				550188431F8588690070DF80 /* Discountdataliverpool.swift */,
 				550188451F8588B40070DF80 /* Baseamount.swift */,
 				550188471F8588E50070DF80 /* Percent.swift */,
 				550188491F8589250070DF80 /* Discount.swift */,
+>>>>>>> develop
 			);
 			name = Objects;
 			sourceTree = "<group>";
