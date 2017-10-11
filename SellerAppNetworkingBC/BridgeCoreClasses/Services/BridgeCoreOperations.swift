@@ -333,7 +333,7 @@ public enum BCRequestParams{
             return params
             
         case .totalizeTransaction(let processPromotions):
-            let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions, "promoOptionSelected":0]
+            let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions]
             return params
             
         case .totalizeTransactionAutorized(let promoOptionSelected, let supervisorEntryMethod, let processPromotions, let supervisorPassword, let supervisorName):
