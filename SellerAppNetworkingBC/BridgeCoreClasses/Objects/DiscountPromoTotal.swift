@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class DiscountPromoTotal: Mappable{
-    public var number: NSNumber?
+    public var number: Double?
 
     required public init?(map: Map){
     }
