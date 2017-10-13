@@ -16,6 +16,12 @@ public class DiscountPromoTotal: Mappable{
     }
     
     public func mapping(map: Map){
-        number <- map["number"]
+        
+        if let numString = map["number"].currentValue as? String{
+             number = Double(numString)
+        }else{
+             number <- map["number"]
+        }
+       
     }
 }
