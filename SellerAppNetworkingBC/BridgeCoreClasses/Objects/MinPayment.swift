@@ -1,20 +1,19 @@
 //
-//  DiscountPromoTotal.swift
+//  MinPayment.swift
 //  SellerAppNetworkingBC
 //
-//  Created by Bernardino Guerrero Ibarra on 9/6/17.
+//  Created by Bernardino Guerrero Ibarra on 10/10/17.
 //  Copyright © 2017 Liverpool. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class DiscountPromoTotal: Mappable{
-    public var number: Double?
-
+public class MinPayment: Mappable{
+    public var number: Float?
+    
     required public init?(map: Map){
     }
-    
     public func mapping(map: Map){
         number <- map["number"]
     }
