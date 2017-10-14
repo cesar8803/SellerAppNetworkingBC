@@ -18,12 +18,14 @@ public struct Item{
     public let itemQty:String
     public let itemBarcode:String
     public let type:String
+    public let itemDepartment:String
     
-    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String){
         self.itemPrice = itemPrice
         self.warrantySelected = warrantySelected
         self.itemQty = itemQty
         self.itemBarcode = itemBarcode
+        self.itemDepartment = itemDepartment
         self.type = "map"
     }
 }
