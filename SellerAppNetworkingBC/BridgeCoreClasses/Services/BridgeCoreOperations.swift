@@ -28,6 +28,15 @@ public struct Item{
         self.itemDepartment = itemDepartment
         self.type = "map"
     }
+    
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
+        self.itemPrice = itemPrice
+        self.warrantySelected = warrantySelected
+        self.itemQty = itemQty
+        self.itemBarcode = itemBarcode
+        self.itemDepartment = ""
+        self.type = "map"
+    }
 }
 
 public enum BridgeCoreOperationName:String
