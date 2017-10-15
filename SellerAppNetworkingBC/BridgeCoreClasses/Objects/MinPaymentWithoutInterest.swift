@@ -15,6 +15,13 @@ public class MinPaymentWithoutInterest: Mappable{
     required public init?(map: Map){
     }
     public func mapping(map: Map){
-        number <- map["number"]
+        switch map["number"].currentValue {
+        case (let v as Float):
+            number = v
+        case (let v as String):
+            number = Float(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }
