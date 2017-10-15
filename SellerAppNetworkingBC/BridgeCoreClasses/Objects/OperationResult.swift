@@ -95,6 +95,7 @@ public class OperationResult: Mappable{
     public var tagEX: String?
     public var barcode: String?
     public var cfBarcode: String?
+    public var nroOrdenPaqueteria: String?
     
     /****************************/
     
@@ -170,6 +171,7 @@ public class OperationResult: Mappable{
         terminalReportData <- map["terminalReportData"]
         barcode <- map["barcode"]
         cfBarcode <- map["cfBarcode"]
+        nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
     }
     
     public class TerminalReportData: Mappable{
