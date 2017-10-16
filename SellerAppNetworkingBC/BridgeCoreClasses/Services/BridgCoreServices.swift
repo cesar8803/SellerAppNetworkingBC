@@ -522,17 +522,13 @@ public class BridgeCoreServices
         }
     }
     
-    public class func addMonederoPayment(connectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+    public class func addMonederoPayment(connectionId:String, storeCode:String, terminalCode:String, parameters: Parameters,  completion:@escaping (_ dataResponse: BridgecorePaymentResponse)-> Void, completionError: @escaping ErrorStringHandlerBC){
         
-        let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"addMonederoPayment", "params":params] as [String : Any]
+        let operation = BridgeCoreOperation.addMonederoPayment(connectionId: connectionId, terminal: terminalCode, store: storeCode, params: parameters)
         
-        let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
-        
-        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addMonederoPayment(terminalCode: terminalCode, storeCode: storeCode, paramters: p), completion: { (response) in
-            
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addMonederoPayment(operation: operation), completion: { (response) in
             completion(response)
         }) { (error) in
-            
             completionError(error)
         }
     }
