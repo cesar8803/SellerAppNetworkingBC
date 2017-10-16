@@ -171,7 +171,16 @@ public class OperationResult: Mappable{
         terminalReportData <- map["terminalReportData"]
         barcode <- map["barcode"]
         cfBarcode <- map["cfBarcode"]
-        nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+        //nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+        if let numString = map["nroOrdenPaqueteria"].currentValue as? IntMax
+        {
+            nroOrdenPaqueteria =  String(numString )
+            
+        }else{
+            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+        }
+       
+
     }
     
     public class TerminalReportData: Mappable{
