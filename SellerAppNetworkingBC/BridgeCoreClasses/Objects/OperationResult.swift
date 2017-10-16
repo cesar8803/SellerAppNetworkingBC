@@ -172,12 +172,12 @@ public class OperationResult: Mappable{
         barcode <- map["barcode"]
         cfBarcode <- map["cfBarcode"]
         //nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
-        if let numString = map["number"].currentValue as? Double
+        if let numString = map["nroOrdenPaqueteria"].currentValue as? Double
         {
             nroOrdenPaqueteria = String(format:"%d",numString)
             
         }else{
-            nroOrdenPaqueteria <- map["number"]
+            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         }
        
 
