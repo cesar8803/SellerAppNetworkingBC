@@ -179,12 +179,7 @@ public class OperationResult: Mappable{
         }else{
             nroOrdenPaqueteria <- map["number"]
         }
-        
-        if map["nroOrdenPaqueteria"].currentValue is Double{
-            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
-        }else{
-            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
-        }
+       
 
     }
     
