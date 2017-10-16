@@ -172,6 +172,20 @@ public class OperationResult: Mappable{
         barcode <- map["barcode"]
         cfBarcode <- map["cfBarcode"]
         nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+        if let numString = map["number"].currentValue as? Double
+        {
+            nroOrdenPaqueteria = String(format:"%d",numString)
+            
+        }else{
+            nroOrdenPaqueteria <- map["number"]
+        }
+        
+        if map["nroOrdenPaqueteria"].currentValue is Double{
+            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+        }else{
+            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+        }
+
     }
     
     public class TerminalReportData: Mappable{
