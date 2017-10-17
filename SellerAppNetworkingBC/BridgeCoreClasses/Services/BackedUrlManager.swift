@@ -267,6 +267,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .addMonederoPayment(let oper):
             let (params,_,_) = oper.getParams()
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
         
