@@ -19,7 +19,7 @@ public class BenefitData: Mappable{
     public var installments: String?
     public var paymentPlanId: String?
     public var bank: String?
-    
+    public var discountValue: DiscountValue?
     
     required public init?(map: Map){
     }
@@ -33,6 +33,7 @@ public class BenefitData: Mappable{
         installments <- map["installments"]
         paymentPlanId <- map["paymentPlanId"]
         bank <- map["bank"]
+        discountValue <- map["discountValue"]
         print("BenefitData(map)",map)
     }
 }
