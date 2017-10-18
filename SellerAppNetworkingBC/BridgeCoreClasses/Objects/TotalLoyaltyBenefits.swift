@@ -18,6 +18,10 @@ public class TotalLoyaltyBenefits: Mappable{
     }
     
     public func mapping(map: Map){
-        number <- map["number"]
+        if let numString = map["number"].currentValue as? Double{
+            number =  String(numString )
+        }else{
+            number <- map["number"]
+        }
     }
 }
