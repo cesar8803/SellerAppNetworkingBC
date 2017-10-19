@@ -163,8 +163,6 @@ public class Ticket: Mappable{
         contigencyFlag <- map["contigencyFlag"]
         originalPayments <- map["originalPayments"]
         
-        
-        
         if let _ = map["items"].currentValue as? [String]{
             items <- map["items"]
         }else {
@@ -773,6 +771,37 @@ public class Additionaldata: Mappable
     public var PINPAD__RESPONSE__TOKENS: String?
     public var additionalDataListField: [AdditionalDataListField]?
     
+    
+    public var cardtype : String?
+    public var ad__paymentDTO : String?
+    public var nroVoucher : Int?
+    public var firstDayDiscountFactor : Int?
+    public var isPuntosBmerCard : String?
+    public var authorizationCode : String?
+    public var responseMessage : String?
+    public var ad__first__day__discount : String?
+    public var description : String?
+    public var inputType : String?
+    public var authorizationType : String?
+    public var ad__sequence : String?
+    public var notSecureAccount : Bool?
+    public var responseCode : Int?
+    public var ad__planPrinterDescriptor : String?
+    public var ad__aid : String?
+    public var currencyCode : String?
+    public var response__code : Int?
+    public var authorization__type : String?
+    public var sellerName : String?
+    public var planId : Int?
+    public var bankdescription : String?
+    public var installments : Int?
+    public var ad__criptograma : String?
+    public var account : Int?
+    public var customerDocument : String?
+    public var authorization__code : String?
+    public var storeCode : String?
+    
+    
     required public init?( map: Map){
     }
     public func mapping(map: Map){
@@ -781,6 +810,30 @@ public class Additionaldata: Mappable
         ad__InputDto <- map["ad__InputDto"]
         PINPAD__RESPONSE__TOKENS <- map["PINPAD__RESPONSE__TOKENS"]
         additionalDataListField <- map["additionalDataListField"]
+        cardtype <- map["cardtype"]
+        ad__paymentDTO <- map["ad__paymentDTO"]
+        nroVoucher <- map["nroVoucher"]
+        firstDayDiscountFactor <- map["firstDayDiscountFactor"]
+        isPuntosBmerCard <- map["isPuntosBmerCard"]
+        authorizationCode <- map["authorizationCode"]
+        responseMessage <- map["responseMessage"]
+        ad__first__day__discount <- map["ad__first__day__discount"]
+        description <- map["description"]
+        inputType <- map["inputType"]
+        authorizationType <- map["authorizationType"]
+        ad__sequence <- map["ad__sequence"]
+        notSecureAccount <- map["notSecureAccount"]
+        responseCode <- map["responseCode"]
+        authorization__type <- map["authorization__type"]
+        sellerName <- map["sellerName"]
+        planId <- map["planId"]
+        bankdescription <- map["bankdescription"]
+        installments <- map["installments"]
+        ad__criptograma <- map["ad__criptograma"]
+        account <- map["account"]
+        customerDocument <- map["customerDocument"]
+        authorization__code <- map["authorization__code"]
+        storeCode <- map["storeCode"]
     }
 }
 
