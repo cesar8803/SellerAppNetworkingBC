@@ -10,15 +10,11 @@ import Foundation
 import ObjectMapper
 
 public class Walletbalance: Mappable{
-    public var number: String?
+    public var number: Float?
     
     required public init?(map: Map){
     }
     public func mapping(map: Map){
-        if let numString = map["number"].currentValue as? Double{
-            number =  String(numString )
-        }else{
-            number <- map["number"]
-        }
+        number <- map["number"]
     }
 }
