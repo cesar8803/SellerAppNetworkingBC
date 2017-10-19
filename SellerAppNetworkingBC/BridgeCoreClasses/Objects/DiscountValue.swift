@@ -16,5 +16,6 @@ public class DiscountValue: Mappable{
     }
     public func mapping(map: Map){
         number <- map["number"]
+        
     }
 }
