@@ -620,12 +620,32 @@ public class Promopaymentplans: Mappable{
 
 public class Payments: Mappable
 {
-    public var paymentDataLiverpool: Paymentdataliverpool?
+    public var paymentDataLiverpool: [Paymentdataliverpool]?
     
     required public init?(map: Map){
     }
     public func mapping(map: Map){
-        paymentDataLiverpool <- map["paymentDataLiverpool"]
+        //paymentDataLiverpool <- map["paymentDataLiverpool"]
+        
+        switch map["paymentDataLiverpool"].currentValue{
+        case is [String:Any]:
+            debugPrint("is a Dictionary...")
+            
+            self.paymentDataLiverpool = [Paymentdataliverpool]()
+            var itm:Paymentdataliverpool? = nil
+            itm <- map["paymentDataLiverpool"]
+            if let i = itm{
+                self.paymentDataLiverpool?.append(i)
+            }
+            
+        case is [[String:Any]]:
+            paymentDataLiverpool <- map["paymentDataLiverpool"]
+        case is NSNull:
+            debugPrint("is null :(")
+        default:
+            debugPrint(map["paymentDataLiverpool"].currentValue.debugDescription)
+        }
+        
     }
 }
 
