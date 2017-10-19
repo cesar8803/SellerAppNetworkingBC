@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class Walletbalance: Mappable{
-    public var number: Float?
+    public var number: String?
     
     required public init?(map: Map){
     }
