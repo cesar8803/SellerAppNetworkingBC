@@ -155,18 +155,7 @@ public class ItemTicketLiverpoolData: Mappable{
         optionsGroupsSelected <- map["optionsGroupsSelected"]
         optionsGroups <- map["optionsGroups"]
         discounts <- map["discounts"]
-        
-        if let _ = map["promotions"].currentValue as? [String:Any]{
-            self.promotions = [Promotions]()
-            var itm:Promotions? = nil
-            itm <- map["promotions"]
-            if let i = itm{
-                self.promotions?.append(i)
-            }
-        }else{
-            promotions <- map["promotions"]
-        }
-        
+        promotions <- map["promotions"]
         
         paymentPlanList <- map["paymentPlanList"]
     }

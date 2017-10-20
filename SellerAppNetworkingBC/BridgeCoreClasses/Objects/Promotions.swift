@@ -16,5 +16,17 @@ public class Promotions: Mappable{
     }
     public func mapping(map: Map){
         benefitData <- map["benefitData"]
+        
+        if let _ = map["benefitData"].currentValue as? [String:Any]{
+            benefitData = [BenefitData]()
+            var itm:BenefitData? = nil
+            itm <- map["benefitData"]
+            if let i = itm{
+                benefitData?.append(i)
+            }
+        }else{
+            benefitData <- map["benefitData"]
+        }
+        
     }
 }
