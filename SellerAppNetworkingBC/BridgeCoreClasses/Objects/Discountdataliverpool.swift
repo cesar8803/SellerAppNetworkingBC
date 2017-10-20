@@ -19,6 +19,8 @@ public class Discountdataliverpool: Mappable{
     public var discount: Discount?
     public var descriptions: [String]?
     public var type: Int?
+    public var description: String?
+    public var concatDisplayMessage: String?
     
     required public init?(map: Map){
     }
@@ -32,5 +34,7 @@ public class Discountdataliverpool: Mappable{
         discount <- map["discount"]
         descriptions <- map["descriptions"]
         type <- map["type"]
+        description <- map["description"]
+        concatDisplayMessage <- map["concatDisplayMessage"]
     }
 }
