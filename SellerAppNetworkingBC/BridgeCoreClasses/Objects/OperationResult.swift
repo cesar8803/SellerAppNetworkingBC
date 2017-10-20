@@ -159,7 +159,7 @@ public class OperationResult: Mappable{
         dilisaCorporated <- map["dilisaCorporated"]
         originalPayments <- map["originalPayments"]
         items <- map["items"]
-        itemsPromos <- map["itemsPromos"]
+        itemsPromos <- map["items"]
         subtotal <- map["subtotal"]
         promoGifts <- map["promoGifts"]
         ivaPerceptions <- map["ivaPerceptions"]
