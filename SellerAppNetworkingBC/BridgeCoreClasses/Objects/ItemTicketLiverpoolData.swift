@@ -67,6 +67,7 @@ public class ItemTicketLiverpoolData: Mappable{
     public var villaNevada: Int?
     public var discountPromoTotal: DiscountPromoTotal?
     public var monederoBenefits: [String]?
+    public var monederoBenefitsArray: [monederoBenefits]?
     public var optionsGroups: [OptionsGroups]?
     public var discounts: [Discounts]?
     public var promotions: [Promotions]?
@@ -134,7 +135,22 @@ public class ItemTicketLiverpoolData: Mappable{
         isVoid <- map["isVoid"]
         villaNevada <- map["villaNevada"]
         discountPromoTotal <- map["discountPromoTotal"]
-        monederoBenefits <- map["monederoBenefits"]
+        
+        switch map["monederoBenefits"].currentValue{
+            
+        case is [String]:
+            
+             monederoBenefits <- map["monederoBenefits"]
+            
+            
+        case is [[String:Any]]:
+        
+            monederoBenefitsArray <- map["monederoBenefits"]
+            
+            
+        default:
+            debugPrint("promoOptionData is other type")
+        }
         
         optionsGroupsSelected <- map["optionsGroupsSelected"]
         optionsGroups <- map["optionsGroups"]

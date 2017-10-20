@@ -71,6 +71,7 @@
 		55E1DCCC1F82A2E8008A469F /* Forcekeysdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */; };
 		55E35FA51F3CF24E00E93EB6 /* Balancedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */; };
 		55E35FA71F3CF2E300E93EB6 /* WalletBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA61F3CF2E300E93EB6 /* WalletBalance.swift */; };
+		55F04B271F997423001A95A3 /* monederoBenefits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F04B261F997423001A95A3 /* monederoBenefits.swift */; };
 		57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9CD891F29020200367A15 /* CloseTerminal.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		71418E821F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */; };
@@ -240,6 +241,7 @@
 		55E1DCCB1F82A2E8008A469F /* Forcekeysdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Forcekeysdata.swift; path = Objects/Forcekeysdata.swift; sourceTree = "<group>"; };
 		55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balancedata.swift; path = Objects/Balancedata.swift; sourceTree = "<group>"; };
 		55E35FA61F3CF2E300E93EB6 /* WalletBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalletBalance.swift; path = Objects/WalletBalance.swift; sourceTree = "<group>"; };
+		55F04B261F997423001A95A3 /* monederoBenefits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = monederoBenefits.swift; path = Objects/monederoBenefits.swift; sourceTree = "<group>"; };
 		57F9CD891F29020200367A15 /* CloseTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTerminal.swift; sourceTree = "<group>"; };
 		71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgecorePaymentResponse.swift; path = Payment/BridgecorePaymentResponse.swift; sourceTree = "<group>"; };
 		71419A3A1F30FFC3005F70E3 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = Objects/Amount.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				5511269D1F957E3600166B60 /* Promotions.swift */,
 				5511269F1F957F5400166B60 /* DiscountValue.swift */,
 				55D26DC41F96A089002892A2 /* paymentPlanList.swift */,
+				55F04B261F997423001A95A3 /* monederoBenefits.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 				F7FEF2941F630EEB0019F7DE /* BenefitsData.swift in Sources */,
 				F78D195E1F60BFBF00AEA7BB /* VatPercentage.swift in Sources */,
 				F78D193E1F60B7FC00AEA7BB /* VatAmount.swift in Sources */,
+				55F04B271F997423001A95A3 /* monederoBenefits.swift in Sources */,
 				7156ADA21F2A907D00761F38 /* AdditionalInformation.swift in Sources */,
 				F78D194A1F60BCCE00AEA7BB /* Qty.swift in Sources */,
 				2B0CA3AB1F0DA314007A8EB0 /* RepresentationWD.swift in Sources */,
