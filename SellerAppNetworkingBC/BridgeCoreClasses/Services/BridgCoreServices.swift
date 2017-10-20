@@ -325,50 +325,67 @@ public class BridgeCoreServices
     public class func closeTerminal(connectionId:String, userName: String, userPass: String, storeCode:String, terminalCode:String, giftTicket: Bool = false, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         
-        BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, completion: { (logoffBridgeCoreResponse) in
-            guard let bcLogoffR = logoffBridgeCoreResponse.bridgeCoreResponse else {
+        BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPass, trainingMode: false, completion: { (loginBridgeCoreResponse) in
+            guard let bcLoginR = loginBridgeCoreResponse.bridgeCoreResponse else {
                 completionError("bridgeCoreResponse is nil")
-                return }
+                return}
             
-            if bcLogoffR.ack == 0
+            if bcLoginR.ack == 0
             {
-                BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPass, trainingMode: false, completion: { (loginBridgeCoreResponse) in
-                    guard let bcLoginR = loginBridgeCoreResponse.bridgeCoreResponse else {
+                let oper: BridgeCoreOperation = BridgeCoreOperation.selectTransaction(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, transactionSubtype: BCTransactionSubtype.TERMINAL_CLOSE, giftTicket: false)
+                
+                let (params, _, _) =  oper.getParams()
+                let bcRouter = BrigdeCoreRouter.selectTransaction(terminalCode: terminalCode, storeCode: storeCode, paramters: params)
+                
+                
+                AsyncClientBC.getBCRequest(bcRouter: bcRouter, completion: { (bridgeCoreResponse) in
+                    completion(bridgeCoreResponse)
+                }) { (msg) in
+                    completionError(msg)
+                }
+            }else if bcLoginR.ack == 10000{
+                completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
+            }else
+            {
+                BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, completion: { (logoffBridgeCoreResponse) in
+                    guard let bcLogoffR = logoffBridgeCoreResponse.bridgeCoreResponse else {
                         completionError("bridgeCoreResponse is nil")
-                    return}
+                        return }
                     
-                    if bcLoginR.ack == 0
+                    if bcLogoffR.ack == 0
                     {
-                        let oper: BridgeCoreOperation = BridgeCoreOperation.selectTransaction(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, transactionSubtype: BCTransactionSubtype.TERMINAL_CLOSE, giftTicket: false)
-                        
-                        let (params, _, _) =  oper.getParams()
-                        let bcRouter = BrigdeCoreRouter.selectTransaction(terminalCode: terminalCode, storeCode: storeCode, paramters: params)
-                        
-                        
-                        AsyncClientBC.getBCRequest(bcRouter: bcRouter, completion: { (bridgeCoreResponse) in
-                            completion(bridgeCoreResponse)
+                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false, completion: completion, completionError:completionError)
+                    }else if bcLogoffR.ack == 10049{
+                        BridgeCoreServices.cancelTransactionWithParams(coneectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: ["cancelReasonCode":""], completion: { (responseCancel) in
+                            guard let bcCancelR = responseCancel.bridgeCoreResponse else {
+                                completionError("bridgeCoreResponse is nil")
+                                return }
+                            if bcCancelR.ack == 0{
+                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false, completion: completion, completionError:completionError)
+                            }else{
+                                completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
+                            }
                         }) { (msg) in
-                            completionError(msg)
+                            completionError(msg ?? "No se pudo verificar la autorización del jefe")
                         }
-                    }else
-                    {
-                        completionError(bcLoginR.message ?? "")
+                        
+                    }else{
+                        completionError(bcLogoffR.message ?? "")
                     }
-                    
-                }, completionError: { (loginBridgeCoreResponse) in
-                    
-                    //completionError(message)
-                    
-                    completion(logoffBridgeCoreResponse)
-                    
-                })
-            }else{
-                completionError(bcLogoffR.message ?? "")
+                }) { (msg) in
+                    completionError(msg)
+                }
             }
-        }) { (msg) in
-            completionError(msg)
-        }
+            
+        }, completionError: { (loginBridgeCoreResponse) in
+            
+            //completionError(message)
+            
+            //completion(logoffBridgeCoreResponse)
+            
+        })
     }
+    
     
     
     public class func returnSelect(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
