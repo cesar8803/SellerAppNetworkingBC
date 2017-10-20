@@ -83,7 +83,7 @@ public class OperationResult: Mappable{
     public var dilisaCorporated: Int?
     public var originalPayments: [String]?
     public var items: [String]?
-    public var itemsPromos : [ItemTicketLiverpoolData]?
+    public var itemsPromos : [Items]?
     public var subtotal: SubTotal?
     public var promoGifts: [String]?
     public var ivaPerceptions: IvaPerceptions?
