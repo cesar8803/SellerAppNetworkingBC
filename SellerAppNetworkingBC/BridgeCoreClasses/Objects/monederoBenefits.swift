@@ -16,6 +16,16 @@ public class monederoBenefits: Mappable{
     required public init?(map: Map){
     }
     public func mapping(map: Map){
-        discountDataLiverpool <- map["discountDataLiverpool"]
+        
+        if let _ = map["discountDataLiverpool"].currentValue as? [String:Any]{
+            discountDataLiverpool = [Discountdataliverpool]()
+            var itm:Discountdataliverpool? = nil
+            itm <- map["discountDataLiverpool"]
+            if let i = itm{
+                discountDataLiverpool?.append(i)
+            }
+        }else{
+            discountDataLiverpool <- map["discountDataLiverpool"]
+        }
     }
 }

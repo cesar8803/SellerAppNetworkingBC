@@ -15,7 +15,6 @@ public class Promotions: Mappable{
     required public init?(map: Map){
     }
     public func mapping(map: Map){
-        benefitData <- map["benefitData"]
         
         if let _ = map["benefitData"].currentValue as? [String:Any]{
             benefitData = [BenefitData]()
