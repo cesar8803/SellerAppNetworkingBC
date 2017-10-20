@@ -83,6 +83,7 @@ public class OperationResult: Mappable{
     public var dilisaCorporated: Int?
     public var originalPayments: [String]?
     public var items: [String]?
+    public var itemsPromos : [ItemTicketLiverpoolData]?
     public var subtotal: SubTotal?
     public var promoGifts: [String]?
     public var ivaPerceptions: IvaPerceptions?
@@ -158,6 +159,7 @@ public class OperationResult: Mappable{
         dilisaCorporated <- map["dilisaCorporated"]
         originalPayments <- map["originalPayments"]
         items <- map["items"]
+        itemsPromos <- map["itemsPromos"]
         subtotal <- map["subtotal"]
         promoGifts <- map["promoGifts"]
         ivaPerceptions <- map["ivaPerceptions"]
