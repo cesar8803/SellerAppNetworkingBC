@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
 # 2 Version
 
-    s.version = "1.0.0"
+    s.version = "1.0.1"
 
 
 # 3 License
@@ -40,6 +40,7 @@ Pod::Spec.new do |s|
     s.framework = "Foundation"
     s.dependency 'Alamofire', '~> 4.0'
     s.dependency 'AlamofireObjectMapper', '~> 4.0'
+    s.dependency 'PromiseKit', '~> 4.4'
 
 
 # 8 Sources Files
