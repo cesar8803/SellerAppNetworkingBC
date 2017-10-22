@@ -35,6 +35,22 @@ public class BridgeCoreServices
         }
     }
     
+    public class func cancelTransaction(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore>
+    {
+        return Promise { fulfill, reject in
+            
+            let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"cancelTransaction"] as [String : Any]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.cancelTransaction(terminalCode: terminalCode, storeCode: storeCode, parameters: params))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+    }
+    
     public class func logoff(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         //let params = ["storeCode":storeCode, "terminalCode":terminalCode]
