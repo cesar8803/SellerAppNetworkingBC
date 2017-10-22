@@ -12,7 +12,7 @@ import ObjectMapper
 class Sessiondata: Mappable{
     
     var userName: String?
-    var promoOptions: [Promooptions]?
+    var promoOptions: [PromoOptions]?
     var lastTransactionNumber: Int?
     var tendersMenu: Tendersmenu?
     var promoSuggestions: [String]?

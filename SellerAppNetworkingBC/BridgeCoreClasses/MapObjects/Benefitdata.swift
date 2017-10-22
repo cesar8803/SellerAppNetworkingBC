@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 
+/*
 class Benefitdata: Mappable{
     var displayMessage: String?
     var promoId: String?
@@ -26,3 +27,4 @@ class Benefitdata: Mappable{
         printerMessage <- map["printerMessage"]
     }
 }
+*/

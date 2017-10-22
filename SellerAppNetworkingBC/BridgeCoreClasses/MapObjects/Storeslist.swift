@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class Storeslist: Mappable{
-    var storeData: [Storedata]?
+    var storeData: [StoreData]?
     
     required init?(map: Map){
     }
