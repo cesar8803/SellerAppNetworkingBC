@@ -4,7 +4,7 @@ use_frameworks!
 def shared_pods
     pod 'Alamofire', '~> 4.0'
     pod 'AlamofireObjectMapper', '~> 4.0'
-    pod "PromiseKit", "~> 4.4"
+    pod 'PromiseKit', '~> 4.4'
 end
 target 'SellerAppNetworkingBC' do
     shared_pods
