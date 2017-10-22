@@ -546,6 +546,19 @@ public class BridgeCoreServices
         
     }
     
+    public class func startUpSession(storeCode:String, terminalCode:String) -> Promise<BridgeCore>
+    {
+        return Promise { fulfill, reject in
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.startupSession(terminalCode: terminalCode, storeCode: storeCode))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+    }
+    
     public class func addItem(connectionId:String, storeCode:String, terminalCode:String, item:BCRequestParams,  completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         let oper = BridgeCoreOperation.addItem(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: item.getParamsForRequest())
