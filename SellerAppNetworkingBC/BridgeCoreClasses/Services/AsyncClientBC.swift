@@ -10,9 +10,24 @@ import Foundation
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
+import PromiseKit
 
 public class AsyncClientBC
 {
+    
+    class func getBCRequest<T:Mappable>(bcRouter:BrigdeCoreRouter) -> Promise<T> {
+        return Promise { fulfill, reject in
+            Alamofire.request(bcRouter).responseObject { (response: DataResponse<T>) in
+                if response.result.isSuccess{
+                    let responseService = response.result.value
+                    fulfill(responseService!)
+                } else {
+                    reject(response.error!)
+                }
+            }
+        }
+    }
+  
     class func getBCRequest<T:Mappable>(bcRouter:BrigdeCoreRouter, completion:@escaping (_ dataResponse:T) -> Void, errorCompletition: @escaping (_ errorString:String) -> Void)
     {
         Alamofire.request(bcRouter).responseObject { (response: DataResponse<T>) in

@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import PromiseKit
 
 public protocol PaymentMethod
 {
@@ -48,6 +49,22 @@ public class BridgeCoreServices
         }
     }
     
+    public class func logoff(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore>
+    {
+        return Promise { fulfill, reject in
+            let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"logoff"] as [String : Any]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.logoff(terminalCode: terminalCode, storeCode: storeCode, parameters: params))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+    }
+    
     public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, printerTypeName:String, printerStationType:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod, "printerTypeName":printerTypeName, "printerStationType":printerStationType] as [String : Any]
@@ -59,6 +76,24 @@ public class BridgeCoreServices
             completion(bridgeCoreResponse)
         }) { (msg) in
             completionError(msg)
+        }
+    }
+    
+    public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, printerTypeName:String, printerStationType:String) -> Promise<BridgeCore>
+    {
+        return Promise { fulfill, reject in
+            
+            let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod, "printerTypeName":printerTypeName, "printerStationType":printerStationType] as [String : Any]
+            let otherParams = ["params":bridgeCoreRequestDict,"operation":"findWalletBalance"] as [String : Any]
+            let params: Parameters = ["bridgeCoreRequest": otherParams]
+            
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.cancelTransaction(terminalCode: terminalCode, storeCode: storeCode, parameters: params))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
         }
     }
     
@@ -79,6 +114,25 @@ public class BridgeCoreServices
             completionError(msg)
         }
     }
+    
+    public class func logIn(connectionId:String, storeCode:String, terminalCode:String, userName:String, userPassword:String, trainingMode:Bool) -> Promise<BridgeCore>
+    {
+        return Promise { fulfill, reject in
+            let params: Parameters = ["userName":userName, "userPassword":userPassword, "trainingMode":trainingMode]
+            let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"login", "params":params] as [String : Any]
+            let bcParams: Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.login(terminalCode: terminalCode, storeCode: storeCode, parameters: bcParams))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+    }
+    
+    
     
     public class func logOffBoss(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
@@ -443,6 +497,23 @@ public class BridgeCoreServices
             completionError(msg)
         }
     }
+    
+    public class func cancelTransactionWithParams(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore>
+    {
+        return Promise { fulfill, reject in
+            let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"logoff"] as [String : Any]
+            let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
+            
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.cancelTransaction(terminalCode: terminalCode, storeCode: storeCode, parameters: params))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+    }
+    
     
     public class func addCashPayment(connectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
         
