@@ -15,7 +15,7 @@ import PromiseKit
 public class AsyncClientBC
 {
     
-    func getBCRequest<T:Mappable>(bcRouter:BrigdeCoreRouter) -> Promise<T> {
+    class func getBCRequest<T:Mappable>(bcRouter:BrigdeCoreRouter) -> Promise<T> {
         return Promise { fulfill, reject in
             Alamofire.request(bcRouter).responseObject { (response: DataResponse<T>) in
                 if response.result.isSuccess{
