@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class Discountdataliverpool: Mappable{
-    public var index: Int?
+    public var indexPromo: Int?
     public var promo: Int?
     public var baseAmount: Baseamount?
     public var aVoid: Int?
@@ -25,7 +25,7 @@ public class Discountdataliverpool: Mappable{
     required public init?(map: Map){
     }
     public func mapping(map: Map){
-        index <- map["index"]
+        indexPromo <- map["indexPromo"]
         promo <- map["promo"]
         baseAmount <- map["baseAmount"]
         aVoid <- map["aVoid"]
