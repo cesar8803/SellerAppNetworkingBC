@@ -78,7 +78,7 @@ public class OperationResult: Mappable{
     public var giftTicket: Int?
     public var terminalReportData: TerminalReportData?
     public var discountsPromoTotal: DiscountsPromoTotal?
-    public var firstPurchaseDay: Int?
+    public var firstPurchaseDay: Bool?
     public var transactionDolar: Int?
     public var dilisaCorporated: Int?
     public var originalPayments: [String]?
