@@ -23,8 +23,6 @@ public class ExtendedPrice: Mappable{
             number = String(v)
         default:
             debugPrint("You should add another kind of data")
-        }
-        
-        number <- map["number"]
+        }        
     }
 }
