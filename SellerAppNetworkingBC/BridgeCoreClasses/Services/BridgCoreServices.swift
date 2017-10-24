@@ -112,12 +112,14 @@ public class BridgeCoreServices
     {
         return Promise { fulfill, reject in
             var closeCalled: Bool = false
+            var returnSelectedCalled: Bool = false
             firstly {
                 BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode)
                 }.then { response -> Promise<BridgeCore> in
                     switch response.bridgeCoreResponse?.ack ?? -1 {
                     case 10049://Transaction is in course. Needs to cancel transaction
-                        return BridgeCoreServices.cancelTransaction(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode)
+                        returnSelectedCalled = true
+                        return BridgeCoreServices.returnSelect(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode)
                     case 30013://Not a valid connectionId. Create a new connectionId
                         closeCalled = true
                         return BridgeCoreServices.closeSession(storeCode: storeCode, terminalCode: terminalCode)
@@ -133,7 +135,9 @@ public class BridgeCoreServices
                     if response.bridgeCoreResponse?.ack == 0 {
                         if closeCalled {
                             return BridgeCoreServices.startUpSession(storeCode: storeCode, terminalCode: terminalCode)
-                        } else {
+                        } else if returnSelectedCalled {
+                            return BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode)
+                        }else{
                             return BridgeCoreServices.passthruPromise(data: response)
                         }
                     }
@@ -478,7 +482,7 @@ public class BridgeCoreServices
                 }) { (msg) in
                     completionError(msg)
                 }
-            }else if bcLoginR.ack == 10000 || bcLoginR.ack == 10001{
+            }else if bcLoginR.ack == 10000{
                 completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
             }else
             {
@@ -522,6 +526,20 @@ public class BridgeCoreServices
     }
     
     
+    public class func returnSelect(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore> {
+        return Promise { fulfill, reject in
+            let oper = BridgeCoreOperation.returnSelect(connectionId: connectionId)
+            
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.returnSelect(terminalCode: terminalCode, storeCode: storeCode, operation: oper))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+        
+    }
     
     public class func returnSelect(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
         
@@ -735,4 +753,3 @@ public class BridgeCoreServices
     }
     
 }
-
