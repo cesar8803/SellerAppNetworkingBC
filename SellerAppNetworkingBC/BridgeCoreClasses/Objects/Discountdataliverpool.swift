@@ -25,7 +25,7 @@ public class Discountdataliverpool: Mappable{
     required public init?(map: Map){
     }
     public func mapping(map: Map){
-        indexPromo <- map["indexPromo"]
+        indexPromo <- map["index"]
         promo <- map["promo"]
         baseAmount <- map["baseAmount"]
         aVoid <- map["aVoid"]
