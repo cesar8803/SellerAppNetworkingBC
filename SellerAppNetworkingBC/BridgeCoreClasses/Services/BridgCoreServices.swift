@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import PromiseKit
+import ObjectMapper
 
 public protocol PaymentMethod
 {
@@ -18,7 +19,9 @@ public protocol PaymentMethod
     var voidFlag:Bool {get set}
 }
 
-
+enum ServiceResponseError: Error {
+    case unexpectedResponse(String, Int)
+}
 
 public class BridgeCoreServices
 {
@@ -57,7 +60,7 @@ public class BridgeCoreServices
         let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"logoff"] as [String : Any]
         
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
-    
+        
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.logoff(terminalCode: terminalCode, storeCode: storeCode, parameters: p), completion: { (bridgeCoreResponse) in
             completion(bridgeCoreResponse)
         }) { (msg) in
@@ -76,6 +79,72 @@ public class BridgeCoreServices
                 }.then { (bridgeCoreResponse: BridgeCore) -> Void in
                     fulfill(bridgeCoreResponse)
                 }.catch {error in
+                    reject(error)
+            }
+        }
+    }
+    
+    public class func passthruPromise<T:Any>(data: T) -> Promise<T>
+    {
+        return Promise { fulfill, reject in
+            fulfill(data)
+        }
+    }
+    
+    public class func configureTerminal(terminalCode: String, storeCode: String, enablingTerminal:Bool) -> Promise<BridgeCore> {
+        return Promise { fulfill, reject in
+            
+            let params = ["storeCode":storeCode, "terminalCode":terminalCode, "enablingTerminal" : enablingTerminal] as [String : Any]
+            let request = ["operation":"configureTerminal", "params": params] as [String : Any]
+            let bcRequest: Parameters = ["bridgeCoreRequest": request]
+            
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.configureTerminal(paramters: bcRequest))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+    }
+    
+    public class func forciblyLogoff(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore>
+    {
+        return Promise { fulfill, reject in
+            var closeCalled: Bool = false
+            var returnSelectedCalled: Bool = false
+            firstly {
+                BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode)
+                }.then { response -> Promise<BridgeCore> in
+                    switch response.bridgeCoreResponse?.ack ?? -1 {
+                    case 10049://Transaction is in course. Needs to cancel transaction
+                        returnSelectedCalled = true
+                        return BridgeCoreServices.returnSelect(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode)
+                    case 30013://Not a valid connectionId. Create a new connectionId
+                        closeCalled = true
+                        return BridgeCoreServices.closeSession(storeCode: storeCode, terminalCode: terminalCode)
+                    case 30025://Maybe already logged-off TODO: check all cases
+                        response.bridgeCoreResponse?.ack = 0
+                        return BridgeCoreServices.passthruPromise(data: response)
+                    case 0:
+                        return BridgeCoreServices.passthruPromise(data: response)
+                    default:
+                        throw ServiceResponseError.unexpectedResponse("No se pudo completar la operación correctamente. Por favor reintente.", (response.bridgeCoreResponse?.ack)!)
+                    }
+                }.then { response ->  Promise<BridgeCore> in
+                    if response.bridgeCoreResponse?.ack == 0 {
+                        if closeCalled {
+                            return BridgeCoreServices.startUpSession(storeCode: storeCode, terminalCode: terminalCode)
+                        } else if returnSelectedCalled {
+                            return BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode)
+                        }else{
+                            return BridgeCoreServices.passthruPromise(data: response)
+                        }
+                    }
+                    throw ServiceResponseError.unexpectedResponse("No se pudo completar la operación correctamente. Por favor reintente.", (response.bridgeCoreResponse?.ack)!)
+                }.then { response -> Void in
+                    fulfill(response)
+                }.catch { error in
                     reject(error)
             }
         }
@@ -104,7 +173,7 @@ public class BridgeCoreServices
             let params: Parameters = ["bridgeCoreRequest": otherParams]
             
             firstly {
-                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.cancelTransaction(terminalCode: terminalCode, storeCode: storeCode, parameters: params))
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.findWalletBalance(terminalCode: terminalCode, storeCode: storeCode, paramters: params))
                 }.then { (bridgeCoreResponse: BridgeCore) -> Void in
                     fulfill(bridgeCoreResponse)
                 }.catch {error in
@@ -122,7 +191,7 @@ public class BridgeCoreServices
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
         
-
+        
         let bcRouter = BrigdeCoreRouter.login(terminalCode: terminalCode, storeCode: storeCode, parameters: p)
         AsyncClientBC.getBCRequest(bcRouter: bcRouter, completion: { (bridgeCoreResponse) in
             completion(bridgeCoreResponse)
@@ -217,23 +286,23 @@ public class BridgeCoreServices
             if brigeResponse.ack == 0{ //LogOff successful
                 BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPassword, trainingMode: false, completion: { (loginBridgeCore) in
                     
-                     guard let brigeCoreLoginResponse = loginBridgeCore.bridgeCoreResponse else { completionError("Algo salio mal, por favor consulte soporte"); return }
+                    guard let brigeCoreLoginResponse = loginBridgeCore.bridgeCoreResponse else { completionError("Algo salio mal, por favor consulte soporte"); return }
                     
                     if brigeCoreLoginResponse.ack == 0 //Login success
                     {
-                     
+                        
                         
                         
                         let oper: BridgeCoreOperation = BridgeCoreOperation.selectTransaction(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, transactionSubtype: BCTransactionSubtype.TENDER_WITHDRAWAL, giftTicket: false)
                         
-                    
+                        
                         //Select transaction for tender withdrawal
                         Withdrawals.bridgeCoreOperationTransact(operation: oper, completion: { (bridgeCore) in
                             guard let response = bridgeCore.bridgeCoreResponse, let ack = response.ack else { return }
                             if ack == 0{
                                 
                                 
-                               // let  sendTenderGroup = DispatchGroup() //All tenders
+                                // let  sendTenderGroup = DispatchGroup() //All tenders
                                 var storedError:NSError? = nil
                                 
                                 
@@ -287,7 +356,7 @@ public class BridgeCoreServices
                                         let _:DispatchTimeoutResult = semaphore.wait(timeout: DispatchTime.distantFuture)
                                         
                                         if let errorInSomeTender = storedError{
-                                          completionError(errorInSomeTender.description)
+                                            completionError(errorInSomeTender.description)
                                         }
                                         
                                         
@@ -296,18 +365,18 @@ public class BridgeCoreServices
                                     let params: [String:Any] = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false]
                                     
                                     finishTransactionPrinter(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: params, completion: completion, completionError: completionError)
-    
+                                    
                                 }
                                 
                             }else{
                                 if let msg = response.message{
-                                  completionError(msg)
+                                    completionError(msg)
                                 }
                             }
                         }) { (msg) in
                             completionError(msg)
                         }
-
+                        
                         
                     }else{
                         if let msg = brigeCoreLoginResponse.message{
@@ -343,7 +412,7 @@ public class BridgeCoreServices
         
         
         AsyncClientBC.getBCRequest(bcRouter: bcRouter, completion: { (bridgeCoreResponse) in
-           completion(bridgeCoreResponse)
+            completion(bridgeCoreResponse)
         }) { (msg) in
             completionError(msg)
         }
@@ -371,7 +440,7 @@ public class BridgeCoreServices
             
             
         }) { (msg) in
-                completionError(msg)
+            completionError(msg)
             
         }
     }
@@ -413,7 +482,7 @@ public class BridgeCoreServices
                 }) { (msg) in
                     completionError(msg)
                 }
-            }else if bcLoginR.ack == 10000 || bcLoginR.ack == 10001{
+            }else if bcLoginR.ack == 10000{
                 completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
             }else
             {
@@ -457,6 +526,20 @@ public class BridgeCoreServices
     }
     
     
+    public class func returnSelect(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore> {
+        return Promise { fulfill, reject in
+            let oper = BridgeCoreOperation.returnSelect(connectionId: connectionId)
+            
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.returnSelect(terminalCode: terminalCode, storeCode: storeCode, operation: oper))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+        
+    }
     
     public class func returnSelect(connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
         
@@ -469,7 +552,7 @@ public class BridgeCoreServices
     }
     
     public class func selectTransactionWithParams(connectionId:String, storeCode:String, terminalCode:String, params:Parameters, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
-    
+        
         let oper = BridgeCoreOperation.selectTransactionWithParams(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: params)
         
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.selectTransactionWithOperation(terminalCode: terminalCode, storeCode: storeCode, operation: oper), completion: { (bridgeCoreResponse) in
@@ -552,6 +635,18 @@ public class BridgeCoreServices
         }
     }
     
+    public class func closeSession(storeCode:String, terminalCode:String) -> Promise<BridgeCore> {
+        return Promise { fulfill, reject in
+            firstly {
+                AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.closeSession(terminalCode: terminalCode, storeCode: storeCode))
+                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
+                    fulfill(bridgeCoreResponse)
+                }.catch {error in
+                    reject(error)
+            }
+        }
+    }
+    
     public class func startUpSession(storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
         
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.startupSession(terminalCode: terminalCode, storeCode: storeCode), completion: { (closeTrasactionResponse) in
@@ -614,7 +709,7 @@ public class BridgeCoreServices
     }
     
     public class func addCardPayment(connectionId:String, storeCode:String, terminalCode:String, parameters: Parameters,  completion:@escaping (_ dataResponse: BridgecorePaymentResponse)-> Void, completionError: @escaping ErrorStringHandlerBC){
-    
+        
         let operation = BridgeCoreOperation.addCardPayment(connectionId: connectionId, terminal: terminalCode, store: storeCode, params: parameters)
         
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addCardPayment(operation: operation), completion: { (response) in
@@ -656,5 +751,5 @@ public class BridgeCoreServices
         
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.totalizeTransaction(operation: bcO), completion: completion, errorCompletition: completionError)
     }
-
+    
 }

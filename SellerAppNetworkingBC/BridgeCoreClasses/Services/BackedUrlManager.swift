@@ -82,6 +82,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
     case addCardPayment(operation: BridgeCoreOperation)
     case applyDiscount(terminalCode:String, storeCode:String, paramters:Parameters)
     case addMonederoPayment(operation: BridgeCoreOperation)
+    case configureTerminal(paramters:Parameters)
+    
     
     //method
     var method:HTTPMethod{
@@ -133,6 +135,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .applyDiscount(_,_,_):
             return .put
         case .addMonederoPayment(_):
+            return .put
+        case .configureTerminal(_):
             return .put
         }
         
@@ -194,6 +198,8 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addMonederoPayment(let operation):
             let  (_, terminal, store) = operation.getParams()
             return pathForTerminalAndStore(terminalCode: terminal, storeCode: store)
+        case .configureTerminal(_):
+            return "bridge-server-rest-liverpool/service/configureTerminal"
         }
     }
     
@@ -256,7 +262,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .updatePinPadKeys(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
-       case .promotionMapVersion(let params):
+        case .promotionMapVersion(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         case .addCashPayment(_, _,  let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
@@ -268,9 +274,12 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
         case .addMonederoPayment(let oper):
             let (params,_,_) = oper.getParams()
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+        case .configureTerminal(let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
         
         
         return urlRequest
     }
 }
+
