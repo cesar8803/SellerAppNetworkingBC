@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class Discountdataliverpool: Mappable{
     public var indexPromo: Int?
-    public var promo: Int?
+    public var promo: Bool?
     public var baseAmount: Baseamount?
     public var aVoid: Int?
     public var percent: Percent?
