@@ -17,7 +17,10 @@ public class AsyncClientBC
     
     class func getBCRequest<T:Mappable>(bcRouter:BrigdeCoreRouter) -> Promise<T> {
         return Promise { fulfill, reject in
-            Alamofire.request(bcRouter).responseObject { (response: DataResponse<T>) in
+            let manager = Alamofire.SessionManager.default
+            manager.session.configuration.timeoutIntervalForRequest = 500
+            manager.session.configuration.timeoutIntervalForResource = 500
+            manager.request(bcRouter).responseObject { (response: DataResponse<T>) in
                 if response.result.isSuccess{
                     let responseService = response.result.value
                     fulfill(responseService!)

@@ -817,7 +817,16 @@ public class Additionaldata: Mappable
         isPuntosBmerCard <- map["isPuntosBmerCard"]
         authorizationCode <- map["authorizationCode"]
         responseMessage <- map["responseMessage"]
-        ad__first__day__discount <- map["ad__first__day__discount"]
+        
+        switch map["ad__first__day__discount"].currentValue {
+        case (let v as String):
+            ad__first__day__discount = v
+        case (let v as Float):
+            ad__first__day__discount = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
         description <- map["description"]
         inputType <- map["inputType"]
         authorizationType <- map["authorizationType"]
