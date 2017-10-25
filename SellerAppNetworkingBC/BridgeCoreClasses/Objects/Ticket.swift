@@ -100,6 +100,7 @@ public class Ticket: Mappable{
     public var promoOptionSelected: Int?
     public var description: String?
     public var authorizationCode: String?
+    public var walletData : walletData?
     
     required public init?(map: Map){
     }
@@ -209,6 +210,7 @@ public class Ticket: Mappable{
         
         description <- map["description"]
         authorizationCode <- map["authorizationCode"]
+        walletData <- map["walletData"]
     }
 }
 

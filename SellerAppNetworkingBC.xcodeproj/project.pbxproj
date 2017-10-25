@@ -72,6 +72,11 @@
 		55E35FA51F3CF24E00E93EB6 /* Balancedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */; };
 		55E35FA71F3CF2E300E93EB6 /* WalletBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA61F3CF2E300E93EB6 /* WalletBalance.swift */; };
 		55F04B271F997423001A95A3 /* monederoBenefits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F04B261F997423001A95A3 /* monederoBenefits.swift */; };
+		55F980C11FA1544600A24276 /* walletData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F980C01FA1544600A24276 /* walletData.swift */; };
+		55F980C31FA1553D00A24276 /* oldBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F980C21FA1553D00A24276 /* oldBalance.swift */; };
+		55F980C51FA155D400A24276 /* paymentAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F980C41FA155D400A24276 /* paymentAmount.swift */; };
+		55F980C71FA1563D00A24276 /* benefitedAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F980C61FA1563D00A24276 /* benefitedAmount.swift */; };
+		55F980C91FA156CE00A24276 /* newBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F980C81FA156CE00A24276 /* newBalance.swift */; };
 		57F9CD8A1F29020200367A15 /* CloseTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9CD891F29020200367A15 /* CloseTerminal.swift */; };
 		671584061D7E6E454AC09C30 /* Pods_SellerAppNetworkingBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8855F1F0EEF7FE01D773FBFE /* Pods_SellerAppNetworkingBC.framework */; };
 		71418E821F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */; };
@@ -242,6 +247,11 @@
 		55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balancedata.swift; path = Objects/Balancedata.swift; sourceTree = "<group>"; };
 		55E35FA61F3CF2E300E93EB6 /* WalletBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalletBalance.swift; path = Objects/WalletBalance.swift; sourceTree = "<group>"; };
 		55F04B261F997423001A95A3 /* monederoBenefits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = monederoBenefits.swift; path = Objects/monederoBenefits.swift; sourceTree = "<group>"; };
+		55F980C01FA1544600A24276 /* walletData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = walletData.swift; path = Objects/walletData.swift; sourceTree = "<group>"; };
+		55F980C21FA1553D00A24276 /* oldBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = oldBalance.swift; path = Objects/oldBalance.swift; sourceTree = "<group>"; };
+		55F980C41FA155D400A24276 /* paymentAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = paymentAmount.swift; path = Objects/paymentAmount.swift; sourceTree = "<group>"; };
+		55F980C61FA1563D00A24276 /* benefitedAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = benefitedAmount.swift; path = Objects/benefitedAmount.swift; sourceTree = "<group>"; };
+		55F980C81FA156CE00A24276 /* newBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = newBalance.swift; path = Objects/newBalance.swift; sourceTree = "<group>"; };
 		57F9CD891F29020200367A15 /* CloseTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTerminal.swift; sourceTree = "<group>"; };
 		71418E811F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgecorePaymentResponse.swift; path = Payment/BridgecorePaymentResponse.swift; sourceTree = "<group>"; };
 		71419A3A1F30FFC3005F70E3 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = Objects/Amount.swift; sourceTree = "<group>"; };
@@ -475,6 +485,11 @@
 				5511269F1F957F5400166B60 /* DiscountValue.swift */,
 				55D26DC41F96A089002892A2 /* paymentPlanList.swift */,
 				55F04B261F997423001A95A3 /* monederoBenefits.swift */,
+				55F980C01FA1544600A24276 /* walletData.swift */,
+				55F980C21FA1553D00A24276 /* oldBalance.swift */,
+				55F980C41FA155D400A24276 /* paymentAmount.swift */,
+				55F980C61FA1563D00A24276 /* benefitedAmount.swift */,
+				55F980C81FA156CE00A24276 /* newBalance.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -918,6 +933,7 @@
 				2B0CA3B11F0DA6EC007A8EB0 /* Ticket.swift in Sources */,
 				2B788EB71F0B4962004E5F1F /* ExchangeCurrencyData.swift in Sources */,
 				7156AD981F2A8F6300761F38 /* AdditionalData.swift in Sources */,
+				55F980C31FA1553D00A24276 /* oldBalance.swift in Sources */,
 				2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */,
 				F7FEF2861F6306E80019F7DE /* OptionGroupSelected.swift in Sources */,
 				7156ADAC1F2AA21700761F38 /* BudgetAmount.swift in Sources */,
@@ -926,6 +942,7 @@
 				A95FD83A1EF9D2650094AA1C /* Benefitdata.swift in Sources */,
 				A95FD83E1EF9D2650094AA1C /* Optionmenu.swift in Sources */,
 				C1FA8F481F73FDA700024FB1 /* Value.swift in Sources */,
+				55F980C91FA156CE00A24276 /* newBalance.swift in Sources */,
 				2B9096931F2A53070026CFDE /* ItemDataList.swift in Sources */,
 				F78D193C1F60B76B00AEA7BB /* DiscountCouponsTotal.swift in Sources */,
 				55E35FA71F3CF2E300E93EB6 /* WalletBalance.swift in Sources */,
@@ -970,6 +987,7 @@
 				2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */,
 				550188421F85881C0070DF80 /* Discounts.swift in Sources */,
 				A95FD8461EF9D2650094AA1C /* Reasonsalereturnmenu.swift in Sources */,
+				55F980C11FA1544600A24276 /* walletData.swift in Sources */,
 				F78D195C1F60BF7300AEA7BB /* NetValue.swift in Sources */,
 				5511269E1F957E3600166B60 /* Promotions.swift in Sources */,
 				F78D19621F60C04E00AEA7BB /* DiscountPromoTotal.swift in Sources */,
@@ -983,6 +1001,7 @@
 				2B0CA3CF1F0DB748007A8EB0 /* DiscountsPromoTotal.swift in Sources */,
 				2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */,
 				71418E821F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift in Sources */,
+				55F980C71FA1563D00A24276 /* benefitedAmount.swift in Sources */,
 				F78D19421F60B8B300AEA7BB /* OriginalExtendedPrice.swift in Sources */,
 				2B0CA3B91F0DAF26007A8EB0 /* IvaTotal.swift in Sources */,
 				A95FD8421EF9D2650094AA1C /* Promotiondata.swift in Sources */,
@@ -998,6 +1017,7 @@
 				550188481F8588E50070DF80 /* Percent.swift in Sources */,
 				551126A01F957F5400166B60 /* DiscountValue.swift in Sources */,
 				7156ADA81F2AA10600761F38 /* BudgetData.swift in Sources */,
+				55F980C51FA155D400A24276 /* paymentAmount.swift in Sources */,
 				F78D19481F60BC7500AEA7BB /* InternalTaxes.swift in Sources */,
 				A95FD8481EF9D2650094AA1C /* Representation.swift in Sources */,
 				7156ADA41F2A9D9F00761F38 /* PrinterDocument.swift in Sources */,
