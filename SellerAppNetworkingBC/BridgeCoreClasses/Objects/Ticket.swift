@@ -679,7 +679,7 @@ public class Paymentdataliverpool: Mappable{
     public var account: Int?
     public var selectedInstallments: Int?
     public var inputDescriptor: String?
-    
+    public var nombre: String?
     
     
     required public init?(map: Map){
@@ -716,6 +716,7 @@ public class Paymentdataliverpool: Mappable{
         account <- map["account"]
         selectedInstallments <- map["selectedInstallments"]
         inputDescriptor <- map["inputDescriptor"]
+        nombre <- map["nombre"]
     }
 }
 
