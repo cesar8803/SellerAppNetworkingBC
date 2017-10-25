@@ -745,7 +745,7 @@ public class Eglobalcard: Mappable{
 }
 
 public class Selectedinstallmentamount: Mappable{
-    var number: Int?
+    public var number: Int?
     
     required public init?(map: Map){
     }
