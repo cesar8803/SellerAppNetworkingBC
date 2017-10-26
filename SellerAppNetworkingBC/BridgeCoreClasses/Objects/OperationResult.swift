@@ -71,7 +71,7 @@ public class OperationResult: Mappable{
     public var promoPaymentPlans: [String]?
     public var change: Change?
     public var budgetData: BudgetData?
-    public var terminalCode: Int?
+    public var terminalCode: String?
     public var transaccionRegalo: Int?
     public var ticketVoidFlag: Int?
     public var date: String?
@@ -148,7 +148,16 @@ public class OperationResult: Mappable{
         promoPaymentPlans <- map["promoPaymentPlans"]
         change <- map["change"]
         budgetData <- map["budgetData"]
-        terminalCode <- map["terminalCode"]
+        
+        switch map["terminalCode"].currentValue {
+        case (let v as String):
+            terminalCode = v
+        case (let v as Float):
+            terminalCode = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
         transaccionRegalo <- map["transaccionRegalo"]
         ticketVoidFlag <- map["ticketVoidFlag"]
         date <- map["date"]
