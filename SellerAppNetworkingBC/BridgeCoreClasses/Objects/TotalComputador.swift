@@ -18,6 +18,13 @@ public class TotalComputador: Mappable{
     }
     
     public func mapping(map: Map){
-        number <- map["number"]
+        switch map["number"].currentValue {
+        case (let v as String):
+            number = v
+        case (let v as Float):
+            number = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }
