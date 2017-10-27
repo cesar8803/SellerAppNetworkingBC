@@ -72,6 +72,7 @@
 		55E35FA51F3CF24E00E93EB6 /* Balancedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */; };
 		55E35FA71F3CF2E300E93EB6 /* WalletBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E35FA61F3CF2E300E93EB6 /* WalletBalance.swift */; };
 		55F04B271F997423001A95A3 /* monederoBenefits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F04B261F997423001A95A3 /* monederoBenefits.swift */; };
+		55F074171FA3EFF10082B397 /* somsOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F074161FA3EFF10082B397 /* somsOrderData.swift */; };
 		55F980C11FA1544600A24276 /* walletData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F980C01FA1544600A24276 /* walletData.swift */; };
 		55F980C31FA1553D00A24276 /* oldBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F980C21FA1553D00A24276 /* oldBalance.swift */; };
 		55F980C51FA155D400A24276 /* paymentAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F980C41FA155D400A24276 /* paymentAmount.swift */; };
@@ -247,6 +248,7 @@
 		55E35FA41F3CF24E00E93EB6 /* Balancedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balancedata.swift; path = Objects/Balancedata.swift; sourceTree = "<group>"; };
 		55E35FA61F3CF2E300E93EB6 /* WalletBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalletBalance.swift; path = Objects/WalletBalance.swift; sourceTree = "<group>"; };
 		55F04B261F997423001A95A3 /* monederoBenefits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = monederoBenefits.swift; path = Objects/monederoBenefits.swift; sourceTree = "<group>"; };
+		55F074161FA3EFF10082B397 /* somsOrderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = somsOrderData.swift; path = Objects/somsOrderData.swift; sourceTree = "<group>"; };
 		55F980C01FA1544600A24276 /* walletData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = walletData.swift; path = Objects/walletData.swift; sourceTree = "<group>"; };
 		55F980C21FA1553D00A24276 /* oldBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = oldBalance.swift; path = Objects/oldBalance.swift; sourceTree = "<group>"; };
 		55F980C41FA155D400A24276 /* paymentAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = paymentAmount.swift; path = Objects/paymentAmount.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 				55F980C41FA155D400A24276 /* paymentAmount.swift */,
 				55F980C61FA1563D00A24276 /* benefitedAmount.swift */,
 				55F980C81FA156CE00A24276 /* newBalance.swift */,
+				55F074161FA3EFF10082B397 /* somsOrderData.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -983,6 +986,7 @@
 				F7FEF2881F63087A0019F7DE /* OptionsGroups.swift in Sources */,
 				2B4E0CDA1F4DEEFB004CAEA7 /* StoresList.swift in Sources */,
 				2B994B671F27FA4800292163 /* BridgeCoreOperations.swift in Sources */,
+				55F074171FA3EFF10082B397 /* somsOrderData.swift in Sources */,
 				2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */,
 				2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */,
 				550188421F85881C0070DF80 /* Discounts.swift in Sources */,
