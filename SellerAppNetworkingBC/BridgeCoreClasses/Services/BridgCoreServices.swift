@@ -482,7 +482,7 @@ public class BridgeCoreServices
                 }) { (msg) in
                     completionError(msg)
                 }
-            }else if bcLoginR.ack == 10000{
+            }else if bcLoginR.ack == 10000 || bcLoginR.ack == 10001{
                 completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
             }else
             {
