@@ -19,7 +19,7 @@ public class Discount: Mappable{
         switch map["number"].currentValue {
         case (let v as String):
             number = v
-        case (let v as Float):
+        case (let v as Double):
             number = String(v)
         default:
             debugPrint("You should add another kind of data")
