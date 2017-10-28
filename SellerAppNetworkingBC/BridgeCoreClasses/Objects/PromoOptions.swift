@@ -17,11 +17,10 @@ public class PromoOptions: Mappable{
     required public init?(map: Map){
     }
     public func mapping(map: Map){
-        /*
-        print("PromoOptions(map)",map)
+       
         switch map["promoOptionData"].currentValue{
+            
         case is [String:Any]:
-            debugPrint("promoOptionData is a dictionary")
             
             self.promoOptionData = [PromoOptionData]()
             var itm:PromoOptionData? = nil
@@ -32,14 +31,12 @@ public class PromoOptions: Mappable{
             
             
         case is [[String:Any]]:
-            debugPrint("promoOptionData is an Array of dictionary")
             promoOptionData <- map["promoOptionData"]
         default:
             debugPrint("promoOptionData is other type")
         }
-        */
         
-         promoOptionData <- map["promoOptionData"]
+         //promoOptionData <- map["promoOptionData"]
         
     }
 }
