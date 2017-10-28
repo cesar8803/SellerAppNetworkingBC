@@ -56,7 +56,6 @@
 		2B994B6B1F28090D00292163 /* ItemLiverpoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */; };
 		2B994B6D1F280A3B00292163 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6C1F280A3B00292163 /* Price.swift */; };
 		2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6E1F280B1700292163 /* HierarchyGroup.swift */; };
-		2B9FF9501F4D166100E2025E /* BridgeCoreConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FF94F1F4D166100E2025E /* BridgeCoreConnection.swift */; };
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
 		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
 		550188421F85881C0070DF80 /* Discounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550188411F85881C0070DF80 /* Discounts.swift */; };
@@ -233,7 +232,6 @@
 		2B994B6A1F28090D00292163 /* ItemLiverpoolData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemLiverpoolData.swift; path = Objects/ItemLiverpoolData.swift; sourceTree = "<group>"; };
 		2B994B6C1F280A3B00292163 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Price.swift; path = Services/Price.swift; sourceTree = "<group>"; };
 		2B994B6E1F280B1700292163 /* HierarchyGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HierarchyGroup.swift; path = Objects/HierarchyGroup.swift; sourceTree = "<group>"; };
-		2B9FF94F1F4D166100E2025E /* BridgeCoreConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BridgeCoreConnection.swift; path = Services/BridgeCoreConnection.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
 		550188411F85881C0070DF80 /* Discounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discounts.swift; path = Objects/Discounts.swift; sourceTree = "<group>"; };
 		550188431F8588690070DF80 /* Discountdataliverpool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discountdataliverpool.swift; path = Objects/Discountdataliverpool.swift; sourceTree = "<group>"; };
@@ -512,7 +510,6 @@
 		2B9FF94E1F4D160700E2025E /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				2B9FF94F1F4D166100E2025E /* BridgeCoreConnection.swift */,
 			);
 			name = Connection;
 			sourceTree = "<group>";
@@ -881,7 +878,6 @@
 				A95FD83D1EF9D2650094AA1C /* Operationresult.swift in Sources */,
 				C1A91EDE1F82A81C0028D67C /* warrantyList.swift in Sources */,
 				C1A91EE01F82A8430028D67C /* Warrantydata.swift in Sources */,
-				2B9FF9501F4D166100E2025E /* BridgeCoreConnection.swift in Sources */,
 				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
 				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,
 				F7FEF28A1F630B5A0019F7DE /* OptionGroup.swift in Sources */,
