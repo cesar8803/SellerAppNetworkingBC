@@ -55,7 +55,7 @@ import Alamofire
 
 public enum BrigdeCoreRouter:URLRequestConvertible {
     //This variable coul be changed from outside
-    static public var baseURLString = BridgeCoreConnection.sharedInstance.urlString
+    static public var baseURLString = "http://172.22.49.66:9090" //BridgeCoreConnection.sharedInstance.urlString
     
     //Cases
     case selectEnableCoins(parameters:Parameters)
