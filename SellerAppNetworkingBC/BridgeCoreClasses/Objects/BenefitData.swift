@@ -34,6 +34,6 @@ public class BenefitData: Mappable{
         paymentPlanId <- map["paymentPlanId"]
         bank <- map["bank"]
         discountValue <- map["discountValue"]
-        print("BenefitData(map)",map)
+        //print("BenefitData(map)",map)
     }
 }
