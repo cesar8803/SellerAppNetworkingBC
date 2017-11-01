@@ -12,11 +12,11 @@ import ObjectMapper
 public class AdditionalInformation: Mappable{
     public var dataType: String?
     /*********************************/
-    var labelTitle: String?
-    var indexRequired: String?
-    var paymentAmount: String?
-    var activeDevice: String?
-    var storeCode: String?
+    public var labelTitle: String?
+    public var indexRequired: String?
+    public var paymentAmount: String?
+    public var activeDevice: String?
+    public var storeCode: String?
     
     public required init?(map: Map){
     }
