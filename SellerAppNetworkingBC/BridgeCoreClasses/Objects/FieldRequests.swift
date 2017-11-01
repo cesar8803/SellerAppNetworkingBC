@@ -10,11 +10,29 @@ import Foundation
 import ObjectMapper
 
 public class FieldRequests: Mappable{
-    public var fieldRequestData: FieldRequestData?
+    public var fieldRequestData: [FieldRequestData]?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
-        fieldRequestData <- map["fieldRequestData"]
+        
+        if let _ = map["fieldRequestData"].currentValue as? [String:Any]{
+            fieldRequestData = [FieldRequestData]()
+            var itm:FieldRequestData? = nil
+            itm <- map["fieldRequestData"]
+            if let i = itm{
+                fieldRequestData?.append(i)
+            }
+        }else{
+            fieldRequestData <- map["fieldRequestData"]
+        }
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }
