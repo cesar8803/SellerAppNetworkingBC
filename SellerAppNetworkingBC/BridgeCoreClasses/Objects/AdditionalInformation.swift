@@ -14,6 +14,9 @@ public class AdditionalInformation: Mappable{
     /*********************************/
     var labelTitle: String?
     var indexRequired: String?
+    var paymentAmount: String?
+    var activeDevice: String?
+    var storeCode: String?
     
     public required init?(map: Map){
     }
@@ -22,5 +25,14 @@ public class AdditionalInformation: Mappable{
         /*********************************/
         labelTitle <- map["labelTitle"]
         indexRequired <- map["indexRequired"]
+        storeCode <- map["storeCode"]
+        activeDevice <- map["activeDevice"]
+        if let payment = map["paymentAmount"].currentValue as? Double
+        {
+            paymentAmount = String(payment)
+        }else{
+            paymentAmount <- map["paymentAmount"]
+        }
+        
     }
 }
