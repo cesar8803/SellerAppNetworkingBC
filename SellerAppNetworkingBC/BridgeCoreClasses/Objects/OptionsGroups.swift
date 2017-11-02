@@ -18,6 +18,6 @@ public class OptionsGroups: Mappable{
     }
     public func mapping(map: Map){
         optionGroup <- map["optionGroup"]
-        print("OptionsGroups(map)",map)
+        //print("OptionsGroups(map)",map)
     }
 }
