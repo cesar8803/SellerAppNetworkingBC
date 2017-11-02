@@ -97,7 +97,7 @@ public class OperationResult: Mappable{
     public var barcode: String?
     public var cfBarcode: String?
     public var nroOrdenPaqueteria: String?
-    public var tentativeUsed : String?
+    public var tentativeUsed : Bool?
     public var tentativeAmount : TentativeAmount?
     
 
