@@ -102,6 +102,7 @@ public class Ticket: Mappable{
     public var authorizationCode: String?
     public var walletData : walletData?
     public var somsOrderData : somsOrderData?
+    public var cfBarcode: String?
     
     required public init?(map: Map){
     }
@@ -213,6 +214,8 @@ public class Ticket: Mappable{
         authorizationCode <- map["authorizationCode"]
         walletData <- map["walletData"]
         somsOrderData <- map["somsOrderData"]
+        
+        cfBarcode <- map["cfBarcode"]
     }
 }
 

@@ -97,6 +97,10 @@ public class OperationResult: Mappable{
     public var barcode: String?
     public var cfBarcode: String?
     public var nroOrdenPaqueteria: String?
+    public var tentativeUsed : Bool?
+    public var tentativeAmount : TentativeAmount?
+    
+
     public var testerData: [Testerdata]?
     
     /****************************/
@@ -191,6 +195,9 @@ public class OperationResult: Mappable{
         }else{
             nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         }
+        tentativeUsed <- map["tentativeUsed"]
+        tentativeAmount <- map["tentativeAmount"]
+        
        
         testerData <- map["testerData"]
     }

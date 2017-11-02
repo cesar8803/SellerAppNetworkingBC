@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19B945CF1FAB7B400096C639 /* TentativeAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B945CE1FAB7B400096C639 /* TentativeAmount.swift */; };
 		2B0CA3AB1F0DA314007A8EB0 /* RepresentationWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3AA1F0DA314007A8EB0 /* RepresentationWD.swift */; };
 		2B0CA3AD1F0DA585007A8EB0 /* SessionDataWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3AC1F0DA585007A8EB0 /* SessionDataWD.swift */; };
 		2B0CA3AF1F0DA613007A8EB0 /* TerdersMenuWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3AE1F0DA613007A8EB0 /* TerdersMenuWD.swift */; };
@@ -182,6 +183,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19B945CE1FAB7B400096C639 /* TentativeAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TentativeAmount.swift; sourceTree = "<group>"; };
 		2B0CA3AA1F0DA314007A8EB0 /* RepresentationWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepresentationWD.swift; path = Objects/RepresentationWD.swift; sourceTree = "<group>"; };
 		2B0CA3AC1F0DA585007A8EB0 /* SessionDataWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionDataWD.swift; path = Objects/SessionDataWD.swift; sourceTree = "<group>"; };
 		2B0CA3AE1F0DA613007A8EB0 /* TerdersMenuWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerdersMenuWD.swift; path = Objects/TerdersMenuWD.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				55F980C61FA1563D00A24276 /* benefitedAmount.swift */,
 				55F980C81FA156CE00A24276 /* newBalance.swift */,
 				55F074161FA3EFF10082B397 /* somsOrderData.swift */,
+				19B945CE1FAB7B400096C639 /* TentativeAmount.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -1002,6 +1005,7 @@
 				2B0CA3DF1F0DBB6A007A8EB0 /* TotalDiferencia.swift in Sources */,
 				71418E821F69A8A900DFBAF1 /* BridgecorePaymentResponse.swift in Sources */,
 				55F980C71FA1563D00A24276 /* benefitedAmount.swift in Sources */,
+				19B945CF1FAB7B400096C639 /* TentativeAmount.swift in Sources */,
 				F78D19421F60B8B300AEA7BB /* OriginalExtendedPrice.swift in Sources */,
 				2B0CA3B91F0DAF26007A8EB0 /* IvaTotal.swift in Sources */,
 				A95FD8421EF9D2650094AA1C /* Promotiondata.swift in Sources */,
