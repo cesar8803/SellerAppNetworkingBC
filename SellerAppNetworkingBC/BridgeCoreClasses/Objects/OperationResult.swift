@@ -100,6 +100,8 @@ public class OperationResult: Mappable{
     public var tentativeUsed : String?
     public var tentativeAmount : TentativeAmount?
     
+
+    public var testerData: [Testerdata]?
     
     /****************************/
     
@@ -197,7 +199,7 @@ public class OperationResult: Mappable{
         tentativeAmount <- map["tentativeAmount"]
         
        
-
+        testerData <- map["testerData"]
     }
     
     public class TerminalReportData: Mappable{
