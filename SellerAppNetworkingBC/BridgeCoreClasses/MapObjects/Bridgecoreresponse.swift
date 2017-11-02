@@ -33,3 +33,4 @@ class Bridgecoreresponse: Mappable{
         message <- map["message"]
     }
 }
+
