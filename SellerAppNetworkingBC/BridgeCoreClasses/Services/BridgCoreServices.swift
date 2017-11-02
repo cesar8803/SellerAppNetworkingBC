@@ -319,10 +319,7 @@ public class BridgeCoreServices
                                         
                                         let oper:BridgeCoreOperation = BridgeCoreOperation.addTender(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, paymentAmount: "\(w.paymentAmount)", voidFalg: w.voidFlag, paymentMethod: "\(w.paymentMethod)", paymentQuantity: "\(w.paymentQuantity)")
                                         
-                                        
-                                        
                                         Withdrawals.bridgeCoreOperationTransact(operation: oper, completion: { (withdrawalBridgeCore) in
-                                            
                                             print("\(idx) 🌎 - 🌕 ")
                                             if let withdrawalBridgeCoreResponse = withdrawalBridgeCore.bridgeCoreResponse
                                             {
@@ -330,24 +327,18 @@ public class BridgeCoreServices
                                                 {
                                                     //Ejecutar el siguiente hilo
                                                     print("Ejecutar el siguiente hilo")
-                                                    
+                                                    semaphore.signal()
                                                 }else{
                                                     //Cancelar la transacción y todo el proceso
                                                     print("Cancelar la transacción y todo el proceso...:\(withdrawalBridgeCoreResponse.message ?? "-")")
-                                                    
                                                     guard let ackNumber = withdrawalBridgeCoreResponse.ack , let errMsg = withdrawalBridgeCoreResponse.message else {
                                                         storedError = NSError(domain: "TenderError.Domain", code: -1000, userInfo: ["message":"unknow error"])
                                                         return
                                                     }
-                                                    
                                                     storedError = NSError(domain: "TenderError.Domain", code: ackNumber, userInfo: ["message":errMsg])
+                                                    completion(withdrawalBridgeCore)
                                                 }
-                                                
-                                                
                                             }
-                                            
-                                            semaphore.signal()
-                                            
                                         }, completionError: { (msg) in
                                             storedError = NSError(domain: "TenderError.Domain", code: -1000, userInfo: ["message":msg])
                                             semaphore.signal()
@@ -359,13 +350,20 @@ public class BridgeCoreServices
                                             completionError(errorInSomeTender)
                                         }
                                         
+                                        if storedError != nil {
+                                            //terminar el for
+                                            debugPrint("Terminar el for...")
+                                            continue
+                                        }                                  
+                                        
                                         
                                     }
                                     
-                                    let params: [String:Any] = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false]
+                                    if storedError == nil{
+                                        let params: [String:Any] = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false]
                                     
-                                    finishTransactionPrinter(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: params, completion: completion, completionError: completionError)
-                                    
+                                        finishTransactionPrinter(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: params, completion: completion, completionError: completionError)
+                                    }
                                 }
                                 
                             }else{
