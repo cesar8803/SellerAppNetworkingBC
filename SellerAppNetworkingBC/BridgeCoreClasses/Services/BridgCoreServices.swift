@@ -355,8 +355,8 @@ public class BridgeCoreServices
                                         
                                         let _:DispatchTimeoutResult = semaphore.wait(timeout: DispatchTime.distantFuture)
                                         
-                                        if let errorInSomeTender = storedError{
-                                            completionError(errorInSomeTender.description)
+                                        if let errorInSomeTender = storedError?.userInfo["message"] as? String{
+                                            completionError(errorInSomeTender)
                                         }
                                         
                                         
