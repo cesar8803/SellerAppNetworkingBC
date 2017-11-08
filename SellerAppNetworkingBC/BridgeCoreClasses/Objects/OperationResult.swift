@@ -112,7 +112,17 @@ public class OperationResult: Mappable{
         exchangeCurrencyListData <- map["exchangeCurrencyListData"]
         arrobaClass <- map["@class"]
         invoiced <- map["invoiced"]
-        docNumber <- map["docNumber"]
+        //docNumber <- map["docNumber"]
+        switch map["docNumber"].currentValue {
+        case (let v as String):
+            number = v
+        case (let v as Int):
+            number = String(v)
+        case (let v as Double):
+            number = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
         
         currentLevel <- map["currentLevel"]
         itemData <- map["itemData"]
