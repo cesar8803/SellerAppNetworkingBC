@@ -115,11 +115,11 @@ public class OperationResult: Mappable{
         //docNumber <- map["docNumber"]
         switch map["docNumber"].currentValue {
         case (let v as String):
-            number = v
+            docNumber = v
         case (let v as Int):
-            number = String(v)
+            docNumber = String(v)
         case (let v as Double):
-            number = String(v)
+            docNumber = String(v)
         default:
             debugPrint("You should add another kind of data")
         }
