@@ -59,7 +59,7 @@ public enum BrigdeCoreRouter:URLRequestConvertible {
      * Very important!!: This property must be changed from the outside to get the correct connection of Bridgecore services. Otherwise it will be assigned by default the IP 49.66
      */
 
-    static public var baseURLString = "http://172.22.49.66:9090"
+    static public var baseURLString = "https://appvendedor182.liverpool.com.mx:8443"
     
     //Cases
     case selectEnableCoins(parameters:Parameters)
