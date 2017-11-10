@@ -122,7 +122,19 @@ public class Ticket: Mappable{
         ivaTotal <- map["ivaTotal"]
         arrobaClass <- map["@class"]
         invoiced <- map["invoiced"]
-        docNumber <- map["docNumber"]
+        //docNumber <- map["docNumber"]
+        
+        switch map["docNumber"].currentValue {
+        case (let v as String):
+            docNumber = v
+        case (let v as Int):
+            docNumber = String(v)
+        case (let v as Double):
+            docNumber = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
         configuredPaymentPlans <- map["configuredPaymentPlans"]
         total <- map["total"]
         totalBalance <- map["totalBalance"]
