@@ -30,7 +30,11 @@ public class BenefitData: Mappable{
         benefitType <- map["benefitType"]
         value <- map["value"]
         printerMessage <- map["printerMessage"]
-        installments <- map["installments"]
+        if let installmentsString = map["installments"].currentValue as? Double{
+            installments =  String(installmentsString )
+        }else{
+            installments <- map["installments"]
+        }
         paymentPlanId <- map["paymentPlanId"]
         bank <- map["bank"]
         discountValue <- map["discountValue"]
