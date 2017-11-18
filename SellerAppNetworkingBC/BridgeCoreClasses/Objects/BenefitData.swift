@@ -31,7 +31,7 @@ public class BenefitData: Mappable{
         value <- map["value"]
         printerMessage <- map["printerMessage"]
         if let installmentsString = map["installments"].currentValue as? Double{
-            installments =  String(installmentsString )
+            installments =  String(Int(installmentsString))
         }else{
             installments <- map["installments"]
         }
