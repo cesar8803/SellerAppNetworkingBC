@@ -241,7 +241,6 @@ public enum BCRequestParams{
     
     
     case totalizeTransactionAutorized(
-        promoOptionSelected:Int,
         supervisorEntryMethod:String,
         processPromotions:Bool,
         supervisorPassword:String,
@@ -347,10 +346,9 @@ public enum BCRequestParams{
             let params: Parameters = [BCParamsNames.processPromotions.rawValue: processPromotions]
             return params
             
-        case .totalizeTransactionAutorized(let promoOptionSelected, let supervisorEntryMethod, let processPromotions, let supervisorPassword, let supervisorName):
+        case .totalizeTransactionAutorized(let supervisorEntryMethod, let processPromotions, let supervisorPassword, let supervisorName):
             
-            let params: Parameters = [BCParamsNames.promoOptionSelected.rawValue:promoOptionSelected,
-                                      BCParamsNames.supervisorEntryMethod.rawValue:supervisorEntryMethod,
+            let params: Parameters = [BCParamsNames.supervisorEntryMethod.rawValue:supervisorEntryMethod,
                                       BCParamsNames.processPromotions.rawValue: processPromotions,
                                       BCParamsNames.supervisorPassword.rawValue: supervisorPassword,
                                       BCParamsNames.supervisorName.rawValue: supervisorName]
