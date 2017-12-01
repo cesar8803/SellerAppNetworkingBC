@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		193CCD3A1FD1AA0F006E5563 /* WarningList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193CCD391FD1AA0F006E5563 /* WarningList.swift */; };
 		19B945CF1FAB7B400096C639 /* TentativeAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B945CE1FAB7B400096C639 /* TentativeAmount.swift */; };
 		2B0CA3AB1F0DA314007A8EB0 /* RepresentationWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3AA1F0DA314007A8EB0 /* RepresentationWD.swift */; };
 		2B0CA3AD1F0DA585007A8EB0 /* SessionDataWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CA3AC1F0DA585007A8EB0 /* SessionDataWD.swift */; };
@@ -183,6 +184,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		193CCD391FD1AA0F006E5563 /* WarningList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WarningList.swift; path = Objects/WarningList.swift; sourceTree = "<group>"; };
 		19B945CE1FAB7B400096C639 /* TentativeAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TentativeAmount.swift; sourceTree = "<group>"; };
 		2B0CA3AA1F0DA314007A8EB0 /* RepresentationWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepresentationWD.swift; path = Objects/RepresentationWD.swift; sourceTree = "<group>"; };
 		2B0CA3AC1F0DA585007A8EB0 /* SessionDataWD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionDataWD.swift; path = Objects/SessionDataWD.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 				55F980C81FA156CE00A24276 /* newBalance.swift */,
 				55F074161FA3EFF10082B397 /* somsOrderData.swift */,
 				19B945CE1FAB7B400096C639 /* TentativeAmount.swift */,
+				193CCD391FD1AA0F006E5563 /* WarningList.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -904,6 +907,7 @@
 				2B0CA3BB1F0DAFE0007A8EB0 /* Total.swift in Sources */,
 				A95FD8471EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift in Sources */,
 				F75F37AD1F8D18EA00BE00CB /* PaymentWithoutRefinance.swift in Sources */,
+				193CCD3A1FD1AA0F006E5563 /* WarningList.swift in Sources */,
 				F75F37A91F8D17CC00BE00CB /* BalanceBC.swift in Sources */,
 				F78D19461F60BBC400AEA7BB /* OriginalTaxesAmount.swift in Sources */,
 				A95FD8371EF9D2650094AA1C /* LPStoreData.swift in Sources */,
