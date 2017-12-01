@@ -56,7 +56,7 @@ public class RepresentationWD: Mappable{
     
     
     public var autoCancelTrxAddCustomer: Int?
-    public var warningList: [String]?
+    public var warningList: [WarningList]?
     public var warrantyMessage: String?
     public var warrantyList: [String]?
     public var warrantyListN: [Warrantylist]?
