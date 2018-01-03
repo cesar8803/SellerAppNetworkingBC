@@ -232,9 +232,9 @@ public class BridgeCoreServices
         }
     }
     
-    public class func loginBoss(userName:String, userPass:String, connectionId:String, storeCode:String, terminalCode:String, completion: @escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    public class func loginBoss(userName:String, userPass:String, connectionId:String, storeCode:String, terminalCode:String,trainingMode:Bool, completion: @escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
-        let params:Parameters = ["userName":userName, "userPassword":userPass, "trainingMode":false]
+        let params:Parameters = ["userName":userName, "userPassword":userPass, "trainingMode":trainingMode]
         let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"login", "params":params] as [String : Any]
         let p:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
         
