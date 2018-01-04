@@ -284,7 +284,7 @@ public class BridgeCoreServices
             guard let brigeResponse = bridgeCore.bridgeCoreResponse else { completionError("Algo salio mal, por favor consulte soporte"); return }
             
             if brigeResponse.ack == 0{ //LogOff successful
-                BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPassword, trainingMode: false, completion: { (loginBridgeCore) in
+                BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPassword, trainingMode: trainingMode, completion: { (loginBridgeCore) in
                     
                     guard let brigeCoreLoginResponse = loginBridgeCore.bridgeCoreResponse else { completionError("Algo salio mal, por favor consulte soporte"); return }
                     
