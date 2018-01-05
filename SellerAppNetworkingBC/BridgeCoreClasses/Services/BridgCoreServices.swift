@@ -459,10 +459,10 @@ public class BridgeCoreServices
         })
     }
     
-    public class func closeTerminal(connectionId:String, userName: String, userPass: String, storeCode:String, terminalCode:String, giftTicket: Bool = false, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    public class func closeTerminal(connectionId:String, userName: String, userPass: String, storeCode:String, terminalCode:String, giftTicket: Bool = false,trainingMode:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         
-        BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPass, trainingMode: false, completion: { (loginBridgeCoreResponse) in
+        BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPass, trainingMode: trainingMode, completion: { (loginBridgeCoreResponse) in
             guard let bcLoginR = loginBridgeCoreResponse.bridgeCoreResponse else {
                 completionError("bridgeCoreResponse is nil")
                 return}
@@ -491,14 +491,14 @@ public class BridgeCoreServices
                     
                     if bcLogoffR.ack == 0
                     {
-                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false, completion: completion, completionError:completionError)
+                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, completion: completion, completionError:completionError)
                     }else if bcLogoffR.ack == 10049{
                         BridgeCoreServices.cancelTransactionWithParams(coneectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: ["cancelReasonCode":""], completion: { (responseCancel) in
                             guard let bcCancelR = responseCancel.bridgeCoreResponse else {
                                 completionError("bridgeCoreResponse is nil")
                                 return }
                             if bcCancelR.ack == 0{
-                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false, completion: completion, completionError:completionError)
+                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, completion: completion, completionError:completionError)
                             }else{
                                 completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
                             }
