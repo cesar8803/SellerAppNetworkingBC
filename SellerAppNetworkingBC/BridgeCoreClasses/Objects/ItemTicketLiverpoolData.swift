@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class ItemTicketLiverpoolData: Mappable{
     public var unitOfMeasureDecimals: Int?
-    public var code: Int?
+    public var code: String?
     public var entryMethod: EntryMethod?
     public var saleForDelivery: Int?
     public var sequenceNumber: Int?
@@ -80,7 +80,16 @@ public class ItemTicketLiverpoolData: Mappable{
     
     public func mapping(map: Map){
         unitOfMeasureDecimals <- map["unitOfMeasureDecimals"]
-        code <- map["code"]
+        switch map["code"].currentValue {
+        case (let v as String):
+            code = v
+        case (let v as Int):
+            code = String(v)
+        case (let v as Double):
+            code = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
         entryMethod <- map["entryMethod"]
         saleForDelivery <- map["saleForDelivery"]
         sequenceNumber <- map["sequenceNumber"]
