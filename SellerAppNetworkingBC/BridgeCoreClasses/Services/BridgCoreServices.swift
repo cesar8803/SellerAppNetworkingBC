@@ -164,11 +164,11 @@ public class BridgeCoreServices
         }
     }
     
-    public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, printerTypeName:String, printerStationType:String) -> Promise<BridgeCore>
+    public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, track1:String, track2:String, cvv:String, printerTypeName:String, printerStationType:String) -> Promise<BridgeCore>
     {
         return Promise { fulfill, reject in
             
-            let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod, "printerTypeName":printerTypeName, "printerStationType":printerStationType] as [String : Any]
+            let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType] as [String : Any]
             let otherParams = ["params":bridgeCoreRequestDict,"operation":"findWalletBalance"] as [String : Any]
             let params: Parameters = ["bridgeCoreRequest": otherParams]
             
