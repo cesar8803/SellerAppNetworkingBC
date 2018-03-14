@@ -6,8 +6,17 @@
 //  Copyright © 2018 Liverpool. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import ObjectMapper
 
-class discountAmountTlog: NSObject {
-
+public class discountAmountTlog: Mappable {
+    
+    public var number: Double?
+    
+    public required init?(map: Map){
+    }
+    public func mapping(map: Map){
+        number <- map["number"]
+    }
+    
 }

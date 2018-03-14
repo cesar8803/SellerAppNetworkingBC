@@ -6,8 +6,17 @@
 //  Copyright © 2018 Liverpool. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import ObjectMapper
 
-class proratedDiscountsTotal: NSObject {
-
+public class proratedDiscountsTotal: Mappable {
+    
+    public var proratedDiscountTotal: proratedDiscountTotal?
+    
+    public required init?(map: Map){
+    }
+    public func mapping(map: Map){
+        proratedDiscountTotal <- map["proratedDiscountTotal"]
+    }
+    
 }

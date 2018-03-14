@@ -130,6 +130,9 @@
 		A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */; };
 		A9E05B951F3CD450001ACA0A /* ItemErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */; };
 		A9E05B971F3CD4F8001ACA0A /* ItemErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */; };
+		B5DE78AB20598BF900EEA376 /* proratedDiscountsTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE78AA20598BF900EEA376 /* proratedDiscountsTotal.swift */; };
+		B5DE78AD20598D2000EEA376 /* proratedDiscountTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE78AC20598D2000EEA376 /* proratedDiscountTotal.swift */; };
+		B5DE78AF20598EAB00EEA376 /* discountAmountTlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE78AE20598EAB00EEA376 /* discountAmountTlog.swift */; };
 		C17B293D1F7DF150005709C1 /* Aditionalparameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B293C1F7DF150005709C1 /* Aditionalparameters.swift */; };
 		C1A91EDE1F82A81C0028D67C /* warrantyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A91EDD1F82A81C0028D67C /* warrantyList.swift */; };
 		C1A91EE01F82A8430028D67C /* Warrantydata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A91EDF1F82A8430028D67C /* Warrantydata.swift */; };
@@ -310,6 +313,9 @@
 		A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tendersmenu.swift; sourceTree = "<group>"; };
 		A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorList.swift; path = Objects/ItemErrorList.swift; sourceTree = "<group>"; };
 		A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorData.swift; path = Objects/ItemErrorData.swift; sourceTree = "<group>"; };
+		B5DE78AA20598BF900EEA376 /* proratedDiscountsTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = proratedDiscountsTotal.swift; path = Objects/proratedDiscountsTotal.swift; sourceTree = "<group>"; };
+		B5DE78AC20598D2000EEA376 /* proratedDiscountTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = proratedDiscountTotal.swift; path = Objects/proratedDiscountTotal.swift; sourceTree = "<group>"; };
+		B5DE78AE20598EAB00EEA376 /* discountAmountTlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = discountAmountTlog.swift; path = Objects/discountAmountTlog.swift; sourceTree = "<group>"; };
 		C17B293C1F7DF150005709C1 /* Aditionalparameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aditionalparameters.swift; sourceTree = "<group>"; };
 		C1A91EDD1F82A81C0028D67C /* warrantyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = warrantyList.swift; path = Objects/warrantyList.swift; sourceTree = "<group>"; };
 		C1A91EDF1F82A8430028D67C /* Warrantydata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Warrantydata.swift; path = Objects/Warrantydata.swift; sourceTree = "<group>"; };
@@ -497,6 +503,9 @@
 				55F074161FA3EFF10082B397 /* somsOrderData.swift */,
 				19B945CE1FAB7B400096C639 /* TentativeAmount.swift */,
 				193CCD391FD1AA0F006E5563 /* WarningList.swift */,
+				B5DE78AA20598BF900EEA376 /* proratedDiscountsTotal.swift */,
+				B5DE78AC20598D2000EEA376 /* proratedDiscountTotal.swift */,
+				B5DE78AE20598EAB00EEA376 /* discountAmountTlog.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -786,7 +795,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		530C4B45FD566C3D4AA13C23 /* [CP] Check Pods Manifest.lock */ = {
@@ -804,7 +813,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		753F2CBC1298ECD6D71F220C /* [CP] Copy Pods Resources */ = {
@@ -847,12 +856,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -927,6 +938,7 @@
 				A95FD83B1EF9D2650094AA1C /* Benefitsdata.swift in Sources */,
 				2B0CA3C51F0DB489007A8EB0 /* Change.swift in Sources */,
 				A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */,
+				B5DE78AF20598EAB00EEA376 /* discountAmountTlog.swift in Sources */,
 				55E1DCCC1F82A2E8008A469F /* Forcekeysdata.swift in Sources */,
 				A95FD8411EF9D2650094AA1C /* Promooptions.swift in Sources */,
 				2B0CA3D31F0DB898007A8EB0 /* IvaPerceptions.swift in Sources */,
@@ -957,6 +969,7 @@
 				7156ADAA1F2AA14F00761F38 /* BudgetInstallments.swift in Sources */,
 				F78D19581F60BEEA00AEA7BB /* DiscountPerTotal.swift in Sources */,
 				A95FD8391EF9D2650094AA1C /* BCResponse.swift in Sources */,
+				B5DE78AD20598D2000EEA376 /* proratedDiscountTotal.swift in Sources */,
 				55D26DC51F96A089002892A2 /* paymentPlanList.swift in Sources */,
 				A95FD83F1EF9D2650094AA1C /* Options.swift in Sources */,
 				A95FD8301EF9D2650094AA1C /* LoginVendedor.swift in Sources */,
@@ -1000,6 +1013,7 @@
 				F78D19621F60C04E00AEA7BB /* DiscountPromoTotal.swift in Sources */,
 				F78D194E1F60BD6100AEA7BB /* RegularUnitPrice.swift in Sources */,
 				F7FEF28E1F630DD90019F7DE /* PromoOptionData.swift in Sources */,
+				B5DE78AB20598BF900EEA376 /* proratedDiscountsTotal.swift in Sources */,
 				2B994B691F2808C600292163 /* ItemData.swift in Sources */,
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
 				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,
