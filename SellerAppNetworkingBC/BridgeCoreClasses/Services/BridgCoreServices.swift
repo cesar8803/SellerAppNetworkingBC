@@ -150,20 +150,6 @@ public class BridgeCoreServices
         }
     }
     
-    public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, printerTypeName:String, printerStationType:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
-    {
-        let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod, "printerTypeName":printerTypeName, "printerStationType":printerStationType] as [String : Any]
-        
-        let otherP = ["params":bridgeCoreRequestDict,"operation":"findWalletBalance"] as [String : Any]
-        let p:Parameters = ["bridgeCoreRequest":otherP]
-        
-        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.findWalletBalance(terminalCode: terminalCode, storeCode: storeCode, paramters: p), completion: { (bridgeCoreResponse) in
-            completion(bridgeCoreResponse)
-        }) { (msg) in
-            completionError(msg)
-        }
-    }
-    
     public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, track1:String, track2:String, cvv:String, printerTypeName:String, printerStationType:String) -> Promise<BridgeCore>
     {
         return Promise { fulfill, reject in
