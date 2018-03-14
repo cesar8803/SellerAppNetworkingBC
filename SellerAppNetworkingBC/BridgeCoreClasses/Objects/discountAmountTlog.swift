@@ -11,12 +11,19 @@ import ObjectMapper
 
 public class discountAmountTlog: Mappable {
     
-    public var number: Double?
+    public var number: String?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
-        number <- map["number"]
+        
+        switch map["number"].currentValue {
+        case (let v as String):
+            number = v
+        case (let v as Double):
+            number = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
-    
 }
