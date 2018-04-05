@@ -10,16 +10,18 @@ import Foundation
 import ObjectMapper
 
 public class Walletbalance: Mappable{
-    public var number: Float?
+    public var number: Double?
     
     required public init?(map: Map){
     }
     public func mapping(map: Map){
         switch map["number"].currentValue {
-        case (let v as Float):
+        case (let v as Double):
             number = v
         case (let v as String):
-            number = Float(v)
+            number = Double(v)
+        case (let v as Float):
+            number = Double(v)
         default:
             debugPrint("You should add another kind of data")
         }
