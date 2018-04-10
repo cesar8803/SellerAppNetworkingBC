@@ -65,7 +65,7 @@ public class LPBridgeCoreServiceProvider {
         self.environment = environment
         self.customRootEndpoint = customRootEndpoint
         self.manager.session.configuration.httpAdditionalHeaders = LPBridgeCoreServiceProvider.defaultHeaders()
-        self.manager.session.configuration.timeoutIntervalForRequest = 60
+        self.manager.session.configuration.timeoutIntervalForRequest = 300
         #if ENV_DD_DEV
             self.manager.session.configuration.timeoutIntervalForRequest = 500
         #endif
