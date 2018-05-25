@@ -750,4 +750,11 @@ public class BridgeCoreServices
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.totalizeTransaction(operation: bcO), completion: completion, errorCompletition: completionError)
     }
     
+    //TOTALIZE MESA DE REGALOS
+    public class func grTotalizeWithParams(params:Parameters, connectionId:String, storeCode:String, terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC){
+        
+        let bc1 = BridgeCoreOperation.totalizeTransaction(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: params)
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.totalizeTransaction(operation: bc1), completion: completion, errorCompletition: completionError)
+    }
 }
