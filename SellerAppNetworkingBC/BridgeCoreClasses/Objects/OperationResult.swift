@@ -204,6 +204,16 @@ public class OperationResult: Mappable{
             
         }else{
             nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+            if nroOrdenPaqueteria == nil || nroOrdenPaqueteria == ""{
+                let splitTicketMES          = (map["splitTicketsMesaMES"] as [AnyObject])?.first        as? [String:AnyObject]?
+                let ticketLiverpool         = splitTicketsMES["ticketLiverpool"]                        as? [String:AnyObject]?
+                let paqueteriaOrdenNumber1  = ticketLiverpool["paqueteriaOrdenNumber"]                  as? IntMax
+                
+                
+                let splitTicketDataMES      = (map["splitTicketsDataMesaMES"] as [AnyObject])?.first    as? [String:AnyObject]?
+                let ticketLiverpoolData     = splitTicketDataMES["ticketDataLiverpool"]                 as? [String:AnyObject]?
+                let nroOrdenPaqueteria1     = ticketLiverpool["nroOrdenPaqueteria"]                     as? IntMax
+            }
         }
         tentativeUsed <- map["tentativeUsed"]
         tentativeAmount <- map["tentativeAmount"]
