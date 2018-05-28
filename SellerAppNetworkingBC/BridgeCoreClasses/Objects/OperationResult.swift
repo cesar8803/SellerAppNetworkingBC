@@ -100,6 +100,9 @@ public class OperationResult: Mappable{
     public var tentativeUsed : Bool?
     public var tentativeAmount : TentativeAmount?
     
+    public var splitTicketMESList : [splitTicketMES]?
+    public var splitTicketDataMESList : [splitTicketsDataMesaMES]?
+    
 
     public var testerData: [Testerdata]?
     
@@ -198,6 +201,7 @@ public class OperationResult: Mappable{
         barcode <- map["barcode"]
         cfBarcode <- map["cfBarcode"]
         //nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+        
         if let numString = map["nroOrdenPaqueteria"].currentValue as? IntMax
         {
             nroOrdenPaqueteria =  String(numString )
@@ -205,14 +209,15 @@ public class OperationResult: Mappable{
         }else{
             nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
             if nroOrdenPaqueteria == nil || nroOrdenPaqueteria == ""{
-                let splitTicketMES          = (map["splitTicketsMesaMES"] as [AnyObject])?.first        as? [String:AnyObject]?
-                let ticketLiverpool         = splitTicketsMES["ticketLiverpool"]                        as? [String:AnyObject]?
-                let paqueteriaOrdenNumber1  = ticketLiverpool["paqueteriaOrdenNumber"]                  as? IntMax
                 
+                self.splitTicketMESList     <- map["splitTicketsMesaMES"]
+                self.splitTicketDataMESList     <- map["splitTicketsDataMesaMES"]
                 
-                let splitTicketDataMES      = (map["splitTicketsDataMesaMES"] as [AnyObject])?.first    as? [String:AnyObject]?
-                let ticketLiverpoolData     = splitTicketDataMES["ticketDataLiverpool"]                 as? [String:AnyObject]?
-                let nroOrdenPaqueteria1     = ticketLiverpool["nroOrdenPaqueteria"]                     as? IntMax
+                if self.splitTicketMESList != nil && self.splitTicketMESList!.count > 0{
+                    nroOrdenPaqueteria = self.splitTicketMESList!.first!.ticketLiverpool!.paqueteriaOrdenNumber
+                }else if self.splitTicketDataMESList != nil && self.splitTicketDataMESList!.count > 0{
+                    nroOrdenPaqueteria = self.splitTicketDataMESList!.first!.ticketDataLiverpool!.nroOrdenPaqueteria
+                }
             }
         }
         tentativeUsed <- map["tentativeUsed"]
@@ -287,6 +292,46 @@ public class OperationResult: Mappable{
             tipoTax <- map["tipoTax"]
             descripcionTax <- map["descripcionTax"]
             porcenajeTax <- map["porcenajeTax"]
+        }
+    }
+    
+    public class splitTicketMES: Mappable{
+        public var ticketLiverpool: ticketLiverpool?
+        
+        public required init?(map: Map){
+        }
+        public func mapping(map: Map){
+            ticketLiverpool <- map["ticketLiverpool"]
+        }
+    }
+    
+    public class ticketLiverpool: Mappable{
+        public var paqueteriaOrdenNumber: String?
+        
+        public required init?(map: Map){
+        }
+        public func mapping(map: Map){
+            paqueteriaOrdenNumber <- map["paqueteriaOrdenNumber"]
+        }
+    }
+    
+    public class splitTicketsDataMesaMES: Mappable{
+        public var ticketDataLiverpool: ticketDataLiverpool?
+        
+        public required init?(map: Map){
+        }
+        public func mapping(map: Map){
+            ticketDataLiverpool <- map["ticketDataLiverpool"]
+        }
+    }
+    
+    public class ticketDataLiverpool: Mappable{
+        public var nroOrdenPaqueteria: String?
+        
+        public required init?(map: Map){
+        }
+        public func mapping(map: Map){
+            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         }
     }
 
