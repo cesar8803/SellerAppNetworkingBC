@@ -214,7 +214,7 @@ public class OperationResult: Mappable{
                 self.splitTicketDataMESList     <- map["splitTicketsDataMesaMES"]
                 
                 if self.splitTicketMESList != nil && self.splitTicketMESList!.count > 0{
-                    nroOrdenPaqueteria = self.splitTicketMESList!.first!.ticketLiverpool!.paqueteriaOrdenNumber
+                    nroOrdenPaqueteria = self.splitTicketMESList!.first!.ticketLiverpool!.paqueteriaOrderNumber
                 }else if self.splitTicketDataMESList != nil && self.splitTicketDataMESList!.count > 0{
                     nroOrdenPaqueteria = self.splitTicketDataMESList!.first!.ticketDataLiverpool!.nroOrdenPaqueteria
                 }
@@ -306,12 +306,12 @@ public class OperationResult: Mappable{
     }
     
     public class ticketLiverpool: Mappable{
-        public var paqueteriaOrdenNumber: String?
+        public var paqueteriaOrderNumber: String?
         
         public required init?(map: Map){
         }
         public func mapping(map: Map){
-            paqueteriaOrdenNumber <- map["paqueteriaOrdenNumber"]
+            paqueteriaOrderNumber <- map["paqueteriaOrderNumber"]
         }
     }
     
