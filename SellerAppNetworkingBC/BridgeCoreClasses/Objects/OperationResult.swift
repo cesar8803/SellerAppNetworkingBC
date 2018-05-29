@@ -29,17 +29,17 @@ public class OperationResult: Mappable{
     
     /********************************
      FindItemList
-    *********************************/
+     *********************************/
     public var itemDataList: [ItemDataList]?
     public var itemErrorList: [ItemErrorList]?
     public var itemErrorListString: [String]?
-
+    
     /******************************/
     
     
     /****************************
-    FindBudget
-    *****************************/
+     FindBudget
+     *****************************/
     
     
     public var printerDocument: PrinterDocument?
@@ -100,10 +100,9 @@ public class OperationResult: Mappable{
     public var tentativeUsed : Bool?
     public var tentativeAmount : TentativeAmount?
     
-    public var splitTicketMESList : [splitTicketMES]?
     public var splitTicketDataMESList : [splitTicketsDataMesaMES]?
     
-
+    
     public var testerData: [Testerdata]?
     
     /****************************/
@@ -210,20 +209,18 @@ public class OperationResult: Mappable{
             nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
             if nroOrdenPaqueteria == nil || nroOrdenPaqueteria == ""{
                 
-                self.splitTicketMESList     <- map["splitTicketsMesaMES"]
                 self.splitTicketDataMESList     <- map["splitTicketsDataMesaMES"]
-                
-                if self.splitTicketMESList != nil && self.splitTicketMESList!.count > 0{
-                    nroOrdenPaqueteria = String(describing: self.splitTicketMESList!.first!.ticketLiverpool!.paqueteriaOrderNumber)
-                }else if self.splitTicketDataMESList != nil && self.splitTicketDataMESList!.count > 0{
-                    nroOrdenPaqueteria = self.splitTicketDataMESList!.first!.ticketDataLiverpool!.nroOrdenPaqueteria
+                if self.splitTicketDataMESList != nil && self.splitTicketDataMESList!.count > 0{
+                    if let ordenNUmber = self.splitTicketDataMESList!.first!.ticketDataLiverpool!.nroOrdenPaqueteria{
+                        nroOrdenPaqueteria = ordenNUmber.description
+                    }
                 }
             }
         }
         tentativeUsed <- map["tentativeUsed"]
         tentativeAmount <- map["tentativeAmount"]
         
-       
+        
         testerData <- map["testerData"]
     }
     
@@ -295,26 +292,6 @@ public class OperationResult: Mappable{
         }
     }
     
-    public class splitTicketMES: Mappable{
-        public var ticketLiverpool: ticketLiverpool?
-        
-        public required init?(map: Map){
-        }
-        public func mapping(map: Map){
-            ticketLiverpool <- map["ticketLiverpool"]
-        }
-    }
-    
-    public class ticketLiverpool: Mappable{
-        public var paqueteriaOrderNumber: IntMax?
-        
-        public required init?(map: Map){
-        }
-        public func mapping(map: Map){
-            paqueteriaOrderNumber <- map["paqueteriaOrderNumber"]
-        }
-    }
-    
     public class splitTicketsDataMesaMES: Mappable{
         public var ticketDataLiverpool: ticketDataLiverpool?
         
@@ -326,7 +303,7 @@ public class OperationResult: Mappable{
     }
     
     public class ticketDataLiverpool: Mappable{
-        public var nroOrdenPaqueteria: String?
+        public var nroOrdenPaqueteria: IntMax?
         
         public required init?(map: Map){
         }
@@ -334,5 +311,7 @@ public class OperationResult: Mappable{
             nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         }
     }
-
+    
 }
+
+
