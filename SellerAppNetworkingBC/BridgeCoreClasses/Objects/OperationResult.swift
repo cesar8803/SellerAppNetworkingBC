@@ -318,7 +318,6 @@ public class OperationResult: Mappable{
             default:
                 debugPrint("You should add another kind of data")
             }
-//            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         }
     }
     
