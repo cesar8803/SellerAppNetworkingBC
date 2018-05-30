@@ -103,6 +103,7 @@ public class Ticket: Mappable{
     public var walletData : walletData?
     public var somsOrderData : somsOrderData?
     public var cfBarcode: String?
+    public var itemDataList:[itemDataList]?
     
     required public init?(map: Map){
     }
@@ -228,6 +229,8 @@ public class Ticket: Mappable{
         somsOrderData <- map["somsOrderData"]
         
         cfBarcode <- map["cfBarcode"]
+        
+        itemDataList <- map["itemDataList"]
     }
 }
 
@@ -891,5 +894,35 @@ public class Surcharge: Mappable{
     }
     public func mapping(map: Map){
         number <- map["number"]
+    }
+}
+
+public class itemDataList:Mappable
+{
+    public var hashMap:[hashMap]?
+    //
+    required public init?(map: Map) { }
+    
+    public func mapping(map: Map)
+    {
+        hashMap <- map["hashMap"]
+    }
+}
+
+public class hashMap:Mappable
+{
+    public var itemQty:String?
+    public var somsDeliveryDate:String?
+    public var somsDeliveryType:String?
+    public var itemBarcode:String?
+    //
+    required public init?(map: Map) { }
+    
+    public func mapping(map: Map)
+    {
+        itemQty <- map["itemQty"]
+        somsDeliveryDate <- map["somsDeliveryDate"]
+        somsDeliveryType <- map["somsDeliveryType"]
+        itemBarcode <- map["itemBarcode"]
     }
 }
