@@ -921,8 +921,38 @@ public class hashMap:Mappable
     public func mapping(map: Map)
     {
         itemQty <- map["itemQty"]
-        somsDeliveryDate <- map["somsDeliveryDate"]
-        somsDeliveryType <- map["somsDeliveryType"]
-        itemBarcode <- map["itemBarcode"]
+        //
+        switch map["somsDeliveryDate"].currentValue {
+        case (let v as String):
+            somsDeliveryDate = v
+        case (let v as Int):
+            somsDeliveryDate = String(v)
+        case (let v as Double):
+            somsDeliveryDate = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        //
+        switch map["somsDeliveryType"].currentValue {
+        case (let v as String):
+            somsDeliveryType = v
+        case (let v as Int):
+            somsDeliveryType = String(v)
+        case (let v as Double):
+            somsDeliveryType = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        //
+        switch map["itemBarcode"].currentValue {
+        case (let v as String):
+            itemBarcode = v
+        case (let v as Int):
+            itemBarcode = String(v)
+        case (let v as Double):
+            itemBarcode = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }

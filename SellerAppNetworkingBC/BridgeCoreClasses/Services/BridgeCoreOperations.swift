@@ -19,14 +19,20 @@ public struct Item{
     public let itemBarcode:String
     public let type:String
     public let itemDepartment:String
+    public var somsDeliveryType:String?
+    public var somsDeliveryDate:String?
     
-    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String){
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String? = nil, somsDeliveryDate:String? = nil)
+    {
         self.itemPrice = itemPrice
         self.warrantySelected = warrantySelected
         self.itemQty = itemQty
         self.itemBarcode = itemBarcode
         self.itemDepartment = itemDepartment
         self.type = "map"
+        //
+        self.somsDeliveryType = somsDeliveryType
+        self.somsDeliveryDate = somsDeliveryDate
     }
     
     public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
@@ -36,6 +42,8 @@ public struct Item{
         self.itemBarcode = itemBarcode
         self.itemDepartment = ""
         self.type = "map"
+        self.somsDeliveryType = nil
+        self.somsDeliveryDate = nil
     }
 }
 
@@ -119,6 +127,9 @@ public enum BCParamsNames: String{
     case sequence = "sequence"
     case optionsGroupsSelected = "optionsGroupsSelected"
     case optionGroup = "optionGroup"
+    
+    case somsDeliveryType = "somsDeliveryType"
+    case somsDeliveryDate = "somsDeliveryDate"
 }
 
 
@@ -368,13 +379,25 @@ public enum BCRequestParams{
                                       BCParamsNames.itemQty.rawValue:itemQty]
             return params
         case .addItemList(let item):
-            let params: Parameters = [
+            var params: Parameters = [
                 BCParamsNames.type.rawValue : "map",
                 BCParamsNames.itemBarcode.rawValue: item.itemBarcode,
                 BCParamsNames.itemPrice.rawValue: item.itemPrice,
                 BCParamsNames.warrantySelected.rawValue: item.warrantySelected,
                 BCParamsNames.itemQty.rawValue: item.itemQty
             ]
+            //
+            //VALIDAR SI VIENE DELIVERY TYPE Y DELIVERY DATE
+            if let somsDeliveryType = item.somsDeliveryType
+            {
+                params[BCParamsNames.somsDeliveryType.rawValue] = somsDeliveryType
+            }
+            //
+            if let somsDeliveryDate = item.somsDeliveryDate
+            {
+                params[BCParamsNames.somsDeliveryDate.rawValue] = somsDeliveryDate
+            }
+            //
             return params
         }
     }
