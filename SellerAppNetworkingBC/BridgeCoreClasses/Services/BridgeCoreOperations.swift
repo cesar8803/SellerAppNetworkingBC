@@ -22,7 +22,7 @@ public struct Item{
     public let somsDeliveryType:String?
     public let somsDeliveryDate:String?
     
-    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String, somsDeliveryDate:String)
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String? = nil, somsDeliveryDate:String? = nil)
     {
         self.itemPrice = itemPrice
         self.warrantySelected = warrantySelected
