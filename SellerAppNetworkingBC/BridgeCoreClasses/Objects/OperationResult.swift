@@ -201,9 +201,19 @@ public class OperationResult: Mappable{
         cfBarcode <- map["cfBarcode"]
         //nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         
-        if let numString = map["nroOrdenPaqueteria"].currentValue as? IntMax
+        
+        if map["nroOrdenPaqueteria"].currentValue != nil
         {
-            nroOrdenPaqueteria =  String(numString )
+            switch map["nroOrdenPaqueteria"].currentValue {
+            case (let v as String):
+                nroOrdenPaqueteria = v
+            case (let v as Int):
+                nroOrdenPaqueteria = String(v)
+            case (let v as Double):
+                nroOrdenPaqueteria = String(v)
+            default:
+                debugPrint("You should add another kind of data")
+            }
             
         }else{
             nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
