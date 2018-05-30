@@ -19,8 +19,8 @@ public struct Item{
     public let itemBarcode:String
     public let type:String
     public let itemDepartment:String
-    public let somsDeliveryType:String?
-    public let somsDeliveryDate:String?
+    public var somsDeliveryType:String?
+    public var somsDeliveryDate:String?
     
     public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String? = nil, somsDeliveryDate:String? = nil)
     {
