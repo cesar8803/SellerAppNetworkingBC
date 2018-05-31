@@ -201,9 +201,19 @@ public class OperationResult: Mappable{
         cfBarcode <- map["cfBarcode"]
         //nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         
-        if let numString = map["nroOrdenPaqueteria"].currentValue as? IntMax
+        
+        if map["nroOrdenPaqueteria"].currentValue != nil
         {
-            nroOrdenPaqueteria =  String(numString )
+            switch map["nroOrdenPaqueteria"].currentValue {
+            case (let v as String):
+                nroOrdenPaqueteria = v
+            case (let v as Int):
+                nroOrdenPaqueteria = String(v)
+            case (let v as Double):
+                nroOrdenPaqueteria = String(v)
+            default:
+                debugPrint("You should add another kind of data")
+            }
             
         }else{
             nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
@@ -212,7 +222,7 @@ public class OperationResult: Mappable{
                 self.splitTicketDataMESList     <- map["splitTicketsDataMesaMES"]
                 if self.splitTicketDataMESList != nil && self.splitTicketDataMESList!.count > 0{
                     if let ordenNUmber = self.splitTicketDataMESList!.first!.ticketDataLiverpool!.nroOrdenPaqueteria{
-                        nroOrdenPaqueteria = ordenNUmber.description
+                        nroOrdenPaqueteria = ordenNUmber
                     }
                 }
             }
@@ -303,12 +313,21 @@ public class OperationResult: Mappable{
     }
     
     public class ticketDataLiverpool: Mappable{
-        public var nroOrdenPaqueteria: IntMax?
+        public var nroOrdenPaqueteria: String?
         
         public required init?(map: Map){
         }
         public func mapping(map: Map){
-            nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
+            switch map["nroOrdenPaqueteria"].currentValue {
+            case (let v as String):
+                nroOrdenPaqueteria = v
+            case (let v as Int):
+                nroOrdenPaqueteria = String(v)
+            case (let v as Double):
+                nroOrdenPaqueteria = String(v)
+            default:
+                debugPrint("You should add another kind of data")
+            }
         }
     }
     
