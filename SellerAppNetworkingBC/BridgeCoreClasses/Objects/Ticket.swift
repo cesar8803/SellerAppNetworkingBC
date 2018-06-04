@@ -104,6 +104,7 @@ public class Ticket: Mappable{
     public var somsOrderData : somsOrderData?
     public var cfBarcode: String?
     public var itemDataList:[itemDataList]?
+    public var splitTicketsDataMesaMES : [SplitTicketsDataMesaMES]?
     
     required public init?(map: Map){
     }
@@ -231,6 +232,7 @@ public class Ticket: Mappable{
         cfBarcode <- map["cfBarcode"]
         
         itemDataList <- map["itemDataList"]
+        splitTicketsDataMesaMES <- map["splitTicketsDataMesaMES"]
     }
 }
 
