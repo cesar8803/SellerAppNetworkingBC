@@ -130,6 +130,8 @@
 		A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */; };
 		A9E05B951F3CD450001ACA0A /* ItemErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */; };
 		A9E05B971F3CD4F8001ACA0A /* ItemErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */; };
+		B5C97F6120C5A1C3001A550C /* SplitTicketsDataMesaMES.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C97F6020C5A1C3001A550C /* SplitTicketsDataMesaMES.swift */; };
+		B5C97F6320C5A31A001A550C /* ticketDataLiverpool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C97F6220C5A31A001A550C /* ticketDataLiverpool.swift */; };
 		B5DE78AB20598BF900EEA376 /* proratedDiscountsTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE78AA20598BF900EEA376 /* proratedDiscountsTotal.swift */; };
 		B5DE78AD20598D2000EEA376 /* proratedDiscountTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE78AC20598D2000EEA376 /* proratedDiscountTotal.swift */; };
 		B5DE78AF20598EAB00EEA376 /* discountAmountTlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE78AE20598EAB00EEA376 /* discountAmountTlog.swift */; };
@@ -313,6 +315,8 @@
 		A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tendersmenu.swift; sourceTree = "<group>"; };
 		A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorList.swift; path = Objects/ItemErrorList.swift; sourceTree = "<group>"; };
 		A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorData.swift; path = Objects/ItemErrorData.swift; sourceTree = "<group>"; };
+		B5C97F6020C5A1C3001A550C /* SplitTicketsDataMesaMES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplitTicketsDataMesaMES.swift; path = Objects/SplitTicketsDataMesaMES.swift; sourceTree = "<group>"; };
+		B5C97F6220C5A31A001A550C /* ticketDataLiverpool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ticketDataLiverpool.swift; path = Objects/ticketDataLiverpool.swift; sourceTree = "<group>"; };
 		B5DE78AA20598BF900EEA376 /* proratedDiscountsTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = proratedDiscountsTotal.swift; path = Objects/proratedDiscountsTotal.swift; sourceTree = "<group>"; };
 		B5DE78AC20598D2000EEA376 /* proratedDiscountTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = proratedDiscountTotal.swift; path = Objects/proratedDiscountTotal.swift; sourceTree = "<group>"; };
 		B5DE78AE20598EAB00EEA376 /* discountAmountTlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = discountAmountTlog.swift; path = Objects/discountAmountTlog.swift; sourceTree = "<group>"; };
@@ -506,6 +510,8 @@
 				B5DE78AA20598BF900EEA376 /* proratedDiscountsTotal.swift */,
 				B5DE78AC20598D2000EEA376 /* proratedDiscountTotal.swift */,
 				B5DE78AE20598EAB00EEA376 /* discountAmountTlog.swift */,
+				B5C97F6020C5A1C3001A550C /* SplitTicketsDataMesaMES.swift */,
+				B5C97F6220C5A31A001A550C /* ticketDataLiverpool.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -862,6 +868,7 @@
 				F75F37AF1F8D19D400BE00CB /* MinPayment.swift in Sources */,
 				A95FD83D1EF9D2650094AA1C /* Operationresult.swift in Sources */,
 				C1A91EDE1F82A81C0028D67C /* warrantyList.swift in Sources */,
+				B5C97F6320C5A31A001A550C /* ticketDataLiverpool.swift in Sources */,
 				C1A91EE01F82A8430028D67C /* Warrantydata.swift in Sources */,
 				A95FD8351EF9D2650094AA1C /* LPRegisterTerminal.swift in Sources */,
 				A95FD8331EF9D2650094AA1C /* LPCloseSession.swift in Sources */,
@@ -984,6 +991,7 @@
 				B5DE78AB20598BF900EEA376 /* proratedDiscountsTotal.swift in Sources */,
 				2B994B691F2808C600292163 /* ItemData.swift in Sources */,
 				A95FD82F1EF9D2650094AA1C /* LPBridgeCoreTypes.swift in Sources */,
+				B5C97F6120C5A1C3001A550C /* SplitTicketsDataMesaMES.swift in Sources */,
 				A95FD8431EF9D2650094AA1C /* Promotionsdata.swift in Sources */,
 				2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */,
 				7156AD9C1F2A8FBE00761F38 /* AdditionalDataListField.swift in Sources */,

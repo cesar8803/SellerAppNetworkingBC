@@ -199,6 +199,7 @@ public class OperationResult: Mappable{
         terminalReportData <- map["terminalReportData"]
         barcode <- map["barcode"]
         cfBarcode <- map["cfBarcode"]
+        splitTicketDataMESList <- map["splitTicketsDataMesaMES"]
         //nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         
         
@@ -314,6 +315,7 @@ public class OperationResult: Mappable{
     
     public class ticketDataLiverpool: Mappable{
         public var nroOrdenPaqueteria: String?
+        public var somsOrderData: somsOrderData?
         
         public required init?(map: Map){
         }
@@ -328,6 +330,7 @@ public class OperationResult: Mappable{
             default:
                 debugPrint("You should add another kind of data")
             }
+            somsOrderData <- map["somsOrderData"]
         }
     }
     
