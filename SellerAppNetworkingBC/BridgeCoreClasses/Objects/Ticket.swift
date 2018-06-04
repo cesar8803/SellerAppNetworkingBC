@@ -232,6 +232,7 @@ public class Ticket: Mappable{
         cfBarcode <- map["cfBarcode"]
         
         itemDataList <- map["itemDataList"]
+        splitTicketsDataMesaMES <- map["splitTicketsDataMesaMES"]
     }
 }
 
