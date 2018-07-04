@@ -75,7 +75,11 @@ public class ItemTicketLiverpoolData: Mappable{
     public var proratedDiscountsTotal: [proratedDiscountsTotal]?
     
     public var optionsGroupsSelected: [OptionsGroupsSelected]?
-
+    
+    public var somsDeliveryDate: String?
+    public var somsDeliveryState: String?
+    public var somsDeliveryType: String?
+    
     required public init?(map: Map){
     }
     
@@ -150,11 +154,11 @@ public class ItemTicketLiverpoolData: Mappable{
             
         case is [String]:
             
-             monederoBenefits <- map["monederoBenefits"]
+            monederoBenefits <- map["monederoBenefits"]
             
             
         case is [[String:Any]]:
-        
+            
             monederoBenefitsArray <- map["monederoBenefits"]
             
             
@@ -169,5 +173,20 @@ public class ItemTicketLiverpoolData: Mappable{
         
         paymentPlanList <- map["paymentPlanList"]
         proratedDiscountsTotal <- map["proratedDiscountsTotal"]
+        
+        somsDeliveryDate <- map["somsDeliveryDate"]
+        somsDeliveryState <- map["somsDeliveryState"]
+        
+        switch map["somsDeliveryType"].currentValue {
+        case (let v as String):
+            somsDeliveryType = v
+        case (let v as Int):
+            somsDeliveryType = String(v)
+        case (let v as Double):
+            somsDeliveryType = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }
+
