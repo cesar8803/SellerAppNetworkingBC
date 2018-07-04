@@ -111,6 +111,7 @@ public enum BCParamsNames: String{
     case supervisorEntryMethod = "supervisorEntryMethod"
     case supervisorPassword = "supervisorPassword"
     case supervisorName = "supervisorName"
+    case mesaItemFestejado = "mesaItemFestejado"
     
     case paymentAmount = "paymentAmount"
     case account = "account"
