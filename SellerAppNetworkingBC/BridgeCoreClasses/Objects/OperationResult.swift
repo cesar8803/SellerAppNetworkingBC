@@ -222,8 +222,10 @@ public class OperationResult: Mappable{
                 
                 self.splitTicketDataMESList     <- map["splitTicketsDataMesaMES"]
                 if self.splitTicketDataMESList != nil && self.splitTicketDataMESList!.count > 0{
-                    if let ordenNUmber = self.splitTicketDataMESList!.first!.ticketDataLiverpool!.nroOrdenPaqueteria{
+                    if let ordenNUmber = self.splitTicketDataMESList?.first?.ticketDataLiverpool?.nroOrdenPaqueteria {
                         nroOrdenPaqueteria = ordenNUmber
+                    }else {
+                        debugPrint("En splitTicketsDataMesaMES no se encontro el nroOrdenPaqueteria")
                     }
                 }
             }
