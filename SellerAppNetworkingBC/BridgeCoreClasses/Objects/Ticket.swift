@@ -843,6 +843,9 @@ public class Additionaldata: Mappable
     public var customerDocument : String?
     public var authorization__code : String?
     public var storeCode : String?
+    public var old__balance : String?
+    public var adAmountRefund : String?
+    public var actual__balance : String?
     
     
     required public init?( map: Map){
@@ -886,6 +889,9 @@ public class Additionaldata: Mappable
         customerDocument <- map["customerDocument"]
         authorization__code <- map["authorization__code"]
         storeCode <- map["storeCode"]
+        old__balance <- map["old__balance"]
+        adAmountRefund <- map["adAmountRefund"]
+        actual__balance <- map["actual__balance"]
     }
 }
 
