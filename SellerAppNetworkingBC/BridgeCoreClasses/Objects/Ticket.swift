@@ -846,7 +846,7 @@ public class Additionaldata: Mappable
     public var old__balance : String?
     public var adAmountRefund : String?
     public var actual__balance : String?
-    
+    public var adAmountMonedero : String?
     
     required public init?( map: Map){
     }
@@ -919,6 +919,17 @@ public class Additionaldata: Mappable
             actual__balance = String(v)
         case (let v as Double):
             actual__balance = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
+        switch map["adAmountMonedero"].currentValue {
+        case (let v as String):
+            adAmountMonedero = v
+        case (let v as Int):
+            adAmountMonedero = String(v)
+        case (let v as Double):
+            adAmountMonedero = String(v)
         default:
             debugPrint("You should add another kind of data")
         }
