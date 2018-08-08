@@ -843,7 +843,10 @@ public class Additionaldata: Mappable
     public var customerDocument : String?
     public var authorization__code : String?
     public var storeCode : String?
-    
+    public var old__balance : String?
+    public var adAmountRefund : String?
+    public var actual__balance : String?
+    public var adAmountMonedero : String?
     
     required public init?( map: Map){
     }
@@ -886,6 +889,50 @@ public class Additionaldata: Mappable
         customerDocument <- map["customerDocument"]
         authorization__code <- map["authorization__code"]
         storeCode <- map["storeCode"]
+        
+        switch map["old__balance"].currentValue {
+        case (let v as String):
+            old__balance = v
+        case (let v as Int):
+            old__balance = String(v)
+        case (let v as Double):
+            old__balance = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
+        switch map["adAmountRefund"].currentValue {
+        case (let v as String):
+            adAmountRefund = v
+        case (let v as Int):
+            adAmountRefund = String(v)
+        case (let v as Double):
+            adAmountRefund = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
+        switch map["actual__balance"].currentValue {
+        case (let v as String):
+            actual__balance = v
+        case (let v as Int):
+            actual__balance = String(v)
+        case (let v as Double):
+            actual__balance = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
+        switch map["adAmountMonedero"].currentValue {
+        case (let v as String):
+            adAmountMonedero = v
+        case (let v as Int):
+            adAmountMonedero = String(v)
+        case (let v as Double):
+            adAmountMonedero = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }
 
