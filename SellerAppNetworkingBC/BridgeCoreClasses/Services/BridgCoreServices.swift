@@ -354,14 +354,14 @@ public class BridgeCoreServices
                                             //terminar el for
                                             debugPrint("Terminar el for...")
                                             continue
-                                        }                                  
+                                        }
                                         
                                         
                                     }
                                     
                                     if storedError == nil{
                                         let params: [String:Any] = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false]
-                                    
+                                        
                                         finishTransactionPrinter(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: params, completion: completion, completionError: completionError)
                                     }
                                 }
@@ -680,6 +680,18 @@ public class BridgeCoreServices
         
     }
     
+    public class func giftItem(connectionId:String, storeCode:String, terminalCode:String, item:BCRequestParams,  completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    {
+        let oper = BridgeCoreOperation.giftItem(connectionId: connectionId, terminalCode: terminalCode, storeCode: storeCode, params: item.getParamsForRequest())
+        
+        AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.addItem(operation: oper), completion: { (bridgeCoreResponse) in
+            completion(bridgeCoreResponse)
+        }) { (msg) in
+            completionError(msg)
+        }
+        
+    }
+    
     public class func updateKeysPinPad(token:String,terminalCode:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         let params = ["tokens":token, "terminalCode":terminalCode]
@@ -758,3 +770,4 @@ public class BridgeCoreServices
         AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.totalizeTransaction(operation: bc1), completion: completion, errorCompletition: completionError)
     }
 }
+

@@ -697,6 +697,7 @@
 				2B994B541F27AB1800292163 /* Frameworks */,
 				2B994B551F27AB1800292163 /* Resources */,
 				FCB7354EECCDD71580217BAE /* [CP] Embed Pods Frameworks */,
+				5F808F08EFAC3A1B77F60E32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -717,6 +718,7 @@
 				A95FD7FA1EF9D2110094AA1C /* Frameworks */,
 				A95FD7FB1EF9D2110094AA1C /* Headers */,
 				A95FD7FC1EF9D2110094AA1C /* Resources */,
+				027A560FA248927238690C63 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -784,6 +786,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		027A560FA248927238690C63 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SellerAppNetworkingBC/Pods-SellerAppNetworkingBC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		35E78D3000D5B77C9F1F5BFF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -818,6 +835,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F808F08EFAC3A1B77F60E32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SellerAppNetworkingBCTests/Pods-SellerAppNetworkingBCTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCB7354EECCDD71580217BAE /* [CP] Embed Pods Frameworks */ = {
