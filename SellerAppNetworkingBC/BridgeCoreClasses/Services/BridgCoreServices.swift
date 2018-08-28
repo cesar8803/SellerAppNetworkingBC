@@ -503,10 +503,13 @@ public class BridgeCoreServices
                                 completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
                             }
                         }) { (msg) in
-                            completionError(msg ?? "No se pudo verificar la autorización del jefe")
+                            if msg.count > 0 {
+                                completionError(msg)
+                            }else {
+                                completionError("No se pudo verificar la autorización del jefe")
+                            }
                         }
-                        
-                    }else{
+                    }else {
                         completionError(bcLogoffR.message ?? "")
                     }
                 }) { (msg) in

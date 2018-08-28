@@ -51,6 +51,7 @@ public class ItemTicketLiverpoolData: Mappable{
     public var unitOfMeasureCode: String?
     public var itemWarranty: Int?
     public var giftItem: Int?
+    public var giftBarcode: String?
     public var discountPerTotal: DiscountPerTotal?
     public var extendedPrice: ExtendedPrice?
     public var netValue: NetValue?
@@ -134,6 +135,7 @@ public class ItemTicketLiverpoolData: Mappable{
         unitOfMeasureCode <- map["unitOfMeasureCode"]
         itemWarranty <- map["itemWarranty"]
         giftItem <- map["giftItem"]
+        giftBarcode <- map["giftBarcode"]
         discountPerTotal <- map["discountPerTotal"]
         extendedPrice <- map["extendedPrice"]
         netValue <- map["netValue"]
