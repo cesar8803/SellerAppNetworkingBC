@@ -104,6 +104,7 @@ public class Ticket: Mappable{
     public var somsOrderData : somsOrderData?
     public var cfBarcode: String?
     public var itemDataList:[itemDataList]?
+    public var monederoData: MonederoData?
     public var splitTicketsDataMesaMES : [SplitTicketsDataMesaMES]?
     
     required public init?(map: Map){
@@ -228,6 +229,8 @@ public class Ticket: Mappable{
         authorizationCode <- map["authorizationCode"]
         walletData <- map["walletData"]
         somsOrderData <- map["somsOrderData"]
+        
+        monederoData <- map["monederoData"]
         
         cfBarcode <- map["cfBarcode"]
         
@@ -1005,3 +1008,69 @@ public class hashMap:Mappable
         }
     }
 }
+
+//MARK: - Objetos de monedero
+public class MonederoData : Mappable {
+    public var oldBalance : OldBalance?
+    public var paymentAmount : PaymentAmount?
+    public var benefitedAmount : BenefitedAmount?
+    public var newBalance : NewBalance?
+    public var walletAccount : Int?
+    public var vale : Bool?
+    public var accountTypeMonedero : Int?
+    
+    required public init?(map: Map) { }
+    
+    public func mapping(map: Map) {
+        
+        oldBalance <- map["oldBalance"]
+        paymentAmount <- map["paymentAmount"]
+        benefitedAmount <- map["benefitedAmount"]
+        newBalance <- map["newBalance"]
+        walletAccount <- map["walletAccount"]
+        vale <- map["vale"]
+        accountTypeMonedero <- map["accountTypeMonedero"]
+    }
+}
+
+public class OldBalance : Mappable {
+    public var number : String?
+    
+    required public init?(map: Map) { }
+    
+    public func mapping(map: Map) {
+        
+        number <- map["number"]
+    }
+}
+
+public class PaymentAmount : Mappable {
+    public var number : String?
+    
+    required public init?(map: Map) { }
+    
+    public func mapping(map: Map) {
+        number <- map["number"]
+    }
+}
+
+public class BenefitedAmount : Mappable {
+    public var number : String?
+    
+    required public init?(map: Map) { }
+    
+    public func mapping(map: Map) {
+        number <- map["number"]
+    }
+}
+
+public class NewBalance : Mappable {
+    public var number : String?
+    
+    required public init?(map: Map) { }
+    
+    public func mapping(map: Map) {
+        number <- map["number"]
+    }
+}
+
