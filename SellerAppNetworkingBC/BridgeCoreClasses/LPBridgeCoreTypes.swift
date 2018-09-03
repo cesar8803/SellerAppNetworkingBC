@@ -28,6 +28,8 @@ public enum LPTransactionSubtype: Int {
     case payment_SEGMENT_CARD = 120
     case refund_GIFTS_PLAN = 121
     case refund_SOMS = 106
+    case sale_MARKETPLACE = 148
+    case refund_MARKETPLACE = 149
 }
 
 public enum LPEntryMethod: String {
