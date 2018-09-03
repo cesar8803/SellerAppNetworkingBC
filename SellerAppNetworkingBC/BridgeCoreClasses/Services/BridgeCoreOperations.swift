@@ -240,7 +240,8 @@ public enum BCRequestParams{
         itemDepartmentPrice: String?,
         itemQty: String,
         itemBarcode: String,
-        processPromotions:Bool)
+        processPromotions:Bool,
+        isCambioPrecio:Bool)
     
     
     case applydiscount(
