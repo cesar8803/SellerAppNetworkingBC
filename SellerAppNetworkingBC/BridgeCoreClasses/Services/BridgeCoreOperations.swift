@@ -22,8 +22,9 @@ public struct Item{
     public var somsDeliveryType:String?
     public var somsDeliveryDate:String?
     public var giffTicket:Bool?
+    public var isCambioPrecio:Bool?
     
-    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String? = nil, somsDeliveryDate:String? = nil, giffTicket:Bool? = nil)
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String? = nil, somsDeliveryDate:String? = nil, giffTicket:Bool? = nil, isCambioPrecio:Bool? = nil)
     {
         self.itemPrice = itemPrice
         self.warrantySelected = warrantySelected
@@ -35,6 +36,7 @@ public struct Item{
         self.somsDeliveryType = somsDeliveryType
         self.somsDeliveryDate = somsDeliveryDate
         self.giffTicket = giffTicket
+        self.isCambioPrecio = isCambioPrecio
     }
     
     public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
@@ -106,6 +108,7 @@ public enum BCParamsNames: String{
     case itemQty = "itemQty"
     case itemBarcode = "itemBarcode"
     case processPromotions = "processPromotions"
+    case isCambioPrecio = "isCambioPrecio"
     case sequenceNumber = "sequenceNumber"
     case discountType = "discountType"
     case discountValue = "discountValue"
