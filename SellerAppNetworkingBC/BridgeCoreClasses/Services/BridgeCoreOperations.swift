@@ -245,7 +245,8 @@ public enum BCRequestParams{
         itemDepartmentPrice: String?,
         itemQty: String,
         itemBarcode: String,
-        processPromotions:Bool)
+        processPromotions:Bool,
+        isCambioPrecio:Bool)
     
     case giftItem(sequenceNumber:Int,
         giftItem:Bool,
@@ -339,11 +340,12 @@ public enum BCRequestParams{
                                       BCParamsNames.somsAccountNumber.rawValue:somsAccountNumber]
             return params
             
-        case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions):
+        case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions, let isCambioPrecio):
             var params: Parameters = [BCParamsNames.itemPrice.rawValue: itemPrice,
                                       BCParamsNames.itemQty.rawValue:itemQty,
                                       BCParamsNames.itemBarcode.rawValue:itemBarcode,
-                                      BCParamsNames.processPromotions.rawValue:processPromotions]
+                                      BCParamsNames.processPromotions.rawValue:processPromotions,
+                                      BCParamsNames.isCambioPrecio.rawValue:isCambioPrecio]
             
             if let itmDepartment = itemDepartment{
                 params[BCParamsNames.itemDepartment.rawValue] = itmDepartment
