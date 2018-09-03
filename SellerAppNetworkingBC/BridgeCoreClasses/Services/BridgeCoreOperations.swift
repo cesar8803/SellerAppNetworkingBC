@@ -70,6 +70,7 @@ public enum BridgeCoreOperationName:String
 public enum BCTransactionSubtype: String {
     case TENDER_WITHDRAWAL = "7"
     case SALE_NORMAL = "101"
+    case SALE_MARKETPLACE = "148"
     case SALE_SOMS = "102"
     case SALE_DULCERIA = "103"
     case SALE_RESTAURANTE = "104"
@@ -87,6 +88,7 @@ public enum BCTransactionSubtype: String {
     case PAYMENT_SEGMENT_CARD = "120"
     case REFUND_GIFTS_PLAN = "121"
     case REFUND_SOMS = "106"
+    case REFUND_MARKETPLACE = "149"
 }
 
 public enum BCParamsNames: String{
