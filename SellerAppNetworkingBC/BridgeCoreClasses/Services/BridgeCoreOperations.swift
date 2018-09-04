@@ -246,7 +246,7 @@ public enum BCRequestParams{
         itemQty: String,
         itemBarcode: String,
         processPromotions:Bool,
-        isCambioPrecio:Bool)
+        isCambioPrecio:Bool?)
     
     case giftItem(sequenceNumber:Int,
         giftItem:Bool,
