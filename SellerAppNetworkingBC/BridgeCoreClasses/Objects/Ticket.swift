@@ -1040,7 +1040,16 @@ public class OldBalance : Mappable {
     
     public func mapping(map: Map) {
         
-        number <- map["number"]
+        switch map["number"].currentValue {
+        case (let v as String):
+            number = v
+        case (let v as Int):
+            number = String(v)
+        case (let v as Double):
+            number = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }
 
@@ -1050,7 +1059,17 @@ public class PaymentAmount : Mappable {
     required public init?(map: Map) { }
     
     public func mapping(map: Map) {
-        number <- map["number"]
+        
+        switch map["number"].currentValue {
+        case (let v as String):
+            number = v
+        case (let v as Int):
+            number = String(v)
+        case (let v as Double):
+            number = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }
 
@@ -1060,7 +1079,18 @@ public class BenefitedAmount : Mappable {
     required public init?(map: Map) { }
     
     public func mapping(map: Map) {
-        number <- map["number"]
+        
+        switch map["number"].currentValue {
+        case (let v as String):
+            number = v
+        case (let v as Int):
+            number = String(v)
+        case (let v as Double):
+            number = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
     }
 }
 
@@ -1070,7 +1100,17 @@ public class NewBalance : Mappable {
     required public init?(map: Map) { }
     
     public func mapping(map: Map) {
-        number <- map["number"]
+        
+        switch map["number"].currentValue {
+        case (let v as String):
+            number = v
+        case (let v as Int):
+            number = String(v)
+        case (let v as Double):
+            number = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }
 
