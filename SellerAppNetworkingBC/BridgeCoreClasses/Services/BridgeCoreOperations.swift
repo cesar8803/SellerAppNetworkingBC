@@ -23,8 +23,10 @@ public struct Item{
     public var somsDeliveryDate:String?
     public var giffTicket:Bool?
     public var isCambioPrecio:Bool?
+    public var sellerId:String?
+    public var deliveryDateMarketPlace:String?
     
-    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String? = nil, somsDeliveryDate:String? = nil, giffTicket:Bool? = nil, isCambioPrecio:Bool? = nil)
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String? = nil, somsDeliveryDate:String? = nil, giffTicket:Bool? = nil, isCambioPrecio:Bool? = nil, sellerId:String?, deliveryDateMarketPlace:String?)
     {
         self.itemPrice = itemPrice
         self.warrantySelected = warrantySelected
@@ -37,6 +39,8 @@ public struct Item{
         self.somsDeliveryDate = somsDeliveryDate
         self.giffTicket = giffTicket
         self.isCambioPrecio = isCambioPrecio
+        self.sellerId = sellerId
+        self.deliveryDateMarketPlace = deliveryDateMarketPlace
     }
     
     public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
@@ -109,6 +113,8 @@ public enum BCParamsNames: String{
     case itemBarcode = "itemBarcode"
     case processPromotions = "processPromotions"
     case isCambioPrecio = "isCambioPrecio"
+    case sellerId = "sellerId"
+    case deliveryDateMarketPlace = "deliveryDateMarketPlace"
     case sequenceNumber = "sequenceNumber"
     case discountType = "discountType"
     case discountValue = "discountValue"
@@ -246,7 +252,9 @@ public enum BCRequestParams{
         itemQty: String,
         itemBarcode: String,
         processPromotions:Bool,
-        isCambioPrecio:Bool)
+        isCambioPrecio:Bool,
+        sellerId: String,
+        deliveryDateMarketPlace: String)
     
     case giftItem(sequenceNumber:Int,
         giftItem:Bool,
@@ -340,7 +348,7 @@ public enum BCRequestParams{
                                       BCParamsNames.somsAccountNumber.rawValue:somsAccountNumber]
             return params
             
-        case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions, let isCambioPrecio):
+        case .additem(let itemPrice, let itemDepartment, let itemDepartmentPrice, let itemQty, let itemBarcode, let processPromotions, let isCambioPrecio, let sellerId, let deliveryDateMarketPlace):
             
             var params: Parameters = Parameters()
             
@@ -354,7 +362,9 @@ public enum BCRequestParams{
                           BCParamsNames.itemQty.rawValue:itemQty,
                           BCParamsNames.itemBarcode.rawValue:itemBarcode,
                           BCParamsNames.processPromotions.rawValue:processPromotions,
-                          BCParamsNames.isCambioPrecio.rawValue:isCambioPrecio]
+                          BCParamsNames.isCambioPrecio.rawValue:isCambioPrecio,
+                          BCParamsNames.sellerId.rawValue:sellerId,
+                          BCParamsNames.deliveryDateMarketPlace.rawValue:deliveryDateMarketPlace]
             }
             
             if let itmDepartment = itemDepartment{
