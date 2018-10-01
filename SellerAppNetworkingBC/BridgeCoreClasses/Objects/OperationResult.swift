@@ -88,7 +88,7 @@ public class OperationResult: Mappable{
     public var promoGifts: [String]?
     public var ivaPerceptions: IvaPerceptions?
     public var tenderSurchargeTotal: TendersurChargeTotal?
-    public var payments: [String]?
+    public var payments: [Payments]?
     public var discountsTransactionTotal: DiscountsTransactionTotal?
     public var taxDetailPerceptions: [String]?
     public var paymentsSurchargeTotal: PaymentsSurChargetotal?
