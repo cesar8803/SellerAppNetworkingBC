@@ -842,7 +842,7 @@ public class Additionaldata: Mappable
     public var bankdescription : String?
     public var installments : Int?
     public var ad__criptograma : String?
-    public var account : Int?
+    public var account : String?
     public var customerDocument : String?
     public var authorization__code : String?
     public var storeCode : String?
@@ -888,7 +888,19 @@ public class Additionaldata: Mappable
         bankdescription <- map["bankdescription"]
         installments <- map["installments"]
         ad__criptograma <- map["ad__criptograma"]
-        account <- map["account"]
+//        account <- map["account"]
+        
+        switch map["account"].currentValue {
+        case (let v as String):
+            account = v
+        case (let v as Int):
+            account = String(v)
+        case (let v as Double):
+            account = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
         customerDocument <- map["customerDocument"]
         authorization__code <- map["authorization__code"]
         storeCode <- map["storeCode"]
