@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class Warrantylist: Mappable{
-    public var warrantyData: Warrantydata?
+    public var warrantyData: [Warrantydata]?
     
     public required init?(map: Map){
     }
