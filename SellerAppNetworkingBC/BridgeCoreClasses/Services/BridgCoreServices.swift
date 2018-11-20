@@ -494,7 +494,7 @@ public class BridgeCoreServices
                     {
                         self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, completion: completion, completionError:completionError)
                     }else if bcLogoffR.ack == 10049{
-                        BridgeCoreServices.cancelTransactionWithParams(coneectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: ["cancelReasonCode":""], completion: { (responseCancel) in
+                        BridgeCoreServices.cancelTransactionWithParams(coneectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: ["cancelReasonCode":"","tiendaDeReconocimiento": storeCode,"canalDeVenta": "10","subCanalDeVenta": "12","campoLibreReconocimiento": ""], completion: { (responseCancel) in
                             guard let bcCancelR = responseCancel.bridgeCoreResponse else {
                                 completionError("bridgeCoreResponse is nil")
                                 return }
