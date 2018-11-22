@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class Warrantydata: Mappable{
-    public var serviceItemCode: String?
+    public var serviceItemCode: Int?
     public var description: String?
     public var netCost: Netcost?
     public var warrantedItemSeq: Int?
@@ -20,13 +20,16 @@ public class Warrantydata: Mappable{
     public required init?(map: Map){
     }
     public func mapping(map: Map){
-        serviceItemCode <- map["serviceItemCode"]
         
         switch map["serviceItemCode"].currentValue {
-        case (let v as String):
-            serviceItemCode = v
         case (let v as Int):
-            serviceItemCode = String(v)
+            serviceItemCode = v
+        case (let v as Float):
+            serviceItemCode = Int(v)
+        case (let v as Double):
+            serviceItemCode = Int(v)
+        case (let v as String):
+            serviceItemCode = Int(v)
         default:
             debugPrint("You should add another kind of data")
         }
@@ -42,17 +45,21 @@ public class Warrantydata: Mappable{
 
 
 public class Netcost: Mappable{
-    public var number: String?
+    public var number: Double?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
         
         switch map["number"].currentValue {
-        case (let v as String):
-            number = v
         case (let v as Double):
-            number = String(v)
+            number = v
+        case (let v as String):
+            number = Double(v)
+        case (let v as Int):
+            number = Double(v)
+        case (let v as Float):
+            number = Double(v)
         default:
             debugPrint("You should add another kind of data")
         }
@@ -71,6 +78,10 @@ public class Itemprice: Mappable{
             number = v
         case (let v as Double):
             number = String(v)
+        case (let v as Int):
+            number = String(v)
+        case (let v as Float):
+            number = String(v)
         default:
             debugPrint("You should add another kind of data")
         }
@@ -79,17 +90,21 @@ public class Itemprice: Mappable{
 
 
 public class Percentage: Mappable{
-    public var number: String?
+    public var number: Int?
     
     public required init?(map: Map){
     }
     
     public func mapping(map: Map){
         switch map["number"].currentValue {
-        case (let v as String):
+        case (let v as Int):
             number = v
+        case (let v as String):
+            number = Int(v)
         case (let v as Double):
-            number = String(v)
+            number = Int(v)
+        case (let v as Float):
+            number = Int(v)
         default:
             debugPrint("You should add another kind of data")
         }
