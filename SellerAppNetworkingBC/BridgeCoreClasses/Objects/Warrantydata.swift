@@ -42,12 +42,20 @@ public class Netcost: Mappable{
 }
 
 public class Itemprice: Mappable{
-    public var number: String?
+    public var number: Float?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
-        number <- map["number"]
+        
+        switch map["number"].currentValue {
+        case (let v as Float):
+            number = v
+        case (let v as String):
+            number = Float(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
     }
 }
 
