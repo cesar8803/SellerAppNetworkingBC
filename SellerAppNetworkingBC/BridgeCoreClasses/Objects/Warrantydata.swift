@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class Warrantydata: Mappable{
-    public var serviceItemCode: Int?
+    public var serviceItemCode: String?
     public var description: String?
     public var netCost: Netcost?
     public var warrantedItemSeq: Int?
@@ -22,14 +22,14 @@ public class Warrantydata: Mappable{
     public func mapping(map: Map){
         
         switch map["serviceItemCode"].currentValue {
-        case (let v as Int):
+        case (let v as String):
             serviceItemCode = v
         case (let v as Float):
-            serviceItemCode = Int(v)
+            serviceItemCode = String(v)
         case (let v as Double):
-            serviceItemCode = Int(v)
-        case (let v as String):
-            serviceItemCode = Int(v)
+            serviceItemCode = String(v)
+        case (let v as Int):
+            serviceItemCode = String(v)
         default:
             debugPrint("You should add another kind of data")
         }
