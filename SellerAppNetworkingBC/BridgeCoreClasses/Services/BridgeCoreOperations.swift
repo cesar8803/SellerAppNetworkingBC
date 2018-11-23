@@ -14,7 +14,7 @@ public typealias ErrorStringHandlerBC = (_ errorString:String) -> Void
 
 public struct Item{
     public let itemPrice:String
-    public let warrantySelected:Bool
+    public var warrantySelected:Bool?
     public let itemQty:String
     public let itemBarcode:String
     public let type:String
@@ -46,6 +46,16 @@ public struct Item{
     public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
         self.itemPrice = itemPrice
         self.warrantySelected = warrantySelected
+        self.itemQty = itemQty
+        self.itemBarcode = itemBarcode
+        self.itemDepartment = ""
+        self.type = "map"
+        self.somsDeliveryType = nil
+        self.somsDeliveryDate = nil
+    }
+    
+    public init(itemPrice: String, itemQty: String, itemBarcode: String){
+        self.itemPrice = itemPrice
         self.itemQty = itemQty
         self.itemBarcode = itemBarcode
         self.itemDepartment = ""
