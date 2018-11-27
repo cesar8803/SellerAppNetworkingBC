@@ -55,14 +55,16 @@ public struct Item{
         self.somsDeliveryDate = nil
     }
     
-    public init(itemPrice: String, warrantedItem: String?, itemBarcode: String){
+    public init(itemPrice: String, itemQty: String, warrantedItem: String, itemBarcode: String){
         self.itemPrice = itemPrice
         self.itemBarcode = itemBarcode
+        self.itemQty = itemQty
+        self.warrantedItem = warrantedItem
         self.itemDepartment = ""
         self.type = "map"
         self.somsDeliveryType = nil
         self.somsDeliveryDate = nil
-        self.warrantedItem = warrantedItem
+        self.warrantySelected = nil
     }
 }
 
