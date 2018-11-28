@@ -157,6 +157,8 @@ public enum BCParamsNames: String{
     
     case somsDeliveryType = "somsDeliveryType"
     case somsDeliveryDate = "somsDeliveryDate"
+    
+    case warrantedItem = "warrantedItem"
 }
 
 
@@ -436,10 +438,17 @@ public enum BCRequestParams{
                 BCParamsNames.type.rawValue : "map",
                 BCParamsNames.itemBarcode.rawValue: item.itemBarcode,
                 BCParamsNames.itemPrice.rawValue: item.itemPrice,
-                BCParamsNames.warrantySelected.rawValue: item.warrantySelected,
-                BCParamsNames.itemQty.rawValue: item.itemQty
+                BCParamsNames.itemQty.rawValue: item.itemQty ?? "1"
             ]
-            //
+            
+            //VALIDAR SI VIENE MAS GARANTIA
+            if let warrantedItem = item.warrantedItem{
+                params[BCParamsNames.warrantedItem.rawValue] = warrantedItem
+            }else{
+                params[BCParamsNames.warrantySelected.rawValue] = item.warrantySelected
+            }
+            
+            
             //VALIDAR SI VIENE DELIVERY TYPE Y DELIVERY DATE
             if let somsDeliveryType = item.somsDeliveryType
             {
