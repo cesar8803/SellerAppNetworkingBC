@@ -850,6 +850,7 @@ public class Additionaldata: Mappable
     public var adAmountRefund : String?
     public var actual__balance : String?
     public var adAmountMonedero : String?
+    public var adAmountPromotion : String?
     
     required public init?( map: Map){
     }
@@ -948,6 +949,8 @@ public class Additionaldata: Mappable
         default:
             debugPrint("You should add another kind of data")
         }
+        
+        adAmountPromotion <- map["adAmountPromotion"]
     }
 }
 
