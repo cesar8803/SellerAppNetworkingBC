@@ -496,7 +496,7 @@ public class BridgeCoreServices
                     
                     if bcLogoffR.ack == 0
                     {
-                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, completion: completion, completionError:completionError)
+                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, tbRecIngresos: tbRecIngresos, completion: completion, completionError:completionError)
                     }else if bcLogoffR.ack == 10049{
                         
                         var laParams:[String: Any] = [:]
@@ -511,7 +511,7 @@ public class BridgeCoreServices
                                 completionError("bridgeCoreResponse is nil")
                                 return }
                             if bcCancelR.ack == 0{
-                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, completion: completion, completionError:completionError)
+                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, tbRecIngresos: tbRecIngresos, completion: completion, completionError:completionError)
                             }else{
                                 completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
                             }
