@@ -275,7 +275,8 @@ public enum BCRequestParams{
     case additemWarranty(itemBarcode: String,
         itemPrice:String,
         warrantedItemSeq:String?,
-        warrantedItem: String?)
+        warrantedItem: String?,
+        itemDepartment: String?)
     
     case giftItem(sequenceNumber:Int,
         giftItem:Bool,
@@ -467,7 +468,7 @@ public enum BCRequestParams{
             }
             //
             return params
-        case .additemWarranty(let itemBarcode, let itemPrice, let warrantedItemSeq, let warrantedItem):
+        case .additemWarranty(let itemBarcode, let itemPrice, let warrantedItemSeq, let warrantedItem, let itemDepartment):
             
             var params: Parameters = Parameters()
             
@@ -480,6 +481,10 @@ public enum BCRequestParams{
             
             if let warItem = warrantedItem{
                 params[BCParamsNames.warrantedItem.rawValue] = warItem
+            }
+            
+            if let itmDepartment = itemDepartment{
+                params[BCParamsNames.itemDepartment.rawValue] = itmDepartment
             }
             
             return params
