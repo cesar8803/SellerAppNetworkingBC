@@ -159,6 +159,7 @@ public enum BCParamsNames: String{
     case somsDeliveryDate = "somsDeliveryDate"
     
     case warrantedItem = "warrantedItem"
+    case warrantedItemSeq = "warrantedItemSeq"
 }
 
 
@@ -270,6 +271,11 @@ public enum BCRequestParams{
         isCambioPrecio:Bool,
         sellerId: String,
         deliveryDateMarketPlace: String)
+    
+    case additemWarranty(itemBarcode: String,
+        itemPrice:String,
+        warrantedItemSeq:String?,
+        warrantedItem: String?)
     
     case giftItem(sequenceNumber:Int,
         giftItem:Bool,
@@ -460,6 +466,22 @@ public enum BCRequestParams{
                 params[BCParamsNames.somsDeliveryDate.rawValue] = somsDeliveryDate
             }
             //
+            return params
+        case .additemWarranty(let itemBarcode, let itemPrice, let warrantedItemSeq, let warrantedItem):
+            
+            var params: Parameters = Parameters()
+            
+            params = [BCParamsNames.itemPrice.rawValue: itemPrice,
+                      BCParamsNames.itemBarcode.rawValue:itemBarcode]
+            
+            if let warItemSeq = warrantedItemSeq{
+                params[BCParamsNames.warrantedItemSeq.rawValue] = warItemSeq
+            }
+            
+            if let warItem = warrantedItem{
+                params[BCParamsNames.warrantedItem.rawValue] = warItem
+            }
+            
             return params
         }
     }
