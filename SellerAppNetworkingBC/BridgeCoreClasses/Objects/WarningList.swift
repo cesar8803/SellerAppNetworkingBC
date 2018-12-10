@@ -11,11 +11,13 @@ import ObjectMapper
 
 public class WarningList: Mappable{
     public var warrantyData: WarningData?
+    public var warningData: WarningData?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
         warrantyData <- map["warningData"]
+        warningData <- map["warningData"]
     }
 }
 
