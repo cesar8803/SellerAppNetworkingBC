@@ -272,11 +272,12 @@ public enum BCRequestParams{
         sellerId: String,
         deliveryDateMarketPlace: String)
     
-    case additemWarranty(itemBarcode: String,
-        itemPrice:String,
-        warrantedItemSeq:String,
-        warrantedItem: String,
-        itemDepartment: String)
+    case additemWarranty(warrantedItemSeq: String,
+        itemBarcode:String)
+    
+    case additemWarrantyWithDepartment(warrantedItemSeq: String,
+        itemBarcode:String,
+        itemDepartment:String)
     
     case giftItem(sequenceNumber:Int,
         giftItem:Bool,
@@ -468,15 +469,21 @@ public enum BCRequestParams{
             }
             //
             return params
-        case .additemWarranty(let itemBarcode, let itemPrice, let warrantedItemSeq, let warrantedItem, let itemDepartment):
+        case .additemWarranty(let warrantedItemSeq, let itemBarcode):
             
             var params: Parameters = Parameters()
             
-            params = [BCParamsNames.itemPrice.rawValue: itemPrice,
+            params = [BCParamsNames.warrantedItemSeq.rawValue:warrantedItemSeq,
+                      BCParamsNames.itemBarcode.rawValue:itemBarcode]
+                
+            return params
+        case .additemWarrantyWithDepartment(let warrantedItemSeq, let itemBarcode, let itemDepartment):
+            
+            var params: Parameters = Parameters()
+            
+            params = [BCParamsNames.warrantedItemSeq.rawValue:warrantedItemSeq,
                       BCParamsNames.itemBarcode.rawValue:itemBarcode,
-                      BCParamsNames.warrantedItemSeq.rawValue:warrantedItemSeq,
-                      BCParamsNames.warrantedItem.rawValue:warrantedItem,
-                      BCParamsNames.itemDepartment.rawValue:itemDepartment]
+                      BCParamsNames.itemBarcode.rawValue:itemDepartment]
             
             return params
         }
