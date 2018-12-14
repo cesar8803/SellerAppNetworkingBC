@@ -451,10 +451,10 @@ public enum BCRequestParams{
             ]
             
             //VALIDAR SI VIENE MAS GARANTIA
-            if item.warrantedItem == nil{
-                params[BCParamsNames.itemPrice.rawValue] = item.itemPrice
-            }else{
+            if item.warrantySelected ?? false{
                 params[BCParamsNames.warrantedItemSeq.rawValue] = item.warrantedItemSeq
+            }else{
+                params[BCParamsNames.itemPrice.rawValue] = item.itemPrice
             }
             
             //VALIDAR SI VIENE DELIVERY TYPE Y DELIVERY DATE
