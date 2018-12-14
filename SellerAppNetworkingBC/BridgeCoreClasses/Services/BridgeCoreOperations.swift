@@ -13,7 +13,7 @@ import AlamofireObjectMapper
 public typealias ErrorStringHandlerBC = (_ errorString:String) -> Void
 
 public struct Item{
-    public let itemPrice:String
+    public let itemPrice:String?
     public var warrantySelected:Bool?
     public var itemQty:String?
     public let itemBarcode:String
@@ -26,6 +26,7 @@ public struct Item{
     public var sellerId:String?
     public var deliveryDateMarketPlace:String?
     public var warrantedItem: String?
+    public var warrantedItemSeq: String?
     
     public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String,itemDepartment: String, somsDeliveryType:String? = nil, somsDeliveryDate:String? = nil, giffTicket:Bool? = nil, isCambioPrecio:Bool? = nil, sellerId:String?, deliveryDateMarketPlace:String?)
     {
@@ -55,11 +56,12 @@ public struct Item{
         self.somsDeliveryDate = nil
     }
     
-    public init(itemPrice: String, itemQty: String, warrantedItem: String, itemBarcode: String){
-        self.itemPrice = itemPrice
+    public init(itemBarcode: String, warrantedItemSeq: String){
+        self.itemPrice = nil
         self.itemBarcode = itemBarcode
-        self.itemQty = itemQty
-        self.warrantedItem = warrantedItem
+        self.warrantedItemSeq = warrantedItemSeq
+        self.itemQty = nil
+        self.warrantedItem = nil
         self.itemDepartment = ""
         self.type = "map"
         self.somsDeliveryType = nil
