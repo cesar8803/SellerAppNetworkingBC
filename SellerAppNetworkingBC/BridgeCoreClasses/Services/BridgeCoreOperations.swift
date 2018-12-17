@@ -450,11 +450,19 @@ public enum BCRequestParams{
                 BCParamsNames.itemQty.rawValue: item.itemQty ?? "1"
             ]
             
+            //VALIDAR SI VIENE PRECIO
+            if let priceItem = item.itemPrice{
+                params[BCParamsNames.itemPrice.rawValue] = priceItem
+            }
+            
             //VALIDAR SI VIENE MAS GARANTIA
-            if item.warrantySelected ?? false{
-                params[BCParamsNames.warrantedItemSeq.rawValue] = item.warrantedItemSeq
-            }else{
-                params[BCParamsNames.itemPrice.rawValue] = item.itemPrice
+            
+            if let warrantedSel = item.warrantySelected{
+                params[BCParamsNames.warrantySelected.rawValue] = warrantedSel
+            }
+            
+            if let warrantedItem = item.warrantedItemSeq{
+                params[BCParamsNames.warrantedItemSeq.rawValue] = warrantedItem
             }
             
             //VALIDAR SI VIENE DELIVERY TYPE Y DELIVERY DATE
