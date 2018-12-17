@@ -446,9 +446,13 @@ public enum BCRequestParams{
         case .addItemList(let item):
             var params: Parameters = [
                 BCParamsNames.type.rawValue : "map",
-                BCParamsNames.itemBarcode.rawValue: item.itemBarcode,
-                BCParamsNames.itemQty.rawValue: item.itemQty ?? "1"
+                BCParamsNames.itemBarcode.rawValue: item.itemBarcode
             ]
+            
+            //VALIDAR SI VIENE CANTIDAD
+            if let qtyItem = item.itemQty{
+                params[BCParamsNames.itemQty.rawValue] = qtyItem
+            }
             
             //VALIDAR SI VIENE PRECIO
             if let priceItem = item.itemPrice{
