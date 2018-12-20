@@ -56,8 +56,8 @@ public struct Item{
         self.somsDeliveryDate = nil
     }
     
-    public init(itemBarcode: String, warrantedItemSeq: String){
-        self.itemPrice = nil
+    public init(itemBarcode: String, warrantedItemSeq: String, itemPrice: String){
+        self.itemPrice = itemPrice
         self.itemBarcode = itemBarcode
         self.warrantedItemSeq = warrantedItemSeq
         self.itemQty = nil
