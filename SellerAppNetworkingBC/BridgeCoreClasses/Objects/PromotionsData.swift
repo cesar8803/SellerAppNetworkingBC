@@ -11,12 +11,20 @@ import ObjectMapper
 
 public class PromotionsData: Mappable{
     public var promotionData: PromotionData?
-    
+    public var promotionDataWar : [PromotionData]?
     
     required public  init?(map: Map){
     }
     
     public func mapping(map: Map){
-        promotionData <- map["promotionData"]
+        
+        switch map["PromotionData"].currentValue{
+        case is PromotionData:
+            promotionData <- map["PromotionData"]
+        case is [PromotionData]:
+            promotionDataWar <- map["PromotionData"]
+       default:
+            debugPrint(map["promotionsData"].currentValue.debugDescription)
+        }
     }
 }

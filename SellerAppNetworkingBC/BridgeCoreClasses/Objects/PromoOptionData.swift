@@ -14,8 +14,7 @@ public class PromoOptionData: Mappable{
     public var benefitsData: [BenefitsData]?
     public var number: Int?
     public var benefitStatements : String?
-    
-    //public var promotionsData: [PromotionsData]?
+    public var promotionsData: [PromotionsData]?
     //public var promotionsData2: PromotionsData?
     
     //public var number: Int?
@@ -26,7 +25,6 @@ public class PromoOptionData: Mappable{
     public func mapping(map: Map){
        // debugPrint("++++ benifitData..:\(map["benefitsData"].currentValue)")
         
-        /*
         switch map["promotionsData"].currentValue{
         case is [String:Any]:
             debugPrint("is a Dictionary...")
@@ -37,17 +35,14 @@ public class PromoOptionData: Mappable{
             if let i = itm{
                 self.promotionsData?.append(i)
             }
-            
         case is [[String:Any]]:
-            debugPrint("is an Array WTF!")
             promotionsData <- map["promotionsData"]
         case is NSNull:
             debugPrint("is null :(")
         default:
             debugPrint(map["promotionsData"].currentValue.debugDescription)
         }
-         */
-       
+ 
         benefitsData <- map["benefitsData"]
         number <- map["number"]
         
