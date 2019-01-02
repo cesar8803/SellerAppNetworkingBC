@@ -850,6 +850,9 @@ public class Additionaldata: Mappable
     public var adAmountRefund : String?
     public var actual__balance : String?
     public var adAmountMonedero : String?
+    public var adAmountPromotion : String?
+    
+    public var promo__balance: String?
     
     required public init?( map: Map){
     }
@@ -948,6 +951,20 @@ public class Additionaldata: Mappable
         default:
             debugPrint("You should add another kind of data")
         }
+        
+        switch map["adAmountPromotion"].currentValue {
+        case (let v as String):
+            adAmountPromotion = v
+        case (let v as Int):
+            adAmountPromotion = String(v)
+        case (let v as Double):
+            adAmountPromotion = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
+        promo__balance <- map["promo__balance"]
+        
     }
 }
 

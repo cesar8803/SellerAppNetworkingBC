@@ -99,6 +99,7 @@ public class OperationResult: Mappable{
     public var nroOrdenPaqueteria: String?
     public var tentativeUsed : Bool?
     public var tentativeAmount : TentativeAmount?
+    public var warningList: [WarningList]?
     
     public var splitTicketDataMESList : [splitTicketsDataMesaMES]?
     
@@ -200,6 +201,7 @@ public class OperationResult: Mappable{
         barcode <- map["barcode"]
         cfBarcode <- map["cfBarcode"]
         splitTicketDataMESList <- map["splitTicketsDataMesaMES"]
+        warningList <- map["warningList"]
         //nroOrdenPaqueteria <- map["nroOrdenPaqueteria"]
         
         

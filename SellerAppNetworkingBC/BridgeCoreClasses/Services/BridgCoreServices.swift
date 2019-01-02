@@ -154,7 +154,7 @@ public class BridgeCoreServices
     {
         return Promise { fulfill, reject in
             
-            let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType] as [String : Any]
+            let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType, "tiendaDeReconocimiento":storeCode, "campoLibreReconocimiento":"","subCanalDeVenta":"12"] as [String : Any]
             let otherParams = ["params":bridgeCoreRequestDict,"operation":"findWalletBalance"] as [String : Any]
             let params: Parameters = ["bridgeCoreRequest": otherParams]
             
@@ -170,7 +170,7 @@ public class BridgeCoreServices
     
     public class func findWalletBalance(terminalCode:String, storeCode:String, entryMethod:String,track1 :String, track2:String, cvv:String, printerTypeName:String, printerStationType:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
-        let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":"", "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType] as [String : Any]
+        let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":"", "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType, "tiendaDeReconocimiento":storeCode, "campoLibreReconocimiento":"","subCanalDeVenta":"12"] as [String : Any]
         
         let otherP = ["params":bridgeCoreRequestDict,"operation":"findWalletBalance"] as [String : Any]
         let p:Parameters = ["bridgeCoreRequest":otherP]
@@ -277,7 +277,7 @@ public class BridgeCoreServices
     }
     
     
-    public class func addTender(connectionId:String, storeCode:String, terminalCode:String, payments:[PaymentMethod], userName:String, userPassword:String, trainingMode:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    public class func addTender(connectionId:String, storeCode:String, terminalCode:String, payments:[PaymentMethod], userName:String, userPassword:String, trainingMode:Bool, tbRecIngresos:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, completion: { (bridgeCore) in
             
@@ -360,9 +360,14 @@ public class BridgeCoreServices
                                     }
                                     
                                     if storedError == nil{
-                                        let params: [String:Any] = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false]
+                                        var laParams:[String: Any] = [:]
+                                        if tbRecIngresos{
+                                            laParams = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false, "tiendaDeReconocimiento": storeCode,"canalDeVenta": "10","subCanalDeVenta": "12","campoLibreReconocimiento": ""]
+                                        }else{
+                                            laParams = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false]
+                                        }
                                         
-                                        finishTransactionPrinter(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: params, completion: completion, completionError: completionError)
+                                        finishTransactionPrinter(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: laParams, completion: completion, completionError: completionError)
                                     }
                                 }
                                 
@@ -459,7 +464,7 @@ public class BridgeCoreServices
         })
     }
     
-    public class func closeTerminal(connectionId:String, userName: String, userPass: String, storeCode:String, terminalCode:String, giftTicket: Bool = false,trainingMode:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    public class func closeTerminal(connectionId:String, userName: String, userPass: String, storeCode:String, terminalCode:String, giftTicket: Bool = false,trainingMode:Bool, tbRecIngresos:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         
         BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPass, trainingMode: trainingMode, completion: { (loginBridgeCoreResponse) in
@@ -491,14 +496,22 @@ public class BridgeCoreServices
                     
                     if bcLogoffR.ack == 0
                     {
-                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, completion: completion, completionError:completionError)
+                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, tbRecIngresos: tbRecIngresos, completion: completion, completionError:completionError)
                     }else if bcLogoffR.ack == 10049{
-                        BridgeCoreServices.cancelTransactionWithParams(coneectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: ["cancelReasonCode":""], completion: { (responseCancel) in
+                        
+                        var laParams:[String: Any] = [:]
+                        if tbRecIngresos{
+                            laParams = ["cancelReasonCode":"","tiendaDeReconocimiento": storeCode,"canalDeVenta": "10","subCanalDeVenta": "12","campoLibreReconocimiento": ""]
+                        }else{
+                            laParams = ["cancelReasonCode":""]
+                        }
+                        
+                        BridgeCoreServices.cancelTransactionWithParams(coneectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, params: laParams, completion: { (responseCancel) in
                             guard let bcCancelR = responseCancel.bridgeCoreResponse else {
                                 completionError("bridgeCoreResponse is nil")
                                 return }
                             if bcCancelR.ack == 0{
-                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, completion: completion, completionError:completionError)
+                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, tbRecIngresos: tbRecIngresos, completion: completion, completionError:completionError)
                             }else{
                                 completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
                             }
