@@ -18,7 +18,7 @@ public struct Item{
     public var itemQty:String?
     public let itemBarcode:String
     public let type:String
-    public let itemDepartment:String
+    public let itemDepartment:String?
     public var somsDeliveryType:String?
     public var somsDeliveryDate:String?
     public var giffTicket:Bool?
@@ -461,6 +461,11 @@ public enum BCRequestParams{
                 BCParamsNames.type.rawValue : "map",
                 BCParamsNames.itemBarcode.rawValue: item.itemBarcode
             ]
+            
+            //VALIDAR SI VIENE DEPARTAMENTO
+            if let departmentItem = item.itemDepartment{
+                params[BCParamsNames.itemDepartment.rawValue] = departmentItem
+            }
             
             //VALIDAR SI VIENE CANTIDAD
             if let qtyItem = item.itemQty{
