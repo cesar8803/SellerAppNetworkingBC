@@ -68,6 +68,19 @@ public struct Item{
         self.somsDeliveryDate = nil
         self.warrantySelected = nil
     }
+    
+    public init(itemBarcode: String, warrantedItemSeq: String, itemPrice: String, itemDepartment: String){
+        self.itemPrice = itemPrice
+        self.itemBarcode = itemBarcode
+        self.warrantedItemSeq = warrantedItemSeq
+        self.itemQty = nil
+        self.warrantedItem = nil
+        self.itemDepartment = itemDepartment
+        self.type = "map"
+        self.somsDeliveryType = nil
+        self.somsDeliveryDate = nil
+        self.warrantySelected = nil
+    }
 }
 
 public enum BridgeCoreOperationName:String
