@@ -43,8 +43,8 @@ class Representation: Mappable {
     var autoCancelTrxAddCustomer: Int?
     var reasonSaleTransactionDiscountMenu: Reasonsaletransactiondiscountmenu?
     var mustCloseCashdrawerBeforeTransaction: Int?
-    
     var sessionData: Sessiondata?
+    var exceptionIndex: Int?
     
     required init?(map: Map){}
     
@@ -80,7 +80,7 @@ class Representation: Mappable {
         reasonSaleTransactionDiscountMenu <- map["reasonSaleTransactionDiscountMenu"]
         mustCloseCashdrawerBeforeTransaction <- map["mustCloseCashdrawerBeforeTransaction"]
         sessionData <- map["sessionData"]
-
+        exceptionIndex <- map["exceptionIndex"]
     }
     
 }

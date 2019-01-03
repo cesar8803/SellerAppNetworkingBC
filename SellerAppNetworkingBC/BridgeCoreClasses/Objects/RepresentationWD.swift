@@ -28,7 +28,6 @@ public class RepresentationWD: Mappable{
     public var additionalData: [AdditionalData]?
     public var fieldRequests: [FieldRequests]?
     public var storesList: [StoresList]?
-    
     public var stores:[LPStoreData]? {
         
         if let storeDataList = self.storesList?.first?.storeData {
@@ -93,6 +92,7 @@ public class RepresentationWD: Mappable{
     }
     
     public var forceKeysData: Forcekeysdata?
+    public var exceptionIndex: Int?
     
     public func mapping(map: Map){
         status <- map["status"]
@@ -135,5 +135,6 @@ public class RepresentationWD: Mappable{
         forceKeysData <- map["forceKeysData"]
         code <- map["code"]
         authorizationCode <- map["authorizationCode"]
+        exceptionIndex <- map["exceptionIndex"]
     }
 }
