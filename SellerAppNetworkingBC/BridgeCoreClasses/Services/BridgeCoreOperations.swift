@@ -513,7 +513,7 @@ public enum BCRequestParams{
             
             params = [BCParamsNames.warrantedItemSeq.rawValue:warrantedItemSeq,
                       BCParamsNames.itemBarcode.rawValue:itemBarcode,
-                      BCParamsNames.itemBarcode.rawValue:itemDepartment]
+                      BCParamsNames.itemDepartment.rawValue:itemDepartment]
             
             return params
         }
