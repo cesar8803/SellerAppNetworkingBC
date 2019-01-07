@@ -45,6 +45,7 @@ class Representation: Mappable {
     var mustCloseCashdrawerBeforeTransaction: Int?
     var sessionData: Sessiondata?
     var exceptionIndex: Int?
+    var exceptionsListData: [ExceptionsListData]?
     
     required init?(map: Map){}
     
@@ -81,6 +82,7 @@ class Representation: Mappable {
         mustCloseCashdrawerBeforeTransaction <- map["mustCloseCashdrawerBeforeTransaction"]
         sessionData <- map["sessionData"]
         exceptionIndex <- map["exceptionIndex"]
+        exceptionsListData <- map["exceptionsListData"]
     }
     
 }

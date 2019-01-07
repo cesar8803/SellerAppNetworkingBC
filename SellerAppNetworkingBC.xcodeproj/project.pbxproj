@@ -130,6 +130,8 @@
 		A95FD84C1EF9D2650094AA1C /* Tendersmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */; };
 		A9E05B951F3CD450001ACA0A /* ItemErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */; };
 		A9E05B971F3CD4F8001ACA0A /* ItemErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */; };
+		B507EF0821E4089300BD42CC /* ExceptionsListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B507EF0721E4089300BD42CC /* ExceptionsListData.swift */; };
+		B507EF0A21E4094C00BD42CC /* AdditionalDataRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B507EF0921E4094C00BD42CC /* AdditionalDataRepresentation.swift */; };
 		B5C97F6120C5A1C3001A550C /* SplitTicketsDataMesaMES.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C97F6020C5A1C3001A550C /* SplitTicketsDataMesaMES.swift */; };
 		B5C97F6320C5A31A001A550C /* ticketDataLiverpool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C97F6220C5A31A001A550C /* ticketDataLiverpool.swift */; };
 		B5DE78AB20598BF900EEA376 /* proratedDiscountsTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE78AA20598BF900EEA376 /* proratedDiscountsTotal.swift */; };
@@ -315,6 +317,8 @@
 		A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tendersmenu.swift; sourceTree = "<group>"; };
 		A9E05B941F3CD450001ACA0A /* ItemErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorList.swift; path = Objects/ItemErrorList.swift; sourceTree = "<group>"; };
 		A9E05B961F3CD4F8001ACA0A /* ItemErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemErrorData.swift; path = Objects/ItemErrorData.swift; sourceTree = "<group>"; };
+		B507EF0721E4089300BD42CC /* ExceptionsListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionsListData.swift; sourceTree = "<group>"; };
+		B507EF0921E4094C00BD42CC /* AdditionalDataRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalDataRepresentation.swift; sourceTree = "<group>"; };
 		B5C97F6020C5A1C3001A550C /* SplitTicketsDataMesaMES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplitTicketsDataMesaMES.swift; path = Objects/SplitTicketsDataMesaMES.swift; sourceTree = "<group>"; };
 		B5C97F6220C5A31A001A550C /* ticketDataLiverpool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ticketDataLiverpool.swift; path = Objects/ticketDataLiverpool.swift; sourceTree = "<group>"; };
 		B5DE78AA20598BF900EEA376 /* proratedDiscountsTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = proratedDiscountsTotal.swift; path = Objects/proratedDiscountsTotal.swift; sourceTree = "<group>"; };
@@ -650,6 +654,8 @@
 				A95FD82A1EF9D2650094AA1C /* Storedata.swift */,
 				A95FD82B1EF9D2650094AA1C /* Storeslist.swift */,
 				A95FD82C1EF9D2650094AA1C /* Tendersmenu.swift */,
+				B507EF0721E4089300BD42CC /* ExceptionsListData.swift */,
+				B507EF0921E4094C00BD42CC /* AdditionalDataRepresentation.swift */,
 			);
 			path = MapObjects;
 			sourceTree = "<group>";
@@ -894,6 +900,7 @@
 				A95FD8471EF9D2650094AA1C /* Reasonsaletransactiondiscountmenu.swift in Sources */,
 				F75F37AD1F8D18EA00BE00CB /* PaymentWithoutRefinance.swift in Sources */,
 				193CCD3A1FD1AA0F006E5563 /* WarningList.swift in Sources */,
+				B507EF0A21E4094C00BD42CC /* AdditionalDataRepresentation.swift in Sources */,
 				F75F37A91F8D17CC00BE00CB /* BalanceBC.swift in Sources */,
 				F78D19461F60BBC400AEA7BB /* OriginalTaxesAmount.swift in Sources */,
 				A95FD8371EF9D2650094AA1C /* LPStoreData.swift in Sources */,
@@ -907,6 +914,7 @@
 				F78D194A1F60BCCE00AEA7BB /* Qty.swift in Sources */,
 				2B0CA3AB1F0DA314007A8EB0 /* RepresentationWD.swift in Sources */,
 				A9E05B951F3CD450001ACA0A /* ItemErrorList.swift in Sources */,
+				B507EF0821E4089300BD42CC /* ExceptionsListData.swift in Sources */,
 				2B788EB31F0B48AA004E5F1F /* ExchangeCurrencyListData.swift in Sources */,
 				A95FD82D1EF9D2650094AA1C /* Int+Extension.swift in Sources */,
 				2B788ECF1F0C54F9004E5F1F /* BridgeCore.swift in Sources */,

@@ -93,6 +93,7 @@ public class RepresentationWD: Mappable{
     
     public var forceKeysData: Forcekeysdata?
     public var exceptionIndex: Int?
+    public var exceptionsListData: [ExceptionsListData]?
     
     public func mapping(map: Map){
         status <- map["status"]
@@ -136,5 +137,6 @@ public class RepresentationWD: Mappable{
         code <- map["code"]
         authorizationCode <- map["authorizationCode"]
         exceptionIndex <- map["exceptionIndex"]
+        exceptionsListData <- map["exceptionsListData"]
     }
 }
