@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class ExceptionsListData: Mappable {
-    var additionalDataRepresentation: AdditionalDataRepresentation?
+    public var additionalDataRepresentation: AdditionalDataRepresentation?
     
     required public init?(map: Map){
     }
