@@ -45,12 +45,12 @@ public struct Item{
         self.deliveryDateMarketPlace = deliveryDateMarketPlace
     }
     
-    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String){
+    public init(itemPrice: String, warrantySelected: Bool, itemQty: String, itemBarcode: String, itemDepartment: String){
         self.itemPrice = itemPrice
         self.warrantySelected = warrantySelected
         self.itemQty = itemQty
         self.itemBarcode = itemBarcode
-        self.itemDepartment = ""
+        self.itemDepartment = itemDepartment
         self.type = "map"
         self.somsDeliveryType = nil
         self.somsDeliveryDate = nil
