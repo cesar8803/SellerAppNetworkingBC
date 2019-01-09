@@ -69,11 +69,11 @@ public struct Item{
         self.warrantySelected = nil
     }
     
-    public init(itemBarcode: String, warrantedItemSeq: String, itemPrice: String, itemDepartment: String){
+    public init(itemBarcode: String, warrantedItemSeq: String, itemPrice: String, itemDepartment: String, itemQuantity: String){
         self.itemPrice = itemPrice
         self.itemBarcode = itemBarcode
         self.warrantedItemSeq = warrantedItemSeq
-        self.itemQty = nil
+        self.itemQty = itemQuantity
         self.warrantedItem = nil
         self.itemDepartment = itemDepartment
         self.type = "map"
