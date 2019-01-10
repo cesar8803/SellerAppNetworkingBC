@@ -38,9 +38,9 @@ Pod::Spec.new do |s|
 # 7 Dependencies
 
     s.framework = "Foundation"
-    s.dependency 'Alamofire', '~> 4.0'
-    s.dependency 'AlamofireObjectMapper', '~> 4.0'
-    s.dependency 'PromiseKit', '~> 4.4'
+    s.dependency 'Alamofire'#, '~> 4.0'
+    s.dependency 'AlamofireObjectMapper'#, '~> 4.0'
+    s.dependency 'PromiseKit'#, '~> 4.4'
 
 
 # 8 Sources Files
