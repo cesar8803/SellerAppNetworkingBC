@@ -40,16 +40,16 @@ public class BridgeCoreServices
     
     public class func cancelTransaction(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore>
     {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             
             let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"cancelTransaction"] as [String : Any]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.cancelTransaction(terminalCode: terminalCode, storeCode: storeCode, parameters: params))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
@@ -70,29 +70,29 @@ public class BridgeCoreServices
     
     public class func logoff(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore>
     {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"logoff"] as [String : Any]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.logoff(terminalCode: terminalCode, storeCode: storeCode, parameters: params))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
     
     public class func passthruPromise<T:Any>(data: T) -> Promise<T>
     {
-        return Promise { fulfill, reject in
-            fulfill(data)
+        return Promise<T> { seal in
+            seal.fulfill(data)
         }
     }
     
     public class func configureTerminal(terminalCode: String, storeCode: String, enablingTerminal:Bool) -> Promise<BridgeCore> {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             
             let params = ["storeCode":storeCode, "terminalCode":terminalCode, "enablingTerminal" : enablingTerminal] as [String : Any]
             let request = ["operation":"configureTerminal", "params": params] as [String : Any]
@@ -100,17 +100,17 @@ public class BridgeCoreServices
             
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.configureTerminal(paramters: bcRequest))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
     
     public class func forciblyLogoff(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore>
     {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             var closeCalled: Bool = false
             var returnSelectedCalled: Bool = false
             firstly {
@@ -142,17 +142,17 @@ public class BridgeCoreServices
                         }
                     }
                     throw ServiceResponseError.unexpectedResponse("No se pudo completar la operación correctamente. Por favor reintente.", (response.bridgeCoreResponse?.ack)!)
-                }.then { response -> Void in
-                    fulfill(response)
+                }.done { response -> Void in
+                    seal.fulfill(response)
                 }.catch { error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
     
     public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, track1:String, track2:String, cvv:String, printerTypeName:String, printerStationType:String) -> Promise<BridgeCore>
     {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             
             let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType, "tiendaDeReconocimiento":storeCode, "campoLibreReconocimiento":"","subCanalDeVenta":"12"] as [String : Any]
             let otherParams = ["params":bridgeCoreRequestDict,"operation":"findWalletBalance"] as [String : Any]
@@ -160,10 +160,10 @@ public class BridgeCoreServices
             
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.findWalletBalance(terminalCode: terminalCode, storeCode: storeCode, paramters: params))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
@@ -202,17 +202,17 @@ public class BridgeCoreServices
     
     public class func logIn(connectionId:String, storeCode:String, terminalCode:String, userName:String, userPassword:String, trainingMode:Bool) -> Promise<BridgeCore>
     {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             let params: Parameters = ["userName":userName, "userPassword":userPassword, "trainingMode":trainingMode]
             let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"login", "params":params] as [String : Any]
             let bcParams: Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.login(terminalCode: terminalCode, storeCode: storeCode, parameters: bcParams))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
@@ -541,15 +541,15 @@ public class BridgeCoreServices
     
     
     public class func returnSelect(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore> {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             let oper = BridgeCoreOperation.returnSelect(connectionId: connectionId)
             
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.returnSelect(terminalCode: terminalCode, storeCode: storeCode, operation: oper))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
         
@@ -613,16 +613,16 @@ public class BridgeCoreServices
     
     public class func cancelTransactionWithParams(connectionId:String, storeCode:String, terminalCode:String) -> Promise<BridgeCore>
     {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             let bridgeCoreRequestDict = ["connectionId":connectionId, "operation":"logoff"] as [String : Any]
             let params:Parameters = ["bridgeCoreRequest":bridgeCoreRequestDict]
             
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.cancelTransaction(terminalCode: terminalCode, storeCode: storeCode, parameters: params))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
@@ -650,13 +650,13 @@ public class BridgeCoreServices
     }
     
     public class func closeSession(storeCode:String, terminalCode:String) -> Promise<BridgeCore> {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.closeSession(terminalCode: terminalCode, storeCode: storeCode))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
@@ -673,13 +673,13 @@ public class BridgeCoreServices
     
     public class func startUpSession(storeCode:String, terminalCode:String) -> Promise<BridgeCore>
     {
-        return Promise { fulfill, reject in
+        return Promise<BridgeCore> { seal in
             firstly {
                 AsyncClientBC.getBCRequest(bcRouter: BrigdeCoreRouter.startupSession(terminalCode: terminalCode, storeCode: storeCode))
-                }.then { (bridgeCoreResponse: BridgeCore) -> Void in
-                    fulfill(bridgeCoreResponse)
+                }.done { (bridgeCoreResponse: BridgeCore) -> Void in
+                    seal.fulfill(bridgeCoreResponse)
                 }.catch {error in
-                    reject(error)
+                    seal.reject(error)
             }
         }
     }
