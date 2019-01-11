@@ -100,6 +100,7 @@ public class OperationResult: Mappable{
     public var tentativeUsed : Bool?
     public var tentativeAmount : TentativeAmount?
     public var warningList: [WarningList]?
+    public var warrantyReference : String?
     
     public var splitTicketDataMESList : [splitTicketsDataMesaMES]?
     
@@ -234,7 +235,7 @@ public class OperationResult: Mappable{
         }
         tentativeUsed <- map["tentativeUsed"]
         tentativeAmount <- map["tentativeAmount"]
-        
+        warrantyReference <- map["warrantyReference"]
         
         testerData <- map["testerData"]
     }
