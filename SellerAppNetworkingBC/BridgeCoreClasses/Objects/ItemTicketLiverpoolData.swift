@@ -80,6 +80,7 @@ public class ItemTicketLiverpoolData: Mappable{
     public var somsDeliveryDate: String?
     public var somsDeliveryState: String?
     public var somsDeliveryType: String?
+    public var parentItemCode: String?
     
     required public init?(map: Map){
     }
@@ -186,6 +187,17 @@ public class ItemTicketLiverpoolData: Mappable{
             somsDeliveryType = String(v)
         case (let v as Double):
             somsDeliveryType = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
+        
+        switch map["parentItemCode"].currentValue {
+        case (let v as String):
+            parentItemCode = v
+        case (let v as Int):
+            parentItemCode = String(v)
+        case (let v as Double):
+            parentItemCode = String(v)
         default:
             debugPrint("You should add another kind of data")
         }
