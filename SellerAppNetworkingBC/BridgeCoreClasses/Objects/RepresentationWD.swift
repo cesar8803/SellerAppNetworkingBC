@@ -44,7 +44,7 @@ public class RepresentationWD: Mappable{
     
     /****************************/
     /*      CloseTerminal      */
-
+    
     public var totalsData: TotalsData?
     public var storeStatus: String?
     public var priceWithTaxes: Int?
@@ -65,8 +65,8 @@ public class RepresentationWD: Mappable{
     
     //MARK:- SimpleParameters for ConfirmCardPaymentRepresentation
     /**
-    * authorizationCode: Codigo de autorización a enviar al pinpad en la confirmación en el campo “Authorization Code”
-    */
+     * authorizationCode: Codigo de autorización a enviar al pinpad en la confirmación en el campo “Authorization Code”
+     */
     public var authorizationCode: String?
     /**
      * code: Codigo de respuesta para enviar al PinPad en la confirmación en el campo “Status de la respuesta del Host”
@@ -82,10 +82,11 @@ public class RepresentationWD: Mappable{
     public var authorization: String?
     
     /**
-    * tokenTlv91: Token de respuesta para enviar al PinPad en la confirmación en el campo “Issuer Authentication Data” (String (Base 64))
-    */
+     * tokenTlv91: Token de respuesta para enviar al PinPad en la confirmación en el campo “Issuer Authentication Data” (String (Base 64))
+     */
     public var tokenTlv91: String?
     
+    public var scripts: Scripts?
     
     
     required public init?(map: Map){
@@ -133,6 +134,7 @@ public class RepresentationWD: Mappable{
         authorization <- map["authorization"]
         fieldRequests <- map["fieldRequests"]
         tokenTlv91 <- map["tokenTlv91"]
+        scripts <- map["scripts"]
         forceKeysData <- map["forceKeysData"]
         code <- map["code"]
         authorizationCode <- map["authorizationCode"]
@@ -140,3 +142,4 @@ public class RepresentationWD: Mappable{
         exceptionsListData <- map["exceptionsListData"]
     }
 }
+
