@@ -59,7 +59,7 @@
 		2B994B6D1F280A3B00292163 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6C1F280A3B00292163 /* Price.swift */; };
 		2B994B6F1F280B1700292163 /* HierarchyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B994B6E1F280B1700292163 /* HierarchyGroup.swift */; };
 		2BA3B34C1F0AF5C0003CCFB2 /* AsyncClientBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */; };
-		48C49BB7224AE07F00A3EF14 /* Scripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C49BB6224AE07F00A3EF14 /* Scripts.swift */; };
+		4897A57E223883F4007E6CC0 /* Scripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897A57D223883F4007E6CC0 /* Scripts.swift */; };
 		4D4B194E1606625BFF557B56 /* Pods_SellerAppNetworkingBCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4025A9665F6AE4ABC86A3 /* Pods_SellerAppNetworkingBCTests.framework */; };
 		550188421F85881C0070DF80 /* Discounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550188411F85881C0070DF80 /* Discounts.swift */; };
 		550188441F8588690070DF80 /* Discountdataliverpool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550188431F8588690070DF80 /* Discountdataliverpool.swift */; };
@@ -245,7 +245,7 @@
 		2B994B6C1F280A3B00292163 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Price.swift; path = Services/Price.swift; sourceTree = "<group>"; };
 		2B994B6E1F280B1700292163 /* HierarchyGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HierarchyGroup.swift; path = Objects/HierarchyGroup.swift; sourceTree = "<group>"; };
 		2BA3B34B1F0AF5C0003CCFB2 /* AsyncClientBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncClientBC.swift; path = Services/AsyncClientBC.swift; sourceTree = "<group>"; };
-		48C49BB6224AE07F00A3EF14 /* Scripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scripts.swift; path = Objects/Scripts.swift; sourceTree = "<group>"; };
+		4897A57D223883F4007E6CC0 /* Scripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Scripts.swift; path = Objects/Scripts.swift; sourceTree = "<group>"; };
 		550188411F85881C0070DF80 /* Discounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discounts.swift; path = Objects/Discounts.swift; sourceTree = "<group>"; };
 		550188431F8588690070DF80 /* Discountdataliverpool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Discountdataliverpool.swift; path = Objects/Discountdataliverpool.swift; sourceTree = "<group>"; };
 		550188451F8588B40070DF80 /* Baseamount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Baseamount.swift; path = Objects/Baseamount.swift; sourceTree = "<group>"; };
@@ -397,7 +397,6 @@
 		2B788EAD1F0B45D8004E5F1F /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				48C49BB6224AE07F00A3EF14 /* Scripts.swift */,
 				C17B293C1F7DF150005709C1 /* Aditionalparameters.swift */,
 				2B788EB41F0B48C3004E5F1F /* OperationResult.swift */,
 				2B788EAE1F0B4784004E5F1F /* BridgeCoreResponse.swift */,
@@ -519,6 +518,7 @@
 				B5DE78AE20598EAB00EEA376 /* discountAmountTlog.swift */,
 				B5C97F6020C5A1C3001A550C /* SplitTicketsDataMesaMES.swift */,
 				B5C97F6220C5A31A001A550C /* ticketDataLiverpool.swift */,
+				4897A57D223883F4007E6CC0 /* Scripts.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -923,7 +923,7 @@
 				2B788ECF1F0C54F9004E5F1F /* BridgeCore.swift in Sources */,
 				A95FD83B1EF9D2650094AA1C /* Benefitsdata.swift in Sources */,
 				2B0CA3C51F0DB489007A8EB0 /* Change.swift in Sources */,
-				48C49BB7224AE07F00A3EF14 /* Scripts.swift in Sources */,
+				4897A57E223883F4007E6CC0 /* Scripts.swift in Sources */,
 				A95FD8311EF9D2650094AA1C /* LPBridgeCoreResponse.swift in Sources */,
 				B5DE78AF20598EAB00EEA376 /* discountAmountTlog.swift in Sources */,
 				55E1DCCC1F82A2E8008A469F /* Forcekeysdata.swift in Sources */,

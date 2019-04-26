@@ -44,7 +44,7 @@ public class RepresentationWD: Mappable{
     
     /****************************/
     /*      CloseTerminal      */
-    
+
     public var totalsData: TotalsData?
     public var storeStatus: String?
     public var priceWithTaxes: Int?
@@ -142,4 +142,3 @@ public class RepresentationWD: Mappable{
         exceptionsListData <- map["exceptionsListData"]
     }
 }
-

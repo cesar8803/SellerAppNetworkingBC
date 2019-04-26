@@ -150,11 +150,11 @@ public class BridgeCoreServices
         }
     }
     
-    public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, track1:String, track2:String, cvv:String, printerTypeName:String, printerStationType:String) -> Promise<BridgeCore>
+    public class func findWalletBalance(terminalCode:String, account:String, storeCode:String, entryMethod:String, track1:String, track2:String, cvv:String, printerTypeName:String, printerStationType:String, campoLibreReconocimiento: String) -> Promise<BridgeCore>
     {
         return Promise { fulfill, reject in
             
-            let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType, "tiendaDeReconocimiento":storeCode, "campoLibreReconocimiento":"","subCanalDeVenta":"12"] as [String : Any]
+            let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":account, "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType, "tiendaDeReconocimiento":storeCode, "campoLibreReconocimiento": campoLibreReconocimiento,"subCanalDeVenta":"12"] as [String : Any]
             let otherParams = ["params":bridgeCoreRequestDict,"operation":"findWalletBalance"] as [String : Any]
             let params: Parameters = ["bridgeCoreRequest": otherParams]
             
@@ -168,7 +168,7 @@ public class BridgeCoreServices
         }
     }
     
-    public class func findWalletBalance(terminalCode:String, storeCode:String, entryMethod:String,track1 :String, track2:String, cvv:String, printerTypeName:String, printerStationType:String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    public class func findWalletBalance(terminalCode:String, storeCode:String, entryMethod:String,track1 :String, track2:String, cvv:String, printerTypeName:String, printerStationType:String, campoLibreReconocimiento: String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         let bridgeCoreRequestDict = ["terminalCode":terminalCode, "account":"", "storeCode":storeCode, "entryMethod":entryMethod,"track1":track1,"track2":track2, "cardPaymentinputCvv":cvv, "printerTypeName":printerTypeName, "printerStationType":printerStationType, "tiendaDeReconocimiento":storeCode, "campoLibreReconocimiento":"","subCanalDeVenta":"12"] as [String : Any]
         
@@ -277,7 +277,7 @@ public class BridgeCoreServices
     }
     
     
-    public class func addTender(connectionId:String, storeCode:String, terminalCode:String, payments:[PaymentMethod], userName:String, userPassword:String, trainingMode:Bool, tbRecIngresos:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    public class func addTender(connectionId:String, storeCode:String, terminalCode:String, payments:[PaymentMethod], userName:String, userPassword:String, trainingMode:Bool, tbRecIngresos:Bool, campoLibreReconocimiento: String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         BridgeCoreServices.logoff(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, completion: { (bridgeCore) in
             
@@ -362,7 +362,7 @@ public class BridgeCoreServices
                                     if storedError == nil{
                                         var laParams:[String: Any] = [:]
                                         if tbRecIngresos{
-                                            laParams = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false, "tiendaDeReconocimiento": storeCode,"canalDeVenta": "10","subCanalDeVenta": "12","campoLibreReconocimiento": ""]
+                                            laParams = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false, "tiendaDeReconocimiento": storeCode,"canalDeVenta": "10","subCanalDeVenta": "12","campoLibreReconocimiento": campoLibreReconocimiento]
                                         }else{
                                             laParams = ["printerTypeName": "1001", "printerStationType": "4", "printerTemplate": "transaction.vcl", "invoiceAccepted": false]
                                         }
@@ -464,7 +464,7 @@ public class BridgeCoreServices
         })
     }
     
-    public class func closeTerminal(connectionId:String, userName: String, userPass: String, storeCode:String, terminalCode:String, giftTicket: Bool = false,trainingMode:Bool, tbRecIngresos:Bool, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
+    public class func closeTerminal(connectionId:String, userName: String, userPass: String, storeCode:String, terminalCode:String, giftTicket: Bool = false,trainingMode:Bool, tbRecIngresos:Bool, campoLibreReconocimiento: String, completion:@escaping (_ dataResponse: BridgeCore)-> Void, completionError: @escaping ErrorStringHandlerBC)
     {
         
         BridgeCoreServices.logIn(connectionId: connectionId, storeCode: storeCode, terminalCode: terminalCode, userName: userName, userPassword: userPass, trainingMode: trainingMode, completion: { (loginBridgeCoreResponse) in
@@ -496,12 +496,12 @@ public class BridgeCoreServices
                     
                     if bcLogoffR.ack == 0
                     {
-                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, tbRecIngresos: tbRecIngresos, completion: completion, completionError:completionError)
+                        self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, tbRecIngresos: tbRecIngresos, campoLibreReconocimiento: campoLibreReconocimiento, completion: completion, completionError:completionError)
                     }else if bcLogoffR.ack == 10049{
                         
                         var laParams:[String: Any] = [:]
                         if tbRecIngresos{
-                            laParams = ["cancelReasonCode":"","tiendaDeReconocimiento": storeCode,"canalDeVenta": "10","subCanalDeVenta": "12","campoLibreReconocimiento": ""]
+                            laParams = ["cancelReasonCode":"","tiendaDeReconocimiento": storeCode,"canalDeVenta": "10","subCanalDeVenta": "12","campoLibreReconocimiento": campoLibreReconocimiento]
                         }else{
                             laParams = ["cancelReasonCode":""]
                         }
@@ -511,7 +511,7 @@ public class BridgeCoreServices
                                 completionError("bridgeCoreResponse is nil")
                                 return }
                             if bcCancelR.ack == 0{
-                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, tbRecIngresos: tbRecIngresos, completion: completion, completionError:completionError)
+                                self.closeTerminal(connectionId: connectionId, userName: userName, userPass: userPass, storeCode: storeCode, terminalCode: terminalCode, giftTicket: false,trainingMode : trainingMode, tbRecIngresos: tbRecIngresos, campoLibreReconocimiento: campoLibreReconocimiento, completion: completion, completionError:completionError)
                             }else{
                                 completionError(bcLoginR.message ?? "No se pudo verificar la autorización del jefe")
                             }
