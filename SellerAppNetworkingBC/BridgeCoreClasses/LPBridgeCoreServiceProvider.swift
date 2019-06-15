@@ -22,18 +22,18 @@ public class LPBridgeCoreServiceProvider {
     
     var printerTypeName: String = "1003"
     var printerStationType: String = "6"
-
+    
     // ***** End points ***** //
-
+    
     open var endPointString: String = ""
     open var customRootEndpoint: String = ""
     open var environment: Environment = .qa
     
     open var rootEndpoint: String {
         switch self.environment {
-            case .development:      return "http://172.22.70.40:9090/bridge-server-rest-liverpool/terminal"
-            case .qa:               return "http://172.22.209.88:9090/bridge-server-rest-liverpool/terminal"
-            case .custom:           return "\(self.customRootEndpoint)/bridge-server-rest-liverpool/terminal"
+        case .development:      return "http://172.22.70.40:9090/bridge-server-rest-liverpool/terminal"
+        case .qa:               return "http://172.22.209.88:9090/bridge-server-rest-liverpool/terminal"
+        case .custom:           return "\(self.customRootEndpoint)/bridge-server-rest-liverpool/terminal"
         }
     }
     
@@ -42,9 +42,9 @@ public class LPBridgeCoreServiceProvider {
     
     open var staticEndpoint: String {
         switch self.environment {
-            case .development:      return "http://172.22.70.40:9090/bridge-server-rest-liverpool/service"
-            case .qa:               return "http://172.22.209.88:9090/bridge-server-rest-liverpool/service"
-            case .custom:           return "\(self.customRootEndpoint)/bridge-server-rest-liverpool/service"
+        case .development:      return "http://172.22.70.40:9090/bridge-server-rest-liverpool/service"
+        case .qa:               return "http://172.22.209.88:9090/bridge-server-rest-liverpool/service"
+        case .custom:           return "\(self.customRootEndpoint)/bridge-server-rest-liverpool/service"
         }
     }
     
@@ -179,7 +179,7 @@ public class LPBridgeCoreServiceProvider {
         }
         
     }
-
+    
     
     public func logoutVendedor(completion: @escaping (Bool, NSError?) -> ()) {
         
@@ -209,7 +209,7 @@ public class LPBridgeCoreServiceProvider {
         }
         
     }
-
+    
     
     public func registerTerminal(terminalCode: String, storeCode: String, enablingTerminal:Bool, completion: @escaping (LPRegisterTerminal?, NSError?) ->()) {
         
@@ -241,10 +241,10 @@ public class LPBridgeCoreServiceProvider {
             completion(LPRegisterTerminal(mappable: responseTuple.mapObj), responseTuple.error)
             
         }
-
+        
     }
-
-
+    
+    
     // MARK: Transactions
     
     public func cancelTransaction(cancelReasonCode: String = "", completion: @escaping (LPCancelTransaction?, NSError?) ->()) {
@@ -266,53 +266,53 @@ public class LPBridgeCoreServiceProvider {
                 completion(nil, error)
                 return
             }
-        
+            
             // ***** Request successfuly ***** //
             
             completion(LPCancelTransaction(mappable: responseTuple.mapObj), responseTuple.error)
-
+            
         }
-    
-    }
-
-    
         
+    }
+    
+    
+    
     // MARK: Processing response
     
     func responseProcessing(response: DataResponse<Data>) -> (mapObj: Bridgecoreresponse?, error: NSError?) {
         
         switch response.result {
             
-            case .success(let responseData):
-                
-                do {
-                    
-                    let jsonValue = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
-
-                    guard let bc3Mappable = BCResponse(JSON: jsonValue)?.bridgeCoreResponse else {
-                        let mappableError = NSError(domain: "No se pudo mappear la respuesta", code: 9999, userInfo: nil)
-                        return (nil, mappableError)
-                    }
-                    
-                    let bc3Response = LPBridgeCoreResponse(mapplable: bc3Mappable)
-                    
-                    if bc3Response.ack != 0 {
-                        let errorAck = NSError(domain: bc3Response.message, code: bc3Response.ack, userInfo: nil)
-                        return (nil, errorAck)
-                    }
-                    
-                    return (bc3Mappable, nil)
-                
-                }
-                catch {
-                    
-                    let jsonError = error as NSError
-                    return (nil, jsonError)
-                }
+        case .success(let responseData):
             
-            case .failure(let error):
-                let responseError = error as NSError
-                return (nil, responseError)
+            do {
+                
+                let jsonValue = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
+                
+                guard let bc3Mappable = BCResponse(JSON: jsonValue)?.bridgeCoreResponse else {
+                    let mappableError = NSError(domain: "No se pudo mappear la respuesta", code: 9999, userInfo: nil)
+                    return (nil, mappableError)
+                }
+                
+                let bc3Response = LPBridgeCoreResponse(mapplable: bc3Mappable)
+                
+                if bc3Response.ack != 0 {
+                    let errorAck = NSError(domain: bc3Response.message, code: bc3Response.ack, userInfo: nil)
+                    return (nil, errorAck)
+                }
+                
+                return (bc3Mappable, nil)
+                
+            }
+            catch {
+                
+                let jsonError = error as NSError
+                return (nil, jsonError)
+            }
+            
+        case .failure(let error):
+            let responseError = error as NSError
+            return (nil, responseError)
             
         }
         
@@ -321,3 +321,4 @@ public class LPBridgeCoreServiceProvider {
     
     
 }
+
